@@ -9,7 +9,7 @@
   "description": "booncon PIXELS base theme",
   "main": [
     "assets/styles/main.scss",
-    "assets/js/main.js"
+    "assets/scripts/main.js"
   ],
   "repository": {
     "type": "git",
