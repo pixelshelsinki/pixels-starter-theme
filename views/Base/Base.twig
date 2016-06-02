@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html class="no-js" {{site.language_attributes}}>
+
+  <head>
+    {% include 'components/SiteHead/SiteHead.twig' %}
+    {% block head %}
+    {% endblock %}
+  </head>
+
+  <body class="{{ body_class }}">
+
+    <a href="#content" class="skip-to-content">{{ __('Skip to content', 'px-base-theme') }}</a>
+
+    {% block header %}
+      {% include 'components/SiteHeader/SiteHeader.twig' %}
+    {% endblock %}
+
+    <main id="content">
+      {% block content %}
+        {{ __('Sorry, no content was found!', 'pix-base-theme') }}
+      {% endblock %}
+    </main>
+
+    <aside class="">Aside content here</aside>
+
+    {% block footer %}
+      {% include 'components/SiteFooter/SiteFooter.twig' %}
+    {% endblock %}
+
+    {{ function('wp_footer') }}
+
+  </body>
+
+</html>
