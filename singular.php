@@ -2,7 +2,9 @@
 /**
  * The Template for displaying all single content items
  *
- * Methods for TimberHelper can be found in the /lib sub-directory
+ * Methods for TimberHelper can be found in the /lib sub-directory. If a content
+ * type requires its own logic a custom `single-{post_type}.php` should be
+ * created with the post-type-specific logic there.
  *
  * @package  WordPress
  * @subpackage  Timber

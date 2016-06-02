@@ -1,0 +1,15 @@
+{# TODO: not complete #}
+{# I think this should be different, checking if comments allowed vs closed. #}
+{% if post.comment_status != 'closed' %}
+	<section class="article-comments">
+		<div class="article-comments-comment-form">
+			<h3>{{ __('Comments', 'pix-base-theme') }}</h3>
+			{{ fn('comment_form') }}
+		</div>
+		<div class="article-comments-responses">
+			{% for cmt in post.get_comments() %}
+	      {% include 'components/Comment/Comment.twig' with {comment:cmt} %}
+			{% endfor %}
+		</div>
+	</section>
+{% endif %}

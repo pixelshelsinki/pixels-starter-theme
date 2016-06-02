@@ -1,0 +1,5 @@
+{# TODO: not complete #}
+<div class="article-comment {{comment.comment_type}}" id="article-comment-{{comment.ID}}">
+  <h5 class="article-comment-author">{{ __('%s says', 'px-base-theme')|format(comment.author.name) }}</h5>
+  <div class="article-comment-content">{{comment.comment_content|wpautop}}</div>
+</div>

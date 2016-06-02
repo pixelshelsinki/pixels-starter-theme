@@ -5,19 +5,19 @@
   <article class="article article-{{post.post_type}}" id="post-{{post.ID}}">
 
     {% block singularHeader %}
-      {% include 'SingularHeader/SingularHeader.twig' %}
+      {% include 'components/SingularHeader/SingularHeader.twig' %}
     {% endblock %}
 
     {% block singularMeta %}
-      {% include 'SingularMeta/SingularMeta.twig' %}
     {% endblock %}
 
     {% block singularContent %}
-      {% include 'SingularContent/SingularContent.twig' %}
+      {% include 'components/SingularContent/SingularContent.twig' %}
+      {% include 'components/Comments/Comments.twig' %}
     {% endblock %}
 
     {% block singularFooter %}
-      {% include 'SingularFooter/SingularFooter.twig' %}
+      {% include 'components/SingularFooter/SingularFooter.twig' %}
     {% endblock %}
 
   </article>
