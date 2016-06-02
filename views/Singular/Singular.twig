@@ -1,0 +1,25 @@
+{% extends 'views/Base/Base.twig' %}
+
+{% block content %}
+
+  <article class="article article-{{post.post_type}}" id="post-{{post.ID}}">
+
+    {% block singularHeader %}
+      {% include 'SingularHeader/SingularHeader.twig' %}
+    {% endblock %}
+
+    {% block singularMeta %}
+      {% include 'SingularMeta/SingularMeta.twig' %}
+    {% endblock %}
+
+    {% block singularContent %}
+      {% include 'SingularContent/SingularContent.twig' %}
+    {% endblock %}
+
+    {% block singularFooter %}
+      {% include 'SingularFooter/SingularFooter.twig' %}
+    {% endblock %}
+
+  </article>
+
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends "views/Base/Base.twig" %}
+
+{% block content %}
+
+	{# TODO: Not sure where the title should go for this. Need to double check.#}
+	
+	{% for post in posts %}
+		{% include ['components/Teaser/Teaser-'~post.post_type~'.twig', 'components/Teaser/Teaser.twig'] %}
+	{% endfor %}
+{% endblock %}
