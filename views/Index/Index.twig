@@ -2,7 +2,9 @@
 
 {% block content %}
 
-	{# TODO: Not sure where the title should go for this. Need to double check.#}
+	{% if title %}
+		<h1>{{ title }}</h1>
+	{% endif %}
 
 	{% for post in posts %}
 		{% include ['components/Teaser/Teaser-' ~ post.post_type ~ '.twig', 'components/Teaser/Teaser.twig'] %}
