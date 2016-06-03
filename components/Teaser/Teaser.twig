@@ -2,7 +2,7 @@
 	{% block content %}
 		<h2 class="h2"><a href="{{post.link}}">{{post.title}}</a></h2>
 		{% if post.get_thumbnail %}
-			<img src="{{post.thumbnail.src}}" />
+			<img src="{{post.thumbnail.src}}" alt="{{post.thumbnail.alt ? post.thumbnail.alt : post.thumbnail.title}}">
 		{% endif %}
 		<p>{{post.get_preview}}</p>
 	{% endblock %}

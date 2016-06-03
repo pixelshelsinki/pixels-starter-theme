@@ -1,4 +1,21 @@
-{# Purposely empty #}
 <section class="singular-meta singular-meta-{{ post.post_type }}">
   <p>{{ __('Posted by <a href="%1$s">%2$s</a> on %3$s', 'pix-base-theme')|format(post.author.path, post.author.name, post.post_date|date) }}</p>
+
+  {% if post.categories %}
+    <span>{{ __('Categories', 'pix-base-theme') }}</span>
+    <ul>
+      {% for category in post.categories %}
+        <li>{{category.name}}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+  {% if post.tags %}
+    <span>{{ __('Tags', 'pix-base-theme') }}</span>
+    <ul>
+      {% for tag in post.tags %}
+        <li>{{tag.name}}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
 </section>

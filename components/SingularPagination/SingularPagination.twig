@@ -1,14 +1,16 @@
-<nav class="nav-pagination-singular">
-  <span class="nav-pagination-singular-title">{{ __('Pages:', 'pix-base-theme') }}</span>
-  <ul>
-    {% for page in post.pagination.pages %}
-      <li>
-        {% if page.current %}
-          <span>{{page.name}}</span>
-        {% else %}
-          <a href="{{page.link}}">{{page.name}}</a>
-        {% endif %}
-      </li>
-    {% endfor %}
-  </ul>
-</nav>
+{% if post.pagination %}
+  <nav class="nav-pagination-singular">
+    <span class="nav-pagination-singular-title">{{ __('Pages:', 'pix-base-theme') }}</span>
+    <ul>
+      {% for page in post.pagination.pages %}
+        <li>
+          {% if page.current %}
+            <span>{{ page.name }}</span>
+          {% else %}
+            <a href="{{ page.link }}">{{ page.name }}</a>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+{% endif %}
