@@ -68,7 +68,8 @@
   },
   "dependencies": {
     "babel-runtime": "^6.5.0",
-    "bootstrap": "^3.3.6",
+    "bootstrap-sass": "^3.3.6",
+    "bootstrap": "^4.0.0-alpha.2",
     "jquery": "^2.1.4",
     "tether": "^1.2.0"
   }

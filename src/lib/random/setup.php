@@ -1,8 +1,8 @@
 <?php
 
-namespace Roots\Sage\Setup;
+namespace App;
 
-use Roots\Sage\Assets;
+use Roots\Sage\Template;
 
 /**
  * Theme setup
@@ -50,7 +50,7 @@ function setup() {
 
   // Use main stylesheet for visual editor
   // To add custom styles edit /assets/styles/layouts/_tinymce.scss
-  add_editor_style(Assets\asset_path('styles/main.css'));
+  add_editor_style(asset_path('styles/main.css'));
 }
 add_action('after_setup_theme', __NAMESPACE__ . '\\setup');
 
@@ -69,34 +69,17 @@ function widgets_init() {
 }
 add_action('widgets_init', __NAMESPACE__ . '\\widgets_init');
 
-/**
- * Determine which pages should NOT display the sidebar
- */
-function display_sidebar() {
-  static $display;
-
-  isset($display) || $display = !in_array(true, [
-    // The sidebar will NOT be displayed if ANY of the following return true.
-    // @link https://codex.wordpress.org/Conditional_Tags
-    // is_404(),
-    // is_front_page(),
-    // is_page_template('template-custom.php'),
-    // is_singular()
-  ]);
-
-  return apply_filters('sage/display_sidebar', $display);
-}
-
-/**
- * Theme assets
- */
-function assets() {
-  wp_enqueue_style('sage/css', Assets\asset_path('styles/main.css'), false, null);
-
-  if (is_single() && comments_open() && get_option('thread_comments')) {
-    wp_enqueue_script('comment-reply');
-  }
-
-  wp_enqueue_script('sage/js', Assets\asset_path('scripts/main.js'), ['jquery'], null, true);
-}
-add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\assets', 100);
+//
+// /**
+//  * Theme assets
+//  */
+// function assets() {
+//   wp_enqueue_style('pixels/css', Assets\asset_path('styles/main.css'), false, null);
+//
+//   if (is_single() && comments_open() && get_option('thread_comments')) {
+//     wp_enqueue_script('comment-reply');
+//   }
+//
+//   wp_enqueue_script('pixels/js', Assets\asset_path('scripts/main.js'), ['jquery'], null, true);
+// }
+// add_action('wp_enqueue_scripts', __NAMESPACE__ . '\\assets', 100);

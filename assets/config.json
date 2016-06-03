@@ -1,0 +1,18 @@
+{
+  "context": "assets",
+  "entry": {
+    "main": [
+      "./scripts/main.js",
+      "./styles/main.scss"
+    ],
+    "customizer": [
+      "./scripts/customizer.js"
+    ]
+  },
+  "output": {
+    "path": "dist",
+    "publicPath": "/app/themes/px-base-theme/dist/"
+  },
+  "devUrl": "http://sandbox.dev",
+  "devPort": 3000
+}

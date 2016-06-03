@@ -6,13 +6,13 @@
  */
 
 $function_includes = [
-  'lib/assets.php',    // Scripts and stylesheets
+  'src/helpers.php',    // Scripts and stylesheets
   // 'lib/extras.php',    // Custom functions
-  'lib/setup.php',     // Theme setup
+  // 'src/setup.php',     // Theme setup
   // 'lib/titles.php',    // Page titles
   // // 'lib/wrapper.php',   // Theme wrapper class
   // 'lib/customizer.php', // Theme customizer
-	'lib/timber.php' 			// Timber basics
+	'src/timber.php' 			// Timber basics
 ];
 
 foreach ($function_includes as $file) {
@@ -23,3 +23,10 @@ foreach ($function_includes as $file) {
   require_once $filepath;
 }
 unset($file, $filepath);
+
+/**
+ * Require Composer autoloader if installed on it's own
+ */
+if (file_exists($composer = __DIR__ . '/vendor/autoload.php')) {
+    require_once $composer;
+}
