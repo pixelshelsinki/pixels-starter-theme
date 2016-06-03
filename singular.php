@@ -14,6 +14,7 @@
 $context = Timber::get_context();
 $post = Timber::query_post();
 $context['post'] = $post;
+$context['pagination'] = $context['post'];
 
 if ( post_password_required( $post->ID ) ) {
 	Timber::render( 'views/Singular/SingularPassword.twig', $context );
