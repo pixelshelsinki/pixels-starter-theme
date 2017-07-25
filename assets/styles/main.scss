@@ -3,14 +3,18 @@
 // Import npm dependencies
 @import "~bootstrap/scss/bootstrap";
 
+// Common styles
 @import "common/global";
-@import "components/buttons";
 @import "components/comments";
 @import "components/forms";
-@import "components/wp-classes";
-@import "layouts/header";
-@import "layouts/sidebar";
-@import "layouts/footer";
-@import "layouts/pages";
-@import "layouts/posts";
-@import "layouts/tinymce";
+
+
+// Component styles
+@import "../../components/button/button.scss";
+@import "../../components/site-header/site-header.scss";
+
+// View styles
+
+// Vendor styles
+@import "vendor/tinymce.scss";
+@import "vendor/wordpress.scss";
