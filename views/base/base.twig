@@ -1,0 +1,36 @@
+<!doctype html>
+<html class="no-js" {{ site.language_attributes }}>
+
+  {% block head %}
+    {% include 'site-head/site-head.twig' %}
+  {% endblock %}
+
+  <body class="{{ body_class }}">
+
+    {% block header %}
+      {% include 'site-header/site-header.twig' %}
+    {% endblock %}
+
+    {% block content %}
+      <main role="main">
+        {% block main %}
+          {{ __('Sorry, no content was found!', 'pixels') }}
+        {% endblock %}
+      </main>
+
+      <aside class="sidebar">
+        {% block sidebar %}
+          sidebar
+        {% endblock %}
+      </aside>
+    {% endblock %}
+
+    {% block footer %}
+      {% include 'site-footer/site-footer.twig' %}
+    {% endblock %}
+
+    {{ function('wp_footer') }}
+
+  </body>
+
+</html>

@@ -1,0 +1,15 @@
+{#
+/**
+ * Template for the site footer.
+ */
+#}
+
+<footer>
+  <section class="footer-content">
+    footer
+  </section>
+  <section class="footer-credits">
+    {{ __('&copy; %1$s %2$s.', 'pixels')|format(("now"|date('Y')), 'Company') }}
+    {{ __('Crafted by <a href="https://pixels.fi" rel="nofollow" target="_blank">Pixels</a>.', 'pixels') }}
+  </section>
+</footer>
