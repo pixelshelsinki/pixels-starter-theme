@@ -5,6 +5,9 @@
 
 // Common styles
 @import "common/global";
+@import "common/tinymce.scss";
+@import "common/wordpress.scss";
+
 @import "components/comments";
 @import "components/forms";
 
@@ -14,7 +17,3 @@
 @import "../../components/site-header/site-header.scss";
 
 // View styles
-
-// Vendor styles
-@import "vendor/tinymce.scss";
-@import "vendor/wordpress.scss";
