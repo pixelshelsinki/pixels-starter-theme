@@ -1,0 +1,28 @@
+{#
+ # Template for a bootstrap table
+ #}
+
+{% if not contents %}
+  {% set contents = { thead: ['#', 'First Name', 'Last Name', 'Username'], tbody: [ ['1', 'Mark', 'Otto', '@mdo'], ['2', 'Jacob', 'Thornton', '@fat'] ] } %}
+{% endif %}
+
+<table class="table">
+  {% if contents.thead %}
+    <thead>
+      <tr>
+        {% for cell in contents.thead %}
+          <th>{{ cell }}</th>
+        {% endfor %}
+      </tr>
+    </thead>
+  {% endif %}
+  <tbody>
+    {% for row in contents.tbody %}
+      <tr>
+        {% for cell in row %}
+          <td>{{ cell }}</td>
+        {% endfor %}
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
