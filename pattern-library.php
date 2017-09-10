@@ -18,6 +18,7 @@ $context['post'] = $post; // not needed probably
 $components = glob(get_template_directory() . "/components/**/*.twig");
 
 foreach ($components as $key => $component) {
+  var_dump($component);
   Timber::render( $component, $context );
 }
 
