@@ -21,7 +21,7 @@
 
     {% block single_footer %}
       <footer class="single-footer single-body-{{post.post_type}}">
-
+        {% include 'pagination/pagination.twig' with {pagination: posts.pagination}} %}
       </footer>
     {% endblock %}
 
