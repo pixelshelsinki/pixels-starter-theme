@@ -4,10 +4,12 @@
 
 <footer>
   <section class="footer-content">
-    footer
+    {% block contents %}
+
+    {% endblock %}
   </section>
   <section class="footer-credits">
-    {{ __('&copy; %1$s %2$s.', 'pixels')|format(("now"|date('Y')), 'Company') }}
-    {{ __('Crafted by <a href="https://pixels.fi" rel="nofollow" target="_blank">Pixels</a>.', 'pixels') }}
+    {{ __('&copy; %1$s %2$s.', 'pixels-text-domain')|format(("now"|date('Y')), 'Company') }}
+    {{ __('Crafted by <a href="https://pixels.fi" rel="nofollow" target="_blank">Pixels</a>.', 'pixels-text-domain') }}
   </section>
 </footer>

@@ -10,25 +10,17 @@
 
   <body class="{{ body_class }}">
 
-    {% block header %}
+    {% block site_header %}
       {% include 'site-header/site-header.twig' %}
     {% endblock %}
 
-    {% block content %}
-      <main role="main">
-        {% block main %}
-          {{ __('Sorry, no content was found!', 'pixels') }}
-        {% endblock %}
-      </main>
+    <main role="main">
+      {% block site_content %}
+        {{ __('Sorry, no content was found!', 'pixels') }}
+      {% endblock %}
+    </main>
 
-      <aside class="sidebar">
-        {% block sidebar %}
-          sidebar
-        {% endblock %}
-      </aside>
-    {% endblock %}
-
-    {% block footer %}
+    {% block site_footer %}
       {% include 'site-footer/site-footer.twig' %}
     {% endblock %}
 

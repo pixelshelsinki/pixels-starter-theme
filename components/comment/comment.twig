@@ -1,3 +1,27 @@
 {#
  # Template for a comment.
+ #
+ # @version 1.0.0
+ #
+ # @var comment
  #}
+
+<div class="comment comment-{{ comment.comment_type }}" id="comment-{{ comment.ID }}">
+	<h5 class="comment-author">{{ __('%s says', 'pixels-text-domain')|format(comment.author.name) }}</h5>
+	<div class="comment-content">{{ comment.comment_content|wpautop }}</div>
+
+	<section class="comment-box">
+		<!-- child comments -->
+		{% if post.comments %}
+			<h4> replies </h4>
+			<div class="comment-comments">
+				{% for child_comment in comment.children %}
+					{% include "comment/comment.twig" with {comment: child_comment} %}
+				{% endfor %}
+			</div>
+		{% endif %}
+
+		<!-- comment form -->
+		{% include "comment/comment-form.twig" %}
+	</section>
+</div>

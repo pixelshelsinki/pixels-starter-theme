@@ -1,3 +1,29 @@
 {#
  # View template for a single content item.
  #}
+
+{% extends "base/base.twig" %}
+
+{% block site_content %}
+  <article class="single single-{{post.post_type}}">
+
+    {% block single_header %}
+      <header class="single-header single-header-{{post.post_type}}">
+        <h1 class="single-title single-title-{{ post.post_type }}">{{ post.title }}</h1>
+      </header>
+    {% endblock %}
+
+    {% block single_body %}
+      <div class="single-body single-body-{{post.post_type}}">
+        {{ post.content }}
+      </div>
+    {% endblock %}
+
+    {% block single_footer %}
+      <footer class="single-footer single-body-{{post.post_type}}">
+
+      </footer>
+    {% endblock %}
+
+  </article>
+{% endblock %}
