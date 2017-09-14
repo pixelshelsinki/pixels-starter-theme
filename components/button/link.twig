@@ -1,0 +1,40 @@
+{#
+ # Template for a button.
+ #
+ # @see https://getbootstrap.com/docs/4.0/components/buttons/
+ # @version 1.0.0
+ #
+ # @var element
+ # @var classes
+ # @var type
+ # @var label
+ # @var href
+ # @var state
+ # @var data
+ #}
+
+{% if not element %}
+  {% set element = 'button' %}
+  {% set classes = 'btn default' %}
+  {% set type = '' %}
+  {% set label = 'Button' %}
+  {% set href = 'http://example.com' %}
+  {% set state = '' %}
+  {% set data = { example: 'thing' } %}
+{% endif %}
+
+{% for key, datum in data %}
+  {% set data_attributes = data_attributes ~ 'data-'~key~'=\''~datum~'\' ' %}
+{% endfor %}
+
+{% if element == 'link' %}
+  <a class="btn {{ classes }} {{ state ? state }}" href="{{ href }}" {{ type == 'button' ? 'role="button"' }} {{ state == 'active' ? 'aria-pressed="true"' }} {{ data_attributes ? data_attributes }} {{ state == 'disabled' ? 'aria-disabled="true" tabindex="-1"' }}>{{ label }}</a>
+{% endif %}
+
+{% if element == 'button' %}
+  <button class="btn {{ classes }}" type="{{ type ? type : 'button' }}" {{ data_attributes ? data_attributes }} {{ state == 'disabled' ? 'disabled' }}>{{ label }}</button>
+{% endif %}
+
+{% if element == 'input' %}
+  <input class="btn {{ classes }}" type="{{ type ? type : 'submit' }}" {{ data_attributes ? data_attributes }} {{ state == 'disabled' ? 'disabled' }} value="{{ label }}">
+{% endif %}

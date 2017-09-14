@@ -1,0 +1,68 @@
+{#
+ # Partial template for an input element.
+ #
+ # @see https://getbootstrap.com/docs/4.0/components/forms/'
+ # @version 1.0.0
+ #
+ # @var type
+ # @var label
+ # @var classes
+ # @var id
+ # @var name
+ # @var options
+ # @var required
+ # @var readonly
+ # @var disabled
+ # @var checked
+ # @var inline
+ # @var help_text
+ #}
+
+{% if not type %}
+  {% set type = 'text' %}
+  {% set label = '' %}
+  {% set classes = '' %}
+  {% set id = '' %}
+  {% set name = '' %}
+  {% set options = {option_name: 'option_value'} %}
+  {% set required = false %}
+  {% set readonly = false %}
+  {% set disabled = false %}
+  {% set checked = false %}
+  {% set inline = false %}
+  {% set help_text = {content: __('Helper text for the field above.', 'pixels-text-domain')} %}
+{% endif %}
+
+{% if type == 'select' %}
+  <label for="{{ id }}">{{ label }}</label>
+  <select class="form-control {{ classes }}" id="{{ id }}" name="{{ name }}" {{ help_text ? 'aria-describedby="'~help_text.content~'"' }} {{ disabled ? 'disabled' }} {{ readonly ? 'readonly' }} {{ required ? 'required' }}>
+    {% for option_name, option_value in options %}
+      <option value="{{ option_value }}">{{ option_name }}</option>
+    {% endfor %}
+  </select>
+{% else if type == 'textarea' %}
+  <label for="{{ id }}">{{ label }}</label>
+  <textarea class="form-control {{ classes }}" id="{{ id }}" name="{{ name }}" rows="3" {{ help_text ? 'aria-describedby="'~help_text.content~'"' }} {{ disabled ? 'disabled' }} {{ readonly ? 'readonly' }} {{ required ? 'required' }}></textarea>
+{% else if type == 'checkbox' %}
+  <div class="form-check {{ inline ? 'form-check-inline' }} {{ disabled ? 'disabled' }}">
+    <label class="form-check-label">
+      <input class="form-check-input" type="{{ type }}" value="{{ value }}" {{ checked ? 'checked' }} {{ disabled ? 'disabled' }} {{ required ? 'required' }}>
+      {{ label }}
+    </label>
+  </div>
+{% else if type == 'radio' %}
+  <div class="form-check {{ inline ? 'form-check-inline' }} {{ disabled ? 'disabled' }}">
+    <label class="form-check-label">
+      <input class="form-check-input" type="{{ type }}" name="{{ name }}" id="{{ id }}" value="{{ value }}" {{ checked ? 'checked' }} {{ disabled ? 'disabled' }} {{ required ? 'required' }}>
+      {{ label }}
+    </label>
+  </div>
+{% else %}
+  <label for="{{ id }}">{{ label }}</label>
+  <input type="{{ type }}" class="form-control{{ type == 'file' ? '-file' }} {{ classes }}" id="{{ id }}"  name="{{ name }}" placeholder="{{ label }}" {{ help_text ? 'aria-describedby="'~help_text.content~'"' }} {{ disabled ? 'disabled' }} {{ readonly ? 'readonly' }} {{ required ? 'required' }}>
+{% endif %}
+{% if help_text %}
+  <small id="{{ id }}-help-text" class="form-text {{ help_text.classes }}">
+    {{ help_text.content }}
+  </small>
+{% endif %}
