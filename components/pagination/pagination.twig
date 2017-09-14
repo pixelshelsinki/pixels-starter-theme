@@ -1,3 +1,67 @@
 {#
  # Template for pagination.
  #}
+
+{% if pagination %}
+  <nav class="pagination-nav" aria-label="{{ pagination_title }}">
+    <ul class="pagination">
+      {% if pagination.prev %}
+        <li class="page-item {{ pagination.prev.link|length ?: 'disabled'}}">
+          <a class="page-link" href="{{ pagination.prev.link }}" {{ pagination.prev.link|length ?: 'tabindex="-1"'}}>{{ __('Previous', 'pixels-text-domain') }}</a>
+        </li>
+      {% endif %}
+      {% for page in pagination.pages %}
+        <li class="page-item {{ page.current ? 'active' }}">
+          <a class="page-link" href="{{ page.link }}">{{ page.title }}{{ page.current ? __('<span class="sr-only">(current)</span>', 'pixels-text-domain') }}</a>
+        </li>
+      {% endfor %}
+      {% if pagination.next %}
+        <li class="page-item {{ pagination.next.link|length ?: 'disabled'}}">
+          <a class="page-link" href="{{ pagination.next.link }}" {{ pagination.next.link|length ?: 'tabindex="-1"'}}>{{ __('Next', 'pixels-text-domain') }}</a>
+        </li>
+      {% endif %}
+    </ul>
+  </nav>
+{% endif %}
+
+
+{% if post.pagination %}
+  <nav class="nav-pagination-singular">
+    <span class="nav-pagination-singular-title">{{ __('Pages:', 'pix-base-theme') }}</span>
+    <ul>
+      {% for page in post.pagination.pages %}
+        <li>
+          {% if page.current %}
+            <span>{{ page.name }}</span>
+          {% else %}
+            <a href="{{ page.link }}">{{ page.name }}</a>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+{% endif %}
+
+{% if pagination %}
+  <nav class="nav-pagination">
+    {% if pagination.prev %}
+      <a href="{{pagination.prev.link}}" class="nav-pagination-prev {{pagination.prev.link|length ? '' : 'invisible'}}">{{ __('Previous', 'pix-base-theme') }}</a>
+    {% endif %}
+
+    <ul class="nav-pagination-pages">
+      {% for page in pagination.pages %}
+        <li>
+          {% if page.link %}
+            <a href="{{page.link}}" class="{{page.class}}">{{page.title}}</a>
+          {% else %}
+            <span class="{{page.class}}">{{page.title}}</span>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+
+    {% if pagination.next %}
+      <a href="{{pagination.next.link}}" class="nav-pagination-next {{pagination.next.link|length ? '' : 'invisible'}}">{{ __('Next', 'pix-base-theme') }}</a>
+    {% endif %}
+  </nav>
+{% endif %}
