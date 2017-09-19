@@ -1,68 +1,45 @@
 {#
- # Partial template for an input element.
+ # Template for a Bootstrap select input.
  #
  # @see https://getbootstrap.com/docs/4.0/components/forms/'
  # @version 1.0.0
  #
- # @var type
- # @var label
- # @var classes
- # @var id
- # @var name
- # @var options
- # @var required
- # @var readonly
- # @var disabled
- # @var checked
- # @var inline
- # @var help_text
+ # @var classes           Classes for the input.
+ # @var disabled          If the input is disabled.
+ # @var help_text         Help text for the input.
+ # @var help_text_classes Classes for the help text.
+ # @var id                Id attribute for the input.
+ # @var label             Label for the input.
+ # @var label_classes     Label for the <label> element.
+ # @var name              Name attribute for the input
+ # @var options           Array of options for the select.
+ # @var placeholder       Placeholder for the input.
+ # @var readonly          If the input is read-only.
+ # @var required          If the input is required.
+ # @var type              The input type.
  #}
 
-{% if not type %}
-  {% set type = 'text' %}
-  {% set label = '' %}
+{% extends 'input/input.twig' %}
+
+{% if not label %}
   {% set classes = '' %}
-  {% set id = '' %}
-  {% set name = '' %}
-  {% set options = {option_name: 'option_value'} %}
-  {% set required = false %}
-  {% set readonly = false %}
   {% set disabled = false %}
-  {% set checked = false %}
-  {% set inline = false %}
-  {% set help_text = {content: __('Helper text for the field above.', 'pixels-text-domain')} %}
+  {% set help_text = __('Helper text for the field above.', 'pixels-text-domain') %}
+  {% set help_text_classes = 'text-muted' %}
+  {% set id = '' %}
+  {% set label = '' %}
+  {% set label_classes = '' %}
+  {% set name = '' %}
+  {% set options = [{value: '1', label: 'One'},{value: '2', label: 'Two', selected: true}] %}
+  {% set placeholder = '' %}
+  {% set readonly = false %}
+  {% set required = false %}
 {% endif %}
 
-{% if type == 'select' %}
-  <label for="{{ id }}">{{ label }}</label>
-  <select class="form-control {{ classes }}" id="{{ id }}" name="{{ name }}" {{ help_text ? 'aria-describedby="'~help_text.content~'"' }} {{ disabled ? 'disabled' }} {{ readonly ? 'readonly' }} {{ required ? 'required' }}>
-    {% for option_name, option_value in options %}
-      <option value="{{ option_value }}">{{ option_name }}</option>
+{% block input %}
+  <select class="form-control {{ classes }}" id="{{ id }}" name="{{ name }}" {{ help_text ? 'aria-describedby="'~help_text~'"' }} {{ disabled ? 'disabled' }} {{ readonly ? 'readonly' }} {{ required ? 'required' }}>
+    {% for option in options %}
+      <option value="{{ option.value }}" {{ option.selected ? 'selected' }}>{{ option.label }}</option>
     {% endfor %}
   </select>
-{% else if type == 'textarea' %}
-  <label for="{{ id }}">{{ label }}</label>
-  <textarea class="form-control {{ classes }}" id="{{ id }}" name="{{ name }}" rows="3" {{ help_text ? 'aria-describedby="'~help_text.content~'"' }} {{ disabled ? 'disabled' }} {{ readonly ? 'readonly' }} {{ required ? 'required' }}></textarea>
-{% else if type == 'checkbox' %}
-  <div class="form-check {{ inline ? 'form-check-inline' }} {{ disabled ? 'disabled' }}">
-    <label class="form-check-label">
-      <input class="form-check-input" type="{{ type }}" value="{{ value }}" {{ checked ? 'checked' }} {{ disabled ? 'disabled' }} {{ required ? 'required' }}>
-      {{ label }}
-    </label>
-  </div>
-{% else if type == 'radio' %}
-  <div class="form-check {{ inline ? 'form-check-inline' }} {{ disabled ? 'disabled' }}">
-    <label class="form-check-label">
-      <input class="form-check-input" type="{{ type }}" name="{{ name }}" id="{{ id }}" value="{{ value }}" {{ checked ? 'checked' }} {{ disabled ? 'disabled' }} {{ required ? 'required' }}>
-      {{ label }}
-    </label>
-  </div>
-{% else %}
-  <label for="{{ id }}">{{ label }}</label>
-  <input type="{{ type }}" class="form-control{{ type == 'file' ? '-file' }} {{ classes }}" id="{{ id }}"  name="{{ name }}" placeholder="{{ label }}" {{ help_text ? 'aria-describedby="'~help_text.content~'"' }} {{ disabled ? 'disabled' }} {{ readonly ? 'readonly' }} {{ required ? 'required' }}>
-{% endif %}
-{% if help_text %}
-  <small id="{{ id }}-help-text" class="form-text {{ help_text.classes }}">
-    {{ help_text.content }}
-  </small>
-{% endif %}
+{% endblock %}
