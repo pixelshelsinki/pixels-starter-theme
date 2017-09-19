@@ -1,0 +1,19 @@
+{#
+ # Template for an alert.
+ #
+ # @see https://getbootstrap.com/docs/4.0/components/alerts/
+ # @version 1.0.0
+ #
+ # @var classes     Classes to be applied to this alert.
+ # @var dismissable If the alert is dismissable.
+ # @var message     The message for the alert.
+ #}
+
+<div class="alert {{ classes }} {{ dismissable ? 'alert-dismissable' }}" role="alert">
+  {% if dismissable %}
+    <button type="button" class="close" data-dismiss="alert" aria-label="{{ _x('Close', 'Label for button to close an alert', 'pixels-starter-theme') }}">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  {% endif %}
+  {{ message }}
+</div>
