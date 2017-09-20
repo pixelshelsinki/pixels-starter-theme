@@ -1,0 +1,34 @@
+{#
+ # Template for a Bootstrap modal.
+ #
+ # This modal is intended to be extended with specific content and modified as
+ # needed, then the specific twig file used. Can be changed as we use this more.
+ #
+ # @see https://getbootstrap.com/docs/4.0/components/modal/
+ # @version 1.0.0
+ #}
+
+<div class="modal">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        {% block modal_header %}
+
+        {% endblock %}
+        <button type="button" class="close" data-dismiss="modal" aria-label="{{ _x('Close', 'Label for X button to close a modal', 'pixels-starter-theme') }}">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        {% block modal_body %}
+
+        {% endblock %}
+      </div>
+      <div class="modal-footer">
+        {% block modal_footer %}
+
+        {% endblock %}
+      </div>
+    </div>
+  </div>
+</div>
