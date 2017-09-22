@@ -2,10 +2,10 @@
  # View template for a content type's index.
  #}
 
-{% extends "base/base.twig" %}
+{% extends 'base/base.twig' %}
 
 {% block site_content %}
 	{% for post in posts %}
-		{% include ["tease-"~post.post_type~".twig", "tease.twig"] %}
+		{% include ['teaser/teaser-'~post.post_type~'.twig', 'teaser/teaser.twig'] %}
 	{% endfor %}
 {% endblock %}

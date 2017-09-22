@@ -2,7 +2,6 @@
  # Template for a single content's teaser.
  #}
 
-
 <article class="teaser teaser-{{ post.post_type }}" id="teaser-{{ post.ID }}">
 
 	{% block content %}
@@ -10,7 +9,7 @@
 		<h2 class="teaser-title teaser-title-{{ post.post_type }}">
       <a href="{{ post.link }}">{{ post.title }}</a>
     </h2>
-    
+
 		<p>{{post.get_preview}}</p>
 
 		{% if post.get_thumbnail %}

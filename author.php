@@ -10,11 +10,18 @@
  */
 global $wp_query;
 
+// Templates
+$templates = ['author/author.twig', 'archive/archive.twig'];
+
+// Context
 $context = Timber::get_context();
 $context['posts'] = Timber::get_posts();
+
 if ( isset( $wp_query->query_vars['author'] ) ) {
 	$author = new TimberUser( $wp_query->query_vars['author'] );
 	$context['author'] = $author;
 	$context['title'] = 'Author Archives: ' . $author->name();
 }
-Timber::render( array( 'author/author.twig', 'archive/archive.twig' ), $context );
+
+// Render with Timber
+Timber::render( $templates, $context );

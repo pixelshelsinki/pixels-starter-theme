@@ -51,7 +51,6 @@ class PixelsSite extends TimberSite {
 		 */
 		add_theme_support('soil-clean-up');
 		add_theme_support('soil-jquery-cdn');
-		add_theme_support('soil-nav-walker');
 		add_theme_support('soil-nice-search');
 
 		/**
@@ -86,7 +85,7 @@ class PixelsSite extends TimberSite {
      * @link https://developer.wordpress.org/reference/functions/register_nav_menus/
      */
     register_nav_menus([
-        'primary_navigation' => __('Primary Navigation', 'sage')
+        'primary_navigation' => __('Primary Navigation', 'pixels-starter-theme')
     ]);
 
 		add_action( 'wp_enqueue_scripts', array( $this, 'setup_scripts_styles' ), 100 );
@@ -109,8 +108,12 @@ class PixelsSite extends TimberSite {
 	}
 
 	function add_to_context( $context ) {
-		$context['navigation'] = new TimberMenu();
+		// Site information
 		$context['site'] = $this;
+
+		// Navigation
+		$context['primary_navigation'] = new TimberMenu('primary_navigation');
+
 		return $context;
 	}
 

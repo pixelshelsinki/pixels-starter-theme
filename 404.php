@@ -9,5 +9,12 @@
  * @since    Timber 0.1
  */
 
+// Templates
+$templates = ['404/404.twig'];
+
+// Context
 $context = Timber::get_context();
-Timber::render( '404/404.twig', $context );
+$context['title'] = __('Not found', 'pixels-starter-theme');
+
+// Render with Timber
+Timber::render( $templates, $context );

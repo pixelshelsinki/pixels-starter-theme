@@ -2,8 +2,12 @@
  # View template for 404.
  #}
 
-{% extends "base/base.twig" %}
+{% extends 'base/base.twig' %}
 
 {% block site_content %}
-	{{ __('Sorry, we couldn\'t find what you\'re looking for.', 'pixels-text-domain') }}
+	<h1>{{ title }}</h1>
+
+	<div class="single-body single-body-{{post.post_type}}">
+		{{ __('Sorry, we couldn\'t find what you\'re looking for.', 'pixels-text-domain') }}
+	</div>
 {% endblock %}

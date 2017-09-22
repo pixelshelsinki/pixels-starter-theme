@@ -14,10 +14,15 @@
  * @since   Timber 0.2
  */
 
-$templates = array( 'archive/archive.twig', 'index/index.twig' );
+// Templates
+$templates = ['archive/archive.twig', 'index/index.twig'];
 
+// Context
 $context = Timber::get_context();
+$context['posts'] = Timber::get_posts();
 
+// Set the title based on type of Archive and add additional template to front
+// of template array if necessary.
 $context['title'] = 'Archive';
 if ( is_day() ) {
 	$context['title'] = 'Archive: '.get_the_date( 'D M Y' );
@@ -35,6 +40,5 @@ if ( is_day() ) {
 	array_unshift( $templates, 'archive/archive-' . get_post_type() . '.twig' );
 }
 
-$context['posts'] = Timber::get_posts();
-
+// Render with Timber
 Timber::render( $templates, $context );

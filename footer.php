@@ -7,11 +7,16 @@
  * WooCommerce) you can delete this file and header.php
  */
 
+// Templates
+$templates = ['single/single-page-plugin.twig'];
+
+// Context
 $timberContext = $GLOBALS['timberContext'];
 if ( ! isset( $timberContext ) ) {
 	throw new \Exception( 'Timber context not set in footer.' );
 }
 $timberContext['content'] = ob_get_contents();
 ob_end_clean();
-$templates = array( 'single/single-page-plugin.twig' );
+
+// Render with Timber
 Timber::render( $templates, $timberContext );

@@ -11,6 +11,9 @@
  * @version 2.0.0-beta
  * @since 2.0.0
  */
+
+
+// Templates
 $context = Timber::get_context();
 $post = Timber::query_post(); // not needed probably
 $context['post'] = $post; // not needed probably
