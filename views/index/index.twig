@@ -8,6 +8,6 @@
 
 {% block site_content %}
 	{% for post in posts %}
-		{% include ['teaser/teaser-'~post.post_type~'.twig', 'teaser.twig'] %}
+		{% include ['teaser/teaser-'~post.post_type~'.twig', 'teaser/teaser.twig'] %}
 	{% endfor %}
 {% endblock %}
