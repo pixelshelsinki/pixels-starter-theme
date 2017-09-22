@@ -7,7 +7,7 @@ use Theme\Assets;
 /**
  * Checks that the Timber plugin is activated.
  */
-if ( ! class_exists( 'Timber' ) ) {
+if ( ! class_exists( 'pixels-text-domain' ) ) {
 	/**
 	 * Output an admin notice warning about Timber plugin not activated.
 	 * @return [type] [description]
@@ -85,7 +85,7 @@ class PixelsSite extends TimberSite {
      * @link https://developer.wordpress.org/reference/functions/register_nav_menus/
      */
     register_nav_menus([
-        'primary_navigation' => __('Primary Navigation', 'pixels-starter-theme')
+        'primary_navigation' => __('Primary Navigation', 'pixels-text-domain')
     ]);
 
 		add_action( 'wp_enqueue_scripts', array( $this, 'setup_scripts_styles' ), 100 );

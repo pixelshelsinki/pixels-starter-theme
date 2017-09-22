@@ -13,11 +13,11 @@ namespace Theme\WidgetAreas;
 //       'after_title'   => '</h3>'
 //   ];
 //   register_sidebar([
-//       'name'          => __('Primary', 'sage'),
+//       'name'          => __('Primary', 'pixels-text-domain'),
 //       'id'            => 'sidebar-primary'
 //   ] + $config);
 //   register_sidebar([
-//       'name'          => __('Footer', 'sage'),
+//       'name'          => __('Footer', 'pixels-text-domain'),
 //       'id'            => 'sidebar-footer'
 //   ] + $config);
 // }

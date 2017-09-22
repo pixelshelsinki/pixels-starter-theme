@@ -7,8 +7,8 @@
  * @param string $title
  */
 $pixels_error = function ($message, $subtitle = '', $title = '') {
-    $title = $title ?: __('Theme &rsaquo; Error', 'pixels');
-    $footer = __('You can report this error to <a href="mailto:support@pixels.fi">support@pixels.fi</a>', 'pixels');
+    $title = $title ?: __('Theme &rsaquo; Error', 'pixels-text-domain');
+    $footer = __('You can report this error to <a href="mailto:support@pixels.fi">support@pixels.fi</a>', 'pixels-text-domain');
     $message = "<h1>{$title}<br><small>{$subtitle}</small></h1><p>{$message}</p><p>{$footer}</p>";
     wp_die($message, $title);
 };
@@ -17,14 +17,14 @@ $pixels_error = function ($message, $subtitle = '', $title = '') {
  * Ensure compatible version of PHP is used
  */
 if (version_compare('5.6.4', phpversion(), '>=')) {
-    $pixels_error(__('You must be using PHP 5.6.4 or greater.', 'pixels'), __('Invalid PHP version', 'pixels'));
+    $pixels_error(__('You must be using PHP 5.6.4 or greater.', 'pixels-text-domain'), __('Invalid PHP version', 'pixels-text-domain'));
 }
 
 /**
  * Ensure compatible version of WordPress is used
  */
 if (version_compare('4.7.0', get_bloginfo('version'), '>=')) {
-    $pixels_error(__('You must be using WordPress 4.7.0 or greater.', 'pixels'), __('Invalid WordPress version', 'pixels'));
+    $pixels_error(__('You must be using WordPress 4.7.0 or greater.', 'pixels-text-domain'), __('Invalid WordPress version', 'pixels-text-domain'));
 }
 
 /**
@@ -36,6 +36,6 @@ if (version_compare('4.7.0', get_bloginfo('version'), '>=')) {
 array_map(function ($file) use ($pixels_error) {
     $file = "lib/{$file}.php";
     if (!locate_template($file, true, true)) {
-        $pixels_error(sprintf(__('Error locating <code>%s</code> for inclusion.', 'pixels'), $file), 'File not found');
+        $pixels_error(sprintf(__('Error locating <code>%s</code> for inclusion.', 'pixels-text-domain'), $file), 'File not found');
     }
-}, ['assets', 'timber']);
+}, ['assets', 'pixels-text-domain']);

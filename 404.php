@@ -14,7 +14,7 @@ $templates = ['404/404.twig'];
 
 // Context
 $context = Timber::get_context();
-$context['title'] = __('Not found', 'pixels-starter-theme');
+$context['title'] = __('Not found', 'pixels-text-domain');
 
 // Render with Timber
 Timber::render( $templates, $context );
