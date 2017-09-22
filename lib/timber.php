@@ -114,6 +114,12 @@ class PixelsSite extends TimberSite {
 		// Navigation
 		$context['primary_navigation'] = new TimberMenu('primary_navigation');
 
+		// Multilingual
+		if (function_exists('pll_the_languages')) {
+			$context['polylang']['current'] = pll_current_language('slug');
+			$context['polylang']['languages'] = pll_the_languages(['raw' => 1]);
+		}
+
 		return $context;
 	}
 

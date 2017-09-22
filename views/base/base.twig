@@ -15,9 +15,11 @@
     {% endblock %}
 
     <main role="main">
-      {% block site_content %}
-        {{ __('Sorry, no content was found!', 'pixels') }}
-      {% endblock %}
+      <div class="container">
+        {% block site_content %}
+          {{ __('Sorry, no content was found!', 'pixels') }}
+        {% endblock %}
+      </div>
     </main>
 
     {% block site_footer %}

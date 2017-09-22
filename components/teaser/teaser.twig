@@ -10,7 +10,9 @@
       <a href="{{ post.link }}">{{ post.title }}</a>
     </h2>
 
-		<p>{{post.get_preview}}</p>
+		<div class="teaser-content teaser-content-{{ post.post_type }}">
+			<p>{{post.get_preview}}</p>
+		</div>
 
 		{% if post.get_thumbnail %}
 			<img src="{{ post.thumbnail.src }}" alt="{{ post.thumbnail.alt }}">
