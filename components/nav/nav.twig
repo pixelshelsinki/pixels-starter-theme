@@ -1,0 +1,27 @@
+{#
+ # Template for navigation.
+ #
+ # @see https://getbootstrap.com/docs/4.0/components/navs/
+ # @version 1.0.0
+ #
+ # @var nav_items	Array of menu items from WordPress.
+ #}
+
+{% if nav_items %}
+	<ul class="nav {{ classes }}">
+	{% for item in nav_items %}
+		<li class="nav-item {{ item.get_children ? 'dropdown' }} {{ item.classes | join(' ') }}">
+			{% if not item.get_children %}
+				<a class="nav-link" target="{{ item.target }}" href="{{ item.link }}">{{ item.title }}</a>
+			{% else %}
+        <a class="nav-link dropdown-toggle" target="{{ item.target }}" href="{{ item.link }}" id="{{ item.slug }}-dropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ item.title }}</a>
+				<div class="dropdown-menu" aria-labelledby="{{ item.slug }}-dropdown">
+					{% for sub_item in item.get_children %}
+					  <a class="dropdown-item {{ sub_item.classes | join(' ') }}" target="{{ sub_item.target }}" href="{{ sub_item.link }}">{{ sub_item.title }}</a>
+					{% endfor %}
+				</div>
+			{% endif %}
+		</li>
+	{% endfor %}
+	</ul>
+{% endif %}
