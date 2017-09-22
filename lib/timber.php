@@ -7,7 +7,7 @@ use Theme\Assets;
 /**
  * Checks that the Timber plugin is activated.
  */
-if ( ! class_exists( 'pixels-text-domain' ) ) {
+if ( ! class_exists( 'Timber' ) ) {
 	/**
 	 * Output an admin notice warning about Timber plugin not activated.
 	 * @return [type] [description]
