@@ -1,0 +1,8 @@
+/**
+ * Single Footer styles
+ */
+
+// Prevent floated content slipping into the next section
+.single-content {
+  overflow: hidden;
+}
