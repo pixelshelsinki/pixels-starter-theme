@@ -5,6 +5,7 @@
  # @version 1.0.0
  #
  # @var classes           Classes for the input.
+ # @var cols              Width of the text area in single character widths.
  # @var disabled          If the input is disabled.
  # @var help_text         Help text for the input.
  # @var help_text_classes Classes for the help text.
@@ -35,10 +36,11 @@
   {% set readonly = false %}
   {% set required = false %}
   {% set rows = 3 %}
+  {% set cols = 60 %}
   {% set type = 'text' %}
   {% set value = '' %}
 {% endif %}
 
 {% block input %}
-  <textarea class="form-control {{ classes }}" id="{{ id }}" name="{{ name }}" rows="{{ rows }}" {{ help_text ? 'aria-describedby="'~help_text~'"' }} {{ disabled ? 'disabled' }} {{ readonly ? 'readonly' }} {{ required ? 'required' }}>{{ value }}</textarea>
+  <textarea class="form-control {{ classes }}" id="{{ id }}" name="{{ name }}" {{ rows ? 'rows="'~rows~'"' }} {{ cols ? 'cols="'~cols~'"' }} {{ help_text ? 'aria-describedby="'~help_text~'"' }} {{ disabled ? 'disabled' }} {{ readonly ? 'readonly' }} {{ required ? 'required' }}>{{ value }}</textarea>
 {% endblock %}

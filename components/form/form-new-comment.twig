@@ -19,26 +19,34 @@
       <input type="hidden" name="url" value="{{ user.link }}">
     {% else %}
       <div>
+        {% include 'input/input.twig' with { type: 'email', name: 'email', id: 'email', label: _x('Email', 'comment form email field label', 'pixels-starter-theme'), required: true } %}
         <label for="email"> email </label>
         <input required name="email" type="text" id="email"/>
 
+        {% include 'input/input.twig' with { type: 'text', name: 'author', id: 'author', label: _x('Author', 'comment form author field label', 'pixels-starter-theme'), required: true } %}
         <label for="author"> username </label>
         <input required name="author" type="text" id="author"/>
 
+        {% include 'input/input.twig' with { type: 'url', name: 'url', id: 'url', label: _x('URL', 'comment form author URL field label', 'pixels-starter-theme') } %}
         <label for="url"> url </label>
         <input name="url" id="url" type="text"/>
       </div>
     {% endif %}
 
     <div>
+      {% include 'input/textarea.twig' with { name: 'comment', id: 'comment', label: _x('Comment', 'comment form comment field label', 'pixels-starter-theme'), placeholder: __('Write your comment here', 'pixels-starter-theme'), rows: 3, cols: 3 } %}
       <label for="comment"> comment </label>
       <textarea placeholder="comment text" name="comment" cols="60" rows="3" id="comment"></textarea>
     </div>
 
+    {% include 'input/input.twig' with { type: 'hidden', name: 'comment_post_ID', id: 'comment_post_ID', value: post.id } %}
     <input name="comment_post_ID" value="{{ post.id }}" id="comment_post_ID" type="hidden">
+    {% include 'input/input.twig' with { type: 'hidden', name: 'comment_parent', id: 'comment_parent', value: comment.ID|default('0') } %}
     <input name="comment_parent" id="comment_parent" value="{{ comment.ID|default('0') }}" type="hidden">
 
     <div>
+      {% include 'button/button.twig' with { type: 'submit', name: 'submit', class: 'btn', label: __('Send', 'label for send button on comment form') } %}
+      {% include 'button/button.twig' with { type: 'reset', class: 'btn', label: __('Cancel', 'label for cancel button on comment form') } %}
       <button type="submit" name="Submit" class="btn"> send </button>
       <button type="reset"> cancel </button>
       <p>{{ __('Your comment will be revised by the site if needed.', 'pixels-text-domain') }}</p>
