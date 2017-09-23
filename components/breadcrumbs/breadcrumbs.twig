@@ -7,7 +7,7 @@
  # @var breadcrumbs The array of breadcrumb items, containing url and label for each item.
  #}
 
-{% if not breadcrumbs %}
+{% if pattern_library %}
   {% set breadcrumbs = [{url: '#', label: 'Home'}, {url: '#', label: 'Library'}, {url: '#', label: 'Data'}, {url: '', label: 'Item'}] %}
 {% endif %}
 

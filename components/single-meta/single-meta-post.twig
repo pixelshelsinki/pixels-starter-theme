@@ -5,3 +5,7 @@
  #
  # @var post	The Timber Post object.
  #}
+
+<section class="meta">
+  <p>{{ __('By %1$s &bull; %2$s', 'Meta byline for a post', 'pixels-text-domain')|format(post.author.name, post.date) }}</p>
+</section>

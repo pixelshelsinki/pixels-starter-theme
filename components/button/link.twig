@@ -12,7 +12,7 @@
  # @var type      The type for this button (button, reset or submit)
  #}
 
-{% if not label %}
+{% if pattern_library %}
   {% set active = false %}
   {% set classes = 'btn-default' %}
   {% set data = { example: 'thing' } %}
