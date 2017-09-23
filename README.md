@@ -1,14 +1,14 @@
 # Pixels Starter Theme
 
 This is the starter theme for Pixels website projects that are built on WordPress.
-Please use the [latest release](https://github.com/pixelshelsinki/pixels-starter-theme/releases/latest), not master.
+**Please use the [latest release](https://github.com/pixelshelsinki/pixels-starter-theme/releases/latest)**, not master.
 
 ## Updates
 Minor updates and additions will added to the current major release as long as they don't break backwards compatibility, in accordance with semantic versioning.
 
 Every 6 months a full check of the theme will be done, to update to new versions of dependencies etc.
 
-## Issues, imporvements and these instructions.
+## Issues, improvements and these instructions.
 Please read the documentation below before using. **If things are not clear or you find a mistake, or simply a way to improve the theme, please submit an issue or pull request.**
 
 *Currently the Pixels Start Theme is still in beta, until the last few things have been finished.*
