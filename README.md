@@ -19,10 +19,10 @@ This theme uses the following:
 
 * Sass for stylesheets
 * ES6 for Javascript
-* Webpack for compiling assets
-* Browsersync for synchronised browser testing
-* Timber Twig as a templating engine
-* Boostrap 4 Beta as a CSS framework
+* [Webpack](https://webpack.github.io/) for compiling assets
+* [Browsersync](http://www.browsersync.io/) for synchronised browser testing
+* [Timber](https://timber.github.io/docs/) as a templating engine
+* [Boostrap 4 Beta](https://getbootstrap.com/docs/4.0/getting-started/introduction/) as a CSS framework
 
 ## Requirements
 
