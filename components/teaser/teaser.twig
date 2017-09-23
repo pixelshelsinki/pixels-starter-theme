@@ -11,7 +11,7 @@
     </h2>
 
 		<div class="teaser-content teaser-content-{{ post.post_type }}">
-			<p>{{post.get_preview}}</p>
+			<p>{{ post.preview.read_more( __('Read more<span class="sr-only"> about %s</span>', 'pixels-text-domain' )|format(post.title) ) }}</p>
 		</div>
 
 		{% if post.get_thumbnail %}

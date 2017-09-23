@@ -38,4 +38,4 @@ array_map(function ($file) use ($pixels_error) {
     if (!locate_template($file, true, true)) {
         $pixels_error(sprintf(__('Error locating <code>%s</code> for inclusion.', 'pixels-text-domain'), $file), 'File not found');
     }
-}, ['assets', 'timber', 'widget-areas']);
+}, ['assets', 'timber', 'widget-areas', 'filters']);
