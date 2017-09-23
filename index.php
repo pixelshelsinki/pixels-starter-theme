@@ -19,6 +19,7 @@ $templates = ['index/index.twig'];
 // Context
 $context = Timber::get_context();
 $context['posts'] = Timber::get_posts();
+$context['pagination'] = Timber::get_pagination();
 
 // If home add the home twig template to the front of the array.
 if ( is_home() ) {

@@ -11,5 +11,5 @@
 		{% include ['teaser/teaser-'~post.post_type~'.twig', 'teaser/teaser.twig'] %}
 	{% endfor %}
 
-	{% include 'pagination/pagination.twig' with { pagination: posts.pagination } %}
+	{% include 'pagination/pagination.twig' with { pagination: pagination } %}
 {% endblock %}

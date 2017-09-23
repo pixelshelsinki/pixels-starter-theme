@@ -1,0 +1,17 @@
+
+
+{% if post.comments %}
+  <section class="comments">
+    <h3 class="comments-title">{{ __('Comments', 'pixels-text-domain') }}</h3>
+
+    {% for comment in post.comments %}
+  	  {% include 'comment/comment.twig' %}
+  	{% endfor %}
+  </section>
+{% endif %}
+
+{% if post.comment_status == "closed" %}
+	<p>{{ __('Comments for this post are closed', 'pixels-text-domain') }}</p>
+{% else %}
+  {% include "form/form-new-comment.twig" %}
+{% endif %}

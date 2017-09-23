@@ -6,14 +6,13 @@
  # @var comment	The comment thread from WordPress
  #}
 
-<div class="comment comment-{{ comment.comment_type }}" id="comment-{{ comment.ID }}">
-	<h5 class="comment-author">{{ __('%s says', 'pixels-text-domain')|format(comment.author.name) }}</h5>
+<article class="comment{{ comment.comment_type ? ' comment-'~comment.comment_type }}" id="comment-{{ comment.ID }}">
+	<h5 class="comment-author">{{ comment.author.name }}</h5>
 	<div class="comment-content">{{ comment.comment_content|wpautop }}</div>
 
-	<section class="comment-box">
-		<!-- child comments -->
-		{% if post.comments %}
-			<h4> replies </h4>
+	<section class="comment-replies">
+		{% if comment.children %}
+			<h4>{{ __('Replies', 'pixels-text-domain') }}</h4>
 			<div class="comment-comments">
 				{% for child_comment in comment.children %}
 					{% include "comment/comment.twig" with {comment: child_comment} %}
@@ -21,7 +20,6 @@
 			</div>
 		{% endif %}
 
-		<!-- comment form -->
 		{% include "form/form-new-comment.twig" %}
 	</section>
-</div>
+</article>

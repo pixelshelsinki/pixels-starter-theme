@@ -111,6 +111,7 @@ class PixelsSite extends TimberSite {
 	function add_to_context( $context ) {
 		// Site information
 		$context['site'] = $this;
+		$context['site']->site_url = get_site_url(); // Since timber only returns home URL as 'link'
 
 		// Navigation
 		$context['primary_navigation'] = new TimberMenu( 'primary_navigation' );

@@ -21,7 +21,7 @@
 
 {% extends 'input/input.twig' %}
 
-{% if not label %}
+{% if pattern_library %}
   {% set classes = '' %}
   {% set disabled = false %}
   {% set help_text = __('Helper text for the field above.', 'pixels-text-domain') %}
