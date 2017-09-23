@@ -4,6 +4,7 @@
  */
 
 use Theme\Assets;
+
 /**
  * Checks that the Timber plugin is activated.
  */
@@ -37,7 +38,7 @@ if ( ! class_exists( 'Timber' ) ) {
  *
  * @var array
  */
-Timber::$dirname = array('components', 'views');
+Timber::$dirname = ['components', 'views'];
 
 /**
  * Sets up the Timber site for this project.
@@ -72,7 +73,7 @@ class PixelsSite extends TimberSite {
 		 * Enable HTML5 markup support
 		 * @link https://developer.wordpress.org/reference/functions/add_theme_support/#html5
 		 */
-		add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
+		add_theme_support( 'html5', ['comment-list', 'comment-form', 'search-form', 'gallery', 'caption'] );
 
 		/**
 		 * Enable selective refresh for widgets in customizer
@@ -88,9 +89,9 @@ class PixelsSite extends TimberSite {
         'primary_navigation' => __('Primary Navigation', 'pixels-text-domain')
     ]);
 
-		add_action( 'wp_enqueue_scripts', array( $this, 'setup_scripts_styles' ), 100 );
-		add_filter( 'timber_context', array( $this, 'add_to_context' ) );
-		add_filter( 'get_twig', array( $this, 'add_to_twig' ) );
+		add_action( 'wp_enqueue_scripts', [$this, 'setup_scripts_styles'], 100 );
+		add_filter( 'timber_context', [$this, 'add_to_context'] );
+		add_filter( 'get_twig', [$this, 'add_to_twig'] );
 		parent::__construct();
 	}
 
@@ -98,13 +99,13 @@ class PixelsSite extends TimberSite {
 	 * Adds the JS and CSS files to the document head.
 	 */
 	function setup_scripts_styles() {
-		wp_enqueue_style('pixels/main.css', Assets\get_asset_uri('styles/main.css'), false, null);
-    wp_enqueue_script('pixels/main.js', Assets\get_asset_uri('scripts/main.js'), ['jquery'], null, true);
+		wp_enqueue_style( 'pixels/main.css', Assets\get_asset_uri( 'styles/main.css' ), false, null );
+    wp_enqueue_script( 'pixels/main.js', Assets\get_asset_uri( 'scripts/main.js' ), ['jquery'], null, true );
 		/**
 		 * Use main stylesheet for visual editor
 		 * @see assets/styles/layouts/_tinymce.scss
 		 */
-		add_editor_style(Assets\get_asset_uri('styles/main.css'));
+		add_editor_style( Assets\get_asset_uri('styles/main.css') );
 	}
 
 	function add_to_context( $context ) {
@@ -112,12 +113,12 @@ class PixelsSite extends TimberSite {
 		$context['site'] = $this;
 
 		// Navigation
-		$context['primary_navigation'] = new TimberMenu('primary_navigation');
+		$context['primary_navigation'] = new TimberMenu( 'primary_navigation' );
 
 		// Multilingual
 		if (function_exists('pll_the_languages')) {
-			$context['polylang']['current'] = pll_current_language('slug');
-			$context['polylang']['languages'] = pll_the_languages(['raw' => 1]);
+			$context['polylang']['current'] = pll_current_language( 'slug' );
+			$context['polylang']['languages'] = pll_the_languages( ['raw' => 1] );
 		}
 
 		return $context;
