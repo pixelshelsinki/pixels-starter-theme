@@ -1,5 +1,5 @@
 {
-  "name": "pixels-starter-theme",
+  "name": "pixelshelsinki/pixels-starter-theme",
   "type": "wordpress-theme",
   "license": "MIT",
   "description": "WordPress starter theme mixing Timber Twig templates and webpack.",
@@ -24,9 +24,7 @@
   },
   "require": {
     "php": ">=5.6.4",
-    "composer/installers": "~1.0",
-    "illuminate/view": "~5.4.0",
-    "illuminate/config": "~5.4.0"
+    "composer/installers": "~1.0"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^2.8.0"
@@ -34,12 +32,6 @@
   "scripts": {
     "test": [
       "phpcs"
-    ],
-    "post-create-project-cmd": [
-        "Roots\\Sage\\PostCreateProject::updateHeaders",
-        "Roots\\Sage\\PostCreateProject::selectFramework",
-        "Roots\\Sage\\PostCreateProject::addFontAwesome",
-        "Roots\\Sage\\PostCreateProject::buildOptions"
     ]
   }
 }
