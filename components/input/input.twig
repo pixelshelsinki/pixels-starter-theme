@@ -36,7 +36,9 @@
 {% endif %}
 
 {% block label %}
-  <label for="{{ id }}" class="{{ label_classes }}">{{ label }}</label>
+  {% if type != 'hidden' %}
+    <label for="{{ id }}" class="{{ label_classes }}">{{ label }}</label>
+  {% endif %}
 {% endblock %}
 {% block input %}
   <input type="{{ type }}" class="form-control{{ type == 'file' ? '-file' }} {{ classes }}" id="{{ id }}"  name="{{ name }}" placeholder="{{ placeholder }}" {{ help_text ? 'aria-describedby="'~help_text.content~'"' }} {{ disabled ? 'disabled' }} {{ readonly ? 'readonly' }} {{ required ? 'required' }} value="{{ value }}">

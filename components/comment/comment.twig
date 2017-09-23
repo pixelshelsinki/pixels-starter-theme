@@ -1,9 +1,9 @@
 {#
- # Template for a comment.
+ # Template for a comment thread.
  #
  # @version 1.0.0
  #
- # @var comment
+ # @var comment	The comment thread from WordPress
  #}
 
 <div class="comment comment-{{ comment.comment_type }}" id="comment-{{ comment.ID }}">
@@ -22,6 +22,6 @@
 		{% endif %}
 
 		<!-- comment form -->
-		{% include "comment/comment-form.twig" %}
+		{% include "form/form-new-comment.twig" %}
 	</section>
 </div>

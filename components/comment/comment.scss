@@ -1,0 +1,11 @@
+/**
+ * Comment styles
+ */
+
+.comment-list {
+  @extend .list-unstyled;
+}
+
+.comment-list ol {
+  list-style: none;
+}

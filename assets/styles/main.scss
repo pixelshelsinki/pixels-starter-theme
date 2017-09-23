@@ -3,18 +3,20 @@
 // Import npm dependencies
 @import "~bootstrap/scss/bootstrap";
 
+// *************
 // Common styles
+// *************
 @import "common/global";
 @import "common/tinymce";
 @import "common/wordpress";
 
-// @import "components/comments";
-// @import "components/forms";
-
-
-
+// ****************
 // Component styles
-// @import "../../components/button/button.scss";
-// @import "../../components/site-header/site-header.scss";
+// ****************
+@import "../../components/comment/comment";
+@import "../../components/form/form-new-comment";
 
+// ***********
 // View styles
+// ***********
+// @import "../../views/single/single";

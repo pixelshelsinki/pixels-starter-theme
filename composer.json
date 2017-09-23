@@ -15,7 +15,7 @@
     "wordpress"
   ],
   "support": {
-    "issues": "https://github.com/pixelshelsinki/pixels-starter-theme/issues",
+    "issues": "https://github.com/pixelshelsinki/pixels-starter-theme/issues"
   },
   "autoload": {
     "psr-4": {

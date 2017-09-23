@@ -1,8 +1,19 @@
-<div class="comment-form-add">
+{#
+ # Template for the new comment form.
+ #
+ # @version 1.0.0
+ #
+ # @var user
+ #}
+
+<section class="section section-form-new-comment">
   <h3>{{ __('Add comment', 'pixels-text-domain') }}</h3>
 
-  <form id="form" class="comment-form" method="post" action="{{ site.url~'/wp-comments-post.php' }}">
-    {% if  user %}
+  <form id="form" class="form-new-comment" method="post" action="{{ site.url~'/wp-comments-post.php' }}">
+    {% if user %}
+      {% include 'input/input.twig' with { type: 'hidden', name: 'email', value: user.email } %}
+      {% include 'input/input.twig' with { type: 'hidden', name: 'author', value: user.name } %}
+      {% include 'input/input.twig' with { type: 'hidden', name: 'url', value: user.link } %}
       <input type="hidden" name="email" value="{{ user.email }}">
       <input type="hidden" name="author" value="{{ user.name }}">
       <input type="hidden" name="url" value="{{ user.link }}">
@@ -33,4 +44,4 @@
       <p>{{ __('Your comment will be revised by the site if needed.', 'pixels-text-domain') }}</p>
     </div>
   </form>
-</div>
+</section>
