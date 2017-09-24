@@ -1,0 +1,205 @@
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Project-Id-Version: Pixels Starter Theme\n"
+"POT-Creation-Date: 2017-09-24 15:41+0300\n"
+"PO-Revision-Date: 2017-09-24 15:47+0300\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.4\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: style.css\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;"
+"_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Last-Translator: \n"
+"Language: fi\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: 404.php:17
+msgid "Not found"
+msgstr "Ei löytynyt"
+
+#: functions.php:22
+msgid "Theme &rsaquo; Error"
+msgstr ""
+
+#: functions.php:23
+msgid ""
+"You can report this error to <a href=\"mailto:support@pixels.fi"
+"\">support@pixels.fi</a>"
+msgstr ""
+
+#: functions.php:32
+msgid "You must be using PHP 5.6.4 or greater."
+msgstr "Käytössä pitää olla PHP 5.6.4 tai uudempi."
+
+#: functions.php:32
+msgid "Invalid PHP version"
+msgstr ""
+
+#: functions.php:39
+msgid "You must be using WordPress 4.7.0 or greater."
+msgstr "Käytössä pitää olla WordPress 4.7.0 tai uudempi."
+
+#: functions.php:39
+msgid "Invalid WordPress version"
+msgstr ""
+
+#: functions.php:51
+#, php-format
+msgid "Error locating <code>%s</code> for inclusion."
+msgstr "Virhe paikallistettaessa <code>%s</code>."
+
+#: lib/timber.php:17
+#, php-format
+msgid ""
+"Timber not activated. Make sure you activate the plugin in <a href=\"%1$s\">"
+"%2$s</a>"
+msgstr ""
+
+#: lib/timber.php:89
+msgid "Primary Navigation"
+msgstr "﻿Päävalikko"
+
+#: lib/widget-areas.php:18
+msgid "Footer"
+msgstr ""
+
+#: search.php:17
+#, php-format
+msgid "Search results for %s"
+msgstr ""
+
+#: components/alert/alert.twig:14
+msgctxt "Label for button to close an alert"
+msgid "Close"
+msgstr "Sulje"
+
+#: components/comment/comment.twig:16
+msgid "Replies"
+msgstr ""
+
+#: components/comments/comments.twig:5
+msgid "Comments"
+msgstr "Kommentteja"
+
+#: components/comments/comments.twig:14
+msgid "Comments for this post are closed"
+msgstr ""
+
+#: components/form/form-new-comment.twig:10
+msgid "Add comment"
+msgstr "Lisää kommentti"
+
+#: components/form/form-new-comment.twig:18
+msgctxt "comment form email field label"
+msgid "Email"
+msgstr "Sähköposti"
+
+#: components/form/form-new-comment.twig:22
+msgctxt "comment form author field label"
+msgid "Author"
+msgstr "﻿Kirjoittaja"
+
+#: components/form/form-new-comment.twig:26
+msgctxt "comment form author URL field label"
+msgid "URL"
+msgstr "www-osoite"
+
+#: components/form/form-new-comment.twig:31
+msgctxt "comment form comment field label"
+msgid "Comment"
+msgstr "Kommentti"
+
+#: components/form/form-new-comment.twig:31
+msgid "Write your comment here"
+msgstr ""
+
+#: components/form/form-new-comment.twig:38
+msgid "Send"
+msgstr "Lähetä"
+
+#: components/form/form-new-comment.twig:39
+msgid "Cancel"
+msgstr "Peruuta"
+
+#: components/form/form-new-comment.twig:41
+msgid "Your comment will be revised by the site if needed."
+msgstr ""
+
+#: components/input/input.twig:25 components/input/select.twig:27
+#: components/input/textarea.twig:29
+msgid "Helper text for the field above."
+msgstr ""
+
+#: components/modal/modal.twig:22
+msgctxt "Label for X button to close a modal"
+msgid "Close"
+msgstr ""
+
+#: components/pagination/pagination.twig:16
+msgid "Previous"
+msgstr "Edellinen"
+
+#: components/pagination/pagination.twig:21
+msgid "<span class=\"sr-only\">(current)</span>"
+msgstr ""
+
+#: components/pagination/pagination.twig:26
+msgid "Next"
+msgstr "Seuraava"
+
+#: components/site-footer/site-footer.twig:12
+#, php-format
+msgid "&copy; %1$s %2$s."
+msgstr "&copy; %1$s %2$s."
+
+#: components/site-footer/site-footer.twig:13
+msgid ""
+"Crafted by <a href=\"https://pixels.fi\" rel=\"nofollow\" target=\"_blank"
+"\">Pixels</a>."
+msgstr ""
+
+#: components/site-header/site-header.twig:9
+msgctxt "Accessibility label for toggling menu"
+msgid "Toggle navigation"
+msgstr ""
+
+#: components/teaser/teaser.twig:14
+#, php-format
+msgid "Read more<span class=\"sr-only\"> about %s</span>"
+msgstr ""
+
+#: views/404/404.twig:11
+msgid "Sorry, we couldn't find what you're looking for."
+msgstr ""
+
+#: views/base/base.twig:20
+msgid "Sorry, no content was found!"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "Pixels Starter Theme"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "https://github.com/pixelshelsinki/pixels-starter-theme/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "A WordPress starter theme for Pixels projects."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Pixels Helsinki Oy"
+msgstr "Pixels Helsinki Oy"
+
+#. Author URI of the plugin/theme
+msgid "https://pixels.fi/"
+msgstr "https://pixels.fi/"
