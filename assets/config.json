@@ -9,8 +9,8 @@
     ]
   },
   "publicPath": "/app/themes/pixels-starter-theme",
-  "devUrl": "http://example.dev",
-  "proxyUrl": "http://localhost:3000",
+  "devUrl": "https://example.local",
+  "proxyUrl": "https://localhost:3000",
   "cacheBusting": "[name]_[hash:8]",
   "watch": [
     "{components,views}/**/*.twig",
