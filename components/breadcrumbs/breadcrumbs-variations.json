@@ -1,0 +1,15 @@
+[{
+  "filename": "breadcrumbs.twig",
+  "variables": {
+    "breadcrumbs": "An array of urls and labels to be output in the breadcrumbs."
+  },
+  "defaults": {},
+  "variations": [
+    {
+      "description": "A success alert that stays in place",
+      "variables": {
+        "breadcrumbs": [{"url": "#", "label": "Home"}, {"url": "#", "label": "Library"}, {"url": "#", "label": "Data"}, {"url": "", "label": "Item"}]
+      }
+    }
+  ]
+}]

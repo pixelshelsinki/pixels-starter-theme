@@ -1,0 +1,15 @@
+{# color swatches, PATTERN LIBRARY USE ONLY #}
+
+<div class="d-flex flex-row flex-wrap">
+  {% for color in colors %}
+    <div class="color-swatch-wrap">
+      <div class="color-swatch {{ color.bgClass }}">
+      </div>
+      <ul class="list-unstyled">
+        {% if color.variable %}<li><code>{{ color.variable }}</code></li>{% endif %}
+        {% if color.bgClass %}<li><code>.{{ color.bgClass }}</code></li>{% endif %}
+        {% if color.textClass %}<li><code>.{{ color.textClass }}</code></li>{% endif %}
+      </ul>
+    </div>
+  {% endfor %}
+</div>
