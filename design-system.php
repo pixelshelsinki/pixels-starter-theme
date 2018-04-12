@@ -2,14 +2,14 @@
 /**
  * Template Name: Design System
  *
- * Outputs the System.
+ * Outputs the Design System.
  *
  * Loops through all component twig files and outputs them in a design system.
  * In the future it will be possible to specify groupings for components to show
  * them in a better organised fashion.
  *
- * @version 2.0.0-beta
- * @since 2.0.0
+ * @version 1.0.0
+ * @since 1.1.0
  */
 
 if ( file_exists( get_template_directory() . '/vendor/erusev/parsedown/Parsedown.php' ) ) {
