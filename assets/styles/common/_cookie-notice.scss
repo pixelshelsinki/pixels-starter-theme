@@ -1,0 +1,21 @@
+/********* START COOKIE NOTICE STYLES *********/
+// Styling for container. Allows complete overriding if need be.
+// .cookie-notice-container {}
+
+// Styling for buttons.
+.cn-set-cookie,
+.cn-more-info {
+  @extend .btn;
+}
+
+// Styling for Accept/Deny Cookies button.
+.cn-set-cookie {
+  @extend .btn-primary;
+}
+
+// Styling for More information button.
+.cn-more-info {
+  @extend .btn-secondary;
+}
+
+/********* END COOKIE NOTICE STYLES *********/
