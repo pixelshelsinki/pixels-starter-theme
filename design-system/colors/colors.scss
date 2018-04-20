@@ -1,0 +1,15 @@
+/*************************** COLOR SWATCHES *******************************/
+.color-swatch-wrap {
+  flex: 0 0 100%;
+  @include media_breakpoint_up(md) {
+    flex: 0 0 50%;
+  };
+  @include media_breakpoint_up(lg) {
+    flex: 0 0 20%;
+  };
+}
+
+.color-swatch {
+  min-height: 100px;
+}
+/*************************** END COLOR SWATCHES *******************************/

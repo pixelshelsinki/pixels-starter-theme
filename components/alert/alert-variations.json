@@ -1,0 +1,75 @@
+[{
+  "filename": "alert.twig",
+  "variables": {
+    "classes": "Classes to add to the alert.",
+    "dismissable": "Whether the modal is dismissable or not (adds an 'x' icon).",
+    "message": "The message to appear in the alert."
+  },
+  "defaults": {
+    "classes": "",
+    "dismissable": false,
+    "message": "Default alert message text."
+  },
+  "variations": [
+    {
+      "description": "A success alert that stays in place",
+      "variables": {
+        "classes": "alert-success",
+        "message": "This alert is successful and stays in place."
+      }
+    },
+    {
+      "description": "A warning alert that stays in place",
+      "variables": {
+        "classes": "alert-warning",
+        "message": "This alert is a warning and stays in place."
+      }
+    },
+    {
+      "description": "An error alert that stays in place",
+      "variables": {
+        "classes": "alert-danger",
+        "message": "This alert is an error and stays in place."
+      }
+    },
+    {
+      "description": "An information alert that stays in place",
+      "variables": {
+        "classes": "alert-info",
+        "message": "This alert is for information and stays in place."
+      }
+    },
+    {
+      "description": "A success alert that can be dissmissed",
+      "variables": {
+        "classes": "alert-success",
+        "dismissable": true,
+        "message": "This alert is successful and can be dissmissed."
+      }
+    },
+    {
+      "description": "A warning alert that can be dissmissed",
+      "variables": {
+        "classes": "alert-warning",
+        "dismissable": true,
+        "message": "This alert is a warning and can be dissmissed."
+      }
+    },
+    {
+      "description": "An error alert that can be dissmissed",
+      "variables": {
+        "classes": "alert-danger",
+        "dismissable": true,
+        "message": "This alert is an error and can be dissmissed."
+      }
+    },
+    {
+      "description": "An information alert that can be dissmissed",
+      "variables": {
+        "classes": "alert-info",
+        "dismissable": true,
+        "message": "This alert is information and can be dissmissed."
+      }
+    }
+  ]
+}]

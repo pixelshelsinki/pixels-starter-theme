@@ -1,0 +1,80 @@
+[{
+  "filename": "typography.twig",
+  "variables": {},
+  "defaults": {},
+  "hideCodeSnippet": true,
+  "variations": [
+    {
+      "description": "An h1 element.",
+      "variables": {
+        "element": "h1",
+        "classes": "",
+        "bgColor": "",
+        "textColor": ""
+      }
+    },
+    {
+      "description": "An h2 element.",
+      "variables": {
+        "element": "h2",
+        "classes": "",
+        "bgColor": "",
+        "textColor": ""
+      }
+    },
+    {
+      "description": "An h3 element.",
+      "variables": {
+        "element": "h3",
+        "classes": "",
+        "bgColor": "",
+        "textColor": ""
+      }
+    },
+    {
+      "description": "An h4 element.",
+      "variables": {
+        "element": "h4",
+        "classes": "",
+        "bgColor": "",
+        "textColor": ""
+      }
+    },
+    {
+      "description": "An h5 element.",
+      "variables": {
+        "element": "h5",
+        "classes": "",
+        "bgColor": "",
+        "textColor": ""
+      }
+    },
+    {
+      "description": "An h6 element.",
+      "variables": {
+        "element": "h6",
+        "classes": "",
+        "bgColor": "",
+        "textColor": ""
+      }
+    },
+    {
+      "description": "Lead paragraph text",
+      "variables": {
+        "element": "p",
+        "classes": "lead",
+        "bgColor": "",
+        "textColor": ""
+      }
+    },
+    {
+      "description": "Normal Paragraph text",
+      "variables": {
+        "element": "p",
+        "classes": "",
+        "bgColor": "",
+        "textColor": ""
+      }
+    }
+  ]
+}]

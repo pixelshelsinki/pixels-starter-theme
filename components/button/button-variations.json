@@ -1,0 +1,37 @@
+[{
+  "filename": "button.twig",
+  "variables": {
+    "classes": "A string of classes to be applied to the element.",
+    "data": "An object of properties to values to be added as data attributes.",
+    "disabled": "A boolean to indicate if the element should be visually and functionally disabled.",
+    "label": "Label for the button.",
+    "type": "The type of the button element (button or submit)."
+  },
+  "defaults": {
+    "classes": "btn-default",
+    "data": {},
+    "disabled": false,
+    "label": "Button",
+    "type": "button"
+  },
+  "variations": [
+    {
+      "description": "A default button.",
+      "variables": {
+        "classes": "btn-default"
+      }
+    },
+    {
+      "description": "A Primary button.",
+      "variables": {
+        "classes": "btn-primary"
+      }
+    },
+    {
+      "description": "A Secondary button.",
+      "variables": {
+        "classes": "btn-secondary"
+      }
+    }
+  ]
+}]
