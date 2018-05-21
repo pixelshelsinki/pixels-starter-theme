@@ -89,6 +89,7 @@ class PixelsSite extends TimberSite {
         'primary_navigation' => __('Primary Navigation', 'pixels-text-domain')
     ]);
 
+    add_action( 'after_setup_theme', [$this, 'setup_editor_styles'], 100 );
 		add_action( 'wp_enqueue_scripts', [$this, 'setup_scripts_styles'], 100 );
 		add_filter( 'timber_context', [$this, 'add_to_context'] );
 		add_filter( 'get_twig', [$this, 'add_to_twig'] );
@@ -101,6 +102,9 @@ class PixelsSite extends TimberSite {
 	function setup_scripts_styles() {
 		wp_enqueue_style( 'pixels/main.css', Assets\get_asset_uri( 'styles/main.css' ), false, null );
     wp_enqueue_script( 'pixels/main.js', Assets\get_asset_uri( 'scripts/main.js' ), ['jquery'], null, true );
+	}
+  
+  function setup_editor_styles() {
 		/**
 		 * Use main stylesheet for visual editor
 		 * @see assets/styles/layouts/_tinymce.scss
