@@ -109,7 +109,7 @@ class PixelsSite extends TimberSite {
 		 * Use main stylesheet for visual editor
 		 * @see assets/styles/layouts/_tinymce.scss
 		 */
-		add_editor_style( Assets\get_asset_uri('styles/main.css') );
+		add_editor_style( '/dist/' . Assets\get_asset_uri('styles/main.css') );
 	}
 
 	function add_to_context( $context ) {
