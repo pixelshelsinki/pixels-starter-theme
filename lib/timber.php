@@ -124,6 +124,7 @@ class PixelsSite extends TimberSite {
 		if (function_exists('pll_the_languages')) {
 			$context['polylang']['current'] = pll_current_language( 'slug' );
 			$context['polylang']['languages'] = pll_the_languages( ['raw' => 1] );
+      $context['polylang']['home'] = pll_home_url();
 		}
 
 		return $context;
