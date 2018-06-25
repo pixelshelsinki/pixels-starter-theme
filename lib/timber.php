@@ -126,10 +126,6 @@ class PixelsSite extends TimberSite {
 			$context['polylang']['languages'] = pll_the_languages( ['raw' => 1] );
       $context['polylang']['home'] = pll_home_url();
 		}
-    
-    // Privacy policy
-		$context['privacy'] = get_the_privacy_policy_link();
-
 
 		return $context;
 	}
