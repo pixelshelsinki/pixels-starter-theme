@@ -103,7 +103,7 @@ class PixelsSite extends TimberSite {
 		wp_enqueue_style( 'pixels/main.css', Assets\get_asset_uri( 'styles/main.css' ), false, null );
     wp_enqueue_script( 'pixels/main.js', Assets\get_asset_uri( 'scripts/main.js' ), ['jquery'], null, true );
 	}
-  
+
   function setup_editor_styles() {
 		/**
 		 * Use main stylesheet for visual editor
@@ -126,11 +126,11 @@ class PixelsSite extends TimberSite {
 			$context['polylang']['languages'] = pll_the_languages( ['raw' => 1] );
       $context['polylang']['home'] = pll_home_url();
 		}
-    
+
     // Privacy policy
-		$context['privacy'] = get_the_privacy_policy_link();
-
-
+		if(function_exists('get_privacy_policy_url')){
+			$context['privacy'] = get_privacy_policy_url();
+		}
 		return $context;
 	}
 
