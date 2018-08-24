@@ -1,0 +1,16 @@
+<nav>
+  <ul class="some-list list-inline text-lg-right">
+    {% for name,url in social %}
+      {% if name and url %}
+        <li class="list-inline-item">
+          <a href="{{url}}" target="_blank">
+            <span class="sr-only">{{site.name}} on {{name}}</span>
+            <span class="footer-some-icon">
+              {% include 'assets/images/social-media-icons/' ~ name|lower ~ '.svg' %}
+            </span>
+          </a>
+        </li>
+      {% endif %}
+    {% endfor %}
+  </ul>
+</nav>

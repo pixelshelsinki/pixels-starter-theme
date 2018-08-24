@@ -120,6 +120,13 @@ class PixelsSite extends TimberSite {
 		// Navigation
 		$context['primary_navigation'] = new TimberMenu( 'primary_navigation' );
 
+		// Footer widgets
+    // Widgets for footer.
+    $context['footer_company_info'] = Timber::get_widgets('site-footer-company');
+    $context['footer_menu_1'] = Timber::get_widgets('site-footer-menu-1');
+    $context['footer_menu_2'] = Timber::get_widgets('site-footer-menu-2');
+    $context['footer_some'] = Timber::get_widgets('site-footer-some');
+
 		// Multilingual
 		if (function_exists('pll_the_languages')) {
 			$context['polylang']['current'] = pll_current_language( 'slug' );
