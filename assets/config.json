@@ -9,7 +9,7 @@
     ]
   },
   "publicPath": "/app/themes/pixels-starter-theme",
-  "devUrl": "https://example.local",
+  "devUrl": "https://startertheme.local",
   "proxyUrl": "https://localhost:3000",
   "cacheBusting": "[name]_[hash:8]",
   "watch": [
