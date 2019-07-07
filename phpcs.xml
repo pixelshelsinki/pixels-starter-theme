@@ -125,4 +125,9 @@
   <rule ref="PSR1.Methods.CamelCapsMethodName.NotCamelCaps">
     <exclude-pattern>lib/</exclude-pattern>
   </rule>
+
+  <!-- Allow PHP closing tags -->
+  <rule ref="PSR1.Files.SideEffects.FoundWithSymbols">
+    <exclude-pattern>lib/</exclude-pattern>
+  </rule>
 </ruleset>
