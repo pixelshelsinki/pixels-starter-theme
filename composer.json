@@ -29,7 +29,6 @@
   "require-dev": {
     "squizlabs/php_codesniffer": "^2.8.0",
     "erusev/parsedown": "~1.7.1",
-    "phpcompatibility/phpcompatibility-wp": "*"
   },
   "scripts": {
     "test": [
