@@ -1,65 +1,41 @@
+language: php
 sudo: false
 dist: trusty
+php:
+  - 7.3
+  - 7.2
+  - 7.1
+  - nightly
 
-language: php
-
-notifications:
-  email:
-    on_success: never
-    on_failure: change
-
-branches:
-  only:
-    - master
-
-cache:
-  directories:
-    - $HOME/.composer/cache
+env:
+  - TRAVIS_NODE_VERSION="8"
+  - TRAVIS_NODE_VERSION="10"
 
 matrix:
-  include:
-    - php: 7.2
-      env: WP_VERSION=latest
-    - php: 7.1
-      env: WP_VERSION=latest
-    - php: 7.0
-      env: WP_VERSION=latest
-    - php: 5.6
-      env: WP_VERSION=latest
-    - php: 5.6
-      env: WP_VERSION=trunk
-    - php: 5.6
-      env: WP_TRAVISCI=phpcs
-    - php: 5.3
-      env: WP_VERSION=latest
-      dist: precise
+  fast_finish: true
+  allow_failures:
+    - php: nightly
 
-before_script:
-  - export PATH="$HOME/.composer/vendor/bin:$PATH"
-  - |
-    if [ -f ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/xdebug.ini ]; then
-      phpenv config-rm xdebug.ini
-    else
-      echo "xdebug.ini does not exist"
-    fi
-  - |
-    if [[ ! -z "$WP_VERSION" ]] ; then
-      bash bin/install-wp-tests.sh wordpress_test root '' localhost $WP_VERSION
-      composer global require "phpunit/phpunit=4.8.*|5.7.*"
-    fi
-  - |
-    if [[ "$WP_TRAVISCI" == "phpcs" ]] ; then
-      composer global require wp-coding-standards/wpcs
-      phpcs --config-set installed_paths $HOME/.composer/vendor/wp-coding-standards/wpcs
-    fi
+cache:
+  apt: true
+  directories:
+    - $HOME/.composer/cache
+    - $HOME/.yarn-cache
+    - vendor
+
+before_install:
+  - composer self-update
+  - source ~/.nvm/nvm.sh && nvm install $TRAVIS_NODE_VERSION && nvm use $TRAVIS_NODE_VERSION
+  - export PATH=$HOME/.yarn/bin:$PATH && travis_retry curl -o- -L https://yarnpkg.com/install.sh | bash
+
+install:
+  - node -v && yarn -V
+  - travis_retry yarn
+  - composer install -o --prefer-dist --no-interaction
 
 script:
-  - |
-    if [[ ! -z "$WP_VERSION" ]] ; then
-      phpunit
-      WP_MULTISITE=1 phpunit
-    fi
-  - |
-    if [[ "$WP_TRAVISCI" == "phpcs" ]] ; then
-      phpcs
-    fi
+  - yarn run test
+  - yarn run build
+  - yarn run rmdist
+  - yarn run "build:production"
+  - composer test
