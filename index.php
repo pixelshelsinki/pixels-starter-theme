@@ -23,7 +23,7 @@ $context['pagination'] = Timber::get_pagination();
 
 // If home add the home twig template to the front of the array.
 if ( is_home() ) {
-	array_unshift( $templates, 'home/home.twig' );
+  array_unshift( $templates, 'home/home.twig' );
 }
 
 // Render with Timber

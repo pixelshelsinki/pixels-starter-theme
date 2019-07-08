@@ -30,7 +30,7 @@ $component_directories = array_merge( $ds_directories, $component_directories );
 // Our array of components we will feed to the Design System Template.
 $components = [];
 
-foreach ( $component_directories as $key => $component_directory_path ) {
+foreach ($component_directories as $key => $component_directory_path) {
   // Setup this component
   $component = [];
 
