@@ -1,6 +1,6 @@
-# Pixels Starter Theme
-
 [![Build Status](https://travis-ci.org/pixelshelsinki/pixels-starter-theme.svg?branch=master)](https://travis-ci.org/pixelshelsinki/pixels-starter-theme)
+
+# Pixels Starter Theme
 
 This is the starter theme for Pixels website projects that are built on WordPress.
 **Please use the [latest release](https://github.com/pixelshelsinki/pixels-starter-theme/releases/latest)**, not master.
