@@ -1,0 +1,13 @@
+{#
+ # Template for a single content footer.
+ #
+ # @version 1.0.0
+ #
+ # @var post	The Timber Post object.
+ #}
+
+<footer class="single-footer single-footer-{{ post.post_type }}">
+  {% include 'pagination/pagination.twig' with { pagination: post.pagination } %}
+
+  {% include 'comments/comments.twig' %}
+</footer>
