@@ -10,26 +10,26 @@ use Theme\Assets;
  * Checks that the Timber plugin is activated.
  */
 if ( ! class_exists( 'Timber' ) ) {
-	/**
-	 * Output an admin notice warning about Timber plugin not activated.
-	 * @return [type] [description]
-	 */
-	function missing_timber_admin_notice() {
-		echo '<div class="error"><p>' . sprintf(__('Timber not activated. Make sure you activate the plugin in <a href="%1$s">%2$s</a>' ), esc_url( admin_url( 'plugins.php#timber' ) ), esc_url( admin_url( 'plugins.php') ) ) . '</p></div>';
-	}
-	add_action( 'admin_notices', 'missing_timber_admin_notice' );
+  /**
+   * Output an admin notice warning about Timber plugin not activated.
+   * @return [type] [description]
+   */
+  function missing_timber_admin_notice() {
+    echo '<div class="error"><p>' . sprintf(__('Timber not activated. Make sure you activate the plugin in <a href="%1$s">%2$s</a>' ), esc_url( admin_url( 'plugins.php#timber' ) ), esc_url( admin_url( 'plugins.php') ) ) . '</p></div>';
+  }
+  add_action( 'admin_notices', 'missing_timber_admin_notice' );
 
-	/**
-	 * Output a page on the frontend warning about Timber plugin not activated.
-	 * @param  [type] $template [description]
-	 * @return [type]           [description]
-	 */
-	function missing_timber_frontend_notice($template) {
+  /**
+   * Output a page on the frontend warning about Timber plugin not activated.
+   * @param  [type] $template [description]
+   * @return [type]           [description]
+   */
+  function missing_timber_frontend_notice($template) {
     wp_die( __( 'Oh no! You need to activate the Timber plugin before you can use this theme.', 'pixels-starter-theme' ) );
-	}
-	add_filter('template_include', 'missing_timber_frontend_notice' );
+  }
+  add_filter('template_include', 'missing_timber_frontend_notice' );
 
-	return;
+  return;
 }
 
 /**
@@ -46,7 +46,6 @@ Timber::$dirname = ['components', 'design-system', 'views'];
 */
 class PixelsSite extends TimberSite
 {
-
   public function __construct() {
     /**
     * Enable features from Soil when plugin is activated
@@ -115,33 +114,34 @@ class PixelsSite extends TimberSite
   }
 
   public function add_to_context($context) {
-    // Site information
-    $context['site'] = $this;
-    $context['site']->site_url = get_site_url(); // Since timber only returns home URL as 'link'
+  // Site information
+  $context['site'] = $this;
+  $context['site']->site_url = get_site_url(); // Since timber only returns home URL as 'link'
 
-    // Navigation
-    $context['primary_navigation'] = new TimberMenu( 'primary_navigation' );
+  // Navigation
+  $context['primary_navigation'] = new TimberMenu( 'primary_navigation' );
 
-    // Multilingual
-    if (function_exists('pll_the_languages')) {
-      $context['polylang']['current'] = pll_current_language( 'slug' );
-      $context['polylang']['languages'] = pll_the_languages( ['raw' => 1] );
-      $context['polylang']['home'] = pll_home_url();
-    }
-
-    // Multilingual
-    if (function_exists('pll_the_languages')) {
-      $context['polylang']['current'] = pll_current_language( 'slug' );
-      $context['polylang']['languages'] = pll_the_languages( ['raw' => 1] );
-      $context['polylang']['home_url'] = pll_home_url();
-    }
-
-    // Privacy policy
-    if (function_exists('get_privacy_policy_url')){
-      $context['privacy'] = get_privacy_policy_url();
-    }
-    return $context;
+  // Multilingual
+  if (function_exists('pll_the_languages')) {
+    $context['polylang']['current'] = pll_current_language( 'slug' );
+    $context['polylang']['languages'] = pll_the_languages( ['raw' => 1] );
+    $context['polylang']['home'] = pll_home_url();
   }
+
+  // Multilingual
+  if (function_exists('pll_the_languages')) {
+    $context['polylang']['current'] = pll_current_language( 'slug' );
+    $context['polylang']['languages'] = pll_the_languages( ['raw' => 1] );
+    $context['polylang']['home_url'] = pll_home_url();
+  }
+
+  // Privacy policy
+  if (function_exists('get_privacy_policy_url')){
+    $context['privacy'] = get_privacy_policy_url();
+  }
+
+  return $context;
+}
 
   public function myfoo($text) {
     $text .= ' bar!';

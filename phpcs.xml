@@ -3,7 +3,12 @@
   <description>Roots Coding Standards</description>
 
   <!-- Scan these files -->
-  <file>lib/</file>
+  <file>.</file>
+  <exclude-pattern>vendor/</exclude-pattern>
+  <exclude-pattern>node-modules/</exclude-pattern>
+  <exclude-pattern>tests/</exclude-pattern>
+
+  <arg name="extensions" value="php"/>
 
   <!-- Show colors in console -->
   <arg value="-colors"/>
@@ -34,100 +39,134 @@
   <!-- Allow braces on same line for named functions -->
   <rule ref="Squiz.Functions.MultiLineFunctionDeclaration.BraceOnSameLine">
     <exclude-pattern>lib/</exclude-pattern>
+    <exclude-pattern>*.php</exclude-pattern>
   </rule>
 
   <!-- Allow closing braces to be on the same line -->
   <rule ref="Squiz.WhiteSpace.ScopeClosingBrace">
     <exclude-pattern>lib/</exclude-pattern>
+    <exclude-pattern>*.php</exclude-pattern>
+
   </rule>
 
   <!-- Disable newline after opening brace -->
   <rule ref="Squiz.ControlStructures.ControlSignature.NewlineAfterOpenBrace">
     <exclude-pattern>lib/</exclude-pattern>
+    <exclude-pattern>*.php</exclude-pattern>
   </rule>
 
   <!-- Allow multiple PHP statements in the same line -->
   <rule ref="Generic.Formatting.DisallowMultipleStatements.SameLine">
     <exclude-pattern>lib/</exclude-pattern>
+    <exclude-pattern>*.php</exclude-pattern>
+
   </rule>
 
   <!-- Disable PSR-2 indentation rules that are buggy with 2 spaces -->
   <rule ref="PSR2.ControlStructures.SwitchDeclaration.BreakIndent">
     <exclude-pattern>lib/</exclude-pattern>
+    <exclude-pattern>*.php</exclude-pattern>
   </rule>
 
   <!-- Don't require a blank line after the last `use` -->
   <rule ref="PSR2.Namespaces.UseDeclaration.SpaceAfterLastUse">
     <exclude-pattern>lib/</exclude-pattern>
+    <exclude-pattern>*.php</exclude-pattern>
   </rule>
 
   <!-- Allow long lines -->
   <rule ref="Generic.Files.LineLength.TooLong">
     <exclude-pattern>lib/</exclude-pattern>
+    <exclude-pattern>*.php</exclude-pattern>
   </rule>
 
   <!-- Ignore indentation rules -->
   <rule ref="Generic.WhiteSpace.ScopeIndent">
     <exclude-pattern>lib/</exclude-pattern>
+    <exclude-pattern>*.php</exclude-pattern>
   </rule>
 
   <!-- Allow PHP closing tags -->
   <rule ref="PSR2.Files.ClosingTag.NotAllowed">
     <exclude-pattern>lib/</exclude-pattern>
+    <exclude-pattern>*.php</exclude-pattern>
   </rule>
 
   <!-- Allow space after open brace -->
   <rule ref="PSR2.ControlStructures.ControlStructureSpacing.SpacingAfterOpenBrace">
     <exclude-pattern>lib/</exclude-pattern>
+    <exclude-pattern>*.php</exclude-pattern>
   </rule>
 
   <!-- Allow space after open bracket -->
   <rule ref="PSR2.Methods.FunctionCallSignature.SpaceAfterOpenBracket">
     <exclude-pattern>lib/</exclude-pattern>
+    <exclude-pattern>*.php</exclude-pattern>
   </rule>
 
   <!-- Allow space before close brace -->
   <rule ref="PSR2.ControlStructures.ControlStructureSpacing.SpacingBeforeCloseBrace">
     <exclude-pattern>lib/</exclude-pattern>
+    <exclude-pattern>*.php</exclude-pattern>
   </rule>
 
   <!-- Allow space after close brace -->
   <rule ref="PSR2.ControlStructures.ControlStructureSpacing.SpacingAfterCloseBrace">
     <exclude-pattern>lib/</exclude-pattern>
+    <exclude-pattern>*.php</exclude-pattern>
   </rule>
 
   <!-- Allow space after close brace -->
   <rule ref="PSR2.ControlStructures.ControlStructureSpacing.SpaceBeforeCloseBrace">
     <exclude-pattern>lib/</exclude-pattern>
+    <exclude-pattern>*.php</exclude-pattern>
+  </rule>
+
+  <!-- Allow space before open bracket -->
+  <rule ref="PSR2.Methods.FunctionCallSignature.SpaceBeforeOpenBracket">
+    <exclude-pattern>lib/</exclude-pattern>
+    <exclude-pattern>*.php</exclude-pattern>
+  </rule>
+
+  <!-- Allow space after open bracket -->
+  <rule ref="PSR2.Methods.FunctionCallSignature.SpaceAfterOpenBracket">
+    <exclude-pattern>lib/</exclude-pattern>
+    <exclude-pattern>*.php</exclude-pattern>
   </rule>
 
   <!-- Allow space before close bracket -->
   <rule ref="PSR2.Methods.FunctionCallSignature.SpaceBeforeCloseBracket">
     <exclude-pattern>lib/</exclude-pattern>
+    <exclude-pattern>*.php</exclude-pattern>
   </rule>
 
   <!-- Allow space after close bracket -->
   <rule ref="PSR2.Methods.FunctionCallSignature.SpaceAfterCloseBracket">
     <exclude-pattern>lib/</exclude-pattern>
+    <exclude-pattern>*.php</exclude-pattern>
   </rule>
 
   <!-- Allow space after close parenthesis -->
   <rule ref="Squiz.ControlStructures.ControlSignature.SpaceAfterCloseParenthesis">
     <exclude-pattern>lib/</exclude-pattern>
+    <exclude-pattern>*.php</exclude-pattern>
   </rule>
 
   <!-- Allow space after close parenthesis -->
   <rule ref="Squiz.Functions.FunctionDeclarationArgumentSpacing.SpacingBeforeClose">
     <exclude-pattern>lib/</exclude-pattern>
+    <exclude-pattern>*.php</exclude-pattern>
   </rule>
 
   <!-- Allow PHP closing tags -->
   <rule ref="PSR1.Methods.CamelCapsMethodName.NotCamelCaps">
     <exclude-pattern>lib/</exclude-pattern>
+    <exclude-pattern>*.php</exclude-pattern>
   </rule>
 
   <!-- Allow PHP closing tags -->
   <rule ref="PSR1.Files.SideEffects.FoundWithSymbols">
     <exclude-pattern>lib/</exclude-pattern>
+    <exclude-pattern>*.php</exclude-pattern>
   </rule>
 </ruleset>
