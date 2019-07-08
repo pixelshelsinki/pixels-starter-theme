@@ -10,26 +10,26 @@ use Theme\Assets;
  * Checks that the Timber plugin is activated.
  */
 if ( ! class_exists( 'Timber' ) ) {
-  /**
-  * Output an admin notice warning about Timber plugin not activated.
-  * @return [type] [description]
-  */
-  function missing_timber_admin_notice() {
-    echo '<div class="error"><p>' . sprintf(__('Timber not activated. Make sure you activate the plugin in <a href="%1$s">%2$s</a>' ), esc_url( admin_url( 'plugins.php#timber' ) ), esc_url( admin_url( 'plugins.php') ) ) . '</p></div>';
-  }
-  add_action( 'admin_notices', 'missing_timber_admin_notice' );
+	/**
+	 * Output an admin notice warning about Timber plugin not activated.
+	 * @return [type] [description]
+	 */
+	function missing_timber_admin_notice() {
+		echo '<div class="error"><p>' . sprintf(__('Timber not activated. Make sure you activate the plugin in <a href="%1$s">%2$s</a>' ), esc_url( admin_url( 'plugins.php#timber' ) ), esc_url( admin_url( 'plugins.php') ) ) . '</p></div>';
+	}
+	add_action( 'admin_notices', 'missing_timber_admin_notice' );
 
-  /**
-  * Output a page on the frontend warning about Timber plugin not activated.
-  * @param  [type] $template [description]
-  * @return [type]           [description]
-  */
-  function missing_timber_frontend_notice($template) {
-    return get_stylesheet_directory() . '/static/no-timber.html'; // TODO: replace this with something better.
-  }
-  add_filter('template_include', 'missing_timber_frontend_notice' );
+	/**
+	 * Output a page on the frontend warning about Timber plugin not activated.
+	 * @param  [type] $template [description]
+	 * @return [type]           [description]
+	 */
+	function missing_timber_frontend_notice($template) {
+    wp_die( __( 'Oh no! You need to activate the Timber plugin before you can use this theme.', 'pixels-starter-theme' ) );
+	}
+	add_filter('template_include', 'missing_timber_frontend_notice' );
 
-  return;
+	return;
 }
 
 /**
