@@ -36,7 +36,7 @@ To install this theme the server instance must have the following setup:
 To develop this theme you must also have the following:
 
 * [Composer](https://getcomposer.org/download/)
-* [Node.js](http://nodejs.org/) >= 6.9.x
+* [Node.js](http://nodejs.org/) >= 6.9.x, <= 8 (use nvm to switch on your local environment)
 * [Yarn](https://yarnpkg.com/en/docs/install) >= 1.0
 
 ## Theme Installation
@@ -141,6 +141,6 @@ This theme uses a linter that will force certain styling of SCSS and JS. This is
 
 ### lib/
 
-`lib/` is where the PHP setup functionality related to the theme lives.
+`lib/` is where the PHP setup functionality related to the theme lives. To ensure a file in this directory loads, add it in the array at the end of the functions.php file.
 
 *currently files in here are still being finalised, but this shouldn't affect the use of the theme*
