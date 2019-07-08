@@ -2,6 +2,9 @@
 /**
  * Loads theme function files.
  *
+ * NOTE: To add functionality to the theme, create or add to a file in the lib
+ * directory and then include the file name (without the extension) it at the
+ * end of this file.
  */
 
 /**
