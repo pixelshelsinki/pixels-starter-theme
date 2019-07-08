@@ -24,7 +24,7 @@ if ( ! class_exists( 'Timber' ) ) {
 	 * @return [type]           [description]
 	 */
 	function missing_timber_frontend_notice($template) {
-		return get_stylesheet_directory() . '/static/no-timber.html'; // TODO: replace this with something better.
+    wp_die( __( 'Oh no! You need to activate the Timber plugin before you can use this theme.', 'pixels-starter-theme' ) );
 	}
 	add_filter('template_include', 'missing_timber_frontend_notice' );
 
