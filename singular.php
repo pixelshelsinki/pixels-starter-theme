@@ -19,7 +19,7 @@ $context['post'] = $post;
 
 // If this is a password protected page we render the single password template.
 if ( post_password_required( $post->ID ) ) {
-	$templates = ['single/single-password.twig'];
+  $templates = ['single/single-password.twig'];
 }
 
 // Render with Timber
