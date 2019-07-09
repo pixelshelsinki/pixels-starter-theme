@@ -39,12 +39,12 @@ if ( ! class_exists( 'Timber' ) ) {
 *
 * @var array
 */
-Timber::$dirname = ['components', 'design-system', 'views'];
+\Timber::$dirname = ['components', 'design-system', 'views'];
 
 /**
 * Sets up the Timber site for this project.
 */
-class PixelsSite extends TimberSite
+class PixelsSite extends \TimberSite
 {
   public function __construct() {
     /**
@@ -156,4 +156,4 @@ class PixelsSite extends TimberSite
   }
 }
 
-new \PixelsSite();
+new PixelsSite();
