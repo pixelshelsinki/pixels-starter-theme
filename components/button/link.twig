@@ -22,7 +22,7 @@
 {% endif %}
 
 {% for key, datum in data %}
-  {% set data_attributes = data_attributes ~ 'data-'~key~'=\''~datum~'\' ' %}
+  {% set data_attributes = data_attributes ~ 'data-' ~ key ~ '=\'' ~ datum ~ '\' ' %}
 {% endfor %}
 
 <a class="btn {{ classes }} {{ state ? state }}" href="{{ href }}" {{ type == 'button' ? 'role="button"' }} {{ active ? 'aria-pressed="true"' }} {{ data_attributes ? data_attributes }} {{ disabled ? 'aria-disabled="true" tabindex="-1"' }}>{{ label }}</a>

@@ -7,7 +7,6 @@
  # @var classes           Classes for the input.
  # @var disabled          If the input is disabled.
  # @var help_text         Help text for the input.
- # @var help_text_classes Classes for the help text.
  # @var id                Id attribute for the input.
  # @var label             Label for the input.
  # @var label_classes     Label for the <label> element.
@@ -25,19 +24,20 @@
   {% set classes = '' %}
   {% set disabled = false %}
   {% set help_text = __('Helper text for the field above.', 'pixels-text-domain') %}
-  {% set help_text_classes = 'text-muted' %}
   {% set id = '' %}
   {% set label = '' %}
   {% set label_classes = '' %}
   {% set name = '' %}
-  {% set options = [{value: '1', label: 'One'},{value: '2', label: 'Two', selected: true}] %}
-  {% set placeholder = '' %}
+  {% set options = [{value: '1', label: 'One'}, {value: '2', label: 'Two', selected: true}] %}
   {% set readonly = false %}
   {% set required = false %}
 {% endif %}
 
+{% block label %}
+  <label for="{{ id }}" class="{{ label_classes }}">{{ label }}</label>
+{% endblock %}
 {% block input %}
-  <select class="form-control {{ classes }}" id="{{ id }}" name="{{ name }}" {{ help_text ? 'aria-describedby="'~help_text~'"' }} {{ disabled ? 'disabled' }} {{ readonly ? 'readonly' }} {{ required ? 'required' }}>
+  <select class="form-control {{ classes }}" id="{{ id }}" name="{{ name }}" {{ help_text ? 'aria-describedby="' ~ help_text ~ '"' }} {{ disabled ? 'disabled' }} {{ readonly ? 'readonly' }} {{ required ? 'required' }}>
     {% for option in options %}
       <option value="{{ option.value }}" {{ option.selected ? 'selected' }}>{{ option.label }}</option>
     {% endfor %}

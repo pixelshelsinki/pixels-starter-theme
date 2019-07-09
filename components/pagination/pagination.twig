@@ -12,8 +12,8 @@
   <nav class="pagination-nav" aria-label="{{ pagination_title }}">
     <ul class="pagination {{ classes }}">
       {% if pagination.prev %}
-        <li class="page-item {{ pagination.prev.link|length ?: 'disabled'}}">
-          <a class="page-link" href="{{ pagination.prev.link }}" {{ pagination.prev.link|length ?: 'tabindex="-1"'}}>{{ __('Previous', 'pixels-text-domain') }}</a>
+        <li class="page-item {{ pagination.prev.link|length ?: 'disabled' }}">
+          <a class="page-link" href="{{ pagination.prev.link }}" {{ pagination.prev.link|length ?: 'tabindex="-1"' }}>{{ __('Previous', 'pixels-text-domain') }}</a>
         </li>
       {% endif %}
       {% for page in pagination.pages %}
@@ -22,8 +22,8 @@
         </li>
       {% endfor %}
       {% if pagination.next %}
-        <li class="page-item {{ pagination.next.link|length ?: 'disabled'}}">
-          <a class="page-link" href="{{ pagination.next.link }}" {{ pagination.next.link|length ?: 'tabindex="-1"'}}>{{ __('Next', 'pixels-text-domain') }}</a>
+        <li class="page-item {{ pagination.next.link|length ?: 'disabled' }}">
+          <a class="page-link" href="{{ pagination.next.link }}" {{ pagination.next.link|length ?: 'tabindex="-1"' }}>{{ __('Next', 'pixels-text-domain') }}</a>
         </li>
       {% endif %}
     </ul>

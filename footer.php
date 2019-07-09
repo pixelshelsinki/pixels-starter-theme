@@ -5,18 +5,21 @@
  *
  * If you're not using a plugin that requries this behavior (ones that do include Events Calendar Pro and
  * WooCommerce) you can delete this file and header.php
+ *
+ * @package  WordPress
+ * @subpackage  PixelsTheme
  */
 
-// Templates
-$templates = ['single/single-page-plugin.twig'];
+// Templates.
+$templates = [ 'single/single-page-plugin.twig' ];
 
-// Context
-$timberContext = $GLOBALS['timberContext'];
-if ( ! isset( $timberContext ) ) {
-  throw new \Exception( 'Timber context not set in footer.' );
+// Context.
+$timber_context = $GLOBALS['timberContext'];
+if ( ! isset( $timber_context ) ) {
+	throw new \Exception( 'Timber context not set in footer.' );
 }
-$timberContext['content'] = ob_get_contents();
+$timber_context['content'] = ob_get_contents();
 ob_end_clean();
 
-// Render with Timber
-Timber::render( $templates, $timberContext );
+// Render with Timber.
+Timber::render( $templates, $timber_context );
