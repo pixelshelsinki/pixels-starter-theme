@@ -17,7 +17,7 @@ if ( ! class_exists( 'Timber' ) ) {
   function missing_timber_admin_notice() {
     echo '<div class="error"><p>' . sprintf(__('Timber not activated. Make sure you activate the plugin in <a href="%1$s">%2$s</a>' ), esc_url( admin_url( 'plugins.php#timber' ) ), esc_url( admin_url( 'plugins.php') ) ) . '</p></div>';
   }
-  add_action( 'admin_notices', 'missing_timber_admin_notice' );
+  add_action( 'admin_notices', __NAMESPACE__ . '\\missing_timber_admin_notice' );
 
   /**
    * Output a page on the frontend warning about Timber plugin not activated.
@@ -27,7 +27,7 @@ if ( ! class_exists( 'Timber' ) ) {
   function missing_timber_frontend_notice($template) {
     wp_die( __( 'Oh no! You need to activate the Timber plugin before you can use this theme.', 'pixels-starter-theme' ) );
   }
-  add_filter('template_include', 'missing_timber_frontend_notice' );
+  add_filter('template_include', __NAMESPACE__ . '\\missing_timber_frontend_notice' );
 
   return;
 }
@@ -156,4 +156,4 @@ class PixelsSite extends TimberSite
   }
 }
 
-new PixelsSite();
+new \PixelsSite();
