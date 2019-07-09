@@ -6,7 +6,7 @@
  # @var user
  #}
 
-<form id="form" class="form form-new-comment" method="post" action="{{ site.site_url~'/wp-comments-post.php' }}">
+<form id="form" class="form form-new-comment" method="post" action="{{ site.site_url ~ '/wp-comments-post.php' }}">
   <h5>{{ __('Add comment', 'pixels-text-domain') }}</h5>
 
   {% if user %}
@@ -35,8 +35,8 @@
   {% include 'input/input.twig' with { type: 'hidden', name: 'comment_parent', id: 'comment_parent', value: comment.ID|default('0') } %}
 
   <div class="form-group">
-    {% include 'button/button.twig' with { type: 'submit', name: 'submit', class: 'btn', label: _x('Send', 'label for send button on comment form', 'pixels-text-domain' ) } %}
-    {% include 'button/button.twig' with { type: 'reset', class: 'btn', label: _x('Cancel', 'label for cancel button on comment form', 'pixels-text-domain' ) } %}
+    {% include 'button/button.twig' with { type: 'submit', name: 'submit', class: 'btn', label: _x('Send', 'label for send button on comment form', 'pixels-text-domain') } %}
+    {% include 'button/button.twig' with { type: 'reset', class: 'btn', label: _x('Cancel', 'label for cancel button on comment form', 'pixels-text-domain') } %}
   </div>
   <p class="help-text">{{ __('Your comment will be revised by the site if needed.', 'pixels-text-domain') }}</p>
 </form>

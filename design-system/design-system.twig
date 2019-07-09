@@ -63,32 +63,16 @@
                     <p>{{ variation.description }}</p>
 
                     <div class="ds__component-variation__output {{ background }}">
-                      {% if files.defaults %}
-                        {% set variables = files.defaults|merge(variation.variables) %}
-                      {% else %}
-                        {% set variables = variation.variables %}
-                      {% endif %}
-
-                      {% include component.slug~'/'~files.filename with variables %}
+                      {% include[component.slug ~ '/' ~ files.filename]with files.defaults ? files.defaults|merge(variation.variables) : variation.variables %}
                     </div>
-
-                    {# % if variation.variables %}
-                      { { 'with { ' }}
-                      { % for variable, value in variation.variables %}
-                        { { variable }}: {{ value }},
-                      { % endfor %}
-                      { { ' }' }}
-                    { % endif % #}
 
                     {% if files.hideCodeSnippet != true %}
                       <code>
-                        {{ '{% include '~component.slug~'/'~files.filename~' %}' }}
+                        {{ '{% include ' ~ component.slug ~ '/' ~ files.filename ~ ' %}' }}
                       </code>
                     {% endif %}
 
-
                   </div>
-
                 {% endfor %}
               {% endif %}
             {% endfor %}

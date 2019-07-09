@@ -27,7 +27,6 @@
   {% set classes = '' %}
   {% set disabled = false %}
   {% set help_text = __('Helper text for the field above.', 'pixels-text-domain') %}
-  {% set help_text_classes = 'text-muted' %}
   {% set id = '' %}
   {% set label = '' %}
   {% set label_classes = '' %}
@@ -37,10 +36,12 @@
   {% set required = false %}
   {% set rows = 3 %}
   {% set cols = 60 %}
-  {% set type = 'text' %}
   {% set value = '' %}
 {% endif %}
 
+{% block label %}
+  <label for="{{ id }}" class="{{ label_classes }}">{{ label }}</label>
+{% endblock %}
 {% block input %}
-  <textarea class="form-control {{ classes }}" id="{{ id }}" name="{{ name }}" {{ rows ? 'rows="'~rows~'"' }} {{ cols ? 'cols="'~cols~'"' }} {{ help_text ? 'aria-describedby="'~help_text~'"' }} {{ disabled ? 'disabled' }} {{ readonly ? 'readonly' }} {{ required ? 'required' }}>{{ value }}</textarea>
+  <textarea class="form-control {{ classes }}" id="{{ id }}" name="{{ name }}" {{ rows ? 'rows="' ~ rows ~ '"' }} {{ cols ? 'cols="' ~ cols ~ '"' }} {{ help_text ? 'aria-describedby="' ~ help_text ~ '"' }} {{ disabled ? 'disabled' }} {{ readonly ? 'readonly' }} {{ required ? 'required' }} {{ placeholder ? 'placeholder="' ~ placeholder ~ '"' }}>{{ value }}</textarea>
 {% endblock %}

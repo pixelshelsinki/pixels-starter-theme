@@ -26,14 +26,13 @@
   {% set label = '' %}
   {% set label_classes = '' %}
   {% set name = '' %}
-  {% set readonly = false %}
   {% set required = false %}
   {% set value = '' %}
 {% endif %}
 
 <div class="form-check {{ inline ? 'form-check-inline' }} {{ disabled ? 'disabled' }}">
-  <label class="form-check-label">
-    <input class="form-check-input" type="checkbox" value="{{ value }}" {{ checked ? 'checked' }} {{ disabled ? 'disabled' }} {{ required ? 'required' }}>
+  <label class="form-check-label {{ label_classes }}">
+    <input class="form-check-input {{ classes }}" id="{{ id }}" name="{{ name }}" type="checkbox" value="{{ value }}" {{ checked ? 'checked' }} {{ disabled ? 'disabled' }} {{ required ? 'required' }}>
     {{ label }}
   </label>
 </div>

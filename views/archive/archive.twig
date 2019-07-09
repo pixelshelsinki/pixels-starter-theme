@@ -6,7 +6,7 @@
 
 {% block site_content %}
 	{% for post in posts %}
-		{% include ['teaser/teaser-'~post.post_type~'.twig', 'teaser/teaser.twig'] %}
+		{% include['teaser/teaser-' ~ post.post_type ~ '.twig', 'teaser/teaser.twig'] %}
 	{% endfor %}
 
 	{% include 'pagination/pagination.twig' with { pagination: pagination } %}

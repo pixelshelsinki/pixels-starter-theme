@@ -6,7 +6,7 @@
  # @var comment	The comment thread from WordPress
  #}
 
-<article class="comment{{ comment.comment_type ? ' comment-'~comment.comment_type }}" id="comment-{{ comment.ID }}">
+<article class="comment{{ comment.comment_type ? ' comment-' ~ comment.comment_type }}" id="comment-{{ comment.ID }}">
 	<h5 class="comment-author">{{ comment.author.name }}</h5>
 	<div class="comment-content">{{ comment.comment_content|wpautop }}</div>
 
