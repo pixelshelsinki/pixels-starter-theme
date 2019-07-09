@@ -1,11 +1,15 @@
 <?php
 /**
- * Functions to handle assets.
+ * Functions for handling assets.
  *
- * @version 2.0.0
+ * These functions get the correct assets when production assets for a project
+ * have been built.
+ *
+ * @package WordPress
+ * @subpackage PixelsTheme
  */
 
-namespace Theme\Assets;
+namespace PixelsTheme\Assets;
 
 /**
  * Get the JSON manifest.
@@ -15,8 +19,8 @@ namespace Theme\Assets;
  * @return array
  */
 function get_json_manifest() {
-  $manifest_path = get_template_directory() . '/dist/assets.json';
-  return file_exists($manifest_path) ? json_decode(file_get_contents($manifest_path), true) : [];
+	$manifest_path = get_template_directory() . '/dist/assets.json';
+	return file_exists( $manifest_path ) ? json_decode( file_get_contents( $manifest_path ), true ) : [];
 }
 
 /**
@@ -24,12 +28,12 @@ function get_json_manifest() {
  *
  * If the manifest does not have an entry for $asset, then return $asset.
  *
- * @param string $asset The original name of the file before cache-busting
+ * @param string $asset The original name of the file before cache-busting.
  * @return string
  */
-function get_asset($asset) {
-  $manifest = get_json_manifest();
-  return isset($manifest[$asset]) ? $manifest[$asset] : $asset;
+function get_asset( $asset ) {
+	$manifest = get_json_manifest();
+	return isset( $manifest[ $asset ] ) ? $manifest[ $asset ] : $asset;
 }
 
 /**
@@ -41,6 +45,6 @@ function get_asset($asset) {
  * @param string $asset An asset.
  * @return string
  */
-function get_asset_uri($asset) {
-  return get_template_directory_uri() . '/dist\/' . get_asset($asset);
+function get_asset_uri( $asset ) {
+	return get_template_directory_uri() . '/dist\/' . get_asset( $asset );
 }
