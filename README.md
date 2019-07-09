@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/pixelshelsinki/pixels-starter-theme.svg?branch=master)](https://travis-ci.org/pixelshelsinki/pixels-starter-theme)
+[![Build Status](https://travis-ci.org/pixelshelsinki/pixels-starter-theme.svg?branch=master)](https://travis-ci.org/pixelshelsinki/pixels-starter-theme) [![This project is using Percy.io for visual regression testing.](https://percy.io/static/images/percy-badge.svg)](https://percy.io/Pixels-Helsinki-Oy/pixels)
 
 # Pixels Starter Theme
 
