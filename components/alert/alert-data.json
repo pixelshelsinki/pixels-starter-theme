@@ -1,0 +1,42 @@
+[
+  {
+    "classes": "alert-success",
+    "dismissable": false,
+    "message": "This alert is successful and stays in place."
+  },
+  {
+    "classes": "alert-warning",
+    "dismissable": false,
+    "message": "This alert is a warning and stays in place."
+  },
+  {
+    "classes": "alert-danger",
+    "dismissable": false,
+    "message": "This alert is an error and stays in place."
+  },
+  {
+    "classes": "alert-info",
+    "dismissable": false,
+    "message": "This alert is for information and stays in place."
+  },
+  {
+    "classes": "alert-success",
+    "dismissable": true,
+    "message": "This alert is successful and can be dismissed."
+  },
+  {
+    "classes": "alert-warning",
+    "dismissable": true,
+    "message": "This alert is a warning and can be dismissed."
+  },
+  {
+    "classes": "alert-danger",
+    "dismissable": true,
+    "message": "This alert is an error and can be dismissed."
+  },
+  {
+    "classes": "alert-info",
+    "dismissable": true,
+    "message": "This alert is information and can be dismissed."
+  }
+]

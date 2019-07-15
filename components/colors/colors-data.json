@@ -1,0 +1,19 @@
+{
+  "colors": [
+    {
+      "bgClass": "bg-primary",
+      "textClass": "text-primary",
+      "variable": "$primary"
+    },
+    {
+      "bgClass": "bg-secondary",
+      "textClass": "text-secondary",
+      "variable": "$secondary"
+    },
+    {
+      "bgClass": "bg-default",
+      "textClass": "text-default",
+      "variable": "$default"
+    }
+  ]
+}
