@@ -24,7 +24,6 @@ class PixelsSite extends \TimberSite {
 		 * @link https://roots.io/plugins/soil/
 		 */
 		add_theme_support( 'soil-clean-up' );
-		add_theme_support( 'soil-jquery-cdn' );
 		add_theme_support( 'soil-nice-search' );
 
 		/**

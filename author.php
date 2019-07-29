@@ -11,7 +11,7 @@
 global $wp_query;
 
 // Templates.
-$templates = [ 'author/author.twig', 'archive/archive.twig' ];
+$templates = [ 'author/author.twig', 'index/index.twig' ];
 
 // Context.
 $context          = Timber::get_context();
