@@ -150,5 +150,3 @@ This theme uses a linter that will force certain styling of SCSS and JS. This is
 ### lib/
 
 `lib/` is where the PHP setup functionality related to the theme lives. To ensure a file in this directory loads, add it in the array at the end of the functions.php file.
-
-*currently files in here are still being finalised, but this shouldn't affect the use of the theme*
