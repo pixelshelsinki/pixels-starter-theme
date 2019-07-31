@@ -3,6 +3,8 @@
 // Import npm dependencies
 @import "~bootstrap/scss/bootstrap";
 
+$path_to_templates: "../../templates/";
+
 // *************
 // Common styles
 // *************
@@ -14,13 +16,13 @@
 // ****************
 // Component styles
 // ****************
-@import "../../components/comment/comment";
-@import "../../design-system/colors/colors";
-@import "../../components/form/form";
-@import "../../components/form/form-new-comment";
-@import "../../components/single-content/single-content";
-@import "../../components/site-header/site-header";
-@import "../../design-system/typography/typography";
+@import "../../templates/components/comment/comment";
+@import "../../templates/components/colors/colors";
+@import "../../templates/components/form/form";
+@import "../../templates/components/form/form-new-comment";
+@import "../../templates/components/single-content/single-content";
+@import "../../templates/components/site-header/site-header";
+@import "../../templates/components/typography/typography";
 
 // ***********
 // View styles
