@@ -62,17 +62,17 @@ To start developing do the following:
 
 ### Build Commands
 
-* `yarn run start` -- Compile assets when file changes are made, start Browsersync session
-* `yarn run build` -- Compile and optimize the files in your assets directory
-* `yarn run build:production` -- Compile assets for production
+* `yarn start` -- Compile assets when file changes are made, start Browsersync session
+* `yarn build` -- Compile and optimize the files in your assets directory
+* `yarn build:production` -- Compile assets for production
 
 ### Lint Commands
 
 Lint commands check that code is structured and written nicely. If the commands above return lint errors, run one of the following (based on the error) to get a more detailed explanation.
 
-* `yarn run lint` -- Checks JS and SCSS for errors, formatting and other issues.
-* `yarn run lint:scripts` -- Checks JS *only* for errors, formatting and other issues.
-* `yarn run lint:styles` -- Checks *SCSS* for errors, formatting and other issues.
+* `yarn lint` -- Checks JS and SCSS for errors, formatting and other issues.
+* `yarn lint:scripts` -- Checks JS *only* for errors, formatting and other issues.
+* `yarn lint:styles` -- Checks *SCSS* for errors, formatting and other issues.
 
 ## Theme Structure
 
