@@ -3,7 +3,7 @@
 namespace PixelsTheme\DesignSystem;
 
 /**
- * Add the 'ds-section' query variable so Wordpress won't mangle them.
+ * Add the `component` query variable so Wordpress won't mangle them.
  */
 function add_query_vars( $vars ){
   $vars[] = 'component';
