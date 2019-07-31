@@ -81,32 +81,38 @@ Lint commands check that code is structured and written nicely. If the commands 
 The theme structure is kept simple, sticking to a relatively familiar WordPress structure for the most part. However we try and follow a React Redux-style for components and views, so everything is kept in one package as much as possible.
 
 ```
-pixels-starter-theme/            # -> Theme root folder
-|-- assets/                      # -> Front-end assets
-  |-- config.json                # -> Settings for compiled assets
-  |-- build/                     # -> Webpack and Lint config
-  |-- fonts/                     # -> Theme fonts
-  |-- images/                    # -> Theme images
-  |-- scripts/                   # -> Theme JS
-  |-- styles/                    # -> Theme general styles
-|-- components/                  # -> Components used in the theme
-  |-- component/                 # -> Type of component
-    |-- component.scss           # -> SCSS file for a component (if required)
-    |-- component.twig           # -> Twig template file for a component (required)
-    |-- component-variation.twig # -> Twig template file for a component variation. May extend the base component or be completely independent.
-|-- dist/                        # -> Compiled assets (never edit). Always reference assets from here (never assets/)
-|-- lib/                         # -> Theme PHP
-  |-- assets.php                 # -> PHP functions for fetching assets correctly
-  |-- customizer.php             # -> PHP required for customizer !! Not in use currently
-  |-- filters.php                # -> PHP filters !! Not in use currently
-  |-- timber.php                 # -> PHP for setting up Timber on the theme side
-  |-- widget-areas.php           # -> PHP for setting up widget areas
-|-- node_modules/                # -> Node modules used for theme development (never edit)
-|-- vendor                       # -> Composer dependencies (never edit) !! Not sure if used.
-|-- views/                       # -> Views used in the theme
-  |-- view/                      # -> Type of view
-    |-- view.scss                # -> SCSS file for a view (if required)
-    |-- view.twig                # -> Twig template file for a view (required)
+pixels-starter-theme/                # -> Theme root folder
+|-- assets/                          # -> Front-end assets
+  |-- build/                         # -> Webpack and Lint config
+  |-- fonts/                         # -> Theme fonts
+  |-- images/                        # -> Theme images
+  |-- scripts/                       # -> Theme JS
+  |-- styles/                        # -> Theme general styles
+  |-- config.json                    # -> Settings for compiled assets
+  |-- config-local-example.json      # -> Local settings for compiled assets. Override here if need be.
+|-- data/                            # -> WordPress template files, where data is setup.
+  |-- index.php                      # -> The minimum required file.
+|-- dist/                            # -> Compiled assets (never edit). Always reference assets from here (never assets/)
+|-- languages/                       # -> Language files for the theme.
+|-- lib/                             # -> Theme PHP
+  |-- assets.php                     # -> PHP functions for fetching assets correctly
+  |-- class-pixelssite.php           # -> PHP class for the theme, extends TimberSite.
+  |-- filters.php                    # -> PHP filters !! Not in use currently
+  |-- templates.php                  # -> PHP handles template changes.
+  |-- timber.php                     # -> PHP for setting up Timber on the theme side
+  |-- widget-areas.php               # -> PHP for setting up widget areas
+|-- node_modules/                    # -> Node modules used for theme development (never edit)
+|-- templates/                       # -> Templates used in the theme. All twig files live here.
+  |-- views/                         # -> Views used in the theme
+    |-- view/                        # -> Type of view
+      |-- view.scss                  # -> SCSS file for a view (if required)
+      |-- view.twig                  # -> Twig template file for a view (required)
+  |-- components/                    # -> Components used in the theme
+    |-- component/                   # -> Type of component
+      |-- component.scss             # -> SCSS file for a component (if required)
+        |-- component.twig           # -> Twig template file for a component (required)
+        |-- component-variation.twig # -> Twig template file for a component variation. May extend the base component or be completely independent.
+|-- vendor                           # -> Composer dependencies (never edit)
 ```
 
 ### assets/
@@ -144,5 +150,3 @@ This theme uses a linter that will force certain styling of SCSS and JS. This is
 ### lib/
 
 `lib/` is where the PHP setup functionality related to the theme lives. To ensure a file in this directory loads, add it in the array at the end of the functions.php file.
-
-*currently files in here are still being finalised, but this shouldn't affect the use of the theme*
