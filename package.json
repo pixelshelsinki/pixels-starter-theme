@@ -22,58 +22,6 @@
     "android 4",
     "opera 12"
   ],
-  "eslintConfig": {
-    "root": true,
-    "extends": "eslint:recommended",
-    "globals": {
-      "wp": true
-    },
-    "env": {
-      "node": true,
-      "es6": true,
-      "amd": true,
-      "browser": true,
-      "jquery": true
-    },
-    "parserOptions": {
-      "ecmaFeatures": {
-        "globalReturn": true,
-        "generators": false,
-        "objectLiteralDuplicateProperties": false,
-        "experimentalObjectRestSpread": true
-      },
-      "ecmaVersion": 2017,
-      "sourceType": "module"
-    },
-    "plugins": [
-      "import"
-    ],
-    "settings": {
-      "import/core-modules": [],
-      "import/ignore": [
-        "node_modules",
-        "\\.(coffee|scss|css|less|hbs|svg|json)$"
-      ]
-    },
-    "rules": {
-      "comma-dangle": [
-        "error",
-        {
-          "arrays": "always-multiline",
-          "objects": "always-multiline",
-          "imports": "always-multiline",
-          "exports": "always-multiline",
-          "functions": "ignore"
-        }
-      ]
-    }
-  },
-  "stylelint": {
-    "extends": "stylelint-config-standard",
-    "rules": {
-      "no-empty-source": null
-    }
-  },
   "scripts": {
     "build": "webpack --progress --config assets/build/webpack.config.js",
     "build:production": "webpack --progress -p --config assets/build/webpack.config.js",
@@ -82,53 +30,53 @@
     "rmdist": "rimraf dist",
     "lint": "npm run -s lint:scripts && npm run -s lint:styles",
     "lint:scripts": "eslint assets/scripts assets/build",
-    "lint:styles": "stylelint \"assets/styles/**/*.{css,sass,scss,sss,less}\"",
+    "lint:styles": "stylelint \"{assets/styles,templates}/**/*.{css,sass,scss,sss,less}\"",
     "test": "npm run -s lint"
   },
   "engines": {
-    "node": ">= 6.9.4"
+    "node": ">= 8.0.0"
   },
   "devDependencies": {
-    "autoprefixer": "~7.1",
-    "browser-sync": "~2.18",
+    "autoprefixer": "~8.2.0",
+    "browser-sync": "~2.24.7",
     "browsersync-webpack-plugin": "^0.6.0",
     "bs-html-injector": "~3.0",
     "buble-loader": "^0.4.1",
-    "cache-loader": "~1.0",
-    "clean-webpack-plugin": "~0.1.16",
+    "cache-loader": "~1.2.5",
+    "clean-webpack-plugin": "~0.1.18",
     "copy-globs-webpack-plugin": "^0.2.0",
-    "css-loader": "^0.28.4",
-    "cssnano": "~4.0.0-rc.1",
-    "eslint": "~4.2",
+    "css-loader": "^0.28.9",
+    "cssnano": "~4.0.5",
+    "eslint": "~4.19.1",
     "eslint-loader": "~1.9",
-    "eslint-plugin-import": "~2.7",
-    "extract-text-webpack-plugin": "~3.0",
-    "file-loader": "^0.11.2",
+    "eslint-plugin-import": "~2.14.0",
+    "extract-text-webpack-plugin": "~3.0.2",
+    "file-loader": "^1.1.6",
     "friendly-errors-webpack-plugin": "^1.6.1",
-    "imagemin-mozjpeg": "^6.0",
-    "imagemin-webpack-plugin": "^1.5.0-beta.0",
+    "imagemin-mozjpeg": "~7.0.0",
+    "imagemin-webpack-plugin": "~2.2.0",
     "import-glob": "~1.5",
-    "node-sass": "~4.5",
-    "postcss-loader": "~2.0",
+    "node-sass": "~4.9.4",
+    "postcss-loader": "~2.1.0",
     "postcss-safe-parser": "~3.0",
-    "resolve-url-loader": "~2.1",
+    "resolve-url-loader": "~2.3.1",
     "rimraf": "~2.6",
     "sass-loader": "~6.0",
-    "style-loader": "^0.18.2",
-    "stylelint": "~7.12",
-    "stylelint-config-standard": "~16.0",
-    "stylelint-webpack-plugin": "^0.8.0",
-    "url-loader": "^0.5.9",
-    "webpack": "~3.3",
-    "webpack-assets-manifest": "^0.7.0",
-    "webpack-dev-middleware": "~1.11",
-    "webpack-hot-middleware": "~2.18",
-    "webpack-merge": "~4.1",
-    "yargs": "~8.0"
+    "style-loader": "^0.22.1",
+    "stylelint": "^8.4.0",
+    "stylelint-config-standard": "~18.2.0",
+    "stylelint-webpack-plugin": "^0.10.5",
+    "url-loader": "^0.6.2",
+    "webpack": "~3.10.0",
+    "webpack-assets-manifest": "^1.0.0",
+    "webpack-dev-middleware": "~2.0.4",
+    "webpack-hot-middleware": "~2.22.3",
+    "webpack-merge": "~4.1.4",
+    "yargs": "~11.0.0"
   },
   "dependencies": {
-    "bootstrap": "^4.0.0",
-    "popper.js": "^1.11.0",
-    "jquery": "1.12.4 - 3"
+    "bootstrap": "v4.3.1",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.14.7"
   }
 }

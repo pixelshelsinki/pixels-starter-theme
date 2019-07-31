@@ -51,7 +51,7 @@ let webpackConfig = {
       },
       {
         test: /\.js$/,
-        exclude: [/(node_modules|bower_components)(?![/|\\](bootstrap|foundation-sites))/],
+        exclude: [/node_modules(?![/|\\](bootstrap|foundation-sites))/],
         use: [
           { loader: 'cache' },
           { loader: 'buble', options: { objectAssign: 'Object.assign' } },
@@ -89,12 +89,17 @@ let webpackConfig = {
               },
             },
             { loader: 'resolve-url', options: { sourceMap: config.enabled.sourceMaps } },
-            { loader: 'sass', options: { sourceMap: config.enabled.sourceMaps } },
+            {
+              loader: 'sass', options: {
+                sourceMap: config.enabled.sourceMaps,
+                sourceComments: true,
+              },
+            },
           ],
         }),
       },
       {
-        test: /\.(ttf|eot|woff2?|png|jpe?g|gif|svg|ico)$/,
+        test: /\.(ttf|otf|eot|woff2?|png|jpe?g|gif|svg|ico)$/,
         include: config.paths.assets,
         loader: 'url',
         options: {
@@ -103,8 +108,8 @@ let webpackConfig = {
         },
       },
       {
-        test: /\.(ttf|eot|woff2?|png|jpe?g|gif|svg|ico)$/,
-        include: /node_modules|bower_components/,
+        test: /\.(ttf|otf|eot|woff2?|png|jpe?g|gif|svg|ico)$/,
+        include: /node_modules/,
         loader: 'url',
         options: {
           limit: 4096,
@@ -118,7 +123,6 @@ let webpackConfig = {
     modules: [
       config.paths.assets,
       'node_modules',
-      'bower_components',
     ],
     enforceExtension: false,
   },

@@ -2,7 +2,7 @@
   "name": "pixelshelsinki/pixels-starter-theme",
   "type": "wordpress-theme",
   "license": "MIT",
-  "description": "WordPress starter theme mixing Timber Twig templates and webpack.",
+  "description": "A WordPress starter theme mixing Timber Twig templates and webpack.",
   "homepage": "https://github.com/pixelshelsinki/pixels-starter-theme",
   "authors": [
     {
