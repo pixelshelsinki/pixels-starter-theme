@@ -15,8 +15,6 @@ Every 6 months a full check of the theme will be done, to update to new versions
 
 Please read the documentation below before using. **If things are not clear or you find a mistake, or simply a way to improve the theme, please submit an issue or pull request.**
 
-*Currently the Pixels Start Theme is still in beta, until the last few things have been finished.*
-
 ## Tools and Technologies
 
 This theme uses the following:
