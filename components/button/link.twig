@@ -12,15 +12,6 @@
  # @var type      The type for this button (button, reset or submit)
  #}
 
-{% if pattern_library %}
-  {% set active = false %}
-  {% set classes = 'btn-default' %}
-  {% set data = { example: 'thing' } %}
-  {% set disabled = false %}
-  {% set label = 'Link' %}
-  {% set href = 'http://example.com' %}
-{% endif %}
-
 {% for key, datum in data %}
   {% set data_attributes = data_attributes ~ 'data-' ~ key ~ '=\'' ~ datum ~ '\' ' %}
 {% endfor %}
