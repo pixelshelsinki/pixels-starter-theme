@@ -1,0 +1,20 @@
+[
+  {
+    "comment": {
+      "comment_type": "comment",
+      "author": {
+        "name": "Joe Blogs"
+      },
+      "comment_content": "Here is a really exciting comment example with really amazing information and opinion on absolutely nothing.",
+      "children": [
+        {
+          "comment_type": "comment",
+          "author": {
+            "name": "Carol Crafter"
+          },
+          "comment_content": "I'm replying about your exciting comment example but I feel that it is lacking, much like my imagination."
+        }
+      ]
+    }
+  }
+]

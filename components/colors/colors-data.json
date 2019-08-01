@@ -1,19 +1,17 @@
-{
-  [
-    {
-      "bgClass": "bg-primary",
-      "textClass": "text-primary",
-      "variable": "$primary"
-    },
-    {
-      "bgClass": "bg-secondary",
-      "textClass": "text-secondary",
-      "variable": "$secondary"
-    },
-    {
-      "bgClass": "bg-default",
-      "textClass": "text-default",
-      "variable": "$default"
-    }
-  ]
-}
+[
+  {
+    "bg_class": "bg-primary",
+    "text_class": "text-primary",
+    "variable": "$primary"
+  },
+  {
+    "bg_class": "bg-secondary",
+    "text_class": "text-secondary",
+    "variable": "$secondary"
+  },
+  {
+    "bg_class": "bg-default",
+    "text_class": "text-default",
+    "variable": "$default"
+  }
+]

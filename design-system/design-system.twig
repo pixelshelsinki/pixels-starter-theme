@@ -9,8 +9,8 @@
 {% block site_content %}
 
 <h1 class="text-allergro my-5">Design System</h1>
-<div class="row">
 
+<div class="row">
   <div class="col-md-4 col-lg-3">
     <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
       {% for navigation_item in navigation %}
@@ -37,9 +37,11 @@
         <h3 class="mb-4 h4"><code>{{ variation.filename }}</code></h3>
 
         {% if variation.data %}
-          {% for data_example in variation.data %}
+          {% for example_data in variation.data %}
+          {{dump(example_data)}}
+
             <div class="mb-4">
-              {% include [component.slug ~ '/' ~ variation.filename] with data_example %}
+              {% include [variation.filepath] with example_data %}
             </div>
           {% endfor %}
         {% endif %}

@@ -155,7 +155,7 @@ function get_component_variations( $component_slug ) {
 
     $component_variations[$component_variation_filename] = [
       'filename' => $component_variation_filename,
-      'path' => "{$component_slug}/{$component_variation_filename}",
+      'filepath' => "{$component_slug}/{$component_variation_filename}",
       'data' => get_variation_data( $component_slug, $component_variation_filename ),
     ];
   }
