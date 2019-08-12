@@ -1,0 +1,42 @@
+[
+  {
+    "content": "An h1 element.",
+    "element": "h1",
+    "classes": ""
+  },
+  {
+    "content": "An h2 element.",
+    "element": "h2",
+    "classes": ""
+  },
+  {
+    "content": "An h3 element.",
+    "element": "h3",
+    "classes": ""
+  },
+  {
+    "content": "An h4 element.",
+    "element": "h4",
+    "classes": ""
+  },
+  {
+    "content": "An h5 element.",
+    "element": "h5",
+    "classes": ""
+  },
+  {
+    "content": "An h6 element.",
+    "element": "h6",
+    "classes": ""
+  },
+  {
+    "content": "Lead paragraph text",
+    "element": "p",
+    "classes": "lead"
+  },
+  {
+    "content": "Normal Paragraph text",
+    "element": "p",
+    "classes": ""
+  }
+]

@@ -8,7 +8,7 @@
 
 {% block site_content %}
 
-<h1 class="text-allergro my-5">Design System</h1>
+<h1 class="text-allergro my-5">{{ __( 'Design System', 'pixels-text-domain' ) }}</h1>
 
 <div class="row">
   <div class="col-md-4 col-lg-3">
@@ -21,7 +21,7 @@
     </div>
   </div>
 
-  <div class="col-md-8 col-lg-9">
+  <div class="ds__component col-md-8 col-lg-9">
     <h2>{{ component.label }}</h2>
 
     {% if component.description %}
@@ -38,12 +38,13 @@
 
         {% if variation.data %}
           {% for example_data in variation.data %}
-          {{dump(example_data)}}
 
             <div class="mb-4">
               {% include [variation.filepath] with example_data %}
             </div>
           {% endfor %}
+        {% else %}
+          <p>{{ __( 'No valid data file found for <code>%s</code>. Create one to display an example of this component. If you have created a file, check that the file contains vaild JSON syntax.', 'pixels-text-domain' )|format( variation.filename ) }}</p>
         {% endif %}
       {% endfor %}
 

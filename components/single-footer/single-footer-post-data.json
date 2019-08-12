@@ -1,0 +1,42 @@
+[
+  {
+    "post": {
+      "type": "post",
+      "pagination": {
+        "prev": {
+          "link": "/page/1/",
+          "title": "1",
+          "current": false
+        },
+        "pages": [
+          {
+            "link": "/page/1/",
+            "title": "1",
+            "current": false
+          },
+          {
+            "link": "/page/2/",
+            "title": "2",
+            "current": false
+          },
+          {
+            "link": "/page/3/",
+            "title": "3",
+            "current": false
+          },
+          {
+            "link": "/page/4/",
+            "title": "4",
+            "current": true
+          },
+          {
+            "link": "/page/5/",
+            "title": "5",
+            "current": false
+          }
+        ],
+        "next": false
+      }
+    }
+  }
+]
