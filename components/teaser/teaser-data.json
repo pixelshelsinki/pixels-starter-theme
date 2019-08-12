@@ -1,0 +1,16 @@
+[
+  {
+    "post": {
+      "title": "An example post title",
+      "type": "post",
+      "ID": 345,
+      "link": "/example-post-title",
+      "preview": "Some example preview text.",
+      "get_thumbnail": false,
+      "thumbnail": {
+        "src": false,
+        "alt": "nothing here"
+      }
+    }
+  }
+]

@@ -1,0 +1,10 @@
+[
+  {
+    "breadcrumbs": [
+      {"url": "#", "label": "Home"},
+      {"url": "#", "label": "Library"},
+      {"url": "#", "label": "Data"},
+      {"url": "", "label": "Item"}
+    ]
+  }
+]

@@ -143,4 +143,6 @@ This theme uses a linter that will force certain styling of SCSS and JS. This is
 
 `lib/` is where the PHP setup functionality related to the theme lives. To ensure a file in this directory loads, add it in the array at the end of the functions.php file.
 
-*currently files in here are still being finalised, but this shouldn't affect the use of the theme*
+## Design System
+
+This starter theme comes with a basic, semi-automatic design system. To see the design system, create a page using the 'Design System' template. For each component you can create a <component>-data.json file, with an array of json objects. Each object in the top level array is different example that will be output, useful for if you need to output different configurations of the same component for viewing, or visual regression testing at a component level.

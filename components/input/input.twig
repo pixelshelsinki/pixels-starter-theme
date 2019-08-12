@@ -19,22 +19,6 @@
  # @var value             The value of the input.
  #}
 
-{% if pattern_library %}
-  {% set classes = '' %}
-  {% set disabled = false %}
-  {% set help_text = __('Helper text for the field above.', 'pixels-text-domain') %}
-  {% set help_text_classes = 'text-muted' %}
-  {% set id = '' %}
-  {% set label = '' %}
-  {% set label_classes = '' %}
-  {% set name = '' %}
-  {% set placeholder = '' %}
-  {% set readonly = false %}
-  {% set required = false %}
-  {% set type = 'text' %}
-  {% set value = '' %}
-{% endif %}
-
 {% block label %}
   {% if type != 'hidden' %}
     <label for="{{ id }}" class="{{ label_classes }}">{{ label }}</label>
@@ -46,7 +30,7 @@
 {% block help_text %}
   {% if help_text %}
     <small id="{{ id }}-help-text" class="form-text {{ help_text_classes }}">
-      {{ help_text.content }}
+      {{ help_text }}
     </small>
   {% endif %}
 {% endblock %}

@@ -8,79 +8,47 @@
 
 {% block site_content %}
 
-<h1 class="text-allergro my-5">Design System</h1>
+<h1 class="text-allergro my-5">{{ __( 'Design System', 'pixels-text-domain' ) }}</h1>
+
 <div class="row">
   <div class="col-md-4 col-lg-3">
     <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-      {% for key, component in components %}
-        <a class="nav-link {{ key == 0 ? 'active' }}" id="v-pills-{{ component.slug }}-tab" data-toggle="pill" href="#v-pills-{{ component.slug }}" role="tab" aria-controls="v-pills-{{ component.slug }}" aria-selected="true">
-          {{ component.label }}
+      {% for navigation_item in navigation %}
+        <a class="nav-link {{ navigation_item.active ? 'active' }}" href="{{ navigation_item.link }}">
+          {{ navigation_item.label }}
         </a>
       {% endfor %}
     </div>
   </div>
-  <div class="col-md-8 col-lg-9">
-    <div class="tab-content" id="v-pills-tabContent">
-      {% for key, component in components %}
-        <div class="tab-pane fade {{ key == 0 ? 'show active' }}" id="v-pills-{{ component.slug }}" role="tabpanel" aria-labelledby="v-pills-{{ component.slug }}-tab">
 
-          <h2>{{ component.label }}</h2>
+  <div class="ds__component col-md-8 col-lg-9">
+    <h2>{{ component.label }}</h2>
 
-          {% if component.description %}
-          <div class="ds__component__description mb-4">
-            {{ component.description }}
-          </div>
-          {% endif %}
-
-          {% if component.variations %}
-
-            {# Loop through variations, variations are (at the moment) organized per file. #}
-            {% for files in component.variations %}
-
-              <h3 class="mb-4 h4"><code>{{ files.filename }}</code></h3>
-
-              {% if files.variations %}
-
-                {% if files.variables %}
-                  <section class="ds__component__variables mb-4">
-                    <h4>{{ __('Variables', 'pixels-text-domain') }}</h4>
-
-                    <dl class="ds__component__variables-list row">
-                      {% for variable, description in files.variables %}
-                        <dt class="col-sm-3"><code>{{ variable }}</code></dt> <dd class="col-sm-9">{{ description }}</dd>
-                      {% endfor %}
-                    </dl>
-                  </section>
-                {% endif %}
-
-                <h4>{{ __('Variations', 'pixels-text-domain') }}</h4>
-
-                {# Loop through variations for a file #}
-                {% for variation in files.variations %}
-
-                  <div class="ds__component__variation mb-4">
-
-                    <p>{{ variation.description }}</p>
-
-                    <div class="ds__component-variation__output {{ background }}">
-                      {% include[component.slug ~ '/' ~ files.filename]with files.defaults ? files.defaults|merge(variation.variables) : variation.variables %}
-                    </div>
-
-                    {% if files.hideCodeSnippet != true %}
-                      <code>
-                        {{ '{% include ' ~ component.slug ~ '/' ~ files.filename ~ ' %}' }}
-                      </code>
-                    {% endif %}
-
-                  </div>
-                {% endfor %}
-              {% endif %}
-            {% endfor %}
-
-          {% endif %}
-        </div>
-      {% endfor %}
+    {% if component.description %}
+    <div class="ds__component__description mb-4">
+      {{ component.description }}
     </div>
+    {% endif %}
+
+    {% if component.variations %}
+
+      {# Loop through variations, variations are (at the moment) organized per file. #}
+      {% for variation in component.variations %}
+        <h3 class="mb-4 h4"><code>{{ variation.filename }}</code></h3>
+
+        {% if variation.data %}
+          {% for example_data in variation.data %}
+
+            <div class="mb-4">
+              {% include [variation.filepath] with example_data %}
+            </div>
+          {% endfor %}
+        {% else %}
+          <p>{{ __( 'No valid data file found for <code>%s</code>. Create one to display an example of this component. If you have created a file, check that the file contains vaild JSON syntax.', 'pixels-text-domain' )|format( variation.filename ) }}</p>
+        {% endif %}
+      {% endfor %}
+
+    {% endif %}
   </div>
 </div>
 

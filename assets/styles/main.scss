@@ -11,22 +11,19 @@
 @import "common/wordpress";
 @import "common/cookie-notice";
 
-// ********************
-// Design System styles
-// ********************
-@import "../../design-system/colors/colors";
-@import "../../design-system/typography/typography";
-
 // ****************
 // Component styles
 // ****************
 @import "../../components/comment/comment";
+@import "../../components/colors/colors";
 @import "../../components/form/form";
 @import "../../components/form/form-new-comment";
 @import "../../components/single-content/single-content";
 @import "../../components/site-header/site-header";
+@import "../../components/typography/typography";
 
 // ***********
 // View styles
 // ***********
+@import "../../design-system/design-system";
 // @import "../../views/single/single";
