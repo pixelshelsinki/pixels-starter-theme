@@ -9,10 +9,6 @@
  #
  #}
 
-{% if not contents %}
-  {% set contents = { thead: ['#', 'First Name', 'Last Name', 'Username'], tbody: [ ['1', 'Mark', 'Otto', '@mdo'], ['2', 'Jacob', 'Thornton', '@fat'] ] } %}
-{% endif %}
-
 <table class="table {{ classes }}">
   {% block thead %}
     {% if contents.thead %}

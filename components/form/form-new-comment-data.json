@@ -1,0 +1,12 @@
+[
+  {
+    "user": false
+  },
+  {
+    "user": {
+      "email": "joe@example.com",
+      "name": "Joe Blogs",
+      "link": "https://example.com"
+    }
+  }
+]

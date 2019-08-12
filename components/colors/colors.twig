@@ -1,0 +1,11 @@
+{# color swatches, PATTERN LIBRARY USE ONLY #}
+
+<div class="color-item">
+  <div class="color-swatch {{ bg_class }}"></div>
+
+  <ul class="list-unstyled">
+    {% if variable %}<li><code>{{ variable }}</code></li>{% endif %}
+    {% if bg_class %}<li><code>.{{ bg_class }}</code></li>{% endif %}
+    {% if text_class %}<li><code>.{{ text_class }}</code></li>{% endif %}
+  </ul>
+</div>

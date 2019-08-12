@@ -1,0 +1,17 @@
+[
+  {
+    "bg_class": "bg-primary",
+    "text_class": "text-primary",
+    "variable": "$primary"
+  },
+  {
+    "bg_class": "bg-secondary",
+    "text_class": "text-secondary",
+    "variable": "$secondary"
+  },
+  {
+    "bg_class": "bg-default",
+    "text_class": "text-default",
+    "variable": "$default"
+  }
+]

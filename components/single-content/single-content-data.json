@@ -1,0 +1,8 @@
+[
+  {
+    "post": {
+      "type": "post",
+      "get_paged_content": "This is some example paged content for a single content component."
+    }
+  }
+]

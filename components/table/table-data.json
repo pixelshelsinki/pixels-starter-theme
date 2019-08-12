@@ -1,0 +1,27 @@
+[
+  {
+    "classes": "",
+    "contents": {
+      "thead": [
+        "#",
+        "First Name",
+        "Last Name",
+        "Username"
+      ],
+      "tbody": [
+        [
+          "1",
+          "Mark",
+          "Otto",
+          "@mdo"
+        ],
+        [
+          "2",
+          "Jacob",
+          "Thornton",
+          "@fat"
+        ]
+      ]
+    }
+  }
+]
