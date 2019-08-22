@@ -60,5 +60,5 @@ array_map(
 			$pixels_error( sprintf( __( 'Error locating <code>%s</code> for inclusion.', 'pixels-text-domain' ), $file ), 'File not found' );
 		}
 	},
-	[ 'assets', 'class-pixelssite', 'timber', 'widget-areas', 'filters', 'templates' ]
+	[ 'assets', 'class-pixelssite', 'design-system', 'timber', 'widget-areas', 'filters' ]
 );

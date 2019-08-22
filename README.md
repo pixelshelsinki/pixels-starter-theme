@@ -15,8 +15,6 @@ Every 6 months a full check of the theme will be done, to update to new versions
 
 Please read the documentation below before using. **If things are not clear or you find a mistake, or simply a way to improve the theme, please submit an issue or pull request.**
 
-*Currently the Pixels Start Theme is still in beta, until the last few things have been finished.*
-
 ## Tools and Technologies
 
 This theme uses the following:
@@ -38,7 +36,7 @@ To install this theme the server instance must have the following setup:
 To develop this theme you must also have the following:
 
 * [Composer](https://getcomposer.org/download/)
-* [Node.js](http://nodejs.org/) >= 6.9.x, <= 8 (use nvm to switch on your local environment)
+* [Node.js](http://nodejs.org/) >= 8 (use nvm to switch on your local environment)
 * [Yarn](https://yarnpkg.com/en/docs/install) >= 1.0
 
 ## Theme Installation
@@ -117,7 +115,7 @@ pixels-starter-theme/                # -> Theme root folder
 
 ### assets/
 
-`assets/` is where all global SCSS, JS, images and font files should live. From here filesa are compiled to the `dist/` directory.
+`assets/` is where all global SCSS, JS, images and font files should live. From here files are compiled to the `dist/` directory.
 
 Any references to assets (in particular font files and images) should be made via the `dist/` directory, **not** the `assets/` directory. This is because assets in the `dist/` directory have been optimised.
 
@@ -150,3 +148,7 @@ This theme uses a linter that will force certain styling of SCSS and JS. This is
 ### lib/
 
 `lib/` is where the PHP setup functionality related to the theme lives. To ensure a file in this directory loads, add it in the array at the end of the functions.php file.
+
+## Design System
+
+This starter theme comes with a basic, semi-automatic design system. To see the design system, create a page using the 'Design System' template. For each component you can create a <component>-data.json file, with an array of json objects. Each object in the top level array is different example that will be output, useful for if you need to output different configurations of the same component for viewing, or visual regression testing at a component level.

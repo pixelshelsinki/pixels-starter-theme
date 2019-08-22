@@ -7,10 +7,6 @@
  # @var breadcrumbs The array of breadcrumb items, containing url and label for each item.
  #}
 
-{% if pattern_library %}
-  {% set breadcrumbs = [{url: '#', label: 'Home'}, {url: '#', label: 'Library'}, {url: '#', label: 'Data'}, {url: '', label: 'Item'}] %}
-{% endif %}
-
 <ol class="breadcrumb" itemscope itemtype="http://schema.org/BreadcrumbList">
   {% for item in breadcrumbs %}
     <li class="breadcrumb-item{{ loop.last ? ' active' }}" itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">

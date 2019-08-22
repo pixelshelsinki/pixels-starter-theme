@@ -1,0 +1,34 @@
+[
+  {
+    "nav_items": [
+      {
+        "get_children": false,
+        "classes": "",
+        "target": null,
+        "link": "/design-system",
+        "title": "Design System"
+      },
+      {
+        "get_children": false,
+        "classes": "",
+        "target": null,
+        "link": "/design-system",
+        "title": "Components"
+      },
+      {
+        "get_children": false,
+        "classes": "",
+        "target": null,
+        "link": "/design-system",
+        "title": "Special Cases"
+      },
+      {
+        "get_children": false,
+        "classes": "",
+        "target": "_blank",
+        "link": "example.com",
+        "title": "Example.com"
+      }
+    ]
+  }
+]

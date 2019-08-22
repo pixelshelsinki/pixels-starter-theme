@@ -1,0 +1,23 @@
+[
+  {
+    "classes": "btn-default",
+    "data": {},
+    "disabled": false,
+    "label": "Button",
+    "type": "button"
+  },
+  {
+    "classes": "btn-primary",
+    "data": {},
+    "disabled": false,
+    "label": "Button",
+    "type": "button"
+  },
+  {
+    "classes": "btn-secondary",
+    "data": {},
+    "disabled": false,
+    "label": "Button",
+    "type": "button"
+  }
+]

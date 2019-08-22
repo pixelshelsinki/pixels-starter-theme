@@ -1,0 +1,17 @@
+[
+  {
+    "classes": "",
+    "disabled": false,
+    "help_text": "Helper text for the field above.",
+    "help_text_classes": "text-muted",
+    "id": "",
+    "label": "What's your flavour?",
+    "label_classes": "",
+    "name": "",
+    "placeholder": "",
+    "readonly": false,
+    "required": false,
+    "type": "text",
+    "value": ""
+  }
+]

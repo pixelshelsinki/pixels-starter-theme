@@ -11,14 +11,6 @@
  # @var type      The type for this button (button, reset or submit)
  #}
 
-{% if pattern_library %}
-  {% set classes = 'btn-default' %}
-  {% set data = { example: 'thing' } %}
-  {% set disabled = false %}
-  {% set label = 'Button' %}
-  {% set type = 'button' %}
-{% endif %}
-
 {% for key, datum in data %}
   {% set data_attributes = data_attributes ~ 'data-' ~ key ~ '=\'' ~ datum ~ '\' ' %}
 {% endfor %}

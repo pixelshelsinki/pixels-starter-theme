@@ -1,0 +1,18 @@
+[
+  {
+    "classes": "",
+    "disabled": false,
+    "help_text": "Helper text for the field above.",
+    "help_text_classes": "text-muted",
+    "id": "",
+    "label": "How do you feel?",
+    "label_classes": "",
+    "name": "",
+    "placeholder": "",
+    "readonly": false,
+    "required": false,
+    "rows": 3,
+    "cols": 60,
+    "value": ""
+  }
+]

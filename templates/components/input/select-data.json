@@ -1,0 +1,15 @@
+[
+  {
+    "classes": "",
+    "disabled": false,
+    "help_text": "Helper text for the field above.",
+    "help_text_classes": "text-muted",
+    "id": "",
+    "label": "Normal Select",
+    "label_classes": "",
+    "name": "",
+    "options": [{"value": 1, "label": "One"}, {"value": 2, "label": "Two", "selected": true}],
+    "readonly": false,
+    "required": false
+  }
+]

@@ -1,9 +1,3 @@
-{# Typography definition, PATTERN LIBRARY USE ONLY #}
+{# Typography definition, Design System use only. #}
 
-{% if background %}
-  <div class="{{ background }} p-3">
-    {{ '<' ~ element ~ ' class="' ~ variables.classes ~ '">' }}Text{{ '</' ~ element ~ '>' }}
-  </div>
-{% else %}
-  {{ '<' ~ element ~ ' class="' ~ variables.classes ~ '">' }}Text{{ '</' ~ element ~ '>' }}
-{% endif %}
+<{{ element }} classes="{{ classes }}">{{ content }}</{{ element }}>
