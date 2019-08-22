@@ -33,7 +33,8 @@
   "scripts": {
     "test": [
       "phpcs",
-			"twigcs templates"
+			"twigcs templates",
+			"yarn test"
     ]
   }
 }
