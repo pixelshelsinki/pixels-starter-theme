@@ -91,9 +91,9 @@ pixels-starter-theme/                 # -> Theme root folder
   |-- component/                      # -> Type of component
     |-- component.scss                # -> SCSS file for a component (if required)
     |-- component.twig                # -> Twig template file for a component (required)
-		|-- component-data.twig           # -> JSON file containing mock data for the component.twig for use in the design system.
+    |-- component-data.twig           # -> JSON file containing mock data for the component.twig for use in the design system.
     |-- component-variation.twig      # -> Twig template file for a component variation. May extend the base component or be completely independent.
-		|-- component-variation-data.twig # -> JSON file containing mock data for the component-variation.twig for use in the design system.
+    |-- component-variation-data.twig # -> JSON file containing mock data for the component-variation.twig for use in the design system.
 |-- dist/                        			# -> Compiled assets (never edit). Always reference assets from here (never assets/)
 |-- lib/                         			# -> Theme PHP
   |-- assets.php                 			# -> PHP functions for fetching assets correctly
