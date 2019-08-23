@@ -23,7 +23,7 @@ array_map(
 		$file = "lib/{$file}.php";
 		if ( ! locate_template( $file, true, true ) ) {
 			/* Translators: Placeholder is the path to the file */
-			wp_die( sprintf( __( 'Error locating <code>%s</code> for inclusion.', 'pixels-text-domain' ), $file ), 'File not found' );
+			wp_die( esc_attr( sprintf( __( 'Error locating <code>%s</code> for inclusion.', 'pixels-text-domain' ), $file ) ), 'File not found' );
 		}
 	},
 	[
