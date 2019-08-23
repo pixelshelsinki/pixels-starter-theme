@@ -9,7 +9,7 @@
  */
 
 // Templates.
-$templates = [ 'search/search.twig', 'archive/archive.twig', 'index/index.twig' ];
+$templates = [ 'search/search.twig', 'index/index.twig' ];
 
 // Context.
 $context = Timber::get_context();

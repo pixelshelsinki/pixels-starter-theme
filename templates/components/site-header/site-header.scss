@@ -1,7 +1,8 @@
 /************************************ SITE HEADER *****************************************/
 
 .admin-bar-showing {
-    top: 48px;
+  top: 48px;
+
   @include media-breakpoint-up(md) {
     top: 32px;
   }

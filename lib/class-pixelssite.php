@@ -24,7 +24,6 @@ class PixelsSite extends \TimberSite {
 		 * @link https://roots.io/plugins/soil/
 		 */
 		add_theme_support( 'soil-clean-up' );
-		add_theme_support( 'soil-jquery-cdn' );
 		add_theme_support( 'soil-nice-search' );
 
 		/**
@@ -70,6 +69,7 @@ class PixelsSite extends \TimberSite {
 		);
 
 		add_action( 'after_setup_theme', [ $this, 'setup_editor_styles' ], 100 );
+		add_action( 'after_setup_theme', [ $this, 'load_theme_textdomain' ], 100 );
 		add_action( 'wp_enqueue_scripts', [ $this, 'setup_scripts_styles' ], 100 );
 		add_filter( 'timber_context', [ $this, 'add_to_context' ] );
 		add_filter( 'get_twig', [ $this, 'add_to_twig' ] );
@@ -95,6 +95,13 @@ class PixelsSite extends \TimberSite {
 		 * @see assets/styles/layouts/_tinymce.scss
 		 */
 		add_editor_style( '/dist/' . Assets\get_asset_uri( 'styles/main.css' ) );
+	}
+
+	/**
+	 * Load translation for the theme.
+	 */
+	public function load_theme_textdomain() {
+		load_theme_textdomain( 'pixels-text-domain', get_template_directory() . '/languages' );
 	}
 
 	/**

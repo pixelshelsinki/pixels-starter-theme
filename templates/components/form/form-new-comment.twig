@@ -1,0 +1,42 @@
+{#
+ # Template for the new comment form.
+ #
+ # @version 1.0.0
+ #
+ # @var user
+ #}
+
+<form id="form" class="form form-new-comment" method="post" action="{{ site.site_url ~ '/wp-comments-post.php' }}">
+  <h5>{{ __('Add comment', 'pixels-text-domain') }}</h5>
+
+  {% if user %}
+    {% include 'input/input.twig' with {type: 'hidden', name: 'email', value: user.email} %}
+    {% include 'input/input.twig' with {type: 'hidden', name: 'author', value: user.name} %}
+    {% include 'input/input.twig' with {type: 'hidden', name: 'url', value: user.link} %}
+  {% else %}
+    <div class="form-group">
+      {% include 'input/input.twig' with {type: 'email', name: 'email', id: 'email', label: _x('Email', 'comment form email field label', 'pixels-starter-theme'), required: true} %}
+    </div>
+
+    <div class="form-group">
+      {% include 'input/input.twig' with {type: 'text', name: 'author', id: 'author', label: _x('Author', 'comment form author field label', 'pixels-starter-theme'), required: true} %}
+    </div>
+
+    <div class="form-group">
+      {% include 'input/input.twig' with {type: 'url', name: 'url', id: 'url', label: _x('URL', 'comment form author URL field label', 'pixels-starter-theme')} %}
+    </div>
+  {% endif %}
+
+  <div class="form-group">
+    {% include 'input/textarea.twig' with {name: 'comment', id: 'comment', label: _x('Comment', 'comment form comment field label', 'pixels-starter-theme'), placeholder: __('Write your comment here', 'pixels-starter-theme'), rows: 3, cols: 3} %}
+  </div>
+
+  {% include 'input/input.twig' with {type: 'hidden', name: 'comment_post_ID', id: 'comment_post_ID', value: post.id} %}
+  {% include 'input/input.twig' with {type: 'hidden', name: 'comment_parent', id: 'comment_parent', value: comment.ID|default('0')} %}
+
+  <div class="form-group">
+    {% include 'button/button.twig' with {type: 'submit', name: 'submit', class: 'btn', label: _x('Send', 'label for send button on comment form', 'pixels-text-domain')} %}
+    {% include 'button/button.twig' with {type: 'reset', class: 'btn', label: _x('Cancel', 'label for cancel button on comment form', 'pixels-text-domain')} %}
+  </div>
+  <p class="help-text">{{ __('Your comment will be revised by the site if needed.', 'pixels-text-domain') }}</p>
+</form>

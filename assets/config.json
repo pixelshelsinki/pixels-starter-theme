@@ -13,7 +13,7 @@
   "proxyUrl": "https://localhost:3000",
   "cacheBusting": "[name]_[hash:8]",
   "watch": [
-    "{components,views}/**/*.twig",
+    "templates/**/*.twig",
     "lib/**/*.php"
   ],
   "browsers": [
