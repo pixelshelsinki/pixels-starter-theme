@@ -50,7 +50,7 @@ function get_component_manifest() {
 	$component_manifest = [];
 
 	// Get a list of all top level directories in the components folder.
-	$component_directories = glob( get_template_directory() . '/components/*' );
+	$component_directories = glob( get_template_directory() . '/templates/components/*' );
 
 	foreach ( $component_directories as $key => $component_directory_path ) {
 		$component_slug = basename( $component_directory_path );
@@ -132,7 +132,7 @@ function get_component_description( $component_slug ) {
 	}
 
 	// Load the description text, if it exists.
-	$component_description_path = get_template_directory() . "/components/{$component_slug}/{$component_slug}-description.md";
+	$component_description_path = get_template_directory() . "/templates/components/{$component_slug}/{$component_slug}-description.md";
 
 	if ( ! file_exists( $component_description_path ) ) {
 		return false;
@@ -157,7 +157,7 @@ function get_component_description( $component_slug ) {
 function get_component_variations( $component_slug ) {
 	$component_variations = [];
 
-	$component_variation_paths = glob( get_template_directory() . "/components/{$component_slug}/*.twig" );
+	$component_variation_paths = glob( get_template_directory() . "/templates/components/{$component_slug}/*.twig" );
 
 	foreach ( $component_variation_paths as $key => $component_variation_path ) {
 		$component_variation_filename = basename( $component_variation_path );
@@ -181,7 +181,7 @@ function get_component_variations( $component_slug ) {
  */
 function get_variation_data( $component_slug, $component_variation_filename ) {
 	$variation_data_filename = str_replace( '.twig', '-data.json', $component_variation_filename );
-	$path_to_data_file       = get_template_directory() . "/components/{$component_slug}/$variation_data_filename";
+	$path_to_data_file       = get_template_directory() . "/templates/components/{$component_slug}/$variation_data_filename";
 
 	if ( ! file_exists( $path_to_data_file ) ) {
 		return false;

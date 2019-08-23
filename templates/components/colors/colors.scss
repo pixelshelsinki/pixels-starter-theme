@@ -1,13 +1,14 @@
 /*************************** COLOR SWATCHES *******************************/
-.color-swatch-wrap {
-  flex: 0 0 100%;
+.color-item {
+	display: inline-block;
+  width: 100%;
 
   @include media_breakpoint_up(md) {
-    flex: 0 0 50%;
+    width: 50%;
   }
 
   @include media_breakpoint_up(lg) {
-    flex: 0 0 20%;
+    width: 20%;
   }
 }
 
