@@ -31,7 +31,7 @@ This theme uses the following:
 To install this theme the server instance must have the following setup:
 
 * [WordPress](https://wordpress.org/) >= 4.7
-* [PHP](http://php.net/manual/en/install.php) >= 7.0
+* [PHP](http://php.net/manual/en/install.php) >= 7.1
 
 To develop this theme you must also have the following:
 

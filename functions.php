@@ -13,8 +13,8 @@
 /**
  * Ensure compatible version of PHP is used
  */
-if ( version_compare( '7.0.0', phpversion(), '>=' ) ) {
-	PixelsTheme\Helpers\error_message( __( 'You must be using PHP 7.0.0 or greater.', 'pixels-text-domain' ), __( 'Invalid PHP version', 'pixels-text-domain' ) );
+if ( version_compare( '7.1.0', phpversion(), '>=' ) ) {
+	PixelsTheme\Helpers\error_message( __( 'You must be using PHP 7.1.0 or greater.', 'pixels-text-domain' ), __( 'Invalid PHP version', 'pixels-text-domain' ) );
 }
 
 /**
