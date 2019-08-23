@@ -10,19 +10,7 @@
  * @subpackage  PixelsTheme
  */
 
-/**
- * Ensure compatible version of PHP is used
- */
-if ( version_compare( '7.1.0', phpversion(), '>=' ) ) {
-	PixelsTheme\Helpers\error_message( __( 'You must be using PHP 7.1.0 or greater.', 'pixels-text-domain' ), __( 'Invalid PHP version', 'pixels-text-domain' ) );
-}
-
-/**
- * Ensure compatible version of WordPress is used
- */
-if ( version_compare( '4.7.0', get_bloginfo( 'version' ), '>=' ) ) {
-	PixelsTheme\Helpers\error_message( __( 'You must be using WordPress 4.7.0 or greater.', 'pixels-text-domain' ), __( 'Invalid WordPress version', 'pixels-text-domain' ) );
-}
+namespace PixelsTheme;
 
 /**
  * Theme required files
@@ -31,19 +19,20 @@ if ( version_compare( '4.7.0', get_bloginfo( 'version' ), '>=' ) ) {
  * Add or remove files to the array as needed. Supports child theme overrides.
  */
 array_map(
-	function ( $file ) use ( $pixels_error ) {
+	function ( $file ) {
 		$file = "lib/{$file}.php";
 		if ( ! locate_template( $file, true, true ) ) {
 			/* Translators: Placeholder is the path to the file */
-			$pixels_error( sprintf( __( 'Error locating <code>%s</code> for inclusion.', 'pixels-text-domain' ), $file ), 'File not found' );
+			wp_die( sprintf( __( 'Error locating <code>%s</code> for inclusion.', 'pixels-text-domain' ), $file ), 'File not found' );
 		}
 	},
 	[
 		'assets',
 		'class-pixelssite',
+		'compatibility-check',
 		'design-system',
 		'filters',
-		'helpers',
+		'templates',
 		'timber',
 		'widget-areas',
 	]

@@ -15,7 +15,7 @@
 use PixelsTheme\DesignSystem;
 
 if ( file_exists( get_template_directory() . '/vendor/erusev/parsedown/Parsedown.php' ) ) {
-	include_once 'vendor/erusev/parsedown/Parsedown.php';
+	include_once get_template_directory() . '/vendor/erusev/parsedown/Parsedown.php';
 }
 
 $context         = Timber::get_context();
