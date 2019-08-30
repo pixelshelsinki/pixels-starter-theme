@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Design System.
+ * Template Name: Design System
  *
  * Outputs the Design System.
  *

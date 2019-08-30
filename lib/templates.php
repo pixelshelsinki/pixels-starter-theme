@@ -19,7 +19,7 @@ namespace PixelsTheme\Templates;
  */
 function intercept_template_hierarchy( $templates ) {
 	if ( file_exists( get_theme_file_path() . '/data/' ) ) {
-		$templates = preg_filter( '/^/', 'data/', $templates );
+		$templates = preg_replace( '/^(?!data\/)/', 'data/', $templates );
 	}
 
 	return $templates;
