@@ -33,6 +33,7 @@ array_map(
 		'design-system',
 		'filters',
 		'images',
+		'navigations',
 		'templates',
 		'timber',
 		'widget-areas',

@@ -47,17 +47,6 @@ class PixelsSite extends \TimberSite {
 		 */
 		add_theme_support( 'customize-selective-refresh-widgets' );
 
-		/**
-		 * Register navigation menus.
-		 *
-		 * @link https://developer.wordpress.org/reference/functions/register_nav_menus/
-		 */
-		register_nav_menus(
-			[
-				'primary_navigation' => __( 'Primary Navigation', 'pixels-text-domain' ),
-			]
-		);
-
 		add_action( 'after_setup_theme', [ $this, 'setup_editor_styles' ], 100 );
 		add_action( 'after_setup_theme', [ $this, 'load_theme_textdomain' ], 100 );
 		add_action( 'wp_enqueue_scripts', [ $this, 'setup_scripts_styles' ], 100 );
