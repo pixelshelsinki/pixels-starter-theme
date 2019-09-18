@@ -27,8 +27,8 @@
     "build": "webpack --mode='production' --config assets/build/webpack.config.js",
     "rmdist": "rimraf dist",
     "lint": "npm run -s lint:scripts && npm run -s lint:styles",
-    "lint:scripts": "eslint assets/scripts assets/build",
-    "lint:styles": "stylelint \"{assets/styles,templates}/**/*.{css,sass,scss,sss,less}\"",
+    "lint:scripts": "eslint assets/scripts assets/build --config assets/build/.eslintrc.js",
+    "lint:styles": "stylelint \"{assets/styles,templates}/**/*.{css,sass,scss,sss,less}\" --config assets/build/.stylelintrc.js",
     "test": "npm run -s lint"
   },
   "engines": {
