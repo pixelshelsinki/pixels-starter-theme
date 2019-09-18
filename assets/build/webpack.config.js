@@ -1,7 +1,9 @@
 'use strict'; // eslint-disable-line
 
-const path              = require('path');
-const TerserPlugin      = require('terser-webpack-plugin');
+const path                  = require('path');
+const TerserPlugin          = require('terser-webpack-plugin');
+const StyleLintPlugin       = require('stylelint-webpack-plugin');
+const FriendlyErrorsPlugin  = require('friendly-errors-webpack-plugin')
 
 module.exports = (env, argv) =>  ({
     entry: {
@@ -68,6 +70,12 @@ module.exports = (env, argv) =>  ({
             },
         ],
     },
+    plugins: [      
+      new FriendlyErrorsPlugin(),
+      new StyleLintPlugin({
+        configFile: path.resolve(__dirname, '.stylelintrc.js'),
+      }),
+    ],
     optimization: {
         minimize: argv.mode == 'production' ? true : false,
         minimizer: argv.mode == 'production' ? [
