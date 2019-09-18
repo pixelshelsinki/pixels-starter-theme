@@ -12,14 +12,14 @@ namespace PixelsTheme\Templates;
 
 /**
  * Intercepts the template hierarchy and moves the expected location to the
- * `data/` directory.
+ * `controllers/` directory.
  *
  * @param  array $templates The templates for the requested type.
  * @return array            The modified templates.
  */
 function intercept_template_hierarchy( $templates ) {
-	if ( file_exists( get_theme_file_path() . '/data/' ) ) {
-		$templates = preg_replace( '/^(?!data\/)/', 'data/', $templates );
+	if ( file_exists( get_theme_file_path() . '/controllers/' ) ) {
+		$templates = preg_replace( '/^(?!controllers\/)/', 'controllers/', $templates );
 	}
 
 	return $templates;
