@@ -22,7 +22,20 @@ module.exports = (env, argv) =>  ({
                 test: /\.js$/,
                 include: path.resolve(__dirname, '../scripts'),
                 exclude: /node_modules/,
-                use: argv.mode == 'production' ? [ 'babel-loader' ] : [ 'babel-loader', 'eslint-loader' ],
+                use: [
+                  {
+                    loader: 'babel-loader',
+                    options: {
+                      configFile: path.resolve(__dirname, 'babel.config.js')
+                    },
+                  },
+                  {
+                    loader: 'eslint-loader',
+                    options: {
+                      configFile: path.resolve(__dirname, '.eslintrc.js')
+                    },
+                  },
+                ],
             },
             {
                 test: /\.(sa|sc|c)ss$/,
