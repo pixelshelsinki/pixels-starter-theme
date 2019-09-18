@@ -4,6 +4,7 @@ const path                  = require('path');
 const TerserPlugin          = require('terser-webpack-plugin');
 const StyleLintPlugin       = require('stylelint-webpack-plugin');
 const FriendlyErrorsPlugin  = require('friendly-errors-webpack-plugin')
+const CopyWebpackPlugin     = require('copy-webpack-plugin')
 
 module.exports = (env, argv) =>  ({
     entry: {
@@ -28,13 +29,13 @@ module.exports = (env, argv) =>  ({
                   {
                     loader: 'babel-loader',
                     options: {
-                      configFile: path.resolve(__dirname, 'babel.config.js')
+                      configFile: path.resolve(__dirname, 'babel.config.js'),
                     },
                   },
                   {
                     loader: 'eslint-loader',
                     options: {
-                      configFile: path.resolve(__dirname, '.eslintrc.js')
+                      configFile: path.resolve(__dirname, '.eslintrc.js'),
                     },
                   },
                 ],
@@ -75,6 +76,18 @@ module.exports = (env, argv) =>  ({
       new StyleLintPlugin({
         configFile: path.resolve(__dirname, '.stylelintrc.js'),
       }),
+      new CopyWebpackPlugin([
+          {
+            from: path.resolve(__dirname, '../fonts'),
+            to: path.resolve(__dirname, '../../dist/fonts'),
+            ignore: '.gitkeep',
+          },
+          {
+            from: path.resolve(__dirname, '../images'),
+            to: path.resolve(__dirname, '../../dist/images'),
+            ignore: '.gitkeep',
+          },
+      ]),
     ],
     optimization: {
         minimize: argv.mode == 'production' ? true : false,
