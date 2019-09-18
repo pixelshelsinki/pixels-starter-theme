@@ -34,16 +34,6 @@ class PixelsSite extends \TimberSite {
 		add_theme_support( 'title-tag' );
 
 		/**
-		 * Enable post thumbnails.
-		 *
-		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
-		 * @link http://codex.wordpress.org/Post_Thumbnails
-		 * @link http://codex.wordpress.org/Function_Reference/set_post_thumbnail_size
-		 * @link http://codex.wordpress.org/Function_Reference/add_image_size
-		 */
-		add_theme_support( 'post-thumbnails' );
-
-		/**
 		 * Enable HTML5 markup support
 		 *
 		 * @link https://developer.wordpress.org/reference/functions/add_theme_support/#html5

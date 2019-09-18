@@ -32,6 +32,7 @@ array_map(
 		'compatibility-check',
 		'design-system',
 		'filters',
+		'images',
 		'templates',
 		'timber',
 		'widget-areas',
