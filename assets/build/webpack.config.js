@@ -5,6 +5,9 @@ const TerserPlugin          = require('terser-webpack-plugin');
 const StyleLintPlugin       = require('stylelint-webpack-plugin');
 const FriendlyErrorsPlugin  = require('friendly-errors-webpack-plugin')
 const CopyWebpackPlugin     = require('copy-webpack-plugin')
+const BrowserSyncPlugin     = require('browser-sync-webpack-plugin')
+
+const config                = require('../config')
 
 module.exports = (env, argv) =>  ({
     entry: {
@@ -88,6 +91,13 @@ module.exports = (env, argv) =>  ({
             ignore: '.gitkeep',
           },
       ]),
+      new BrowserSyncPlugin(
+        {
+          host: 'localhost',
+          port: 3000,
+          proxy: config.devUrl,
+        },
+      ),
     ],
     optimization: {
         minimize: argv.mode == 'production' ? true : false,
