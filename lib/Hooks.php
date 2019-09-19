@@ -42,8 +42,6 @@ class Hooks {
 
 		return array_filter( $classes );
 	}
-
-	
 }
 
 new Hooks();

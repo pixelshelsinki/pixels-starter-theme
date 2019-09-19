@@ -36,6 +36,6 @@ array_map(
 		'Navigations',
 		'templates',
 		'timber',
-		'widget-areas',
+		'Widgets',
 	]
 );

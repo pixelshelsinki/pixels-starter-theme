@@ -37,8 +37,6 @@ class Navigations {
 			]
 		);
 	}
-
-	
 }
 
 new Navigations();
