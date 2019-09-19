@@ -86,9 +86,8 @@ pixels-starter-theme/                # -> Theme root folder
   |-- images/                        # -> Theme images
   |-- scripts/                       # -> Theme JS
   |-- styles/                        # -> Theme general styles
-  |-- config.json                    # -> Settings for compiled assets
-  |-- config-local-example.json      # -> Local settings for compiled assets. Override here if need be.
-|-- data/                            # -> WordPress template files, where data is setup.
+  |-- config.js                      # -> Settings for compiled assets
+|-- controllers/                     # -> WordPress template files, where data is setup.
   |-- index.php                      # -> The minimum required file.
 |-- dist/                            # -> Compiled assets (never edit). Always reference assets from here (never assets/)
 |-- languages/                       # -> Language files for the theme.
@@ -100,11 +99,11 @@ pixels-starter-theme/                # -> Theme root folder
   |-- timber.php                     # -> PHP for setting up Timber on the theme side
   |-- widget-areas.php               # -> PHP for setting up widget areas
 |-- node_modules/                    # -> Node modules used for theme development (never edit)
-|-- templates/                       # -> Templates used in the theme. All twig files live here.
-  |-- views/                         # -> Views used in the theme
-    |-- view/                        # -> Type of view
-      |-- view.scss                  # -> SCSS file for a view (if required)
-      |-- view.twig                  # -> Twig template file for a view (required)
+|-- views/                           # -> Views used in the theme. All twig files live here.
+  |-- layouts/                       # -> Layouts used in the theme
+    |-- layout/                      # -> Type of layout
+      |-- layout.scss                # -> SCSS file for a layout (if required)
+      |-- layout.twig                # -> Twig template file for a layout (required)
   |-- components/                    # -> Components used in the theme
     |-- component/                   # -> Type of component
       |-- component.scss             # -> SCSS file for a component (if required)
