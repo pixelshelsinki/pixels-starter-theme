@@ -8,7 +8,7 @@
  * @subpackage PixelsTheme
  */
 
-namespace PixelsTheme\Filters;
+namespace Pixels\Theme\Filters;
 
 // Filters.
 add_filter( 'body_class', __NAMESPACE__ . '\\add_body_classes' );

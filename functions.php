@@ -7,10 +7,10 @@
  * end of this file.
  *
  * @package  WordPress
- * @subpackage  PixelsTheme
+ * @subpackage  Pixels\Theme
  */
 
-namespace PixelsTheme;
+namespace Pixels\Theme;
 
 /**
  * Theme required files

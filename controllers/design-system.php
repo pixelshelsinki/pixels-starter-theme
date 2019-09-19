@@ -9,10 +9,10 @@
  * them in a better organised fashion.
  *
  * @package WordPress
- * @subpackage PixelsTheme
+ * @subpackage Pixels\Theme
  */
 
-use PixelsTheme\DesignSystem;
+use Pixels\Theme\DesignSystem;
 
 if ( file_exists( get_template_directory() . '/vendor/erusev/parsedown/Parsedown.php' ) ) {
 	include_once get_template_directory() . '/vendor/erusev/parsedown/Parsedown.php';

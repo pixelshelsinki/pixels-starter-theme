@@ -8,7 +8,7 @@
  * @subpackage PixelsTheme
  */
 
-namespace PixelsTheme\Templates;
+namespace Pixels\Theme\Templates;
 
 /**
  * Intercepts the template hierarchy and moves the expected location to the

@@ -9,7 +9,7 @@
  * @subpackage PixelsTheme
  */
 
-namespace PixelsTheme\Assets;
+namespace Pixels\Theme\Assets;
 
 /**
  * Get the JSON manifest.

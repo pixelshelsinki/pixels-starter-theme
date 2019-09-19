@@ -8,7 +8,7 @@
  * @subpackage PixelsTheme
  */
 
-namespace PixelsTheme\Images;
+namespace Pixels\Theme\Images;
 
 // Actions.
 add_action( 'init', __NAMESPACE__ . '\\add_img_sizes' );

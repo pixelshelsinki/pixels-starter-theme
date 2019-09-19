@@ -3,10 +3,10 @@
  * Checks that the theme is compatible with the install environment.
  *
  * @package  WordPress
- * @subpackage  PixelsTheme
+ * @subpackage  Pixels\Theme
  */
 
-namespace PixelsTheme\Compatibility;
+namespace Pixels\Theme\Compatibility;
 
 /**
  * Ensure compatible version of PHP is used

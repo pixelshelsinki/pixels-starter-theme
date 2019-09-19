@@ -8,7 +8,7 @@
  * @subpackage PixelsTheme
  */
 
-namespace PixelsTheme\WidgetAreas;
+namespace Pixels\Theme\WidgetAreas;
 
 /**
  * Sets up widget areas for use in the theme.

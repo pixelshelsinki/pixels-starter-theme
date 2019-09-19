@@ -9,9 +9,9 @@
  * @subpackage PixelsTheme
  */
 
-namespace PixelsTheme\Timber;
+namespace Pixels\Theme\Timber;
 
-use PixelsTheme\Assets;
+use Pixels\Theme\Assets;
 
 /**
  * Checks that the Timber plugin is activated.

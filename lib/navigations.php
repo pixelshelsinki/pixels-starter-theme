@@ -8,7 +8,7 @@
  * @subpackage PixelsTheme
  */
 
-namespace PixelsTheme\Navigations;
+namespace Pixels\Theme\Navigations;
 
 // Actions.
 add_action( 'after_setup_theme', __NAMESPACE__ . '\\add_theme_navigations' );
