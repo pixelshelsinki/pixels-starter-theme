@@ -30,6 +30,9 @@
     "friendsoftwig/twigcs": "dev-master",
     "erusev/parsedown": "~1.7.1"
   },
+  "psr-4": {
+    "Pixels\\Theme\\": "lib/"
+  },
   "scripts": {
     "test": [
       "phpcs",
