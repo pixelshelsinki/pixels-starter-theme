@@ -143,6 +143,10 @@ class PixelsSite extends \TimberSite {
 		$twig->addExtension( new \Twig_Extension_StringLoader() );
 		$twig->addFilter( 'example', new Twig_SimpleFilter( 'example', array( $this, 'example' ) ) );
 
+		// Add image helper functions.
+		$twig->addFunction( new Timber\Twig_Function( 'responsive_image', '\\PixelsTheme\\Images\responsive_image' ) );
+		$twig->addFunction( new Timber\Twig_Function( 'responsive_background', '\\PixelsTheme\\Images\responsive_background' ) );
+
 		return $twig;
 	}
 }
