@@ -1,0 +1,27 @@
+{#
+ # View template for a single content item.
+ #}
+
+{% extends 'base/base.twig' %}
+
+{% block site_content %}
+  <article class="single single-{{ post.post_type }}">
+
+    {% block single_header %}
+      {% include ['single-header/single-header-' ~ post.post_type ~ '.twig', 'single-header/single-header.twig'] %}
+    {% endblock %}
+
+    {% block single_meta %}
+      {% include ['single-meta/single-meta-' ~ post.post_type ~ '.twig', 'single-meta/single-meta.twig'] %}
+    {% endblock %}
+
+    {% block single_content %}
+      {% include ['single-content/single-content-' ~ post.post_type ~ '.twig', 'single-content/single-content.twig'] %}
+    {% endblock %}
+
+    {% block single_footer %}
+      {% include ['single-footer/single-footer-' ~ post.post_type ~ '.twig', 'single-footer/single-footer.twig'] %}
+    {% endblock %}
+
+  </article>
+{% endblock %}

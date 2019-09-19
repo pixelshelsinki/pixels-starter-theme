@@ -46,7 +46,7 @@ if ( ! class_exists( 'Timber' ) ) {
 *
 * @var array
 */
-\Timber::$dirname = [ 'templates/views', 'templates/components' ];
+\Timber::$dirname = [ 'views/layouts', 'views/components' ];
 
 /**
  * Sets up the Timber site for this project.

@@ -34,16 +34,6 @@ class PixelsSite extends \TimberSite {
 		add_theme_support( 'title-tag' );
 
 		/**
-		 * Enable post thumbnails.
-		 *
-		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
-		 * @link http://codex.wordpress.org/Post_Thumbnails
-		 * @link http://codex.wordpress.org/Function_Reference/set_post_thumbnail_size
-		 * @link http://codex.wordpress.org/Function_Reference/add_image_size
-		 */
-		add_theme_support( 'post-thumbnails' );
-
-		/**
 		 * Enable HTML5 markup support
 		 *
 		 * @link https://developer.wordpress.org/reference/functions/add_theme_support/#html5
@@ -56,17 +46,6 @@ class PixelsSite extends \TimberSite {
 		 * @link https://developer.wordpress.org/themes/advanced-topics/customizer-api/#theme-support-in-sidebars
 		 */
 		add_theme_support( 'customize-selective-refresh-widgets' );
-
-		/**
-		 * Register navigation menus.
-		 *
-		 * @link https://developer.wordpress.org/reference/functions/register_nav_menus/
-		 */
-		register_nav_menus(
-			[
-				'primary_navigation' => __( 'Primary Navigation', 'pixels-text-domain' ),
-			]
-		);
 
 		add_action( 'after_setup_theme', [ $this, 'setup_editor_styles' ], 100 );
 		add_action( 'after_setup_theme', [ $this, 'load_theme_textdomain' ], 100 );
@@ -163,6 +142,10 @@ class PixelsSite extends \TimberSite {
 		/* this is where you can add your own functions to twig */
 		$twig->addExtension( new \Twig_Extension_StringLoader() );
 		$twig->addFilter( 'example', new Twig_SimpleFilter( 'example', array( $this, 'example' ) ) );
+
+		// Add image helper functions.
+		$twig->addFunction( new Timber\Twig_Function( 'responsive_image', '\\PixelsTheme\\Images\responsive_image' ) );
+		$twig->addFunction( new Timber\Twig_Function( 'responsive_background', '\\PixelsTheme\\Images\responsive_background' ) );
 
 		return $twig;
 	}

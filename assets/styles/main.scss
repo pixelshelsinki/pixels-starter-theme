@@ -14,15 +14,15 @@
 // ****************
 // Component styles
 // ****************
-@import "../../templates/components/comment/comment";
-@import "../../templates/components/colors/colors";
-@import "../../templates/components/form/form";
-@import "../../templates/components/form/form-new-comment";
-@import "../../templates/components/single-content/single-content";
-@import "../../templates/components/site-header/site-header";
-@import "../../templates/components/typography/typography";
+@import "../../views/components/comment/comment";
+@import "../../views/components/colors/colors";
+@import "../../views/components/form/form";
+@import "../../views/components/form/form-new-comment";
+@import "../../views/components/single-content/single-content";
+@import "../../views/components/site-header/site-header";
+@import "../../views/components/typography/typography";
 
 // ***********
 // View styles
 // ***********
-@import "../../templates/views/design-system/design-system";
+@import "../../views/layouts/design-system/design-system";
