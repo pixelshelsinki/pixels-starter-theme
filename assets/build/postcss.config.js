@@ -1,15 +1,19 @@
 /* eslint-disable */
 
-const cssnanoConfig = {
-  preset: ['default', { discardComments: { removeAll: true } }]
-};
+const postcssNormalize 	= require('postcss-normalize')
+const postcssClean 		= require('postcss-clean')
+const autoprefixer 		= require('autoprefixer')
+const cssnano 			= require('cssnano')
 
-module.exports = ({ file, options }) => {
-  return {
-    parser: options.enabled.optimize ? 'postcss-safe-parser' : undefined,
-    plugins: {
-      autoprefixer: true,
-      cssnano: options.enabled.optimize ? cssnanoConfig : false,
-    },
-  };
-};
+module.exports = {
+	plugins: [
+		autoprefixer(),
+		postcssNormalize(),
+		postcssClean(),
+		cssnano(
+			{
+	            preset: 'default',
+	        }
+        )
+	]
+}

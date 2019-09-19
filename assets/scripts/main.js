@@ -1,4 +1,5 @@
-import $ from 'jquery';
+// Import styles
+import '../styles/main.scss'
 
 // Import Bootstrap.
 import 'bootstrap';
