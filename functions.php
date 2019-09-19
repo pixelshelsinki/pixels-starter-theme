@@ -29,7 +29,7 @@ array_map(
 	[
 		'assets',
 		'class-pixelssite',
-		'compatibility-check',
+		'Compatibility',
 		'design-system',
 		'Hooks',
 		'Images',
