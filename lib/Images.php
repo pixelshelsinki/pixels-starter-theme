@@ -1,8 +1,6 @@
 <?php
 /**
- * Theme image sizes
- *
- * Register image sizes
+ * Theme image handling.
  *
  * @package WordPress
  * @subpackage PixelsTheme
@@ -10,9 +8,18 @@
 
 namespace Pixels\Theme;
 
+/**
+ * Theme image sizes
+ *
+ * Register image sizes
+ * Do custom image handling
+ */
 class Images {
 
-	function __construct() {
+	/**
+	 * Class constructor
+	 */
+	public function __construct() {
 
 		// Actions.
 		add_action( 'init', array( $this, 'add_img_sizes' ) );

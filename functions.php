@@ -31,7 +31,7 @@ array_map(
 		'class-pixelssite',
 		'compatibility-check',
 		'design-system',
-		'filters',
+		'Hooks',
 		'Images',
 		'navigations',
 		'templates',
