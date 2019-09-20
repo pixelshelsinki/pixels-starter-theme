@@ -56,7 +56,7 @@ class Widgets {
 		);
 	}
 
-	
+
 }
 
 new Widgets();

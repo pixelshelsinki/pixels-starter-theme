@@ -49,4 +49,12 @@
   <rule ref="WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents">
 		<severity>0</severity>
 	</rule>
+  <!-- Amend WP class filenaming case to allow PSR-4 style -->
+  <rule ref="WordPress">
+    <exclude name="WordPress.Files.FileName.NotHyphenatedLowercase" />
+  </rule>
+  <!-- Amend WP class filenaming style to allow PSR-4 style -->
+  <rule ref="WordPress">
+    <exclude name="WordPress.Files.FileName.InvalidClassFileName" />
+  </rule>
 </ruleset>
