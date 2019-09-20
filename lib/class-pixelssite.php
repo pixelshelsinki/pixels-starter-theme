@@ -8,7 +8,6 @@
  * @subpackage PixelsTheme
  */
 
-
 /**
  * Sets up the Timber site for this project.
  */
