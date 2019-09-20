@@ -27,7 +27,7 @@ array_map(
 		}
 	},
 	[
-		'assets',
+		'Assets',
 		'class-pixelssite',
 		'Compatibility',
 		'design-system',

@@ -8,7 +8,6 @@
  * @subpackage PixelsTheme
  */
 
-use Pixels\Theme\Assets;
 
 /**
  * Sets up the Timber site for this project.
@@ -47,33 +46,11 @@ class PixelsSite extends \TimberSite {
 		 */
 		add_theme_support( 'customize-selective-refresh-widgets' );
 
-		add_action( 'after_setup_theme', [ $this, 'setup_editor_styles' ], 100 );
 		add_action( 'after_setup_theme', [ $this, 'load_theme_textdomain' ], 100 );
-		add_action( 'wp_enqueue_scripts', [ $this, 'setup_scripts_styles' ], 100 );
 		add_filter( 'timber_context', [ $this, 'add_to_context' ] );
 		add_filter( 'get_twig', [ $this, 'add_to_twig' ] );
 
 		parent::__construct();
-	}
-
-	/**
-	 * Adds the JS and CSS files to the document head.
-	 */
-	public function setup_scripts_styles() {
-		wp_enqueue_style( 'pixels/main.css', Assets\get_asset_uri( 'styles/main.css' ), false, null );
-		wp_enqueue_script( 'pixels/main.js', Assets\get_asset_uri( 'scripts/main.js' ), [ 'jquery' ], null, true );
-	}
-
-	/**
-	 * Sets up the editor styles.
-	 */
-	public function setup_editor_styles() {
-		/**
-		 * Use main stylesheet for visual editor
-		 *
-		 * @see assets/styles/layouts/_tinymce.scss
-		 */
-		add_editor_style( '/dist/' . Assets\get_asset_uri( 'styles/main.css' ) );
 	}
 
 	/**
