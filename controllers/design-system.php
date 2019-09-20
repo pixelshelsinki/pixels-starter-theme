@@ -26,11 +26,11 @@ $context['current_component'] = get_query_var( 'component', false );
 /**
  * Gets the navigation for the Design System.
  */
-$context['navigation'] = DesignSystem\get_navigation( $context['current_component'] );
+$context['navigation'] = DesignSystem::get_navigation( $context['current_component'] );
 
 /**
  * Gets the section/component data for the currently viewed section.
  */
-$context['component'] = DesignSystem\get_component( $context['current_component'] );
+$context['component'] = DesignSystem::get_component( $context['current_component'] );
 
 Timber::render( 'design-system/design-system.twig', $context );
