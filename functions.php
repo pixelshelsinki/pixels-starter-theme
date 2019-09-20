@@ -34,7 +34,7 @@ array_map(
 		'Hooks',
 		'Images',
 		'Navigations',
-		'templates',
+		'Templates',
 		'timber',
 		'Widgets',
 	]
