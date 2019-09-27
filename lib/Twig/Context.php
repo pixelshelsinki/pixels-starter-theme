@@ -6,7 +6,7 @@
  * @subpackage PixelsTheme
  */
 
-namespace Pixels\Theme\Timber;
+namespace Pixels\Theme\Twig;
 
 /**
  * Context class

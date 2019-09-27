@@ -46,7 +46,6 @@ class PixelsSite extends \TimberSite {
 		add_theme_support( 'customize-selective-refresh-widgets' );
 
 		add_action( 'after_setup_theme', [ $this, 'load_theme_textdomain' ], 100 );
-		add_filter( 'get_twig', [ $this, 'add_to_twig' ] );
 
 		parent::__construct();
 	}
@@ -56,34 +55,5 @@ class PixelsSite extends \TimberSite {
 	 */
 	public function load_theme_textdomain() {
 		load_theme_textdomain( 'pixels-text-domain', get_template_directory() . '/languages' );
-	}
-
-	/**
-	 * An example function.
-	 *
-	 * @param  string $text String.
-	 * @return string       String.
-	 */
-	public function example( $text ) {
-		$text .= ' bar!';
-
-		return $text;
-	}
-
-	/**
-	 * Adds custom extensions or filters to twig.
-	 *
-	 * @param @object $twig The instance of twig.
-	 */
-	public function add_to_twig( $twig ) {
-		/* this is where you can add your own functions to twig */
-		$twig->addExtension( new \Twig_Extension_StringLoader() );
-		//$twig->addFilter( 'example', new Twig_SimpleFilter( 'example', array( $this, 'example' ) ) );
-
-		// Add image helper functions.
-		$twig->addFunction( new Timber\Twig_Function( 'responsive_image', '\\Pixels\\Theme\\Images::responsive_image' ) );
-		$twig->addFunction( new Timber\Twig_Function( 'responsive_background', '\\Pixels\\Theme\\Images::responsive_background' ) );
-
-		return $twig;
 	}
 }

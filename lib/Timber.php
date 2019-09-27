@@ -8,7 +8,8 @@
 
 namespace Pixels\Theme;
 
-use Pixels\Theme\Timber\Context as Context;
+use Pixels\Theme\Twig\Context   as Context;
+use Pixels\Theme\Twig\Functions as Functions;
 
 /**
  * Timber class
@@ -26,11 +27,20 @@ class Timber {
 	private $context;
 
 	/**
+	 * Functions class instance
+	 *
+	 * @var Functions
+	 */
+	private $functions;
+
+	/**
 	 * Class constructor
 	 */
 	public function __construct() {
 
-		$this->context = new Context();
+		// Class instances.
+		$this->context   = new Context();
+		$this->functions = new Functions();
 
 		// Check that Timber is enabled.
 		if ( ! class_exists( 'Timber' ) ) {
