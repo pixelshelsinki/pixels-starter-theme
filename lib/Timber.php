@@ -83,5 +83,3 @@ class Timber {
 		wp_die( esc_attr( __( 'Oh no! You need to activate the Timber plugin before you can use this theme.', 'pixels-text-domain' ) ) );
 	}
 }
-
-new Timber();

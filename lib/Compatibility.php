@@ -63,5 +63,3 @@ class Compatibility {
 		}
 	}
 }
-
-new Compatibility();

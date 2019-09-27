@@ -81,5 +81,3 @@ class Config extends \TimberSite {
 		load_theme_textdomain( 'pixels-text-domain', get_template_directory() . '/languages' );
 	}
 }
-
-new Config();

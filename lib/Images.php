@@ -81,5 +81,3 @@ class Images {
 		return ob_get_clean();
 	}
 }
-
-new Images();

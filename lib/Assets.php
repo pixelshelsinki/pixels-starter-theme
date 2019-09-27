@@ -58,5 +58,3 @@ class Assets {
 	}
 }
 
-new Assets();
-

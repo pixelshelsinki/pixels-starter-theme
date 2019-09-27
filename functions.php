@@ -1,10 +1,6 @@
 <?php
 /**
- * Loads theme function files.
- *
- * NOTE: To add functionality to the theme, create or add to a file in the lib
- * directory and then include the file name (without the extension) it at the
- * end of this file.
+ * Loads theme lib
  *
  * @package  WordPress
  * @subpackage  Pixels\Theme
@@ -16,29 +12,51 @@ namespace Pixels\Theme;
 require_once 'vendor/autoload.php';
 
 /**
- * Theme required files
+ * Main Application class
  *
- * The mapped array determines the code library included in your theme.
- * Add or remove files to the array as needed. Supports child theme overrides.
+ * Bootstrap app lib
  */
-array_map(
-	function ( $file ) {
-		$file = "lib/{$file}.php";
-		if ( ! locate_template( $file, true, true ) ) {
-			/* Translators: Placeholder is the path to the file */
-			wp_die( esc_attr( sprintf( __( 'Error locating <code>%s</code> for inclusion.', 'pixels-text-domain' ), $file ) ), 'File not found' );
-		}
-	},
-	[
-		'Assets',
-		'Config',
-		'Compatibility',
-		'DesignSystem',
-		'Hooks',
-		'Images',
-		'Navigations',
-		'Templates',
-		'Timber',
-		'Widgets',
-	]
-);
+final class App {
+
+	// Class properties
+	private $assets;
+	private $compatibility;
+	private $config;	
+	private $design_system;
+	private $hooks;
+	private $images;
+	private $navigations;
+	private $templates;
+	private $timber;
+	private $widgets;
+
+	/**
+	 * Class constructor
+	 */
+	public function __construct() {
+
+		/**
+		 * Instantiate class instances
+		 */
+
+		// Common WordPress configs.
+		$this->compatibility 	= new Compatibility();
+		$this->config 			= new Config();
+		$this->assets 			= new Assets();
+		$this->navigations 		= new Navigations();
+		$this->images 			= new Images();
+		$this->hooks 			= new Hooks();
+		$this->widgets 			= new Widgets();
+
+		// Templating
+		$this->timber 			= new Timber();
+		$this->templates 		= new Templates();
+		$this->design_system 	= new DesignSystem();		
+	}
+
+	
+}
+
+// Start the theme app
+new App();
+

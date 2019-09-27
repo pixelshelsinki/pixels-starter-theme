@@ -38,5 +38,3 @@ class Navigations {
 		);
 	}
 }
-
-new Navigations();

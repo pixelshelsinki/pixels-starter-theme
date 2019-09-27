@@ -187,5 +187,3 @@ class DesignSystem {
 		return $variation_data;
 	}
 }
-
-new DesignSystem();
