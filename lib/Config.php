@@ -14,14 +14,27 @@ namespace Pixels\Theme;
  * Common theme configs.
  */
 class Config extends \TimberSite {
+
+	/**
+	 * Instance of admin settings
+	 *
+	 * @var Admin\Config
+	 */
+	private $admin_config;
+
 	/**
 	 * Constructs the initial class.
 	 */
 	public function __construct() {
 
-		// Actions
+		// Actions.
 		add_action( 'init', array( $this, 'add_theme_supports' ) );
 		add_action( 'after_setup_theme', array( $this, 'load_theme_textdomain' ), 100 );
+
+		// Only load admin settings in WP Admin.
+		if ( is_admin() ) {
+			$this->admin_config = new Admin\Config();
+		}
 
 		parent::__construct();
 	}
