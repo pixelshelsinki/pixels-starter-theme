@@ -31,7 +31,7 @@ array_map(
 	},
 	[
 		'Assets',
-		'class-pixelssite',
+		'Config',
 		'Compatibility',
 		'DesignSystem',
 		'Hooks',

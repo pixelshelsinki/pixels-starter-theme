@@ -1,21 +1,36 @@
 <?php
 /**
- * The Pixels Site class for this project.
+ * Common theme Configs.
  *
- * Extends the TimberSite class with configuration specifically for this site.
+ * Extends the TimberSite clas
  *
  * @package WordPress
  * @subpackage PixelsTheme
  */
 
+namespace Pixels\Theme;
+
 /**
- * Sets up the Timber site for this project.
+ * Common theme configs.
  */
-class PixelsSite extends \TimberSite {
+class Config extends \TimberSite {
 	/**
 	 * Constructs the initial class.
 	 */
 	public function __construct() {
+
+		// Actions
+		add_action( 'init', array( $this, 'add_theme_supports' ) );
+		add_action( 'after_setup_theme', array( $this, 'load_theme_textdomain' ), 100 );
+
+		parent::__construct();
+	}
+
+	/**
+	 * Declare theme supports
+	 */
+	public function add_theme_supports() {
+
 		/**
 		 * Enable features from Soil.
 		 *
@@ -44,10 +59,6 @@ class PixelsSite extends \TimberSite {
 		 * @link https://developer.wordpress.org/themes/advanced-topics/customizer-api/#theme-support-in-sidebars
 		 */
 		add_theme_support( 'customize-selective-refresh-widgets' );
-
-		add_action( 'after_setup_theme', [ $this, 'load_theme_textdomain' ], 100 );
-
-		parent::__construct();
 	}
 
 	/**
@@ -57,3 +68,5 @@ class PixelsSite extends \TimberSite {
 		load_theme_textdomain( 'pixels-text-domain', get_template_directory() . '/languages' );
 	}
 }
+
+new Config();

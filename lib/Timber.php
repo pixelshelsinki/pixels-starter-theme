@@ -64,11 +64,6 @@ class Timber {
 		* @var array
 		 */
 		\Timber::$dirname = [ 'views/layouts', 'views/components' ];
-
-		/**
-		 * Sets up the Timber site for this project.
-		 */
-		new \PixelsSite();
 	}
 
 	/**
