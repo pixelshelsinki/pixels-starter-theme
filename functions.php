@@ -12,6 +12,9 @@
 
 namespace Pixels\Theme;
 
+// Composer autoload.
+require_once 'vendor/autoload.php';
+
 /**
  * Theme required files
  *
@@ -30,12 +33,12 @@ array_map(
 		'Assets',
 		'class-pixelssite',
 		'Compatibility',
-		'design-system',
+		'DesignSystem',
 		'Hooks',
 		'Images',
 		'Navigations',
 		'Templates',
-		'timber',
+		'Timber',
 		'Widgets',
 	]
 );

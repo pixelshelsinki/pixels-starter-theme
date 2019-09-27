@@ -8,18 +8,29 @@
 
 namespace Pixels\Theme;
 
+use Pixels\Theme\Timber\Context as Context;
+
 /**
  * Timber class
  *
- * Sets up directories for TImber
+ * Sets up directories for Timber
  * Handle Timber related additional functionalities
  */
 class Timber {
 
 	/**
+	 * Context class instance
+	 *
+	 * @var Context
+	 */
+	private $context;
+
+	/**
 	 * Class constructor
 	 */
 	public function __construct() {
+
+		$this->context = new Context();
 
 		// Check that Timber is enabled.
 		if ( ! class_exists( 'Timber' ) ) {

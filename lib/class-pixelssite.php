@@ -46,7 +46,6 @@ class PixelsSite extends \TimberSite {
 		add_theme_support( 'customize-selective-refresh-widgets' );
 
 		add_action( 'after_setup_theme', [ $this, 'load_theme_textdomain' ], 100 );
-		add_filter( 'timber_context', [ $this, 'add_to_context' ] );
 		add_filter( 'get_twig', [ $this, 'add_to_twig' ] );
 
 		parent::__construct();
@@ -57,44 +56,6 @@ class PixelsSite extends \TimberSite {
 	 */
 	public function load_theme_textdomain() {
 		load_theme_textdomain( 'pixels-text-domain', get_template_directory() . '/languages' );
-	}
-
-	/**
-	 * Sets up data in the Timber global context.
-	 *
-	 * @param array $context The Timber global context.
-	 */
-	public function add_to_context( $context ) {
-		/**
-		 * Setup site-wide information.
-		 *
-		 * @var [type]
-		 */
-		$context['site']           = $this;
-		$context['site']->site_url = get_site_url(); // Since timber only returns home URL as 'link'.
-
-		/**
-		 * Setup site Navigation.
-		 */
-		$context['primary_navigation'] = new \TimberMenu( 'primary_navigation' );
-
-		/**
-		 * Setup Polylang Add polylang content to context.
-		 */
-		if ( function_exists( 'pll_the_languages' ) ) {
-			$context['polylang']['current']   = pll_current_language( 'slug' );
-			$context['polylang']['languages'] = pll_the_languages( [ 'raw' => 1 ] );
-			$context['polylang']['home']      = pll_home_url();
-		}
-
-		/**
-		 * Sets the privacy policy page, if it exists.
-		 */
-		if ( function_exists( 'get_privacy_policy_url' ) ) {
-			$context['privacy'] = get_privacy_policy_url();
-		}
-
-		return $context;
 	}
 
 	/**
@@ -117,7 +78,7 @@ class PixelsSite extends \TimberSite {
 	public function add_to_twig( $twig ) {
 		/* this is where you can add your own functions to twig */
 		$twig->addExtension( new \Twig_Extension_StringLoader() );
-		$twig->addFilter( 'example', new Twig_SimpleFilter( 'example', array( $this, 'example' ) ) );
+		//$twig->addFilter( 'example', new Twig_SimpleFilter( 'example', array( $this, 'example' ) ) );
 
 		// Add image helper functions.
 		$twig->addFunction( new Timber\Twig_Function( 'responsive_image', '\\Pixels\\Theme\\Images::responsive_image' ) );
