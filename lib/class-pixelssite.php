@@ -112,6 +112,11 @@ class PixelsSite extends \TimberSite {
 		}
 
 		/**
+		 * Setup theme slug for textdomain context
+		 */
+		$context['textdomain'] = 'pixels-text-domain';
+
+		/**
 		 * Sets the privacy policy page, if it exists.
 		 */
 		if ( function_exists( 'get_privacy_policy_url' ) ) {
