@@ -78,6 +78,6 @@ class Config extends \TimberSite {
 	 * Load translation for the theme.
 	 */
 	public function load_theme_textdomain() {
-		load_theme_textdomain( 'pixels-text-domain', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'pixels-text-domain', get_template_directory() . '/assets/languages' );
 	}
 }

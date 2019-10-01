@@ -52,9 +52,7 @@ final class App {
 		$this->timber 			= new Timber();
 		$this->templates 		= new Templates();
 		$this->design_system 	= new DesignSystem();		
-	}
-
-	
+	}	
 }
 
 // Start the theme app
