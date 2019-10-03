@@ -20,7 +20,6 @@ final class App {
 
 	// Class properties
 	private $assets;
-	private $compatibility;
 	private $config;	
 	private $design_system;
 	private $hooks;
@@ -35,12 +34,13 @@ final class App {
 	 */
 	public function __construct() {
 
+		// Check if environment matches requirements.
+		Compatibility::run_checks();
+
 		/**
 		 * Instantiate class instances
 		 */
 
-		// Common WordPress configs.
-		$this->compatibility 	= new Compatibility();
 		$this->config 			= new Config();
 		$this->assets 			= new Assets();
 		$this->navigations 		= new Navigations();

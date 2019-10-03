@@ -22,23 +22,21 @@ class Compatibility {
 	 *
 	 * @var string
 	 */
-	protected $php_version = '7.1.0';
+	const PHP_VERSION = '7.1.0';
 
 	/**
 	 * WP version to compare to
 	 *
 	 * @var string
 	 */
-	protected $wp_version = '4.7.0';
+	const WP_VERSION = '4.7.0';
 
 	/**
-	 * Class constructor
+	 * Run all checks on theme start
 	 */
-	public function __construct() {
-
-		// Actions.
-		add_action( 'init', array( $this, 'check_php_version' ) );
-		add_action( 'init', array( $this, 'check_wordpress_version' ) );
+	public function run_checks() {
+		self::check_php_version();
+		self::check_wordpress_version();
 	}
 
 	/**
@@ -47,8 +45,8 @@ class Compatibility {
 	 * @since 1.0
 	 */
 	public function check_php_version() {
-		if ( version_compare( $this->php_version, phpversion(), '>=' ) ) {
-			wp_die( esc_attr( __( 'You must be using PHP' . $this->php_version . ' or greater.', 'pixels-text-domain' ) ), esc_attr( __( 'Theme &rsaquo; Error', 'pixels-text-domain' ) ) );
+		if ( version_compare( self::PHP_VERSION, phpversion(), '>=' ) ) {
+			wp_die( esc_attr( __( 'You must be using PHP ' . self::PHP_VERSION . ' or greater.', 'pixels-text-domain' ) ), esc_attr( __( 'Theme &rsaquo; Error', 'pixels-text-domain' ) ) );
 		}
 	}
 
@@ -58,8 +56,8 @@ class Compatibility {
 	 * @since 1.0
 	 */
 	public function check_wordpress_version() {
-		if ( version_compare( $this->wp_version, get_bloginfo( 'version' ), '>=' ) ) {
-			wp_die( esc_attr( __( 'You must be using WordPress ' . $this->wp_version . ' or greater.', 'pixels-text-domain' ) ), esc_attr( __( 'Theme &rsaquo; Error', 'pixels-text-domain' ) ) );
+		if ( version_compare( self::WP_VERSION, get_bloginfo( 'version' ), '>=' ) ) {
+			wp_die( esc_attr( __( 'You must be using WordPress ' . self::WP_VERSION . ' or greater.', 'pixels-text-domain' ) ), esc_attr( __( 'Theme &rsaquo; Error', 'pixels-text-domain' ) ) );
 		}
 	}
 }
