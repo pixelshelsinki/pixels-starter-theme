@@ -13,33 +13,20 @@
  * @subpackage  PixelsTheme
  */
 
-// Templates.
-$templates = [ 'index/index.twig' ];
+use Pixels\Theme\Controllers\ArchiveController;
 
-// Context.
-$context               = Timber::get_context();
-$context['posts']      = Timber::get_posts();
-$context['pagination'] = Timber::get_pagination();
+// Set up Controller instance.
+$controller = new ArchiveController();
 
-// Set the title based on type of Archive and add additional template to front
-// of template array if necessary.
-$context['title'] = 'Archive';
+// Set templates.
+$controller->set_templates( [ 'archive/archive-' . $post->post_type . '.twig', 'archive/archive.twig', 'index/index.twig' ] );
 
-if ( is_day() ) {
-	$context['title'] = 'Archive: ' . get_the_date( 'D M Y' );
-} elseif ( is_month() ) {
-	$context['title'] = 'Archive: ' . get_the_date( 'M Y' );
-} elseif ( is_year() ) {
-	$context['title'] = 'Archive: ' . get_the_date( 'Y' );
-} elseif ( is_tag() ) {
-	$context['title'] = single_tag_title( '', false );
-} elseif ( is_category() ) {
-	$context['title'] = single_cat_title( '', false );
-	array_unshift( $templates, 'index/index-' . get_query_var( 'cat' ) . '.twig' );
-} elseif ( is_post_type_archive() ) {
-	$context['title'] = post_type_archive_title( '', false );
-	array_unshift( $templates, 'index/index-' . get_post_type() . '.twig' );
+// If home add the home twig template to the front of the array.
+if ( is_home() ) {
+	$templates = $controller->get_templates();
+	array_unshift( $templates, 'home/home.twig' );
+	$controller->set_templates( $templates );
 }
 
-// Render with Timber.
-Timber::render( $templates, $context );
+// Render the twig.
+$controller->render();
