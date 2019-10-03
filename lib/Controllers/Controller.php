@@ -36,9 +36,6 @@ class Controller implements ControllerInterface {
 
 		// Set up global context.
 		$this->context = \Timber::get_context();
-
-		// Set up default post.
-		$this->add_context( 'post', \Timber::query_post() );
 	}
 
 	/**

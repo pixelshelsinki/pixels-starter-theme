@@ -16,20 +16,6 @@ namespace Pixels\Theme\Controllers;
 class ArchiveController extends Controller {
 
 	/**
-	 * Context array
-	 *
-	 * @var array
-	 */
-	private $context;
-
-	/**
-	 * Templates array/string
-	 *
-	 * @var array
-	 */
-	private $templates;
-
-	/**
 	 * Class constructor
 	 */
 	public function __construct() {
@@ -37,14 +23,11 @@ class ArchiveController extends Controller {
 		// Do base setup from parent.
 		parent::__construct();
 
-		// Remove "post" inherited from parent.
-		$this->remove_context( 'post' );
-
 		// Add post from default query to context.
-		$this->add_context( 'posts', \Timber::get_posts() );
+		$this->set_posts( \Timber::get_posts() );
 
 		// Add pagination.
-		$this->add_context( 'pagination', \Timber::get_pagination() );
+		$this->set_pagination( \Timber::get_pagination() );
 
 	}
 
@@ -53,7 +36,7 @@ class ArchiveController extends Controller {
 	 *
 	 * @param array $posts to be displayed in archive.
 	 */
-	public function add_posts( array $posts ) {
+	public function set_posts( array $posts ) {
 		$this->add_context( 'posts', $posts );
 	}
 
@@ -62,7 +45,7 @@ class ArchiveController extends Controller {
 	 *
 	 * @param array $pagination of posts in archive.
 	 */
-	public function add_pagination( array $pagination ) {
+	public function set_pagination( array $pagination ) {
 		$this->add_context( 'pagination', $pagination );
 	}
 }
