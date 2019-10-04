@@ -31,6 +31,9 @@ module.exports = {
     'react-hooks',
   ],
   'settings': {
+    'react': {
+      'version': '16.10.2',
+    },
     'import/core-modules': [],
     'import/ignore': [
       'node_modules',
