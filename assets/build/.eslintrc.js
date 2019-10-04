@@ -1,6 +1,9 @@
 module.exports = {
   'root': true,
-  'extends': 'eslint:recommended',
+  'extends':  [
+    'eslint:recommended',
+    'plugin:react/recommended'
+  ],
   'globals': {
     'wp': true,
   },
@@ -17,12 +20,15 @@ module.exports = {
       'generators': false,
       'objectLiteralDuplicateProperties': false,
       'experimentalObjectRestSpread': true,
+      'jsx': true,
     },
     'ecmaVersion': 2017,
     'sourceType': 'module',
   },
   'plugins': [
     'import',
+    'react',
+    'react-hooks',
   ],
   'settings': {
     'import/core-modules': [],
@@ -32,6 +38,7 @@ module.exports = {
     ],
   },
   'rules': {
+    'react/prop-types': 0,
     'no-console': 0,
     'quotes': ['error', 'single'],
     'comma-dangle': [
