@@ -19,7 +19,7 @@ $controller = new ArchiveController();
 $controller->set_templates( [ 'author/author.twig', 'index/index.twig' ] );
 
 if ( isset( $wp_query->query_vars['author'] ) ) {
-	$author            = new TimberUser( $wp_query->query_vars['author'] );
+	$author = new TimberUser( $wp_query->query_vars['author'] );
 	$controller->add_context( 'author', $author );
 	$controller->add_context( 'title', 'Author Archives: ' . $author->name() );
 }

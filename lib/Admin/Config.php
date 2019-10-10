@@ -29,6 +29,7 @@ class Config {
 	 * Uncomment a line to disable that menu item
 	 */
 	public function disable_admin_menus() {
+		// phpcs:ignore
 		// remove_menu_page( 'index.php' );                  // Dashboard.
 		// remove_menu_page( 'jetpack' );                    // Jetpack.
 		// remove_menu_page( 'edit.php' );                   // Posts.

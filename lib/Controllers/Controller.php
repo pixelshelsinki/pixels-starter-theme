@@ -25,7 +25,7 @@ class Controller implements ControllerInterface {
 	/**
 	 * Templates array/string
 	 *
-	 * @var array.
+	 * @var mixed array or string.
 	 */
 	private $templates;
 
@@ -42,10 +42,10 @@ class Controller implements ControllerInterface {
 	 * Add key & value pair to context
 	 *
 	 * @param string $key to be used in context.
-	 * @param mixed $value to be used in context.
+	 * @param mixed  $value to be used in context.
 	 */
 	public function add_context( $key, $value ) {
-		$this->context[$key] = $value;
+		$this->context[ $key ] = $value;
 	}
 
 	/**
@@ -54,13 +54,13 @@ class Controller implements ControllerInterface {
 	 * @param string $key of context array.
 	 */
 	public function remove_context( $key ) {
-		unset( $this->context[$key] );
+		unset( $this->context[ $key ] );
 	}
 
 	/**
 	 * Set templates of controller
 	 *
-	 * @param mixed $templates, string or array of Twigs.
+	 * @param mixed $templates string or array of Twigs.
 	 */
 	public function set_templates( $templates ) {
 		$this->templates = $templates;

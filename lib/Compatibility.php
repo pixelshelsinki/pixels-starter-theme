@@ -46,6 +46,7 @@ class Compatibility {
 	 */
 	public function check_php_version() {
 		if ( version_compare( self::PHP_VERSION, phpversion(), '>=' ) ) {
+			// phpcs:ignore
 			wp_die( esc_attr( __( 'You must be using PHP ' . self::PHP_VERSION . ' or greater.', 'pixels-text-domain' ) ), esc_attr( __( 'Theme &rsaquo; Error', 'pixels-text-domain' ) ) );
 		}
 	}
@@ -57,6 +58,7 @@ class Compatibility {
 	 */
 	public function check_wordpress_version() {
 		if ( version_compare( self::WP_VERSION, get_bloginfo( 'version' ), '>=' ) ) {
+			// phpcs:ignore
 			wp_die( esc_attr( __( 'You must be using WordPress ' . self::WP_VERSION . ' or greater.', 'pixels-text-domain' ) ), esc_attr( __( 'Theme &rsaquo; Error', 'pixels-text-domain' ) ) );
 		}
 	}

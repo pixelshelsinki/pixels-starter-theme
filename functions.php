@@ -20,7 +20,7 @@ final class App {
 
 	// Class properties
 	private $assets;
-	private $config;	
+	private $config;
 	private $design_system;
 	private $hooks;
 	private $images;
@@ -41,19 +41,19 @@ final class App {
 		 * Instantiate class instances
 		 */
 
-		$this->config 			= new Config();
-		$this->assets 			= new Assets();
-		$this->navigations 		= new Navigations();
-		$this->images 			= new Images();
-		$this->hooks 			= new Hooks();
-		$this->widgets 			= new Widgets();
+		$this->config      = new Config();
+		$this->assets      = new Assets();
+		$this->navigations = new Navigations();
+		$this->images      = new Images();
+		$this->hooks       = new Hooks();
+		$this->widgets     = new Widgets();
 
 		// Templating
 
-		$this->routing 			= new Templates\Routing();
-		$this->timber 			= new Templates\Timber();
-		$this->design_system 	= new Templates\DesignSystem();		
-	}	
+		$this->routing       = new Templates\Routing();
+		$this->timber        = new Templates\Timber();
+		$this->design_system = new Templates\DesignSystem();
+	}
 }
 
 // Start the theme app

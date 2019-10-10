@@ -23,6 +23,7 @@ class Context {
 		// Actions.
 		add_filter( 'timber_context', array( $this, 'add_general_context' ) );
 
+		// Polylang actions.
 		if ( function_exists( 'pll_the_languages' ) ) :
 			add_filter( 'timber_context', array( $this, 'add_polylang_context' ) );
 		endif;

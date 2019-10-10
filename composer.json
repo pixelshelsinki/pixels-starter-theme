@@ -38,8 +38,11 @@
   "scripts": {
     "test": [
       "phpcs",
-			"twigcs views",
-			"yarn test"
+      "twigcs views",
+      "yarn test"
+    ],
+    "fix": [
+      "phpcbf -p -w"
     ]
   }
 }
