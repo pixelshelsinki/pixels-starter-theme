@@ -9,7 +9,7 @@
 namespace Pixels\Theme;
 
 // Composer autoload.
-require_once 'vendor/autoload.php';
+require_once  __DIR__ . '/vendor/autoload.php' ;
 
 /**
  * Main Application class
@@ -58,4 +58,3 @@ final class App {
 
 // Start the theme app
 new App();
-
