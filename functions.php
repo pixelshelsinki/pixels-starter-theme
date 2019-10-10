@@ -25,7 +25,7 @@ final class App {
 	private $hooks;
 	private $images;
 	private $navigations;
-	private $templates;
+	private $routing;
 	private $timber;
 	private $widgets;
 
@@ -49,9 +49,10 @@ final class App {
 		$this->widgets 			= new Widgets();
 
 		// Templating
-		$this->timber 			= new Timber();
-		$this->templates 		= new Templates();
-		$this->design_system 	= new DesignSystem();		
+
+		$this->routing 			= new Templates\Routing();
+		$this->timber 			= new Templates\Timber();
+		$this->design_system 	= new Templates\DesignSystem();		
 	}	
 }
 

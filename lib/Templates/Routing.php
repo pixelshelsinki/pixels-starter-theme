@@ -6,14 +6,14 @@
  * @subpackage PixelsTheme
  */
 
-namespace Pixels\Theme;
+namespace Pixels\Theme\Templates;
 
 /**
- * Templates class
+ * Template routing class
  * Handle custom template routing
  * Handle any custom template functionalities
  */
-class Templates {
+class Routing {
 
 	/**
 	 * Types in WP template hierarchy

@@ -6,7 +6,7 @@
  * @subpackage PixelsTheme
  */
 
-namespace Pixels\Theme;
+namespace Pixels\Theme\Templates;
 
 /**
  * DesignSystem class
