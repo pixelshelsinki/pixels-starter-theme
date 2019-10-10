@@ -9,7 +9,7 @@
 namespace Pixels\Theme;
 
 // Composer autoload.
-require_once  __DIR__ . '/vendor/autoload.php' ;
+require_once __DIR__ . '/vendor/autoload.php';
 
 /**
  * Main Application class
@@ -18,15 +18,67 @@ require_once  __DIR__ . '/vendor/autoload.php' ;
  */
 final class App {
 
-	// Class properties
+	/**
+	 * Assets instance
+	 *
+	 * @var Assets
+	 */
 	private $assets;
+
+	/**
+	 * Config instance
+	 *
+	 * @var Config
+	 */
 	private $config;
+
+	/**
+	 * DesignSystem instance
+	 *
+	 * @var DesignSystem
+	 */
 	private $design_system;
+
+	/**
+	 * Hooks instance
+	 *
+	 * @var Hooks
+	 */
 	private $hooks;
+
+	/**
+	 * Images instance
+	 *
+	 * @var Images
+	 */
 	private $images;
+
+	/**
+	 * Navigations instance
+	 *
+	 * @var Navigations
+	 */
 	private $navigations;
+
+	/**
+	 * Routing instance
+	 *
+	 * @var Routing
+	 */
 	private $routing;
+
+	/**
+	 * Timber instance
+	 *
+	 * @var Timber
+	 */
 	private $timber;
+
+	/**
+	 * Widgets instance
+	 *
+	 * @var Widgets
+	 */
 	private $widgets;
 
 	/**
@@ -48,7 +100,7 @@ final class App {
 		$this->hooks       = new Hooks();
 		$this->widgets     = new Widgets();
 
-		// Templating
+		// Templating.
 
 		$this->routing       = new Templates\Routing();
 		$this->timber        = new Templates\Timber();
@@ -56,5 +108,5 @@ final class App {
 	}
 }
 
-// Start the theme app
+// Start the theme app.
 new App();
