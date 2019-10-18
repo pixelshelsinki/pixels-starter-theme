@@ -26,19 +26,6 @@ class Widgets {
 	}
 
 	/**
-	 * Register navigation menus.
-	 *
-	 * @since 1.0
-	 */
-	public function add_theme_navigations() {
-		register_nav_menus(
-			[
-				'primary_nav' => __( 'Primary Menu', 'pixels-text-domain' ),
-			]
-		);
-	}
-
-	/**
 	 * Sets up widget areas for use in the theme.
 	 */
 	public function setup_widget_areas() {
