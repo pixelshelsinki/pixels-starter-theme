@@ -87,7 +87,7 @@ final class App {
 	public function __construct() {
 
 		// Check if environment matches requirements.
-		Compatibility::run_checks();
+		Utils\Compatibility::run_checks();
 
 		/**
 		 * Instantiate class instances

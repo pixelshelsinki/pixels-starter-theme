@@ -6,7 +6,7 @@
  * @subpackage  Pixels\Theme
  */
 
-namespace Pixels\Theme;
+namespace Pixels\Theme\Utils;
 
 /**
  * Compatibility class
