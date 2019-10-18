@@ -34,6 +34,6 @@ class PostController extends Controller {
 	 * @param TimberPost $post of page.
 	 */
 	public function set_post( $post ) {
-		$this->add_context( 'post', $posts );
+		$this->add_context( 'post', $post );
 	}
 }
