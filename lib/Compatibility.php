@@ -34,7 +34,7 @@ class Compatibility {
 	/**
 	 * Run all checks on theme start
 	 */
-	public function run_checks() {
+	public static function run_checks() {
 		self::check_php_version();
 		self::check_wordpress_version();
 	}
@@ -44,7 +44,7 @@ class Compatibility {
 	 *
 	 * @since 1.0
 	 */
-	public function check_php_version() {
+	public static function check_php_version() {
 		if ( version_compare( self::PHP_VERSION, phpversion(), '>=' ) ) {
 			// phpcs:ignore
 			wp_die( esc_attr( __( 'You must be using PHP ' . self::PHP_VERSION . ' or greater.', 'pixels-text-domain' ) ), esc_attr( __( 'Theme &rsaquo; Error', 'pixels-text-domain' ) ) );
@@ -56,7 +56,7 @@ class Compatibility {
 	 *
 	 * @since 1.0
 	 */
-	public function check_wordpress_version() {
+	public static function check_wordpress_version() {
 		if ( version_compare( self::WP_VERSION, get_bloginfo( 'version' ), '>=' ) ) {
 			// phpcs:ignore
 			wp_die( esc_attr( __( 'You must be using WordPress ' . self::WP_VERSION . ' or greater.', 'pixels-text-domain' ) ), esc_attr( __( 'Theme &rsaquo; Error', 'pixels-text-domain' ) ) );
