@@ -45,9 +45,14 @@ class Functions {
 	 */
 	public function add_functions( $twig ) {
 
-		// Add image helper functions.
+		// Responsive mage helper functions.
 		$twig->addFunction( new \Timber\Twig_Function( 'responsive_image', '\\Pixels\\Theme\\Images::responsive_image' ) );
 		$twig->addFunction( new \Timber\Twig_Function( 'responsive_background', '\\Pixels\\Theme\\Images::responsive_background' ) );
+
+		// Social share functions.
+		$twig->addFunction( new \Timber\Twig_Function( 'facebook_share', '\\Pixels\\Theme\\Share::facebook' ) );
+		$twig->addFunction( new \Timber\Twig_Function( 'twitter_share', '\\Pixels\\Theme\\Share::twitter' ) );
+		$twig->addFunction( new \Timber\Twig_Function( 'linkedin_share', '\\Pixels\\Theme\\Share::linkedin' ) );
 
 		return $twig;
 	}
