@@ -8,7 +8,7 @@
 
 namespace Pixels\Theme\Twig;
 
-// Utilities
+// Utilities.
 use Pixels\Theme\Utils\Common;
 
 /**
@@ -26,8 +26,8 @@ class Context {
 		// Actions.
 		add_filter( 'timber_context', array( $this, 'add_general_context' ) );
 
-		// Uncomment to automatically add all archive links to context
-		//add_filter( 'timber_context', array( $this, 'add_archive_links_context' ) );
+		// Uncomment to automatically add all archive links to context.
+		// add_filter( 'timber_context', array( $this, 'add_archive_links_context' ) );.
 
 		// Polylang actions.
 		if ( function_exists( 'pll_the_languages' ) ) :
@@ -79,11 +79,11 @@ class Context {
 
 		$types = Common::get_post_types();
 
-		if( !empty( $types ) ):
-			foreach( $types as $type ):
+		if ( ! empty( $types ) ) :
+			foreach ( $types as $type ) :
 				$context['links'][ $type->name ] = get_post_type_archive_link( $type->name );
 			endforeach;
-			
+
 		endif;
 
 		return $context;

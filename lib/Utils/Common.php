@@ -13,7 +13,7 @@ namespace Pixels\Theme\Utils;
  *
  * Handle miscellaneous theme functionalities
  */
-class Common {	
+class Common {
 
 	/**
 	 * Return array of custom post types
