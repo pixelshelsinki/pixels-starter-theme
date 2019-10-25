@@ -8,6 +8,10 @@
 
 namespace Pixels\Theme;
 
+// Symfony asset component for versioning.
+use Symfony\Component\Asset\UrlPackage;
+use Symfony\Component\Asset\VersionStrategy\StaticVersionStrategy;
+
 /**
  * Assets class
  *
@@ -18,9 +22,31 @@ namespace Pixels\Theme;
 class Assets {
 
 	/**
+	 * Version number to be used in asset cache busts
+	 *
+	 * @var string
+	 */
+	public $version;
+
+	/**
+	 * Package for /dist/ assets
+	 *
+	 * @var PathPackage
+	 */
+	public $dist_package;
+
+	/**
 	 * Class constructor
 	 */
 	public function __construct() {
+
+		// Asset version.
+		$this->version = 'v1';
+
+		$version_strategy = new StaticVersionStrategy( $this->version );
+
+		// Versioned packages for assets.
+		$this->$dist_package = new UrlPackage( get_template_directory_uri() . '/dist', $version_strategy );
 
 		// Actions.
 		add_action( 'wp_enqueue_scripts', array( $this, 'setup_scripts_styles' ), 100 );
@@ -31,8 +57,8 @@ class Assets {
 	 * Adds the JS and CSS files to the document head.
 	 */
 	public function setup_scripts_styles() {
-		wp_enqueue_style( 'pixels/main.css', $this->get_asset_uri( 'styles/main.css' ), false, null );
-		wp_enqueue_script( 'pixels/main.js', $this->get_asset_uri( 'scripts/main.js' ), [ 'jquery' ], null, true );
+		wp_enqueue_style( 'pixels/main.css', $this->$dist_package->getUrl( 'styles/main.css' ), false, null );
+		wp_enqueue_script( 'pixels/main.js', $this->$dist_package->getUrl( 'scripts/main.js' ), [ 'jquery' ], null, true );
 	}
 
 	/**
@@ -44,17 +70,7 @@ class Assets {
 		 *
 		 * @see assets/styles/layouts/_tinymce.scss
 		 */
-		add_editor_style( '/dist/' . $this->get_asset_uri( 'styles/main.css' ) );
-	}
-
-	/**
-	 * Get the URI for the given asset.
-	 *
-	 * @param string $asset An asset.
-	 * @return string
-	 */
-	public function get_asset_uri( $asset ) {
-		return get_template_directory_uri() . '/dist\/' . $asset;
+		add_editor_style( '/dist/' . $this->$dist_package->getUrl( 'styles/main.css' ) );
 	}
 }
 

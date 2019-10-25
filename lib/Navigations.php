@@ -36,7 +36,7 @@ class Navigations {
 				'primary_nav' => __( 'Primary Menu', 'pixels-text-domain' ),
 				'mobile_nav'  => __( 'Mobile Menu', 'pixels-text-domain' ),
 				'footer_nav'  => __( 'Footer Menu', 'pixels-text-domain' ),
-			),
+			)
 		);
 	}
 }
