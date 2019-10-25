@@ -48,7 +48,9 @@ class Context {
 		/**
 		 * Menus.
 		 */
-		$context['primary_navigation'] = new \TimberMenu( 'primary_navigation' );
+		$context['menu']['desktop'] = new \TimberMenu( 'primary_nav' );
+		$context['menu']['mobile']  = new \TimberMenu( 'mobile_nav' );
+		$context['menu']['footer']  = new \TimberMenu( 'footer_nav' );
 
 		/**
 		 * Privacy policy page, if it exists.

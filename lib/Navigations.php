@@ -32,9 +32,11 @@ class Navigations {
 	 */
 	public function add_theme_navigations() {
 		register_nav_menus(
-			[
+			array(
 				'primary_nav' => __( 'Primary Menu', 'pixels-text-domain' ),
-			]
+				'mobile_nav'  => __( 'Mobile Menu', 'pixels-text-domain' ),
+				'footer_nav'  => __( 'Footer Menu', 'pixels-text-domain' ),
+			),
 		);
 	}
 }
