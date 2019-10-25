@@ -102,8 +102,8 @@ final class App {
 
 		// Templating.
 
+		$this->timber        = new Twig\Timber();
 		$this->routing       = new Templates\Routing();
-		$this->timber        = new Templates\Timber();
 		$this->design_system = new Templates\DesignSystem();
 	}
 }

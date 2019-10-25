@@ -6,10 +6,7 @@
  * @subpackage PixelsTheme
  */
 
-namespace Pixels\Theme\Templates;
-
-use Pixels\Theme\Twig\Context   as Context;
-use Pixels\Theme\Twig\Functions as Functions;
+namespace Pixels\Theme\Twig;
 
 /**
  * Timber class
