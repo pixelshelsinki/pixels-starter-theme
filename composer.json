@@ -19,7 +19,8 @@
   },
   "require": {
     "php": ">=7.1.0",
-    "composer/installers": "~1.0"
+    "composer/installers": "~1.0",
+    "symfony/asset": "^4.3"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^3.3.1",
@@ -30,11 +31,19 @@
     "friendsoftwig/twigcs": "dev-master",
     "erusev/parsedown": "~1.7.1"
   },
+  "autoload": {
+    "psr-4": {
+      "Pixels\\Theme\\": "lib/"
+    }
+  },
   "scripts": {
     "test": [
       "phpcs",
-			"twigcs views",
-			"yarn test"
+      "twigcs views",
+      "yarn test"
+    ],
+    "fix": [
+      "phpcbf -p -w"
     ]
   }
 }

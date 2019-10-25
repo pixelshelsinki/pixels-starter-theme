@@ -1,41 +1,112 @@
 <?php
 /**
- * Loads theme function files.
- *
- * NOTE: To add functionality to the theme, create or add to a file in the lib
- * directory and then include the file name (without the extension) it at the
- * end of this file.
+ * Loads theme lib
  *
  * @package  WordPress
- * @subpackage  PixelsTheme
+ * @subpackage  Pixels\Theme
  */
 
-namespace PixelsTheme;
+namespace Pixels\Theme;
+
+// Composer autoload.
+require_once __DIR__ . '/vendor/autoload.php';
 
 /**
- * Theme required files
+ * Main Application class
  *
- * The mapped array determines the code library included in your theme.
- * Add or remove files to the array as needed. Supports child theme overrides.
+ * Bootstrap app lib
  */
-array_map(
-	function ( $file ) {
-		$file = "lib/{$file}.php";
-		if ( ! locate_template( $file, true, true ) ) {
-			/* Translators: Placeholder is the path to the file */
-			wp_die( esc_attr( sprintf( __( 'Error locating <code>%s</code> for inclusion.', 'pixels-text-domain' ), $file ) ), 'File not found' );
-		}
-	},
-	[
-		'assets',
-		'class-pixelssite',
-		'compatibility-check',
-		'design-system',
-		'filters',
-		'images',
-		'navigations',
-		'templates',
-		'timber',
-		'widget-areas',
-	]
-);
+final class App {
+
+	/**
+	 * Assets instance
+	 *
+	 * @var Assets
+	 */
+	private $assets;
+
+	/**
+	 * Config instance
+	 *
+	 * @var Config
+	 */
+	private $config;
+
+	/**
+	 * DesignSystem instance
+	 *
+	 * @var DesignSystem
+	 */
+	private $design_system;
+
+	/**
+	 * Hooks instance
+	 *
+	 * @var Hooks
+	 */
+	private $hooks;
+
+	/**
+	 * Images instance
+	 *
+	 * @var Images
+	 */
+	private $images;
+
+	/**
+	 * Navigations instance
+	 *
+	 * @var Navigations
+	 */
+	private $navigations;
+
+	/**
+	 * Routing instance
+	 *
+	 * @var Routing
+	 */
+	private $routing;
+
+	/**
+	 * Timber instance
+	 *
+	 * @var Timber
+	 */
+	private $timber;
+
+	/**
+	 * Widgets instance
+	 *
+	 * @var Widgets
+	 */
+	private $widgets;
+
+	/**
+	 * Class constructor
+	 */
+	public function __construct() {
+
+		// Check if environment matches requirements.
+		Utils\Compatibility::run_checks();
+
+		/**
+		 * Instantiate class instances
+		 */
+
+		$this->config      = new Config();
+		$this->assets      = new Assets();
+		$this->navigations = new Navigations();
+		$this->images      = new Images();
+		$this->hooks       = new Hooks();
+		$this->widgets     = new Widgets();
+
+		// Templating.
+
+		$this->timber        = new Twig\Timber();
+		$this->routing       = new Templates\Routing();
+		$this->design_system = new Templates\DesignSystem();
+	}
+}
+
+// Start the theme app.
+new App();

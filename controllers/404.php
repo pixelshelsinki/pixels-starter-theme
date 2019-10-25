@@ -8,12 +8,15 @@
  * @subpackage  PixelsTheme
  */
 
+use Pixels\Theme\Controllers\Controller;
+
+// Set up Controller instance.
+$controller = new Controller();
+
 // Templates.
-$templates = [ '404/404.twig' ];
+$controller->set_templates( [ '404/404.twig' ] );
 
-// Context.
-$context          = Timber::get_context();
-$context['title'] = __( 'Not found', 'pixels-text-domain' );
+$controller->add_context( 'title', __( 'Not found', 'pixels-text-domain' ) );
 
-// Render with Timber.
-Timber::render( $templates, $context );
+// Render the twig.
+$controller->render();

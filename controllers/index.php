@@ -12,18 +12,18 @@
  * @subpackage  PixelsTheme
  */
 
-// Templates.
-$templates = [ 'index/index.twig' ];
+use Pixels\Theme\Controllers\ArchiveController;
 
-// Context.
-$context               = Timber::get_context();
-$context['posts']      = Timber::get_posts();
-$context['pagination'] = Timber::get_pagination();
+// Set up Controller instance.
+$controller = new ArchiveController();
+
+// Set templates.
+$controller->set_templates( [ 'index/index.twig' ] );
 
 // If home add the home twig template to the front of the array.
 if ( is_home() ) {
-	array_unshift( $templates, 'home/home.twig' );
+	$controller->set_templates( array_unshift( $controller->get_templates(), 'home/home.twig' ) );
 }
 
-// Render with Timber.
-Timber::render( $templates, $context );
+// Render the twig.
+$controller->render();

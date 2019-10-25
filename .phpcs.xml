@@ -49,4 +49,23 @@
   <rule ref="WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents">
 		<severity>0</severity>
 	</rule>
+  <!-- Amend WP class filenaming case to allow PSR-4 style -->
+  <rule ref="WordPress">
+    <exclude name="WordPress.Files.FileName.NotHyphenatedLowercase" />
+  </rule>
+  <!-- Amend WP class filenaming style to allow PSR-4 style -->
+  <rule ref="WordPress">
+    <exclude name="WordPress.Files.FileName.InvalidClassFileName" />
+  </rule>
+  <!-- We dont need WP telling us about meta queries -->
+  <rule ref="WordPress.DB.SlowDBQuery.slow_db_query_meta_key">
+    <severity>0</severity>
+  </rule>
+  <rule ref="WordPress.DB.SlowDBQuery.slow_db_query_meta_value">
+    <severity>0</severity>
+  </rule>
+  <!-- We dont need WP telling us about tax queries -->
+  <rule ref="WordPress.DB.SlowDBQuery.slow_db_query_tax_query">
+    <severity>0</severity>
+  </rule>
 </ruleset>

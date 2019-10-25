@@ -8,14 +8,16 @@
  * @subpackage  PixelsTheme
  */
 
+use Pixels\Theme\Controllers\ArchiveController;
+
+// Set up Controller instance.
+$controller = new ArchiveController();
+
 // Templates.
-$templates = [ 'search/search.twig', 'index/index.twig' ];
+$controller->set_templates( [ 'search/search.twig', 'index/index.twig' ] );
 
-// Context.
-$context = Timber::get_context();
 /* Translators: Placeholder is the search term */
-$context['title'] = sprintf( __( 'Search results for %s', 'pixels-text-domain' ), get_search_query() );
-$context['posts'] = Timber::get_posts();
+$controller->add_context( 'title', sprintf( __( 'Search results for %s', 'pixels-text-domain' ), get_search_query() ) );
 
-// Render with Timber.
-Timber::render( $templates, $context );
+// Render Twig.
+$controller->render();
