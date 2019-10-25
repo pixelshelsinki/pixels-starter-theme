@@ -47,7 +47,7 @@ To develop this theme you must also have the following:
 1. Download this repository as a ZIP (don't clone!).
 2. Drop it into the theme folder of your WordPress installation and rename the folder to `<client or project name>-theme`.
 3. Open the theme in your favourite text editor.
-4. Search `pixels-starter-theme`and replace with `<client or project>-theme` through the entire theme directory. This should be the same as the theme folder name name from step 2.
+4. Search `pixels-text-domain`and replace with `<client or project>-theme` through the entire theme directory. This should be the same as the theme folder name name from step 2.
 5. Update `Theme Name` and `Description` in `style.css`. Note don't call the theme '<Project name> theme', call it simply the name of the client or project.
 
 ## Theme Development
