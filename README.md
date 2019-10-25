@@ -21,6 +21,7 @@ This theme uses the following:
 
 * Sass for stylesheets
 * ES6 for Javascript
+* Composer for PSR-4 autoloading and PHP dependencies
 * [Webpack](https://webpack.github.io/) for compiling assets
 * [Browsersync](http://www.browsersync.io/) for synchronised browser testing
 * [Timber](https://timber.github.io/docs/) as a templating engine
@@ -46,7 +47,7 @@ To develop this theme you must also have the following:
 1. Download this repository as a ZIP (don't clone!).
 2. Drop it into the theme folder of your WordPress installation and rename the folder to `<client or project name>-theme`.
 3. Open the theme in your favourite text editor.
-4. Search `talentedmock-theme`and replace with `<client or project>-theme` through the entire theme directory. This should be the same as the theme folder name name from step 2.
+4. Search `pixels-starter-theme`and replace with `<client or project>-theme` through the entire theme directory. This should be the same as the theme folder name name from step 2.
 5. Update `Theme Name` and `Description` in `style.css`. Note don't call the theme '<Project name> theme', call it simply the name of the client or project.
 
 ## Theme Development
@@ -71,6 +72,7 @@ Lint commands check that code is structured and written nicely. If the commands 
 * `yarn lint` -- Checks JS and SCSS for errors, formatting and other issues.
 * `yarn lint:scripts` -- Checks JS *only* for errors, formatting and other issues.
 * `yarn lint:styles` -- Checks *SCSS* for errors, formatting and other issues.
+* `composer test` -- Checks *PHP* for errors, formatting and other issues.
 
 ## Theme Structure
 
@@ -90,12 +92,18 @@ pixels-starter-theme/                # -> Theme root folder
 |-- dist/                            # -> Compiled assets (never edit). Always reference assets from here (never assets/)
 |-- languages/                       # -> Language files for the theme.
 |-- lib/                             # -> Theme PHP
-  |-- assets.php                     # -> PHP functions for fetching assets correctly
-  |-- class-pixelssite.php           # -> PHP class for the theme, extends TimberSite.
-  |-- filters.php                    # -> PHP filters !! Not in use currently
-  |-- templates.php                  # -> PHP handles template changes.
-  |-- timber.php                     # -> PHP for setting up Timber on the theme side
-  |-- widget-areas.php               # -> PHP for setting up widget areas
+  |-- Admin/                         # -> Theme methods for WP-Admin
+  |-- Controllers/                   # -> Twig Controller classes
+  |-- Templates/                     # -> Templating related classes
+  |-- Twig/                          # -> Classes related to Twig and Timber
+  |-- Utils/.                        # -> General purpose theme classes
+  |-- Assets.php                     # -> Handle theme assets
+  |-- Config.php                     # -> Set up theme  
+  |-- Hooks.php                      # -> Theme actions & filters (general purpose)
+  |-- Images.php                     # -> Theme image size & method handling
+  |-- Navigations.php                # -> Theme menus registration & custom logic
+  |-- Share.php                      # -> Social share class
+  |-- Widgets.php                    # -> Register and handle theme widgets & areas
 |-- node_modules/                    # -> Node modules used for theme development (never edit)
 |-- views/                           # -> Views used in the theme. All twig files live here.
   |-- layouts/                       # -> Layouts used in the theme
@@ -114,11 +122,15 @@ pixels-starter-theme/                # -> Theme root folder
 
 `assets/` is where all global SCSS, JS, images and font files should live. From here files are compiled to the `dist/` directory.
 
-Any references to assets (in particular font files and images) should be made via the `dist/` directory, **not** the `assets/` directory. This is because assets in the `dist/` directory have been optimised.
+Any references to assets (in particular font files and images) should be made via the `dist/` directory, **not** the `assets/` directory.
 
 ### components/ and views/
 
-`components/` are where all reusable components live and `views/` where views live. Each broad component and view has its own directory, in which there is *at least* a twig template file, and optionally a SCSS file.
+`views/components/` are where all reusable components live and `views/layouts/` where layouts live. Each broad component and view has its own directory, in which there is *at least* a twig template file, and optionally a SCSS file.
+
+#### PHP files
+
+PHP files are object oriented, namespaced and use Composer autoloading.
 
 #### Twig files
 
