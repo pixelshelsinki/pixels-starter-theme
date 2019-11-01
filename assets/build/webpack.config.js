@@ -50,7 +50,7 @@ module.exports = (env, argv) =>  ({
           {
           loader: 'file-loader',
           options: {
-            name: '../styles/main.css',
+            name: config.paths.dist.styles+'/main.css',
           },
           },
           {
