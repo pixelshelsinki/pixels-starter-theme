@@ -46,7 +46,7 @@ class Assets {
 		$version_strategy = new StaticVersionStrategy( $this->version );
 
 		// Versioned packages for assets.
-		$this->$dist_package = new UrlPackage( get_template_directory_uri() . '/dist', $version_strategy );
+		$this->dist_package = new UrlPackage( get_template_directory_uri() . '/dist', $version_strategy );
 
 		// Actions.
 		add_action( 'wp_enqueue_scripts', array( $this, 'setup_scripts_styles' ), 100 );
@@ -57,8 +57,8 @@ class Assets {
 	 * Adds the JS and CSS files to the document head.
 	 */
 	public function setup_scripts_styles() {
-		wp_enqueue_style( 'pixels/main.css', $this->$dist_package->getUrl( 'styles/main.css' ), false, null );
-		wp_enqueue_script( 'pixels/main.js', $this->$dist_package->getUrl( 'scripts/main.js' ), [ 'jquery' ], null, true );
+		wp_enqueue_style( 'pixels/main.css', $this->dist_package->getUrl( 'styles/main.css' ), false, null );
+		wp_enqueue_script( 'pixels/main.js', $this->dist_package->getUrl( 'scripts/main.js' ), [ 'jquery' ], null, true );
 	}
 
 	/**
@@ -70,7 +70,7 @@ class Assets {
 		 *
 		 * @see assets/styles/layouts/_tinymce.scss
 		 */
-		add_editor_style( '/dist/' . $this->$dist_package->getUrl( 'styles/main.css' ) );
+		add_editor_style( '/dist/' . $this->dist_package->getUrl( 'styles/main.css' ) );
 	}
 }
 
