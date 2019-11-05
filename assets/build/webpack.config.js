@@ -10,113 +10,113 @@ const BrowserSyncPlugin     = require('browser-sync-webpack-plugin')
 const config                = require('../config')
 
 module.exports = (env, argv) =>  ({
-    entry: {
-        'main': path.resolve(__dirname, '../scripts/main.js'),
-        'customizer': path.resolve(__dirname, '../scripts/customizer.js'),
-    },
-    output: {
-        path: path.resolve(__dirname, '../../dist/scripts'),
-        filename: '[name].js',
-    },
-    resolve: {
-        modules: ['node_modules', 'web_modules'],
-        descriptionFiles: ['package.json'],
-    },
-    module: {
-        rules: [
-            {
-                test: /\.js$/,
-                include: path.resolve(__dirname, '../scripts'),
-                exclude: /node_modules/,
-                use: [
-                  {
-                    loader: 'babel-loader',
-                    options: {
-                      configFile: path.resolve(__dirname, 'babel.config.js'),
-                    },
-                  },
-                  {
-                    loader: 'eslint-loader',
-                    options: {
-                      configFile: path.resolve(__dirname, '.eslintrc.js'),
-                    },
-                  },
-                ],
-            },
-            {
-                test: /\.(sa|sc|c)ss$/,
-                include: path.resolve(__dirname, '../styles'),
-                use: [
-                  {
-                    loader: 'file-loader',
-                    options: {
-                      name: '../styles/main.css',
-                    },
-                  },
-                  {
-                      loader: 'extract-loader',
-                  },
-                  {
-                      loader: 'css-loader?-url',
-                  },
-                  {
-                      loader: 'postcss-loader',
-                      options: {
-                        config: {
-                          path: path.resolve(__dirname),
-                        },
-                      },
-                  },
-                  {
-                      loader: 'sass-loader',
-                  },
-                ],
-            },
+  entry: {
+    'main': path.resolve(__dirname, '../scripts/main.js'),
+    'customizer': path.resolve(__dirname, '../scripts/customizer.js'),
+  },
+  output: {
+    path: path.resolve(__dirname, config.paths.dist.scripts),
+    filename: '[name].js',
+  },
+  resolve: {
+    modules: ['node_modules', 'web_modules'],
+    descriptionFiles: ['package.json'],
+  },
+  module: {
+    rules: [
+      {
+        test: /\.js$/,
+        include: path.resolve(__dirname, config.paths.src.scripts),
+        exclude: /node_modules/,
+        use: [
+          {
+          loader: 'babel-loader',
+          options: {
+            configFile: path.resolve(__dirname, 'babel.config.js'),
+          },
+          },
+          {
+          loader: 'eslint-loader',
+          options: {
+            configFile: path.resolve(__dirname, '.eslintrc.js'),
+          },
+          },
         ],
-    },
-    plugins: [      
-      new FriendlyErrorsPlugin(),
-      new StyleLintPlugin({
-        configFile: path.resolve(__dirname, '.stylelintrc.js'),
-      }),
-      new CopyWebpackPlugin([
+      },
+      {
+        test: /\.(sa|sc|c)ss$/,
+        include: path.resolve(__dirname, config.paths.src.styles),
+        use: [
           {
-            from: path.resolve(__dirname, '../fonts'),
-            to: path.resolve(__dirname, '../../dist/fonts'),
-            ignore: '.gitkeep',
+          loader: 'file-loader',
+          options: {
+            name: config.paths.dist.styles+'/main.css',
+          },
           },
           {
-            from: path.resolve(__dirname, '../images'),
-            to: path.resolve(__dirname, '../../dist/images'),
-            ignore: '.gitkeep',
+            loader: 'extract-loader',
           },
-      ]),
-      new BrowserSyncPlugin(
-        {
-          host: 'localhost',
-          port: 3000,
-          proxy: config.devUrl,
-        },
-      ),
+          {
+            loader: 'css-loader?-url',
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+            config: {
+              path: path.resolve(__dirname),
+            },
+            },
+          },
+          {
+            loader: 'sass-loader',
+          },
+        ],
+      },
     ],
-    optimization: {
-        minimize: argv.mode == 'production' ? true : false,
-        minimizer: argv.mode == 'production' ? [
-            new TerserPlugin( {
-                terserOptions: { 
-                    output: { 
-                        comments: false,
-                    },
-                },
-            }),
-        ] : [],
+  },
+  plugins: [      
+    new FriendlyErrorsPlugin(),
+    new StyleLintPlugin({
+    configFile: path.resolve(__dirname, '.stylelintrc.js'),
+    }),
+    new CopyWebpackPlugin([
+      {
+      from: path.resolve(__dirname, config.paths.src.fonts),
+      to: path.resolve(__dirname, config.paths.dist.fonts),
+      ignore: '.gitkeep',
+      },
+      {
+      from: path.resolve(__dirname, config.paths.src.images),
+      to: path.resolve(__dirname, config.paths.dist.images),
+      ignore: '.gitkeep',
+      },
+    ]),
+    new BrowserSyncPlugin(
+    {
+      host: config.urls.devHost,
+      port: config.urls.devPort,
+      proxy: config.urls.devUrl,
     },
-    externals: {
-        jQuery: 'jQuery',      
-        $: 'jQuery',
-    },
-    watch: argv.mode == 'production' ? false : true,
-    watchOptions: {
-        ignored: ['node_modules'],
-    },
+    ),
+  ],
+  optimization: {
+    minimize: argv.mode == 'production' ? true : false,
+    minimizer: argv.mode == 'production' ? [
+      new TerserPlugin( {
+        terserOptions: { 
+          output: { 
+            comments: false,
+          },
+        },
+      }),
+    ] : [],
+  },
+  externals: {
+    jQuery: 'jQuery',      
+    $: 'jQuery',
+  },
+  watch: argv.mode == 'production' ? false : true,
+  watchOptions: {
+    ignored: ['node_modules'],
+  },
 });
