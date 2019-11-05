@@ -7,5 +7,5 @@
  #}
 
 <section class="meta meta-{{ post.post_type }}">
-  <p>{{ __('By %1$s &bull; %2$s', 'Meta byline for a post', 'pixels-text-domain')|format(post.author.name, post.date) }}</p>
+  <p>{{ __('By %1$s &bull; %2$s', 'Meta byline for a post', textdomain)|format(post.author.name, post.date) }}</p>
 </section>

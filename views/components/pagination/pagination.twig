@@ -13,17 +13,17 @@
     <ul class="pagination {{ classes }}">
       {% if pagination.prev %}
         <li class="page-item {{ pagination.prev.link|length ?: 'disabled' }}">
-          <a class="page-link" href="{{ pagination.prev.link }}" {{ pagination.prev.link|length ?: 'tabindex="-1"' }}>{{ __('Previous', 'pixels-text-domain') }}</a>
+          <a class="page-link" href="{{ pagination.prev.link }}" {{ pagination.prev.link|length ?: 'tabindex="-1"' }}>{{ __('Previous', textdomain) }}</a>
         </li>
       {% endif %}
       {% for page in pagination.pages %}
         <li class="page-item {{ page.current ? 'active' }}">
-          <a class="page-link" href="{{ page.link }}">{{ page.title }}{{ page.current ? __('<span class="sr-only">(current)</span>', 'pixels-text-domain') }}</a>
+          <a class="page-link" href="{{ page.link }}">{{ page.title }}{{ page.current ? __('<span class="sr-only">(current)</span>', textdomain) }}</a>
         </li>
       {% endfor %}
       {% if pagination.next %}
         <li class="page-item {{ pagination.next.link|length ?: 'disabled' }}">
-          <a class="page-link" href="{{ pagination.next.link }}" {{ pagination.next.link|length ?: 'tabindex="-1"' }}>{{ __('Next', 'pixels-text-domain') }}</a>
+          <a class="page-link" href="{{ pagination.next.link }}" {{ pagination.next.link|length ?: 'tabindex="-1"' }}>{{ __('Next', textdomain) }}</a>
         </li>
       {% endif %}
     </ul>
