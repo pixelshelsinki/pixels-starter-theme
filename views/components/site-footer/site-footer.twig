@@ -8,8 +8,8 @@
     {% endblock %}
   </section>
   <section class="site-footer-credits container text-center">
-    <a href="{{ privacy }}">{{ __('Privacy policy', 'pixels-text-domain') }}</a>
-    {{ __('&copy; %1$s %2$s.', 'pixels-text-domain')|format(("now"|date('Y')), 'Company') }}
-    {{ __('Crafted by <a href="https://pixels.fi" target="_blank">Pixels</a>.', 'pixels-text-domain') }}
+    <a href="{{ privacy }}">{{ __('Privacy policy', textdomain) }}</a>
+    {{ __('&copy; %1$s %2$s.', textdomain)|format(("now"|date('Y')), 'Company') }}
+    {{ __('Crafted by <a href="https://pixels.fi" target="_blank">Pixels</a>.', textdomain) }}
   </section>
 </footer>

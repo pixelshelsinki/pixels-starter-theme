@@ -12,7 +12,7 @@
 
 	<section class="comment-replies">
 		{% if comment.children %}
-			<h4>{{ __('Replies', 'pixels-text-domain') }}</h4>
+			<h4>{{ __('Replies', textdomain) }}</h4>
 			<div class="comment-comments">
 				{% for child_comment in comment.children %}
 					{% include "comment/comment.twig" with {comment: child_comment} %}
