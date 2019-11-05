@@ -52,6 +52,11 @@ class Context {
 		$context['site']->site_url = get_site_url(); // Since timber only returns home URL as 'link'.
 
 		/**
+		 * Textdomain for translations
+		 */
+		$context['textdomain'] = 'pixels-text-domain';
+
+		/**
 		 * Menus.
 		 */
 		$context['menu']['desktop'] = new \TimberMenu( 'primary_nav' );
