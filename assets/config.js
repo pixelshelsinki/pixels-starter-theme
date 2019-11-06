@@ -12,8 +12,9 @@ const config = {
       images : '../images',
     },
     dist : {
-      scripts : '../../dist/scripts',
-      styles : '../styles',
+      root : '../../dist/',
+      scripts : 'scripts',
+      styles : 'styles',
       fonts : '../../dist/fonts',
       images : '../../dist/images',
     },    
