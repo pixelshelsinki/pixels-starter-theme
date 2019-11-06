@@ -8,7 +8,6 @@ const FriendlyErrorsPlugin   = require('friendly-errors-webpack-plugin')
 const CopyWebpackPlugin      = require('copy-webpack-plugin')
 const BrowserSyncPlugin      = require('browser-sync-webpack-plugin')
 const ManifestPlugin         = require('webpack-manifest-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 // Our asset config.
 const config                = require('../config')
@@ -79,7 +78,7 @@ module.exports = (env, argv) =>  ({
             },
         ],
     },
-    plugins: [      
+    plugins: [   
       new FriendlyErrorsPlugin(),
       new StyleLintPlugin({
         configFile: path.resolve(__dirname, '.stylelintrc.js'),
@@ -109,11 +108,23 @@ module.exports = (env, argv) =>  ({
           proxy: config.urls.devUrl,
         },
       ),
-      new CleanWebpackPlugin(),
     ],
     optimization: {
+        runtimeChunk: 'single',
         splitChunks: {
           chunks: 'all',
+          maxInitialRequests: Infinity,
+          minSize: 0,
+          cacheGroups: {
+            vendor: {
+              test: /[\\/]node_modules[\\/]/,
+              name(module) {
+                const packageName = module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1];
+
+                return `vendor/vendor-npm.${packageName.replace('@', '')}`;
+              },
+            },
+          },
         },
         minimize: argv.mode == 'production' ? true : false,
         minimizer: argv.mode == 'production' ? [
