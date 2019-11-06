@@ -1,13 +1,14 @@
 'use strict'; // eslint-disable-line
 
 // Webpack tools.
-const path                  = require('path');
-const TerserPlugin          = require('terser-webpack-plugin');
-const StyleLintPlugin       = require('stylelint-webpack-plugin');
-const FriendlyErrorsPlugin  = require('friendly-errors-webpack-plugin')
-const CopyWebpackPlugin     = require('copy-webpack-plugin')
-const BrowserSyncPlugin     = require('browser-sync-webpack-plugin')
-const ManifestPlugin        = require('webpack-manifest-plugin');
+const path                   = require('path');
+const TerserPlugin           = require('terser-webpack-plugin');
+const StyleLintPlugin        = require('stylelint-webpack-plugin');
+const FriendlyErrorsPlugin   = require('friendly-errors-webpack-plugin')
+const CopyWebpackPlugin      = require('copy-webpack-plugin')
+const BrowserSyncPlugin      = require('browser-sync-webpack-plugin')
+const ManifestPlugin         = require('webpack-manifest-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 // Our asset config.
 const config                = require('../config')
@@ -108,6 +109,7 @@ module.exports = (env, argv) =>  ({
           proxy: config.urls.devUrl,
         },
       ),
+      new CleanWebpackPlugin(),
     ],
     optimization: {
         splitChunks: {
