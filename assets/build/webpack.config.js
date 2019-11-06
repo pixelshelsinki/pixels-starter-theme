@@ -86,7 +86,7 @@ module.exports = (env, argv) =>  ({
       }),
       new ManifestPlugin(
         {
-          fileName: "manifest.json",
+          fileName: 'manifest.json',
           filter: (file) => !file.path.match(/\.svg|png|jpg|js.LICENSE$/),
         }
       ),
