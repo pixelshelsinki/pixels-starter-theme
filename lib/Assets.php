@@ -8,10 +8,6 @@
 
 namespace Pixels\Theme;
 
-// Symfony asset component for versioning.
-use Symfony\Component\Asset\UrlPackage;
-use Symfony\Component\Asset\VersionStrategy\StaticVersionStrategy;
-
 /**
  * Assets class
  *
@@ -22,31 +18,27 @@ use Symfony\Component\Asset\VersionStrategy\StaticVersionStrategy;
 class Assets {
 
 	/**
-	 * Version number to be used in asset cache busts
+	 * Link to Manifest JSON file of assets
 	 *
 	 * @var string
 	 */
-	public $version;
+	public $manifest_link;
 
 	/**
-	 * Package for /dist/ assets
+	 * Array of Manifest JSON of assets
 	 *
-	 * @var PathPackage
+	 * @var array
 	 */
-	public $dist_package;
+	public $manifest;
 
 	/**
 	 * Class constructor
 	 */
 	public function __construct() {
 
-		// Asset version.
-		$this->version = 'v1';
-
-		$version_strategy = new StaticVersionStrategy( $this->version );
-
-		// Versioned packages for assets.
-		$this->dist_package = new UrlPackage( get_template_directory_uri() . '/dist', $version_strategy );
+		// Asset manifest strategy.
+		$this->manifest_link = get_template_directory() . '/dist/manifest.json';
+		$this->manifest      = $this->get_manifest( $this->manifest_link );
 
 		// Actions.
 		add_action( 'wp_enqueue_scripts', array( $this, 'setup_scripts_styles' ), 100 );
@@ -57,8 +49,59 @@ class Assets {
 	 * Adds the JS and CSS files to the document head.
 	 */
 	public function setup_scripts_styles() {
-		wp_enqueue_style( 'pixels/main.css', $this->dist_package->getUrl( 'styles/main.css' ), false, null );
-		wp_enqueue_script( 'pixels/main.js', $this->dist_package->getUrl( 'scripts/main.js' ), [ 'jquery' ], null, true );
+
+		// Enqueue vendor / split chunk styles.
+		$this->setup_vendors_scripts();
+
+		// Enqueue main scripts / styles.
+		wp_enqueue_style( 'pixels/main.css', $this->get_asset_path( 'styles/main.scss' ), false, null );
+		wp_enqueue_script( 'pixels/main.js', $this->get_asset_path( 'scripts/main.js' ), [ 'jquery' ], null, true );
+	}
+
+	/**
+	 * Enqueue vendor scripts
+	 * Webpack splits node modules from main bundle.
+	 */
+	public function setup_vendors_scripts() {
+
+		// Include "vendor" assets that were split.
+		foreach ( $this->manifest as $name => $path ) :
+			if ( strpos( $name, 'vendor' ) !== false ) :
+				wp_enqueue_script( 'pixels/vendor-' . $count, $this->get_asset_path( $name ), [ 'jquery' ], null, true );
+				$count++;
+			endif;
+		endforeach;
+
+	}
+
+	/**
+	 * Gets manifest array from JSON
+	 *
+	 * @param string $manifest_link to manifest.json.
+	 */
+	public function get_manifest( $manifest_link ) {
+
+		// Open manifest json.
+		$manifest = file_get_contents( $manifest_link );
+
+		// Make into array.
+		$manifest = json_decode( $manifest, true );
+
+		return $manifest;
+	}
+
+	/**
+	 * Get hashed asset version from Asset Manifest
+	 * Append URL to embed it WP Style
+	 *
+	 * @param string $asset key in manifest.
+	 */
+	public function get_asset_path( $asset ) {
+		$path = get_template_directory_uri() . '/dist/';
+
+		$manifest_asset = $this->manifest[ $asset ];
+
+		return $path . '' . $manifest_asset;
 	}
 
 	/**
@@ -70,7 +113,6 @@ class Assets {
 		 *
 		 * @see assets/styles/layouts/_tinymce.scss
 		 */
-		add_editor_style( '/dist/' . $this->dist_package->getUrl( 'styles/main.css' ) );
+		add_editor_style( '/dist/' . $this->get_asset_path( 'styles/main.css' ) );
 	}
 }
-
