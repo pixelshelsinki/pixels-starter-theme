@@ -63,6 +63,8 @@ class Assets {
 	 * Webpack splits node modules from main bundle.
 	 */
 	public function setup_vendors_scripts() {
+		// Add count to vendor inputs.
+		$count = 1;
 
 		// Include "vendor" assets that were split.
 		foreach ( $this->manifest as $name => $path ) :
@@ -113,6 +115,6 @@ class Assets {
 		 *
 		 * @see assets/styles/layouts/_tinymce.scss
 		 */
-		add_editor_style( '/dist/' . $this->get_asset_path( 'styles/main.css' ) );
+		add_editor_style( '/dist/' . $this->get_asset_path( 'styles/main.scss' ) );
 	}
 }
