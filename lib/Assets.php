@@ -63,6 +63,10 @@ class Assets {
 	 * Webpack splits node modules from main bundle.
 	 */
 	public function setup_vendors_scripts() {
+
+		// Enqueue Webpack runtime before vendors bundles.
+		wp_enqueue_script( 'runtime.js', $this->get_asset_path( 'runtime.js' ), array(), null, true );
+
 		// Add count to vendor inputs.
 		$count = 1;
 
