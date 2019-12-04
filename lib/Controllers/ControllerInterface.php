@@ -23,6 +23,14 @@ interface ControllerInterface {
 	public function add_context( $key, $value );
 
 	/**
+	 * Return value from context array.
+	 *
+	 * @param string $key of context.
+	 * @return mixed $value of context.
+	 */
+	public function get_context( $key );
+
+	/**
 	 * Set templates of controller
 	 *
 	 * @param mixed $templates string or array.
