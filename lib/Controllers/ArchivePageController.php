@@ -71,4 +71,13 @@ class ArchivePageController extends ArchiveController {
 		return $template[0]->ID;
 
 	}
+
+	/**
+	 * Returns page id.
+	 *
+	 * @return int $id of archive page.
+	 */
+	public function get_id() {
+		return $this->get_context( 'page' )->id;
+	}
 }
