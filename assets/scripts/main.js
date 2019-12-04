@@ -1,6 +1,9 @@
 // Styles.
 import '../styles/main.scss'
 
+// Common
+import './common/video-embeds.js'
+
 // Imports.
 import $ from 'jquery' // eslint-disable-line
 import 'bootstrap'
