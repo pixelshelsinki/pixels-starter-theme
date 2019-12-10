@@ -58,6 +58,16 @@ class Controller implements ControllerInterface {
 	}
 
 	/**
+	 * Return value from context array.
+	 *
+	 * @param string $key of context.
+	 * @return mixed $value of context.
+	 */
+	public function get_context( $key ) {
+		return $this->context[ $key ];
+	}
+
+	/**
 	 * Set templates of controller
 	 *
 	 * @param mixed $templates string or array of Twigs.
