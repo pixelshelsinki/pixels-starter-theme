@@ -24,6 +24,9 @@ module.exports = (env, argv) =>  ({
     resolve: {
         modules: ['node_modules', 'web_modules'],
         descriptionFiles: ['package.json'],
+    },    
+    performance: {
+      hints: false,
     },
     module: {
         rules: [
