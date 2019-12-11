@@ -37,7 +37,7 @@ To install this theme the server instance must have the following setup:
 To develop this theme you must also have the following:
 
 * [Composer](https://getcomposer.org/download/)
-* [Node.js](http://nodejs.org/) >= 8 (use nvm to switch on your local environment)
+* [Node.js](http://nodejs.org/) >= 10 (use nvm to switch on your local environment)
 * [Yarn](https://yarnpkg.com/en/docs/install) >= 1.0
 
 ## Theme Installation
