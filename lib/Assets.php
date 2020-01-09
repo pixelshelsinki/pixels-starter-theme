@@ -57,16 +57,8 @@ class Assets {
 		wp_enqueue_style( 'pixels/main.css', $this->get_asset_path( 'styles/main.scss' ), false, null );
 		wp_enqueue_script( 'pixels/main.js', $this->get_asset_path( 'scripts/main.js' ), [ 'jquery' ], null, true );
 
-		// Localize nonces & urls for REST and/or AJAX.
-		wp_localize_script(
-			'pixels/main.js',
-			'WPAPI',
-			array(
-				'rest_nonce' => wp_create_nonce( 'wp_rest' ),
-				'rest_url'   => get_rest_url(),
-				'ajax_url'   => admin_url( 'admin-ajax.php' ),
-			)
-		);
+		// Add variables to enqueued script.
+		$this->localize_variables();
 	}
 
 	/**
@@ -89,6 +81,33 @@ class Assets {
 			endif;
 		endforeach;
 
+	}
+
+	/**
+	 * Localize variables for script files.
+	 * --> Nonces & urls for REST and/or AJAX.
+	 * --> Current language
+	 */
+	public function localize_variables() {
+
+		// Array of WPAPI vars to localize.
+		$localized_vars = array(
+			'rest_nonce' => wp_create_nonce( 'wp_rest' ),
+			'rest_url'   => get_rest_url(),
+			'ajax_url'   => admin_url( 'admin-ajax.php' ),
+		);
+
+		// If using polylang, append current language.
+		if ( function_exists( 'pll_the_languages' ) ) :
+			$localized_vars['current_lang'] = pll_current_language( 'slug' );
+		endif;
+
+		// Associate with pixels/main.js.
+		wp_localize_script(
+			'pixels/main.js',
+			'WPAPI',
+			$localized_vars
+		);
 	}
 
 	/**
