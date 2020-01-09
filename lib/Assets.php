@@ -56,6 +56,17 @@ class Assets {
 		// Enqueue main scripts / styles.
 		wp_enqueue_style( 'pixels/main.css', $this->get_asset_path( 'styles/main.scss' ), false, null );
 		wp_enqueue_script( 'pixels/main.js', $this->get_asset_path( 'scripts/main.js' ), [ 'jquery' ], null, true );
+
+		// Localize nonces & urls for REST and/or AJAX.
+		wp_localize_script(
+			'pixels/main.js',
+			'WPAPI',
+			array(
+				'rest_nonce' => wp_create_nonce( 'wp_rest' ),
+				'rest_url'   => get_rest_url(),
+				'ajax_url'   => admin_url( 'admin-ajax.php' ),
+			)
+		);
 	}
 
 	/**

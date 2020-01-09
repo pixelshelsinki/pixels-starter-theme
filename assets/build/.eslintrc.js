@@ -6,6 +6,7 @@ module.exports = {
   ],
   'globals': {
     'wp': true,
+    'WPAPI': true,
   },
   'env': {
     'node': true,
