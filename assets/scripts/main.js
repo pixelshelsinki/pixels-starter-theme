@@ -1,6 +1,3 @@
-// Styles.
-import '../styles/main.scss'
-
 // Common
 import './common/video-embeds.js'
 
