@@ -16,6 +16,7 @@ module.exports = (env, argv) =>  ({
     entry: {
         'scripts/main': path.resolve(__dirname, '../scripts/main.js'),
         'scripts/customizer': path.resolve(__dirname, '../scripts/customizer.js'),
+        'styles/main': path.resolve(__dirname, '../styles/main.scss'),
     },
     output: {
         path: path.resolve(__dirname, config.paths.dist.root),
