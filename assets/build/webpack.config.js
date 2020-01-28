@@ -51,6 +51,14 @@ module.exports = (env, argv) =>  ({
                 ],
             },
             {
+              test: /\.(png|jpg|gif|svg)$/i,
+              use: [
+                {
+                  loader: 'url-loader',
+                },
+              ],
+            },
+            {
                 test: /\.(sa|sc|c)ss$/,
                 include: path.resolve(__dirname, config.paths.src.styles),
                 use: [
