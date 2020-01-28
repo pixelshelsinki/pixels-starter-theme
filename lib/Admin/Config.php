@@ -20,7 +20,7 @@ class Config {
 
 		// Filters & Actions.
 		add_action( 'admin_menu', array( $this, 'disable_admin_menus' ) );
-		add_filter( 'admin_footer_text', array( $this, 'change_admin_footer' ) );
+		add_filter( 'admin_footer_text', array( $this, 'change_admin_footer' ), 1, 99 );
 	}
 
 	/**
@@ -46,9 +46,8 @@ class Config {
 	/**
 	 * Change "Powered by WordPress" to "Crafted by Pixels"
 	 */
-	public function change_admin_footer() {
-		?>
-		<p>Crafted by <a href="https://pixels.fi" rel="nofollow" target="_blank">Pixels</a></p>
-		<?php
+	public function change_admin_footer($footer_text) {
+		$footer_text = "<p>Crafted by <a href=\"https://pixels.fi\" rel=\"nofollow\" target=\"_blank\">Pixels</a></p>";
+		return $footer_text;
 	}
 }
