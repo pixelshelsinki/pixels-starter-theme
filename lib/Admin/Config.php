@@ -45,9 +45,11 @@ class Config {
 
 	/**
 	 * Change "Powered by WordPress" to "Crafted by Pixels"
+	 *
+	 * @param string $footer_text current admin panel footer text.
 	 */
-	public function change_admin_footer($footer_text) {
-		$footer_text = "<p>Crafted by <a href=\"https://pixels.fi\" rel=\"nofollow\" target=\"_blank\">Pixels</a></p>";
+	public function change_admin_footer( $footer_text ) {
+		$footer_text = '<p>Crafted by <a href="https://pixels.fi" rel="nofollow" target="_blank">Pixels</a></p>';
 		return $footer_text;
 	}
 }
