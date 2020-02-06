@@ -51,7 +51,11 @@ module.exports = (env, argv) =>  ({
                 ],
             },
             {
-              test: /\.(png|jpg|gif|svg)$/i,
+              test: /\.svg$/,
+              use: ['@svgr/webpack', 'url-loader'],
+            },
+            {
+              test: /\.(png|jpg|gif)$/i,
               use: [
                 {
                   loader: 'url-loader',
