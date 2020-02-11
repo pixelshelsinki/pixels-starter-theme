@@ -7,7 +7,7 @@
  */
 
 // Templates.
-$templates = [ 'sidebar/sidebar.twig' ];
+$templates = array( 'sidebar/sidebar.twig' );
 
 // Render with Timber.
 Timber::render( $templates, $data );

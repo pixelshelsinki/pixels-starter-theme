@@ -60,7 +60,7 @@ class Timber {
 		*
 		* @var array
 		 */
-		\Timber::$dirname = [ 'views/layouts', 'views/components' ];
+		\Timber::$dirname = array( 'views/layouts', 'views/components' );
 	}
 
 	/**

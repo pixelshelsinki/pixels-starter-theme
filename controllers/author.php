@@ -16,7 +16,7 @@ use Pixels\Theme\Controllers\ArchiveController;
 $controller = new ArchiveController();
 
 // Templates.
-$controller->set_templates( [ 'author/author.twig', 'index/index.twig' ] );
+$controller->set_templates( array( 'author/author.twig', 'index/index.twig' ) );
 
 if ( isset( $wp_query->query_vars['author'] ) ) {
 	$author = new TimberUser( $wp_query->query_vars['author'] );

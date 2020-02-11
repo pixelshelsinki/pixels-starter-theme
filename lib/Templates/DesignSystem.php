@@ -41,7 +41,7 @@ class DesignSystem {
 	 * @return array Array of all components.
 	 */
 	public static function get_component_manifest() {
-		$component_manifest = [];
+		$component_manifest = array();
 
 		// Get a list of all top level directories in the components folder.
 		$component_directories = glob( get_template_directory() . '/views/components/*' );
@@ -49,11 +49,11 @@ class DesignSystem {
 		foreach ( $component_directories as $key => $component_directory_path ) {
 			$component_slug = basename( $component_directory_path );
 
-			$component_manifest[ $component_slug ] = [
+			$component_manifest[ $component_slug ] = array(
 				'slug'  => $component_slug,
 				'label' => ucwords( str_replace( '-', ' ', $component_slug ) ),
 				'path'  => $component_directory_path,
-			];
+			);
 		}
 
 		return $component_manifest;
@@ -66,17 +66,17 @@ class DesignSystem {
 	 * @return array                  The navigation items.
 	 */
 	public static function get_navigation( $current_component = '' ) {
-		$nav_menu_items = [];
+		$nav_menu_items = array();
 
 		$component_manifest = self::get_component_manifest();
 
 		foreach ( $component_manifest as $key => $component ) {
-			$nav_menu_items[] = [
+			$nav_menu_items[] = array(
 				'label'  => $component['label'],
 				'slug'   => $component['slug'],
 				'link'   => self::get_navigation_link( $component['slug'] ),
 				'active' => ( $current_component === $component['slug'] ),
-			];
+			);
 		}
 
 		return $nav_menu_items;
@@ -105,7 +105,7 @@ class DesignSystem {
 		$component = isset( $component_manifest[ $component_slug ] ) ? $component_manifest[ $component_slug ] : false;
 
 		if ( ! $component ) {
-			return [];
+			return array();
 		}
 
 		$component['description'] = self::get_component_description( $component_slug );
@@ -149,18 +149,18 @@ class DesignSystem {
 	 * @return array                  The variations of the component.
 	 */
 	public static function get_component_variations( $component_slug ) {
-		$component_variations = [];
+		$component_variations = array();
 
 		$component_variation_paths = glob( get_template_directory() . "/views/components/{$component_slug}/*.twig" );
 
 		foreach ( $component_variation_paths as $key => $component_variation_path ) {
 			$component_variation_filename = basename( $component_variation_path );
 
-			$component_variations[ $component_variation_filename ] = [
+			$component_variations[ $component_variation_filename ] = array(
 				'filename' => $component_variation_filename,
 				'filepath' => "{$component_slug}/{$component_variation_filename}",
 				'data'     => self::get_variation_data( $component_slug, $component_variation_filename ),
-			];
+			);
 		}
 
 		return $component_variations;

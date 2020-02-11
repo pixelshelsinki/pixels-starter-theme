@@ -68,4 +68,8 @@
   <rule ref="WordPress.DB.SlowDBQuery.slow_db_query_tax_query">
     <severity>0</severity>
   </rule>
+  <!-- Judge him by his size, I do -->
+  <rule ref="WordPress.PHP.YodaConditions.NotYoda">
+    <severity>0</severity>
+  </rule>
 </ruleset>
