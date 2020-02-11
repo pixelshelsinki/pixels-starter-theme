@@ -103,7 +103,7 @@ class Context {
 	public function add_polylang_context( $context ) {
 
 		$context['polylang']['current']   = pll_current_language( 'slug' );
-		$context['polylang']['languages'] = pll_the_languages( [ 'raw' => 1 ] );
+		$context['polylang']['languages'] = pll_the_languages( array( 'raw' => 1 ) );
 		$context['polylang']['home']      = pll_home_url();
 
 		return $context;

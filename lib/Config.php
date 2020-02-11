@@ -64,7 +64,7 @@ class Config extends \TimberSite {
 		 *
 		 * @link https://developer.wordpress.org/reference/functions/add_theme_support/#html5
 		 */
-		add_theme_support( 'html5', [ 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ] );
+		add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
 
 		/**
 		 * Enable selective refresh for widgets in customizer.

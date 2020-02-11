@@ -55,7 +55,7 @@ class Assets {
 
 		// Enqueue main scripts / styles.
 		wp_enqueue_style( 'pixels/main.css', $this->get_asset_path( 'styles/main.scss' ), false, null );
-		wp_enqueue_script( 'pixels/main.js', $this->get_asset_path( 'scripts/main.js' ), [ 'jquery' ], null, true );
+		wp_enqueue_script( 'pixels/main.js', $this->get_asset_path( 'scripts/main.js' ), array( 'jquery' ), null, true );
 
 		// Add variables to enqueued script.
 		$this->localize_variables();
@@ -76,7 +76,7 @@ class Assets {
 		// Include "vendor" assets that were split.
 		foreach ( $this->manifest as $name => $path ) :
 			if ( strpos( $name, 'vendor' ) !== false ) :
-				wp_enqueue_script( 'pixels/vendor-' . $count, $this->get_asset_path( $name ), [ 'jquery' ], null, true );
+				wp_enqueue_script( 'pixels/vendor-' . $count, $this->get_asset_path( $name ), array( 'jquery' ), null, true );
 				$count++;
 			endif;
 		endforeach;
