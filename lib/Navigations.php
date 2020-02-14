@@ -17,7 +17,7 @@ namespace Pixels\Theme;
 class Navigations {
 
 	/**
-	 * Stores registred menus
+	 * Stores registered menus
 	 *
 	 * @var array
 	 */
@@ -37,7 +37,7 @@ class Navigations {
 
 	/**
 	 * Setup array of menus in theme
-	 * --> Used to regiter menus
+	 * --> Used to register menus
 	 * --> Used to automatically add menus to Context
 	 */
 	public function setup_menus() {
