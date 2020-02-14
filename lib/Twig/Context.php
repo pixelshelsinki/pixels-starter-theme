@@ -104,7 +104,7 @@ class Context {
 			// Append items to context array.
 			$context['menu'][ $menu ] = is_object( $content ) ? $content->get_items() : $content;
 		endforeach;
-		
+
 		return $context;
 	}
 
