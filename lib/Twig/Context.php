@@ -11,6 +11,7 @@ namespace Pixels\Theme\Twig;
 // Utilities.
 use Pixels\Theme\Utils\Common;
 
+
 /**
  * Context class
  *
@@ -19,12 +20,24 @@ use Pixels\Theme\Utils\Common;
 class Context {
 
 	/**
-	 * Class constructor
+	 * Navigations instance of theme.
+	 *
+	 * @var Navigations.
 	 */
-	public function __construct() {
+	public $navigations;
+
+	/**
+	 * Class constructor
+	 *
+	 * @param Navigations $navigations of theme.
+	 */
+	public function __construct( $navigations ) {
+
+		$this->navigations = $navigations;
 
 		// Actions.
 		add_filter( 'timber_context', array( $this, 'add_general_context' ) );
+		add_filter( 'timber_context', array( $this, 'add_menus_context' ) );
 
 		// Uncomment to automatically add all archive links to context.
 		// add_filter( 'timber_context', array( $this, 'add_archive_links_context' ) );.
@@ -57,18 +70,40 @@ class Context {
 		$context['textdomain'] = 'pixels-text-domain';
 
 		/**
-		 * Menus.
-		 */
-		$context['menu']['desktop'] = new \TimberMenu( 'primary_nav' );
-		$context['menu']['mobile']  = new \TimberMenu( 'mobile_nav' );
-		$context['menu']['footer']  = new \TimberMenu( 'footer_nav' );
-
-		/**
 		 * Privacy policy page, if it exists.
 		 */
 		if ( function_exists( 'get_privacy_policy_url' ) ) {
 			$context['privacy'] = get_privacy_policy_url();
 		}
+
+		return $context;
+	}
+
+	/**
+	 * Set up all theme menus in context
+	 * --> If menu has item, return items of Timber\Menu
+	 * --> If not, return empty array
+	 * Removes schenarios where WP defaults to wrong menus.
+	 *
+	 * @param array $context The Timber global context.
+	 * @return array $context that has been updated.
+	 */
+	public function add_menus_context( $context ) {
+
+		// Registered menus from Navigations class.
+		$menus = $this->navigations->get_menus();
+
+		/**
+		 * Loop menus to context.
+		 */
+		foreach ( $menus as $menu => $title ) :
+
+			// Check if menu is in use.
+			$content = has_nav_menu( $menu ) ? new \TimberMenu( $menu ) : array();
+
+			// Append items to context array.
+			$context['menu'][ $menu ] = is_object( $content ) ? $content->get_items() : $content;
+		endforeach;
 
 		return $context;
 	}
