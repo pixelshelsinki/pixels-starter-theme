@@ -12,7 +12,7 @@ use Pixels\Theme\Controllers\ArchiveController;
 $controller = new ArchiveController();
 
 // Set templates.
-$controller->set_templates( [ 'archive/archive-' . $post->post_type . '.twig', 'archive/archive.twig', 'index/index.twig' ] );
+$controller->set_templates( array( 'archive/archive-' . $post->post_type . '.twig', 'archive/archive.twig', 'index/index.twig' ) );
 
 // If home add the home twig template to the front of the array.
 if ( is_home() ) {
