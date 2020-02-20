@@ -20,7 +20,7 @@ class Routing {
 	 *
 	 * @var array
 	 */
-	protected $wp_types = [
+	protected $wp_types = array(
 		'index',
 		'404',
 		'archive',
@@ -37,7 +37,7 @@ class Routing {
 		'single',
 		'singular',
 		'attachment',
-	];
+	);
 
 	/**
 	 * Class constructor

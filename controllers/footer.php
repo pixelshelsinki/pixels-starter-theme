@@ -11,7 +11,7 @@
  */
 
 // Templates.
-$templates = [ 'single/single-page-plugin.twig' ];
+$templates = array( 'single/single-page-plugin.twig' );
 
 // Context.
 $timber_context = $GLOBALS['timberContext'];

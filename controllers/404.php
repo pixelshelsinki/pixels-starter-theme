@@ -14,7 +14,7 @@ use Pixels\Theme\Controllers\Controller;
 $controller = new Controller();
 
 // Templates.
-$controller->set_templates( [ '404/404.twig' ] );
+$controller->set_templates( array( '404/404.twig' ) );
 
 $controller->add_context( 'title', __( 'Not found', 'pixels-text-domain' ) );
 

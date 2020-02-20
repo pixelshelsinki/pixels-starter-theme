@@ -32,11 +32,13 @@ class Timber {
 
 	/**
 	 * Class constructor
+	 *
+	 * @param Navigations $navigations of theme.
 	 */
-	public function __construct() {
+	public function __construct( $navigations ) {
 
 		// Class instances.
-		$this->context   = new Context();
+		$this->context   = new Context( $navigations );
 		$this->functions = new Functions();
 
 		// Check that Timber is enabled.
@@ -60,7 +62,7 @@ class Timber {
 		*
 		* @var array
 		 */
-		\Timber::$dirname = [ 'views/layouts', 'views/components' ];
+		\Timber::$dirname = array( 'views/layouts', 'views/components' );
 	}
 
 	/**
