@@ -102,7 +102,7 @@ module.exports = (env, argv) =>  ({
       new ManifestPlugin(
         {
           fileName: 'manifest.json',
-          filter: (file) => !file.path.match(/\.svg|png|jpg|js.LICENSE.txt|js.LICENSE$/),
+          filter: (file) => !file.path.match(/\.svg|png|jpg|woff|woff2|js.LICENSE.txt|js.LICENSE$/),
         }
       ),
       new CopyWebpackPlugin([
