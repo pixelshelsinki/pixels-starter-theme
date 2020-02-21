@@ -1,0 +1,28 @@
+{#
+ # Default archive layout.
+ #
+ # @version 1.0.0
+ #}
+
+{% extends 'base/base.twig' %}
+
+{% block site_body %}
+  <div class="archive archive--{{ post.post_type }}">
+
+    {% block site_header %}
+      {% include 'site-header/site-header.twig' %}
+    {% endblock %}
+
+    {% block site_content %}
+      {% for post in posts %}
+        {% include ['teaser/teaser-' ~ post.post_type ~ '.twig', 'teaser/teaser.twig'] %}
+      {% endfor %}
+
+      {% include 'pagination/pagination.twig' with {pagination: pagination} %}
+    {% endblock %}
+
+    {% block site_footer %}
+        {% include 'site-footer/site-footer.twig' %}
+      {% endblock %}
+  </div>
+{% endblock %}
