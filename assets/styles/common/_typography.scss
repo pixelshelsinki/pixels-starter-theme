@@ -1,3 +1,4 @@
+html,
 body {
   font-size: $body-font-size-mobile;
   line-height: $body-line-height-mobile;
@@ -78,6 +79,7 @@ h6,
 }
 
 @media only screen and (min-width: 768px) {
+  html,
   body {
     font-size: $body-font-size-tablet;
     line-height: $body-line-height-tablet;
@@ -142,6 +144,7 @@ h6,
 }
 
 @media only screen and (min-width: 992px) {
+  html,
   body {
     font-size: $body-font-size;
     line-height: $body-line-height;
