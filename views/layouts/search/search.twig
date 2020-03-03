@@ -1,0 +1,18 @@
+{% extends 'base/base.twig' %}
+
+{% block site_content %}
+
+	{% include ['single-header/single-header-search.twig', 'single-header/single-header.twig'] %}
+
+	<section class="section section--search">
+		{% if posts is not empty %}
+			{% for post in posts %}
+				{% include 'teaser/teaser.twig' %}
+			{% endfor %}
+		{% else %}
+			<p>{{ __('No results found', textdomain) }}</p>
+		{% endif %}
+	</section>
+
+	{% include 'pagination/pagination.twig' with {pagination: pagination} %}
+{% endblock %}

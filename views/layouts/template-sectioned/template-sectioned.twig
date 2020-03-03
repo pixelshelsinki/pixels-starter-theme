@@ -1,0 +1,15 @@
+{#
+ # Template file for sectioned page
+ # Sectioned page is essentially set of flexible fields
+ # "page builder"
+ #
+ # @version 1.0.0
+ #}
+
+{% extends 'base/base.twig' %}
+
+{% block site_content %}
+	{% for section in sections %}
+		{% include 'section/section-' ~ section.acf_fc_layout ~ '.twig' ignore missing %}
+	{% endfor %}
+{% endblock %}

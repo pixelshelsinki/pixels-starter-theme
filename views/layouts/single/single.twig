@@ -5,7 +5,7 @@
 {% extends 'base/base.twig' %}
 
 {% block site_content %}
-  <article class="single single-{{ post.post_type }}">
+  <article class="single single--{{ post.post_type }}">
 
     {% block single_header %}
       {% include ['single-header/single-header-' ~ post.post_type ~ '.twig', 'single-header/single-header.twig'] %}
