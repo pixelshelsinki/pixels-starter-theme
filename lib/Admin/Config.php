@@ -20,7 +20,7 @@ class Config {
 
 		// Filters & Actions.
 		add_action( 'admin_menu', array( $this, 'disable_admin_menus' ) );
-		add_filter( 'admin_footer_text', array( $this, 'change_admin_footer' ), 1, 99 );
+		add_filter( 'admin_footer_text', array( $this, 'change_admin_footer' ), 999, 1 );
 	}
 
 	/**
