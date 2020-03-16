@@ -1,0 +1,202 @@
+html,
+body {
+  font-size: $body-font-size-mobile;
+  line-height: $body-line-height-mobile;
+  letter-spacing: $body-letter-spacing-mobile;
+  font-weight: $body-font-weight-mobile;
+  color: $color-body;
+  font-family: $font-body;
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  font-family: $font-heading;
+}
+
+h1,
+.h1 {
+  font-size: $h1-font-size-mobile;
+  line-height: $h1-line-height-mobile;
+  letter-spacing: $h1-letter-spacing-mobile;
+  font-weight: $h1-font-weight-mobile;
+}
+
+h2,
+.h2 {
+  font-size: $h2-font-size-mobile;
+  line-height: $h2-line-height-mobile;
+  letter-spacing: $h2-letter-spacing-mobile;
+  font-weight: $h2-font-weight-mobile;
+}
+
+h3,
+.h3 {
+  font-size: $h3-font-size-mobile;
+  line-height: $h3-line-height-mobile;
+  letter-spacing: $h3-letter-spacing-mobile;
+  font-weight: $h3-font-weight-mobile;
+}
+
+h4,
+.h4 {
+  font-size: $h4-font-size-mobile;
+  line-height: $h4-line-height-mobile;
+  letter-spacing: $h4-letter-spacing-mobile;
+  font-weight: $h4-font-weight-mobile;
+}
+
+h5,
+.h5 {
+  font-size: $h5-font-size-mobile;
+  line-height: $h5-line-height-mobile;
+  letter-spacing: $h5-letter-spacing-mobile;
+  font-weight: $h5-font-weight-mobile;
+}
+
+h6,
+.h6 {
+  font-size: $h6-font-size-mobile;
+  line-height: $h6-line-height-mobile;
+  letter-spacing: $h6-letter-spacing-mobile;
+  font-weight: $h6-font-weight-mobile;
+}
+
+.lead {
+  font-size: $lead-font-size-mobile;
+  line-height: $lead-line-height-mobile;
+  letter-spacing: $lead-letter-spacing-mobile;
+  font-weight: $lead-font-weight-mobile;
+}
+
+@media only screen and (min-width: 768px) {
+  html,
+  body {
+    font-size: $body-font-size-tablet;
+    line-height: $body-line-height-tablet;
+    letter-spacing: $body-letter-spacing-tablet;
+    font-weight: $body-font-weight-tablet;
+  }
+
+  h1,
+  .h1 {
+    font-size: $h1-font-size-tablet;
+    line-height: $h1-line-height-tablet;
+    letter-spacing: $h1-letter-spacing-tablet;
+    font-weight: $h1-font-weight-tablet;
+  }
+
+  h2,
+  .h2 {
+    font-size: $h2-font-size-tablet;
+    line-height: $h2-line-height-tablet;
+    letter-spacing: $h2-letter-spacing-tablet;
+    font-weight: $h2-font-weight-tablet;
+  }
+
+  h3,
+  .h3 {
+    font-size: $h3-font-size-tablet;
+    line-height: $h3-line-height-tablet;
+    letter-spacing: $h3-letter-spacing-tablet;
+    font-weight: $h3-font-weight-tablet;
+  }
+
+  h4,
+  .h4 {
+    font-size: $h4-font-size-tablet;
+    line-height: $h4-line-height-tablet;
+    letter-spacing: $h4-letter-spacing-tablet;
+    font-weight: $h4-font-weight-tablet;
+  }
+
+  h5,
+  .h5 {
+    font-size: $h5-font-size-tablet;
+    line-height: $h5-line-height-tablet;
+    letter-spacing: $h5-letter-spacing-tablet;
+    font-weight: $h5-font-weight-tablet;
+  }
+
+  h6,
+  .h6 {
+    font-size: $h6-font-size-tablet;
+    line-height: $h6-line-height-tablet;
+    letter-spacing: $h6-letter-spacing-tablet;
+    font-weight: $h6-font-weight-tablet;
+  }
+
+  .lead {
+    font-size: $lead-font-size;
+    line-height: $lead-line-height;
+    letter-spacing: $lead-letter-spacing;
+    font-weight: $lead-font-weight;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  html,
+  body {
+    font-size: $body-font-size;
+    line-height: $body-line-height;
+    letter-spacing: $body-letter-spacing;
+    font-weight: $body-font-weight;
+  }
+
+  h1,
+  .h1 {
+    font-size: $h1-font-size;
+    line-height: $h1-line-height;
+    letter-spacing: $h1-letter-spacing;
+    font-weight: $h1-font-weight;
+  }
+
+  h2,
+  .h2 {
+    font-size: $h2-font-size;
+    line-height: $h2-line-height;
+    letter-spacing: $h2-letter-spacing;
+    font-weight: $h2-font-weight;
+  }
+
+  h3,
+  .h3 {
+    font-size: $h3-font-size;
+    line-height: $h3-line-height;
+    letter-spacing: $h3-letter-spacing;
+    font-weight: $h3-font-weight;
+  }
+
+  h4,
+  .h4 {
+    font-size: $h4-font-size;
+    line-height: $h4-line-height;
+    letter-spacing: $h4-letter-spacing;
+    font-weight: $h4-font-weight;
+  }
+
+  h5,
+  .h5 {
+    font-size: $h5-font-size;
+    line-height: $h5-line-height;
+    letter-spacing: $h5-letter-spacing;
+    font-weight: $h5-font-weight;
+  }
+
+  h6,
+  .h6 {
+    font-size: $h6-font-size;
+    line-height: $h6-line-height;
+    letter-spacing: $h6-letter-spacing;
+    font-weight: $h6-font-weight;
+  }
+}

@@ -1,3 +1,55 @@
 // *************
 // Global Styles
 // *************
+
+body,
+html {
+  max-width: 100%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+strong {
+  font-weight: bold;
+}
+
+em {
+  font-style: italic;
+}
+
+/**
+ * Text helpers
+ */
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+/**
+ * Img
+ */
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+/**
+ * Links
+ */
+
+a {
+  color: $color-link;
+
+  &:hover {
+    color: $color-link-hover;
+  }
+}
