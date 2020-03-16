@@ -25,7 +25,7 @@ class Images {
 	 * @var array
 	 */
 	const SIZES = array(
-		'page-hero' => array( 1200, 800, true, true ),
+		'page-hero'        => array( 1200, 800, true, true ),
 		'page-hero-mobile' => array( 375, 500, true, true ),
 	);
 
@@ -48,14 +48,14 @@ class Images {
 	public function add_img_sizes() {
 		add_theme_support( 'post-thumbnails' );
 
-		foreach( self::SIZES as $name => $details ):
+		foreach ( self::SIZES as $name => $details ) :
 
 			// Register standard size.
 			add_image_size( $name, $details[0], $details[1], $details[2] );
 
 			// Check for retina enable.
-			if( $details[3] ):
-				add_image_size( $name . '-retina', $details[0]*2, $details[1]*2, $details[2] );
+			if ( $details[3] ) :
+				add_image_size( $name . '-retina', $details[0] * 2, $details[1] * 2, $details[2] );
 			endif;
 		endforeach;
 	}
