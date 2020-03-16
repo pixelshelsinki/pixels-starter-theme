@@ -6,6 +6,6 @@
  # @var post	The Timber Post object.
  #}
 
-<footer class="single-footer single-footer-{{ post.type }}">
+<footer class="single-footer single-footer--{{ post.type }}">
   {% include 'pagination/pagination.twig' with {pagination: post.pagination} %}
 </footer>

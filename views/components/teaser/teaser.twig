@@ -2,20 +2,20 @@
  # Template for a single content's teaser.
  #}
 
-<article class="teaser teaser-{{ post.type }}" id="teaser-{{ post.ID }}">
+<article class="teaser teaser--{{ post.type }}" id="teaser-{{ post.ID }}">
 
 	{% block content %}
 
-		<h2 class="teaser-title teaser-title-{{ post.type }}">
+		<h2 class="teaser__title teaser__title--{{ post.type }}">
       <a href="{{ post.link }}">{{ post.title }}</a>
     </h2>
 
-		<div class="teaser-content teaser-content-{{ post.type }}">
+		<div class="teaser__content teaser__content--{{ post.type }}">
 			<p>{{ post.preview.read_more(__('Read more<span class="sr-only"> about %s</span>', textdomain)|format(post.title)) }}</p>
 		</div>
 
 		{% if post.get_thumbnail %}
-			<img src="{{ post.thumbnail.src }}" alt="{{ post.thumbnail.alt }}" class="img-fluid">
+			<img src="{{ post.thumbnail.src }}" alt="{{ post.thumbnail.alt }}" class="teaser__image teaser__image--{{ post.type }} img-fluid">
 		{% endif %}
 
 	{% endblock %}

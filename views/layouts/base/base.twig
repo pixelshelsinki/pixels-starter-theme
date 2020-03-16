@@ -14,21 +14,24 @@
   {% endblock %}
 
   <body class="{{ body_class }}">
+    {% block site_body %}
 
-    {% block site_header %}
-      {% include 'site-header/site-header.twig' %}
-    {% endblock %}
+      {% block site_header %}
+        {% include 'site-header/site-header.twig' %}
+      {% endblock %}
 
-    <main role="main">
-      <div class="container">
-        {% block site_content %}
-          {{ __('Sorry, no content was found!', textdomain) }}
-        {% endblock %}
-      </div>
-    </main>
+      <main role="main">
+        <div class="container">
+          {% block site_content %}
+            {{ __('Sorry, no content was found!', textdomain) }}
+          {% endblock %}
+        </div>
+      </main>
 
-    {% block site_footer %}
-      {% include 'site-footer/site-footer.twig' %}
+      {% block site_footer %}
+        {% include 'site-footer/site-footer.twig' %}
+      {% endblock %}
+
     {% endblock %}
 
     {{ function('wp_footer') }}
