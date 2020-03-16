@@ -17,6 +17,19 @@ namespace Pixels\Theme;
 class Images {
 
 	/**
+	 * Image sizes array
+	 * Pattern:
+	 *
+	 * NAME, WIDTH, HEIGHT, CROP, RETINA TRUE/FALSE
+	 *
+	 * @var array
+	 */
+	const SIZES = array(
+		'page-hero' => array( 1200, 800, true, true ),
+		'page-hero-mobile' => array( 375, 500, true, true ),
+	);
+
+	/**
 	 * Class constructor
 	 */
 	public function __construct() {
@@ -27,13 +40,24 @@ class Images {
 
 	/**
 	 * Register theme image sizes.
+	 * --> Loop through sizes array
+	 * --> If retina, create double version too.
 	 *
 	 * @since 1.0
 	 */
 	public function add_img_sizes() {
 		add_theme_support( 'post-thumbnails' );
-		// phpcs:ignore
-		// add_image_size( 'image-name', 350, 200, true );
+
+		foreach( self::SIZES as $name => $details ):
+
+			// Register standard size.
+			add_image_size( $name, $details[0], $details[1], $details[2] );
+
+			// Check for retina enable.
+			if( $details[3] ):
+				add_image_size( $name . '-retina', $details[0]*2, $details[1]*2, $details[2] );
+			endif;
+		endforeach;
 	}
 
 	/**
