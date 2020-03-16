@@ -8,6 +8,8 @@
 
 namespace Pixels\Theme;
 
+use Pixels\Theme\Images\ResponsiveImage;
+
 /**
  * Theme image sizes
  *
@@ -25,7 +27,7 @@ class Images {
 	 * @var array
 	 */
 	const SIZES = array(
-		'page-hero'        => array( 1200, 800, true, true ),
+		'page-hero'        => array( 1100, 500, true, true ),
 		'page-hero-mobile' => array( 375, 500, true, true ),
 	);
 
@@ -63,20 +65,23 @@ class Images {
 	/**
 	 * Output <picture> tag with two image sizes
 	 *
-	 * @param string $mobile url to mobile size.
-	 * @param string $desktop url to desktop size.
+	 * @param int    $image_id of image / attachment.
+	 * @param string $mobile_size name.
+	 * @param string $desktop_size name.
+	 * @param string $alt tag of image, optional.
 	 * @return string.
 	 */
-	public static function responsive_image( $mobile, $desktop ) {
-		ob_start();
-		?>
-		<picture>
-			<source media="(max-width: 576px)" srcset="<?php echo esc_html( $mobile ); ?>">
-			<source media="(min-width: 576px)" srcset="<?php echo esc_html( $desktop ); ?>">
-			<img src="<?php echo esc_html( $desktop ); ?>">
-		</picture>
-		<?php
-		return ob_get_clean();
+	public static function responsive_image( $image_id, $mobile_size, $desktop_size, $alt = '' ) {
+
+		// Create responsive image instance.
+		$image = new ResponsiveImage( $image_id );
+
+		// Add img sizes.
+		$image->set_mobile_size( $mobile_size );
+		$image->set_desktop_size( $desktop_size );
+		$image->set_alt_tag( $alt );
+
+		return $image->get_picture();
 	}
 
 	/**
