@@ -123,6 +123,18 @@ class ResponsiveImage {
 			$desktop_retina = $this->get_retina( $this->sizes['desktop'] );
 		endif;
 
+		// Get original image for comparison.
+		$original = wp_get_attachment_image_src( $this->id, 'full' )[0];
+
+		// Falsify retinas if right sizes dont exist.
+		if ( $mobile_retina === $original ) :
+			$mobile_retina = false;
+		endif;
+
+		if ( $desktop_retina === $original ) :
+			$desktop_retina = false;
+		endif;
+
 		$urls = array(
 			'mobile'         => $mobile,
 			'mobile_retina'  => $mobile_retina,
@@ -215,6 +227,4 @@ class ResponsiveImage {
 
 		return $desktop_source;
 	}
-
-
 }
