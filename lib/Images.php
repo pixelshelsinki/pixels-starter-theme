@@ -8,8 +8,8 @@
 
 namespace Pixels\Theme;
 
-use Pixels\Theme\Images\ResponsiveImage;
-
+use Pixels\Theme\Images\ResponsivePicture;
+use Pixels\Theme\Images\ResponsiveBackground;
 /**
  * Theme image sizes
  *
@@ -74,7 +74,7 @@ class Images {
 	public static function responsive_image( $image_id, $mobile_size, $desktop_size, $alt = '' ) {
 
 		// Create responsive image instance.
-		$image = new ResponsiveImage( $image_id );
+		$image = new ResponsivePicture( $image_id );
 
 		// Add img sizes.
 		$image->set_mobile_size( $mobile_size );
@@ -87,26 +87,21 @@ class Images {
 	/**
 	 * Output background image with two sizes in <style> tag
 	 *
-	 * @param string $mobile url to mobile size.
-	 * @param string $desktop url to desktop size.
+	 * @param int    $image_id of image / attachment.
+	 * @param string $mobile_size name.
+	 * @param string $desktop_size name.
 	 * @param string $selector css selector of background. Like #my_background.
 	 * @return string.
 	 */
-	public static function responsive_background( $mobile, $desktop, $selector ) {
-		ob_start();
-		?>
-		<style>
-			<?php echo esc_html( $selector ); ?> {
-				background-image:url('<?php echo esc_html( $mobile ); ?>');	
-			}
+	public static function responsive_background( $image_id, $mobile_size, $desktop_size, $selector ) {
 
-			@media only screen and (min-width : 576px) {
-				<?php echo esc_html( $selector ); ?> {
-					background-image:url('<?php echo esc_html( $desktop ); ?>');
-				}
-			}
-		</style>
-		<?php
-		return ob_get_clean();
+		$image = new ResponsiveBackground( $image_id );
+
+		// Add img sizes.
+		$image->set_selector( $selector );
+		$image->set_mobile_size( $mobile_size );
+		$image->set_desktop_size( $desktop_size );
+
+		return $image->get_background();
 	}
 }

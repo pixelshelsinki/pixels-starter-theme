@@ -24,15 +24,6 @@ use Pixels\Theme\Images as ThemeImages;
 class ResponsiveImage extends AbstractImage implements RetinaInterface {
 
 	/**
-	 * Class constructor
-	 *
-	 * @param int $id of attachment.
-	 */
-	public function __construct( $id ) {
-		parent::__construct( $id );
-	}
-
-	/**
 	 * Check if image size has retina version.
 	 *
 	 * @param string $size_name of image.

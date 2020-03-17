@@ -20,18 +20,9 @@ use Pixels\Theme\Images as ThemeImages;
 class ResponsivePicture extends ResponsiveImage {
 
 	/**
-	 * Class constructor
-	 *
-	 * @param int $id of attachment.
-	 */
-	public function __construct( $id ) {
-		parent::__construct( $id );
-	}
-	
-	/**
 	 * Return <picture> tag html.
 	 *
-	 * @return string $html of image;
+	 * @return string $html of image.
 	 */
 	public function get_picture() {
 		$html = '';
