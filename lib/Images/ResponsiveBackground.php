@@ -56,7 +56,7 @@ class ResponsiveBackground extends ResponsiveImage {
 		$html .= '<style>';
 		$html .= $this->get_mobile_background( $urls );
 		$html .= $this->get_desktop_background( $urls );
-		$html .= '</style>';		
+		$html .= '</style>';
 
 		return $html;
 	}
