@@ -8,6 +8,11 @@
 
 namespace Pixels\Theme\Images;
 
+// Contracts.
+use Pixels\Theme\Images\AbstractImage;
+use Pixels\Theme\Images\RetinaInterface;
+
+
 use Pixels\Theme\Images as ThemeImages;
 
 /**
@@ -16,28 +21,7 @@ use Pixels\Theme\Images as ThemeImages;
  * --> Append retina urls.
  * --> Output html
  */
-class ResponsiveImage {
-
-	/**
-	 * Image / attatchment id.
-	 *
-	 * @var int.
-	 */
-	private $id;
-
-	/**
-	 * Image size names
-	 *
-	 * @var array.
-	 */
-	private $sizes;
-
-	/**
-	 * Alternative tag.
-	 *
-	 * @var string.
-	 */
-	private $alt;
+class ResponsiveImage extends AbstractImage implements RetinaInterface {
 
 	/**
 	 * Class constructor
@@ -45,34 +29,7 @@ class ResponsiveImage {
 	 * @param int $id of attachment.
 	 */
 	public function __construct( $id ) {
-		$this->id = $id;
-	}
-
-	/**
-	 * Set mobile size name.
-	 *
-	 * @param string $mobile_size name.
-	 */
-	public function set_mobile_size( $mobile_size ) {
-		$this->sizes['mobile'] = $mobile_size;
-	}
-
-	/**
-	 * Set desktop size name.
-	 *
-	 * @param string $desktop_size name.
-	 */
-	public function set_desktop_size( $desktop_size ) {
-		$this->sizes['desktop'] = $desktop_size;
-	}
-
-	/**
-	 * Set image alt tag.
-	 *
-	 * @param string $alt text of image.
-	 */
-	public function set_alt_tag( $alt ) {
-		$this->alt = $alt;
+		parent::__construct( $id );
 	}
 
 	/**
@@ -111,16 +68,16 @@ class ResponsiveImage {
 	public function get_urls() {
 
 		// Get sizes by id.
-		$mobile        = wp_get_attachment_image_src( $this->id, $this->sizes['mobile'] )[0];
-		$mobile_retina = $this->get_retina( $this->sizes['mobile'] );
+		$mobile        = wp_get_attachment_image_src( $this->id, $this->get_mobile_size() )[0];
+		$mobile_retina = $this->get_retina( $this->get_mobile_size() );
 
 		// Check if mobile & desktop are the same.
-		if ( $this->sizes['mobile'] === $this->sizes['desktop'] ) :
+		if ( $this->get_mobile_size() === $this->get_desktop_size() ) :
 			$desktop        = $mobile;
 			$desktop_retina = $mobile_retina;
 		else :
-			$desktop        = wp_get_attachment_image_src( $this->id, $this->sizes['desktop'] )[0];
-			$desktop_retina = $this->get_retina( $this->sizes['desktop'] );
+			$desktop        = wp_get_attachment_image_src( $this->id, $this->get_desktop_size() )[0];
+			$desktop_retina = $this->get_retina( $this->get_desktop_size() );
 		endif;
 
 		// Get original image for comparison.
