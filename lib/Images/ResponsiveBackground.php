@@ -56,22 +56,7 @@ class ResponsiveBackground extends ResponsiveImage {
 		$html .= '<style>';
 		$html .= $this->get_mobile_background( $urls );
 		$html .= $this->get_desktop_background( $urls );
-		$html .= '</style>';
-
-		ob_start();
-		?>
-		<style>
-			<?php echo esc_html( $selector ); ?> {
-				background-image:url('<?php echo esc_html( $mobile ); ?>');	
-			}
-
-			@media only screen and (min-width : 576px) {
-				<?php echo esc_html( $selector ); ?> {
-					background-image:url('<?php echo esc_html( $desktop ); ?>');
-				}
-			}
-		</style>
-		<?php
+		$html .= '</style>';		
 
 		return $html;
 	}
