@@ -3,15 +3,53 @@
 // *********
 
 // Colors
-$color-body:       #000;
-$color-link:       #007bff;
-$color-link-hover: #000;
+$color-body:          #000;
+$color-link:          #007bff;
+$color-link-hover:    #000;
+$color-disabled-text: #979797;
+$color-disabled-bg:   #e6e6e6;
+
+$theme-colors: (
+  "blue" : $color-link,
+);
 
 /* #################################### */
 
 // Fonts
 $font-body:           "Helvetica Neue", Helvetica, Arial, sans-serif;
 $font-heading:        "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+/* #################################### */
+
+//Standard button
+$button-disabled-text-color: $color-disabled-text;
+$button-disabled-background-color: $color-disabled-bg;
+$button-text-transform: none;
+$button-transition-time: 0.15s;
+$button-box-shadow: none;
+$button-border-radius: 0;
+$button-padding-y: 1rem;
+$button-padding-x: 3rem;
+$button-font-weight: normal;
+$button-font-style: normal;
+$button-letter-spacing: normal;
+$button-background-color: $color-body;
+$button-font-family: $font-body;
+
+//Outline button
+$button-outline-border-width: 1px;
+$button-outline-border-radius: 0;
+$button-outline-disabled-text-color: $color-disabled-text;
+$button-outline-disabled-background-color: $color-disabled-bg;
+$button-outline-text-transform: none;
+$button-outline-transition-time: 0.15s;
+$button-outline-border-radius: 0;
+$button-outline-padding-y: 1rem;
+$button-outline-padding-x: 3rem;
+$button-outline-font-weight: normal;
+$button-outline-font-style: normal;
+$button-outline-letter-spacing: normal;
+$button-outline-font-family: $font-body;
 
 /* #################################### */
 
