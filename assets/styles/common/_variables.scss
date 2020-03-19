@@ -36,20 +36,20 @@ $button-letter-spacing: normal;
 $button-background-color: $color-body;
 $button-font-family: $font-body;
 
-//Outline button
-$button-outline-border-width: 1px;
-$button-outline-border-radius: 0;
-$button-outline-disabled-text-color: $color-disabled-text;
-$button-outline-disabled-background-color: $color-disabled-bg;
-$button-outline-text-transform: none;
-$button-outline-transition-time: 0.15s;
-$button-outline-border-radius: 0;
-$button-outline-padding-y: 1rem;
-$button-outline-padding-x: 3rem;
-$button-outline-font-weight: normal;
-$button-outline-font-style: normal;
-$button-outline-letter-spacing: normal;
-$button-outline-font-family: $font-body;
+//secondary button
+$button-secondary-border-width: 1px;
+$button-secondary-border-radius: 0;
+$button-secondary-disabled-text-color: $color-disabled-text;
+$button-secondary-disabled-background-color: $color-disabled-bg;
+$button-secondary-text-transform: none;
+$button-secondary-transition-time: 0.15s;
+$button-secondary-border-radius: 0;
+$button-secondary-padding-y: 1rem;
+$button-secondary-padding-x: 3rem;
+$button-secondary-font-weight: normal;
+$button-secondary-font-style: normal;
+$button-secondary-letter-spacing: normal;
+$button-secondary-font-family: $font-body;
 
 /* #################################### */
 
