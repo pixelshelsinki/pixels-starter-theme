@@ -93,12 +93,23 @@
   .button-secondary--#{$color} {
     @include button-secondary-variant($value);
   }
+
+  .btn-primary--#{$color} {
+    @include button-variant($value);
+  }
+
+  .btn-secondary--#{$color} {
+    @include button-secondary-variant($value);
+  }
 }
 
-.button-primary,
-.button-secondary {
-  &--fluid {
-    width: 100%;
-    padding: $button-secondary-padding-y 0;
+.button,
+.btn {
+  &-primary,
+  &-secondary {
+    &--fluid {
+      width: 100%;
+      padding: $button-secondary-padding-y 0;
+    }
   }
 }
