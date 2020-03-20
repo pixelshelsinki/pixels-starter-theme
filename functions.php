@@ -87,24 +87,26 @@ final class App {
 	public function __construct() {
 
 		// Check if environment matches requirements.
-		Utils\Compatibility::run_checks();
+		$compatible = Utils\Compatibility::run_checks();
 
-		/**
-		 * Instantiate class instances
-		 */
+		if ( $compatible ) :
+			/**
+			 * Instantiate class instances
+			 */
 
-		$this->config      = new Config();
-		$this->assets      = new Assets();
-		$this->navigations = new Navigations();
-		$this->images      = new Images();
-		$this->hooks       = new Hooks();
-		$this->widgets     = new Widgets();
+			$this->config      = new Config();
+			$this->assets      = new Assets();
+			$this->navigations = new Navigations();
+			$this->images      = new Images();
+			$this->hooks       = new Hooks();
+			$this->widgets     = new Widgets();
 
-		// Templating.
+			// Templating.
 
-		$this->timber        = new Twig\Timber( $this->navigations );
-		$this->routing       = new Templates\Routing();
-		$this->design_system = new Templates\DesignSystem();
+			$this->timber        = new Twig\Timber( $this->navigations );
+			$this->routing       = new Templates\Routing();
+			$this->design_system = new Templates\DesignSystem();
+		endif;
 	}
 }
 
