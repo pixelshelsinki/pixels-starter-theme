@@ -31,8 +31,8 @@ class ResponsivePicture extends ResponsiveImage {
 		$urls = $this->get_urls();
 
 		$html .= '<picture>';
-		$html .= $urls['mobile_retina'] ? $this->get_mobile_source_retina( $urls ) : $this->get_mobile_source( $urls );
-		$html .= $urls['desktop_retina'] ? $this->get_desktop_source_retina( $urls ) : $this->get_desktop_source( $urls );
+		$html .= $this->get_mobile_source( $urls );
+		$html .= $this->get_desktop_source( $urls );
 		$html .= '<img src="' . esc_html( $urls['desktop'] ) . '">';
 
 		return $html;
@@ -46,25 +46,15 @@ class ResponsivePicture extends ResponsiveImage {
 	 */
 	public function get_mobile_source( $urls ) {
 		ob_start();
-		?>
-		<source media="(max-width: <?php echo esc_html( ThemeImages::BREAKPOINT ); ?>)" srcset="<?php echo esc_html( $urls['mobile'] ); ?>">
-		<?php
-		$mobile_source = ob_get_clean();
+		if ( $urls['mobile_retina'] ) : ?>
+			<source media="(max-width: <?php echo esc_html( ThemeImages::BREAKPOINT ); ?>)" srcset="<?php echo esc_html( $urls['mobile'] ); ?> 1x, <?php echo esc_html( $urls['mobile_retina'] ); ?> 2x">
+			<?php
+		else :
+			?>
+			<source media="(max-width: <?php echo esc_html( ThemeImages::BREAKPOINT ); ?>)" srcset="<?php echo esc_html( $urls['mobile'] ); ?>">
+			<?php
+		endif;
 
-		return $mobile_source;
-	}
-
-	/**
-	 * Return retina <source> tag for mobile.
-	 *
-	 * @param array $urls of image.
-	 * @return string $mobile_source of image.
-	 */
-	public function get_mobile_source_retina( $urls ) {
-		ob_start();
-		?>
-		<source media="(max-width: <?php echo esc_html( ThemeImages::BREAKPOINT ); ?>)" srcset="<?php echo esc_html( $urls['mobile'] ); ?> 1x, <?php echo esc_html( $urls['mobile_retina'] ); ?> 2x">
-		<?php
 		$mobile_source = ob_get_clean();
 
 		return $mobile_source;
@@ -78,25 +68,16 @@ class ResponsivePicture extends ResponsiveImage {
 	 */
 	public function get_desktop_source( $urls ) {
 		ob_start();
-		?>
-		<source media="(min-width: <?php echo esc_html( ThemeImages::BREAKPOINT ); ?>)" srcset="<?php echo esc_html( $urls['desktop'] ); ?>">
-		<?php
-		$desktop_source = ob_get_clean();
+		if ( $urls['desktop_retina'] ) :
+			?>
+			<source media="(min-width: <?php echo esc_html( ThemeImages::BREAKPOINT ); ?>)" srcset="<?php echo esc_html( $urls['desktop'] ); ?> 1x, <?php echo esc_html( $urls['desktop_retina'] ); ?> 2x">
+			<?php
+		else :
+			?>
+			<source media="(min-width: <?php echo esc_html( ThemeImages::BREAKPOINT ); ?>)" srcset="<?php echo esc_html( $urls['desktop'] ); ?>">
+			<?php
+		endif;
 
-		return $desktop_source;
-	}
-
-	/**
-	 * Return retina <source> tag for desktop.
-	 *
-	 * @param array $urls of image.
-	 * @return string $desktop_source of image.
-	 */
-	public function get_desktop_source_retina( $urls ) {
-		ob_start();
-		?>
-		<source media="(min-width: <?php echo esc_html( ThemeImages::BREAKPOINT ); ?>)" srcset="<?php echo esc_html( $urls['desktop'] ); ?> 1x, <?php echo esc_html( $urls['desktop_retina'] ); ?> 2x">
-		<?php
 		$desktop_source = ob_get_clean();
 
 		return $desktop_source;
