@@ -32,6 +32,14 @@ class Images {
 	);
 
 	/**
+	 * Breakpoint for switching from mobile img to dekstop image
+	 * Will be used in <sources> and inline styles.
+	 *
+	 * @var string.
+	 */
+	const BREAKPOINT = '576px';
+
+	/**
 	 * Class constructor
 	 */
 	public function __construct() {

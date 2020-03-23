@@ -8,6 +8,8 @@
 
 namespace Pixels\Theme\Images;
 
+use Pixels\Theme\Images as ThemeImages;
+
 /**
  * Handle responsive image.
  * --> Get img urls by sizes
@@ -102,7 +104,7 @@ class ResponsiveBackground extends ResponsiveImage {
 		ob_start();
 		if ( $urls['desktop_retina'] ) :
 			?>
-			@media only screen and (min-width : 576px) {
+			@media only screen and (min-width : <?php echo esc_html( ThemeImages::BREAKPOINT ); ?> ) {
 				<?php
 				echo esc_html( $this->get_selector() );
 				?>
@@ -115,7 +117,7 @@ class ResponsiveBackground extends ResponsiveImage {
 			<?php
 		else :
 			?>
-			@media only screen and (min-width : 576px) {
+			@media only screen and (min-width : <?php echo esc_html( ThemeImages::BREAKPOINT ); ?>) {
 				<?php
 				echo esc_html( $this->get_selector() );
 				?>

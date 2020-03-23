@@ -47,7 +47,7 @@ class ResponsivePicture extends ResponsiveImage {
 	public function get_mobile_source( $urls ) {
 		ob_start();
 		?>
-		<source media="(max-width: 576px)" srcset="<?php echo esc_html( $urls['mobile'] ); ?>">
+		<source media="(max-width: <?php echo esc_html( ThemeImages::BREAKPOINT ); ?>)" srcset="<?php echo esc_html( $urls['mobile'] ); ?>">
 		<?php
 		$mobile_source = ob_get_clean();
 
@@ -63,7 +63,7 @@ class ResponsivePicture extends ResponsiveImage {
 	public function get_mobile_source_retina( $urls ) {
 		ob_start();
 		?>
-		<source media="(max-width: 576px)" srcset="<?php echo esc_html( $urls['mobile'] ); ?> 1x, <?php echo esc_html( $urls['mobile_retina'] ); ?> 2x">
+		<source media="(max-width: <?php echo esc_html( ThemeImages::BREAKPOINT ); ?>)" srcset="<?php echo esc_html( $urls['mobile'] ); ?> 1x, <?php echo esc_html( $urls['mobile_retina'] ); ?> 2x">
 		<?php
 		$mobile_source = ob_get_clean();
 
@@ -79,7 +79,7 @@ class ResponsivePicture extends ResponsiveImage {
 	public function get_desktop_source( $urls ) {
 		ob_start();
 		?>
-		<source media="(min-width: 576px)" srcset="<?php echo esc_html( $urls['desktop'] ); ?>">
+		<source media="(min-width: <?php echo esc_html( ThemeImages::BREAKPOINT ); ?>)" srcset="<?php echo esc_html( $urls['desktop'] ); ?>">
 		<?php
 		$desktop_source = ob_get_clean();
 
@@ -95,7 +95,7 @@ class ResponsivePicture extends ResponsiveImage {
 	public function get_desktop_source_retina( $urls ) {
 		ob_start();
 		?>
-		<source media="(min-width: 576px)" srcset="<?php echo esc_html( $urls['desktop'] ); ?> 1x, <?php echo esc_html( $urls['desktop_retina'] ); ?> 2x">
+		<source media="(min-width: <?php echo esc_html( ThemeImages::BREAKPOINT ); ?>)" srcset="<?php echo esc_html( $urls['desktop'] ); ?> 1x, <?php echo esc_html( $urls['desktop_retina'] ); ?> 2x">
 		<?php
 		$desktop_source = ob_get_clean();
 
