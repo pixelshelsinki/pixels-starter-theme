@@ -6,6 +6,10 @@ body {
   font-weight: $body-font-weight-mobile;
   color: $color-body;
   font-family: $font-body;
+
+  //Or set with fluid typography mixin
+  // NOTE: Mixin parameters should be provided using same units as $breakpoint-min and $breakpoint-max. For example, if there breakpoints are set in rems then mixin should receive values in rems.
+  // @include fluid-type($body-font-size-mobile, $body-font-size, 0, 0);
 }
 
 h1,
@@ -29,6 +33,9 @@ h1,
   line-height: $h1-line-height-mobile;
   letter-spacing: $h1-letter-spacing-mobile;
   font-weight: $h1-font-weight-mobile;
+
+  //Or set with fluid typography mixin
+  // @include fluid-type($h1-font-size-mobile, $h1-font-size, $h1-margin-bottom-mobile, $h1-margin-bottom);
 }
 
 h2,
