@@ -14,6 +14,7 @@ $font-body:           "Helvetica Neue", Helvetica, Arial, sans-serif;
 $font-heading:        "Helvetica Neue", Helvetica, Arial, sans-serif;
 
 // Typography breakpoints
+// NOTE: These are crucial for fluid-type mixin.
 $breakpoint-min: 20rem;
 $breakpoint-max: 75rem;
 
