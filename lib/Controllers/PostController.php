@@ -36,4 +36,13 @@ class PostController extends Controller {
 	public function set_post( $post ) {
 		$this->add_context( 'post', $post );
 	}
+
+	/**
+	 * Returns post id.
+	 *
+	 * @return int $id of post.
+	 */
+	public function get_id() {
+		return $this->get_context( 'post' )->id;
+	}
 }
