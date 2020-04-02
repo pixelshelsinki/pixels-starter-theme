@@ -27,16 +27,16 @@ class Page extends AbstractBreadcrumbs {
 	public function __construct() {
 
 		$this->add_home();
-		$this->add_parent_page();
+		$this->add_parent_post();
 	}
 
 	/**
-	 * Add parent page.
+	 * Add parent post.
 	 * Calls self recursively if parent of parent exists.
 	 *
 	 * @param \WP_POST $post_obj object.
 	 */
-	public function add_parent_page( $post_obj = null ) {
+	public function add_parent_post( $post_obj = null ) {
 
 		// Ensure we have post object.
 		if ( ! $post_obj ) :
@@ -48,7 +48,7 @@ class Page extends AbstractBreadcrumbs {
 			$parent = get_post( $post_obj->post_parent );
 
 			// Recursive add.
-			$this->add_parent_page( $parent );
+			$this->add_parent_post( $parent );
 
 			// Create breadcrumb for parent.
 			$crumb = new Breadcrumb();
