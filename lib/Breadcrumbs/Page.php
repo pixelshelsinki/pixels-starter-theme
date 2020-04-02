@@ -44,7 +44,7 @@ class Page extends AbstractBreadcrumbs {
 		endif;
 
 		// Check for existance of parent.
-		if ( $post_obj->post_parent != 0 ) :
+		if ( $post_obj->post_parent !== 0 ) :
 			$parent = get_post( $post_obj->post_parent );
 
 			// Recursive add.

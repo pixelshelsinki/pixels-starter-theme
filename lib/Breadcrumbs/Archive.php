@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Arcgive Breadcrumb class
  * Gets breadcrumb with pattern:
- * Home -> PostTypeName 
+ * Home -> PostTypeName
  */
 class Archive extends Post {
 
@@ -28,6 +28,6 @@ class Archive extends Post {
 
 		$this->add_home();
 		$this->add_archive();
-	}	
+	}
 
 } // end Archive
