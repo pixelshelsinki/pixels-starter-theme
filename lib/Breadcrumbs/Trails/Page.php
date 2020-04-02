@@ -6,9 +6,10 @@
  * @subpackage PixelsTheme
  */
 
-namespace Pixels\Theme\Breadcrumbs;
+namespace Pixels\Theme\Breadcrumbs\Trails;
 
-use Pixels\Theme\Breadcrumbs\Contracts\AbstractBreadcrumbs;
+use Pixels\Theme\Breadcrumbs\BreadcrumbsTrail;
+use Pixels\Theme\Breadcrumbs\Breadcrumb;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -19,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Gets breadcrumb with pattern:
  * Home -> Parent page -> [...] -> Page
  */
-class Page extends AbstractBreadcrumbs {
+class Page extends BreadcrumbsTrail {
 
 	/**
 	 * Class constructor.

@@ -6,9 +6,10 @@
  * @subpackage PixelsTheme
  */
 
-namespace Pixels\Theme\Breadcrumbs;
+namespace Pixels\Theme\Breadcrumbs\Trails;
 
-use Pixels\Theme\Breadcrumbs\Page;
+use Pixels\Theme\Breadcrumbs\Trails\Page;
+use Pixels\Theme\Breadcrumbs\Breadcrumb;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.

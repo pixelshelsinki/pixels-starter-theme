@@ -1,14 +1,15 @@
 <?php
 /**
- * Abstract Breadcrumbs
+ * Breadcrumbs trail.
  *
  * @package WordPress
  * @subpackage PixelsTheme
  */
 
-namespace Pixels\Theme\Breadcrumbs\Contracts;
+namespace Pixels\Theme\Breadcrumbs;
 
 // Contracts.
+use Pixels\Theme\Breadcrumbs\Contracts\BreadcrumbTrailInterface;
 use Pixels\Theme\Breadcrumbs\Contracts\BreadcrumbInterface;
 
 // Classes.
@@ -19,10 +20,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Abstract Breadcrumb class
+ * Breadcrumbs class
  * Offers implementation for trail.
  */
-class AbstractBreadcrumbs implements BreadcrumbTrailInterface {
+class BreadcrumbsTrail implements BreadcrumbTrailInterface {
 
 	/**
 	 * Breadcrumb trail.
