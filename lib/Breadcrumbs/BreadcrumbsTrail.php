@@ -63,8 +63,8 @@ class BreadcrumbsTrail implements BreadcrumbTrailInterface {
 	 */
 	public function add_home() {
 		$crumb = new Breadcrumb();
-		$label = 'Home'; // TODO: FILTERABLE & BETER
-		$url   = get_home_url(); // TODO: FILTERABLE & BETER
+		$label = apply_filters( 'pixels_breadcrumbs_home_label', __( 'Home', 'pixels-text-domain' ) );
+		$url   = apply_filters( 'pixels_breadcrumbs_home_url', get_home_url() );
 
 		$crumb->set_label( $label );
 		$crumb->set_url( $url );
