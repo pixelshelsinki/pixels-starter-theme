@@ -36,10 +36,10 @@ class Search extends BreadcrumbsTrail {
 	 */
 	public function add_search() {
 
-		// Create breadcrumb for parent.
+		// Create breadcrumb for search.
 		$crumb = new Breadcrumb();
-		$label = __( 'Search', 'pixels-text-domain' );
-		$url   = '#';
+		$label = apply_filters( 'pixels_breadcrumbs_search_label', __( 'Search', 'pixels-text-domain' ) );
+		$url   = apply_filters( 'pixels_breadcrumbs_search_url', '#' );
 
 		$crumb->set_label( $label );
 		$crumb->set_url( $url );
