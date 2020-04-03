@@ -37,14 +37,20 @@ class Author extends BreadcrumbsTrail {
 	 */
 	public function add_author() {
 
-		$crumb = new Breadcrumb();
-		$label = __( 'Author', 'pixels-text-domain' );
-		$url   = '#';
+		$show_author = apply_filters( 'pixels_breadcrumbs_author_enabled', true );
 
-		$crumb->set_label( $label );
-		$crumb->set_url( $url );
+		if ( $show_author ) :
 
-		$this->add( $crumb );
+			$crumb = new Breadcrumb();
+			$label = apply_filters( 'pixels_breadcrumbs_author_label', __( 'Author', 'pixels-text-domain' ) );
+			$url   = apply_filters( 'pixels_breadcrumbs_author_url', '#' );
+
+			$crumb->set_label( $label );
+			$crumb->set_url( $url );
+
+			$this->add( $crumb );
+
+		endif;
 
 	}
 
