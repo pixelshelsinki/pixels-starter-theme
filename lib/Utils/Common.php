@@ -93,6 +93,9 @@ class Common {
 
 		$breadcrumbs = $handler->get_breadcrumbs();
 
+		// Allow filtering.
+		$breadcrumbs = apply_filters( 'pixels_breadcrumbs', $breadcrumbs );
+
 		return $breadcrumbs;
 
 	}
