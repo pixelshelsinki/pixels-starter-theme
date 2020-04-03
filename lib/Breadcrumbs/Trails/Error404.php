@@ -37,8 +37,8 @@ class Error404 extends BreadcrumbsTrail {
 	public function add_404() {
 
 		$crumb = new Breadcrumb();
-		$label = __( 'Not found', 'pixels-text-domain' );
-		$url   = '#';
+		$label = apply_filters( 'pixels_breadcrumbs_404_label', __( 'Not found', 'pixels-text-domain' ) );
+		$url   = apply_filters( 'pixels_breadcrumbs_404_url', '#' );
 
 		$crumb->set_label( $label );
 		$crumb->set_url( $url );
