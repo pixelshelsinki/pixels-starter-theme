@@ -65,7 +65,7 @@ class BreadcrumbsTrail implements BreadcrumbTrailInterface {
 
 		$show_home = apply_filters( 'pixels_breadcrumbs_home_enabled', true );
 
-		if( $show_home ) :
+		if ( $show_home ) :
 
 			$crumb = new Breadcrumb();
 			$label = apply_filters( 'pixels_breadcrumbs_home_label', __( 'Home', 'pixels-text-domain' ) );

@@ -6,7 +6,6 @@
  * @subpackage  Pixels\Theme
  */
 
-
 namespace Pixels\Theme\Utils;
 
 // Breadcrumbs.
@@ -74,12 +73,12 @@ class Common {
 				$handler = new Taxonomy();
 			endif;
 
-			// Search
+			// Search.
 			if ( is_search() ) :
 				$handler = new Search();
 			endif;
 
-			// Author
+			// Author.
 			if ( is_author() ) :
 				$handler = new Author();
 			endif;

@@ -43,7 +43,7 @@ class Post extends Page {
 
 		$crumb = new Breadcrumb();
 		$label = apply_filters( 'pixels_breadcrumbs_' . $post_type . '_archive_label', $post_type_obj->labels->menu_name );
-		$url   = apply_filters( 'pixels_breadcrumbs_' . $post_type . '_archive_url', get_post_type_archive_link( $post_type ) ); 
+		$url   = apply_filters( 'pixels_breadcrumbs_' . $post_type . '_archive_url', get_post_type_archive_link( $post_type ) );
 
 		$crumb->set_label( $label );
 		$crumb->set_url( $url );
