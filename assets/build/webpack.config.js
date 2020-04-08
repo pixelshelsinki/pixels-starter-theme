@@ -8,6 +8,7 @@ const FriendlyErrorsPlugin   = require('friendly-errors-webpack-plugin')
 const CopyWebpackPlugin      = require('copy-webpack-plugin')
 const BrowserSyncPlugin      = require('browser-sync-webpack-plugin')
 const ManifestPlugin         = require('webpack-manifest-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 // Our asset config.
 const config                = require('../config')
@@ -63,34 +64,25 @@ module.exports = (env, argv) =>  ({
               ],
             },
             {
-                test: /\.(sa|sc|c)ss$/,
-                include: path.resolve(__dirname, config.paths.src.styles),
-                use: [
-                  {
-                    loader: 'file-loader',
-                    options: {
-                      name: 'main.[contenthash].css',
-                      outputPath: config.paths.dist.styles,
+              test: /\.(sa|sc|c)ss$/,
+              include: path.resolve(__dirname, config.paths.src.styles),
+              use: [
+                MiniCssExtractPlugin.loader,
+                {
+                  loader: 'css-loader?-url',
+                },
+                {
+                  loader: 'postcss-loader',
+                  options: {
+                    config: {
+                      path: path.resolve(__dirname),
                     },
                   },
-                  {
-                      loader: 'extract-loader',
-                  },
-                  {
-                      loader: 'css-loader?-url',
-                  },
-                  {
-                      loader: 'postcss-loader',
-                      options: {
-                        config: {
-                          path: path.resolve(__dirname),
-                        },
-                      },
-                  },
-                  {
-                      loader: 'sass-loader',
-                  },
-                ],
+                },
+                {
+                    loader: 'sass-loader',
+                },
+              ],
             },
         ],
     },
@@ -124,6 +116,9 @@ module.exports = (env, argv) =>  ({
           proxy: config.urls.devUrl,
         },
       ),
+      new MiniCssExtractPlugin({
+        filename: '[name].[contenthash].css',
+      }),
     ],
     optimization: {
         runtimeChunk: 'single',
@@ -139,6 +134,12 @@ module.exports = (env, argv) =>  ({
 
                 return `vendor/vendor-npm.${packageName.replace('@', '')}`;
               },
+            },
+            styles: {
+              name: 'styles/main',
+              test: module => module.constructor.name === 'CssModule',
+              chunks: chunk => chunk.name.startsWith('app'),
+              enforce: true,
             },
           },
         },
