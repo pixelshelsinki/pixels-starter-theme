@@ -13,8 +13,6 @@ const config = {
     },
     dist : {
       root : '../../dist/',
-      scripts : 'scripts',
-      styles : 'styles',
       fonts : '../../dist/fonts',
       images : '../../dist/images',
     },    
