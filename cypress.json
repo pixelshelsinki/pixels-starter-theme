@@ -7,6 +7,7 @@
   "videosFolder": "tests/cypress/videos",
   "env": {
     "localUrl": "https://pixelsstartertheme.local",
-    "productionUrl": ""
+    "productionUrl": "https://pixelsstartertheme.local",
+    "themeName": "pixels-starter-theme"
   }
 }
