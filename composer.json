@@ -28,7 +28,9 @@
 		"roave/security-advisories": "dev-master",
     "dealerdirect/phpcodesniffer-composer-installer": "^0.5.0",
     "friendsoftwig/twigcs": "dev-master",
-    "erusev/parsedown": "~1.7.1"
+    "erusev/parsedown": "~1.7.1",
+    "vimeo/psalm": "^3.11",
+    "giacocorsiglia/wordpress-stubs": "^5.1"
   },
   "autoload": {
     "psr-4": {
@@ -43,6 +45,9 @@
     ],
     "fix": [
       "phpcbf -p -w"
+    ],
+    "psalm": [
+      "psalm"
     ]
   }
 }
