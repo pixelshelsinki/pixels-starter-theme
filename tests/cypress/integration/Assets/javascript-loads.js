@@ -1,6 +1,8 @@
 describe('Scripts file loaded', () => {
 
-  it('Check if main JS file can be accessed', () => {
+  let scriptsMain = ""
+
+  it('Check if main JS file is enqueued in DOM', () => {
 
     const themeName = Cypress.env('themeName')
     const baseUrl   = Cypress.config().baseUrl
@@ -8,8 +10,12 @@ describe('Scripts file loaded', () => {
 
     cy.visit('/').then( () => {
     	cy.get( pattern ).then( script => {
-    		cy.request( script.attr('src') )
+        scriptsMain = script.attr('src')
     	} )
     } )
+  })
+
+  it('Check if main JS file can be accessed', () => {
+    cy.request( scriptsMain )    
   })
 })

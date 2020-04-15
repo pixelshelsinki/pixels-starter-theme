@@ -1,6 +1,8 @@
 describe('Styles file loaded', () => {
 
-  it('Check if main styles file can be accessed', () => {
+  let stylesMain = ""
+
+  it('Check if main styles file is enqueued in DOM', () => {
 
     const themeName = Cypress.env('themeName')
     const baseUrl   = Cypress.config().baseUrl
@@ -8,8 +10,12 @@ describe('Styles file loaded', () => {
 
     cy.visit('/').then( () => {
       cy.get( pattern ).then( stylesheet => {
-        cy.request( stylesheet.attr('href') )
+        stylesMain = stylesheet.attr('href')
       } )
     } )
+  })
+
+  it('Check if main styles file can be accessed', () => {
+    cy.request( stylesMain )      
   })
 }
