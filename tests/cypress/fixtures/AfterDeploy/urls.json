@@ -1,0 +1,8 @@
+{
+  "local": {
+    "Hello World": "/hello-world",
+    "Other page": "/hello-world"
+  },
+  "production": {
+  }
+}

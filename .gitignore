@@ -9,5 +9,10 @@ yarn-error.log
 vendor
 assets/config-local.json
 
+# Cypress
+tests/cypress/integration/examples
+tests/cypress/videos
+tests/cypress/screenshots
+
 # Mac OS
 .DS_Store
