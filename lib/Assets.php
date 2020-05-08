@@ -54,8 +54,8 @@ class Assets {
 		$this->setup_vendors_scripts();
 
 		// Enqueue main scripts / styles.
-		wp_enqueue_style( 'pixels/main.css', $this->get_asset_path( 'styles/main.scss' ), false, null );
-		wp_enqueue_script( 'pixels/main.js', $this->get_asset_path( 'scripts/main.js' ), array( 'jquery' ), null, true );
+		wp_enqueue_style( 'pixels/main.css', $this->get_asset_uri( 'styles/main.scss' ), false, null );
+		wp_enqueue_script( 'pixels/main.js', $this->get_asset_uri( 'scripts/main.js' ), array( 'jquery' ), null, true );
 
 		// Add variables to enqueued script.
 		$this->localize_variables();
@@ -68,7 +68,7 @@ class Assets {
 	public function setup_vendors_scripts() {
 
 		// Enqueue Webpack runtime before vendors bundles.
-		wp_enqueue_script( 'runtime.js', $this->get_asset_path( 'runtime.js' ), array(), null, true );
+		wp_enqueue_script( 'runtime.js', $this->get_asset_uri( 'runtime.js' ), array(), null, true );
 
 		// Add count to vendor inputs.
 		$count = 1;
@@ -76,7 +76,7 @@ class Assets {
 		// Include "vendor" assets that were split.
 		foreach ( $this->manifest as $name => $path ) :
 			if ( strpos( $name, 'vendor' ) !== false ) :
-				wp_enqueue_script( 'pixels/vendor-' . $count, $this->get_asset_path( $name ), array( 'jquery' ), null, true );
+				wp_enqueue_script( 'pixels/vendor-' . $count, $this->get_asset_uri( $name ), array( 'jquery' ), null, true );
 				$count++;
 			endif;
 		endforeach;
@@ -132,7 +132,7 @@ class Assets {
 	 *
 	 * @param string $asset key in manifest.
 	 */
-	public function get_asset_path( $asset ) {
+	public function get_asset_uri( $asset ) {
 		$path = get_template_directory_uri() . '/dist/';
 
 		$manifest_asset = $this->manifest[ $asset ];
@@ -149,6 +149,7 @@ class Assets {
 		 *
 		 * @see assets/styles/layouts/_tinymce.scss
 		 */
-		add_editor_style( '/dist/' . $this->get_asset_path( 'styles/main.scss' ) );
+		add_editor_style( $this->get_asset_uri( 'styles/main.scss' ) );
+		// add_editor_style( '//example.com/font.css' ); // Uncomment and add URI without protocol to have fonts load correctly.
 	}
 }
