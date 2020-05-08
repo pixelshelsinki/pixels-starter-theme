@@ -142,6 +142,8 @@ class Assets {
 
 	/**
 	 * Sets up the editor styles.
+	 *
+	 * Dont forget to add CSS fonts from external sources. Pass the URI minus the `https:` to `add_editor_style`.
 	 */
 	public function setup_editor_styles() {
 		/**
@@ -150,6 +152,5 @@ class Assets {
 		 * @see assets/styles/layouts/_tinymce.scss
 		 */
 		add_editor_style( $this->get_asset_uri( 'styles/main.scss' ) );
-		// add_editor_style( '//example.com/font.css' ); // Uncomment and add URI without protocol to have fonts load correctly.
 	}
 }
