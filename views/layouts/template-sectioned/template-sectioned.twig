@@ -10,6 +10,6 @@
 
 {% block site_content %}
 	{% for section in sections %}
-		{% include 'section/section-' ~ section.acf_fc_layout ~ '.twig' ignore missing %}
-	{% endfor %}
+        {% include 'section/' ~ section.acf_fc_layout ~ '/' ~ section.acf_fc_layout ~ '.twig' ignore missing %}
+    {% endfor %}
 {% endblock %}
