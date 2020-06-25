@@ -79,10 +79,13 @@ class Images {
 	 * @param string $alt tag of image, optional.
 	 * @return string.
 	 */
-	public static function responsive_image( $image_id, $mobile_size, $desktop_size, $alt = '' ) {
+	public static function responsive_image( $image_id, $mobile_size, $desktop_size, $alt = null ) {
 
 		// Create responsive image instance.
 		$image = new ResponsivePicture( $image_id );
+
+		// Default to main caption if not provided.
+		$alt = $alt ?? wp_get_attachment_caption( $image_id );
 
 		// Add img sizes.
 		$image->set_mobile_size( $mobile_size );
