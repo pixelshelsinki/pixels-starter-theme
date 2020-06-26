@@ -99,6 +99,15 @@ abstract class AbstractImage {
 	}
 
 	/**
+	 * Get image alt tag.
+	 *
+	 * @return string $alt text of image.
+	 */
+	public function get_alt_tag() {
+		return $this->alt;
+	}
+
+	/**
 	 * Return urls array of image.
 	 */
 	abstract public function get_urls();
