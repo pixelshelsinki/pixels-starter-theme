@@ -33,7 +33,8 @@ class ResponsivePicture extends ResponsiveImage {
 		$html .= '<picture>';
 		$html .= $this->get_mobile_source( $urls );
 		$html .= $this->get_desktop_source( $urls );
-		$html .= '<img src="' . esc_html( $urls['desktop'] ) . '">';
+		$html .= '<img src="' . esc_html( $urls['desktop'] ) . '"';
+		$html .= 'alt="' . esc_html( $this->get_alt_tag() ) . '">';
 
 		return $html;
 	}
