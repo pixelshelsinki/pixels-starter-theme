@@ -14,6 +14,8 @@
   {% endblock %}
 
   <body class="{{ body_class }}">
+    {{ function('wp_body_open') }}
+    
     {% block site_body %}
 
       {% block site_header %}
