@@ -33,8 +33,7 @@ class ResponsivePicture extends ResponsiveImage {
 		$html .= '<picture>';
 		$html .= $this->get_mobile_source( $urls );
 		$html .= $this->get_desktop_source( $urls );
-		$html .= '<img src="' . esc_html( $urls['desktop'] ) . '"';
-		$html .= 'alt="' . esc_html( $this->get_alt_tag() ) . '">';
+		$html .= $this->get_img_tag( $this->id );
 
 		return $html;
 	}
@@ -82,5 +81,38 @@ class ResponsivePicture extends ResponsiveImage {
 		$desktop_source = ob_get_clean();
 
 		return $desktop_source;
+	}
+
+	/**
+	 * Return <img> tag for <picture> element.
+	 *
+	 * @param int $id of image.
+	 * @return string $img_tag of image.
+	 */
+	public function get_img_tag( $id ) {
+		$url_key = 'desktop';
+		$size    = $this->get_desktop_size();
+
+		$dimensions = ThemeImages::SIZES[ $size ];
+		$urls       = $this->get_urls();
+
+		$width  = $dimensions[0];
+		$height = $dimensions[1];
+
+		if ( $this->has_retina( $size ) ) {
+			$url_key .= '_retina';
+			$width   *= 2;
+			$height  *= 2;
+		}
+
+		ob_start();
+		?>
+
+		<img width="<?php echo esc_html( $width ); ?>px" height="<?php echo esc_html( $height ); ?>px" loading="lazy" src="<?php echo esc_html( $urls[ $url_key ] ); ?>" alt="<?php echo esc_html( $this->get_alt_tag() ); ?>">
+
+		<?php
+		$img_tag = ob_get_clean();
+
+		return $img_tag;
 	}
 }
