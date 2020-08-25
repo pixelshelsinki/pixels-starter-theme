@@ -34,7 +34,6 @@ class ResponsivePicture extends ResponsiveImage {
 		$html .= $this->get_mobile_source( $urls );
 		$html .= $this->get_desktop_source( $urls );
 		$html .= $this->get_img_tag( $this->id );
-		$html .= 'alt="' . esc_html( $this->get_alt_tag() ) . '">';
 
 		return $html;
 	}
@@ -91,22 +90,25 @@ class ResponsivePicture extends ResponsiveImage {
 	 * @return string $img_tag of image.
 	 */
 	public function get_img_tag( $id ) {
-		$size = 'desktop';
+		$url_key = 'desktop';
+		$size = $this->get_desktop_size();
 
-		if ( $this->has_retina( $size ) ) {
-			$size .= '_retina';
-		}
-
-		$src_arr = wp_get_attachment_image_src( $id, $size );
+		$dimensions = ThemeImages::SIZES[$size];
 		$urls    = $this->get_urls();
 
-		$width  = $src_arr[1];
-		$height = $src_arr[2];
+		$width  = $dimensions[0];
+		$height = $dimensions[1];
+
+		if ( $this->has_retina( $size ) ) {
+			$url_key .= '_retina';
+			$width *= 2;
+			$height *=2;
+		}
 
 		ob_start();
 		?>
 
-		<img width="<?php echo esc_html( $width ); ?>px" height="<?php echo esc_html( $height ); ?>px" loading="lazy" src="<?php echo esc_html( $urls[ $size ] ); ?>" alt="<?php echo esc_html( $this->get_alt_tag() ); ?>">
+		<img width="<?php echo esc_html( $width ); ?>px" height="<?php echo esc_html( $height ); ?>px" loading="lazy" src="<?php echo esc_html( $urls[ $url_key ] ); ?>" alt="<?php echo esc_html( $this->get_alt_tag() ); ?>">
 
 		<?php
 		$img_tag = ob_get_clean();
