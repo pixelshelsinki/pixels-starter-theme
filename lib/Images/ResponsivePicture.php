@@ -91,18 +91,18 @@ class ResponsivePicture extends ResponsiveImage {
 	 */
 	public function get_img_tag( $id ) {
 		$url_key = 'desktop';
-		$size = $this->get_desktop_size();
+		$size    = $this->get_desktop_size();
 
-		$dimensions = ThemeImages::SIZES[$size];
-		$urls    = $this->get_urls();
+		$dimensions = ThemeImages::SIZES[ $size ];
+		$urls       = $this->get_urls();
 
 		$width  = $dimensions[0];
 		$height = $dimensions[1];
 
 		if ( $this->has_retina( $size ) ) {
 			$url_key .= '_retina';
-			$width *= 2;
-			$height *=2;
+			$width   *= 2;
+			$height  *= 2;
 		}
 
 		ob_start();
