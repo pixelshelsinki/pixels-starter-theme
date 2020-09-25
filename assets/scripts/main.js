@@ -1,12 +1,11 @@
 // Common
-import './common/video-embeds.js'
+import './common/video-embeds'
 
 // Imports.
 import $ from 'jquery' // eslint-disable-line
 import 'bootstrap'
 
-const pixelsThemeApp = function() {  
-
+const pixelsThemeApp = (function main() {
   // Page load actions.
   const init = () => {
 
@@ -25,9 +24,8 @@ const pixelsThemeApp = function() {
   /* Functions */
 
   // Exports to DOM binds.
-  return {init:init,scroll:scroll,resize:resize}
-}()
-
+  return { init, scroll, resize }
+}())
 
 /**
  * DOM listener binds
