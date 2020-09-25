@@ -31,7 +31,8 @@
     "lint:styles": "stylelint \"{assets/styles,views}/**/*.{css,sass,scss,sss,less}\" --config assets/build/.stylelintrc.js",
     "fix:scripts": "eslint assets/scripts assets/build --fix --config assets/build/.eslintrc.js",
     "fix:styles": "stylelint \"{assets/styles,views}/**/*.{css,sass,scss,sss,less}\" --fix --config assets/build/.stylelintrc.js",
-    "test": "npm run -s lint",
+    "jest": "jest --verbose --runInBand --passWithNoTests",
+    "test": "npm run -s lint && npm run jest",
     "e2e": "yarn cypress run --env env=test",
     "e2e:production": "yarn cypress run --env env=production"
   },
@@ -58,16 +59,20 @@
     "eslint-loader": "^3.0.3",
     "eslint-plugin-babel": "^5.3.0",
     "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-jest": "^24.0.2",
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-react": "^7.18.3",
     "eslint-plugin-react-hooks": "^2.3.0",
     "extract-loader": "^4.0.3",
     "file-loader": "^5.0.2",
     "friendly-errors-webpack-plugin": "^1.7.0",
+    "jest": "^26.4.2",
+    "jest-svg-transformer": "^1.0.0",
     "node-sass": "^4.13.1",
     "postcss-clean": "^1.1.0",
     "postcss-loader": "^3.0.0",
     "postcss-normalize": "^8.0.1",
+    "react-test-renderer": "^16.13.1",
     "rimraf": "^3.0.1",
     "sass-loader": "^8.0.2",
     "style-loader": "^1.1.3",
@@ -85,6 +90,8 @@
     "axios": "^0.20.0",
     "bootstrap": "^4.4.1",
     "jquery": "^3.4.1",
-    "popper.js": "^1.16.1"
+    "popper.js": "^1.16.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
   }
 }

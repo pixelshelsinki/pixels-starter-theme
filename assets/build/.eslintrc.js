@@ -7,6 +7,7 @@ module.exports = {
   'globals': {
     'wp': true,
     'WPAPI': true,
+    'jest/globals': true,
   },
   'env': {
     'node': true,
@@ -14,6 +15,7 @@ module.exports = {
     'amd': true,
     'browser': true,
     'jquery': true,
+    'jest': true,
   },
   'parserOptions': {
     'ecmaFeatures': {
@@ -31,6 +33,7 @@ module.exports = {
     'import',
     'react',
     'react-hooks',
+    'jest',
   ],
   'settings': {
     'react': {
