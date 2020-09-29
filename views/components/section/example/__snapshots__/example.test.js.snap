@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Example section Should render with all content 1`] = `
+<div>
+  <section
+    class="section section- "
+  >
+    
+    
+    <div
+      class="section-example__wrap"
+    >
+      
+          
+      <h3
+        class="section-example__title"
+      >
+         Title of section 
+      </h3>
+      
+    
+          
+      <p
+        class="section-example__content"
+      >
+         Content of the seciton
+      </p>
+      
+    
+          
+      <a
+        class="btn btn--secondary"
+        href="http://pixels.fi"
+      >
+        Click me
+      </a>
+      
+    
+  
+    </div>
+    
+
+  </section>
+  
+
+</div>
+`;
+
+exports[`Example section Should render with partial content 1`] = `
+<div>
+  <section
+    class="section section- "
+  >
+    
+    
+    <div
+      class="section-example__wrap"
+    >
+      
+          
+      <h3
+        class="section-example__title"
+      >
+         Title of section 
+      </h3>
+      
+    
+    
+    
+  
+    </div>
+    
+
+  </section>
+  
+
+</div>
+`;
