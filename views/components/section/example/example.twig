@@ -1,0 +1,18 @@
+{% extends '@components/section/section.twig' %}
+
+{% block section_content %}
+  <div class="section-example__wrap">
+    {% if section.title %}
+      <h3 class="section-example__title"> {{ section.title }} </h3>
+    {% endif %}
+
+    {% if section.content %}
+      <p class="section-example__content"> {{ section.content }}</p>
+    {% endif %}
+
+    {% if section.button %}
+      <a class="btn btn--secondary" href="{{ section.button.link }}">{{ section.button.title }}</a>
+    {% endif %}
+
+  </div>
+{% endblock %}

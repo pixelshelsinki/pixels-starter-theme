@@ -41,8 +41,11 @@ class Timber {
 		$this->context   = new Context( $navigations );
 		$this->functions = new Functions();
 
-		// Timber setuo.
+		// Timber setup.
 		add_action( 'init', array( $this, 'setup_timber_settings' ) );
+
+		// Register Twig namespaces.
+		add_filter( 'timber/loader/loader', array( $this, 'register_namespaces' ) );
 
 	}
 
@@ -59,5 +62,18 @@ class Timber {
 		* @var array
 		 */
 		\Timber::$dirname = array( 'views/layouts', 'views/components' );
+	}
+
+	/**
+	 * Register additional namespaces to Twig loader.
+	 *
+	 * @param \Twig\Loader\FilesystemLoader $loader of twig.
+	 * @return \Twig\Loader\FilesystemLoader $loader with added params.
+	 */
+	public function register_namespaces( $loader ) {
+		$loader->addPath( __DIR__ . '/../../views/components', 'components' );
+		$loader->addPath( __DIR__ . '/../..//views/layouts', 'layouts' );
+
+		return $loader;
 	}
 }
