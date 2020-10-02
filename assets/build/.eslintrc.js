@@ -17,6 +17,7 @@ module.exports = {
     'browser': true,
     'jquery': true,
     'jest': true,
+    'cypress/globals': true,
   },
   'parserOptions': {
     'ecmaFeatures': {
@@ -35,6 +36,7 @@ module.exports = {
     'react',
     'react-hooks',
     'jest',
+    'cypress',
   ],
   'settings': {
     'react': {
