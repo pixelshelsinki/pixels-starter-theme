@@ -54,7 +54,7 @@ class BreadcrumbsTrail implements BreadcrumbTrailInterface {
 	 *
 	 * @return array $breadcrumbs of page.
 	 */
-	public function get_breadcrumbs() {
+	public function get_breadcrumbs() : array {
 		return $this->trail;
 	}
 
