@@ -34,7 +34,7 @@ class Breadcrumb implements BreadcrumbInterface {
 	 *
 	 * @param string $label of breadcrumb.
 	 */
-	public function set_label( $label ) {
+	public function set_label( string $label ) {
 		$this->label = $label;
 	}
 
@@ -43,7 +43,7 @@ class Breadcrumb implements BreadcrumbInterface {
 	 *
 	 * @return string $label of breadcrumb.
 	 */
-	public function get_label() {
+	public function get_label() : string {
 		return $this->label;
 	}
 
@@ -52,7 +52,7 @@ class Breadcrumb implements BreadcrumbInterface {
 	 *
 	 * @param string $url of breadcrumb.
 	 */
-	public function set_url( $url ) {
+	public function set_url( string $url ) {
 		$this->url = $url;
 	}
 
@@ -61,9 +61,7 @@ class Breadcrumb implements BreadcrumbInterface {
 	 *
 	 * @return string $url of breadcrumb.
 	 */
-	public function get_url() {
+	public function get_url() : string {
 		return $this->url;
 	}
-
-
 }
