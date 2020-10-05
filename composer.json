@@ -41,10 +41,13 @@
   },
   "scripts": {
     "test": [
-      "phpcs",
+      "composer lint",
       "composer phpunit",
       "twigcs views",
       "yarn test"
+    ],
+    "lint": [
+      "phpcs"
     ],
     "fix": [
       "phpcbf -p -w"
