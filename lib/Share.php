@@ -18,7 +18,6 @@ class Share {
 	 *
 	 * @param mixed $url to be shared.
 	 * @return string $link to be used in href.
-	 * @since 1.0
 	 */
 	public static function facebook( $url = null ) {
 
@@ -34,7 +33,6 @@ class Share {
 	 * @param mixed $url to be shared.
 	 * @param mixed $message to append.
 	 * @return string $link to be used in href.
-	 * @since 1.0
 	 */
 	public static function twitter( $url = null, $message = '' ) {
 
@@ -50,7 +48,6 @@ class Share {
 	 * @param mixed $url to be shared.
 	 * @param mixed $message to append.
 	 * @return string $link to be used in href.
-	 * @since 1.0
 	 */
 	public static function linkedin( $url = null, $message = '' ) {
 
@@ -62,16 +59,15 @@ class Share {
 	}
 
 	/**
-	 * Get currnt url
+	 * Get current url
 	 *
-	 * @since 1.0
 	 * @return string $url of current page.
 	 */
 	public static function get_current_url() {
 
 		$server_var = wp_unslash( $_SERVER );
 
-		$url = ( isset( $server_var['HTTPS'] ) ? 'https' : 'http' ) . "://$server_var[HTTP_HOST]$server_var[REQUEST_URI]";
+		$url = ( isset( $server_var['HTTPS'] ) && ( ! empty( $_SERVER['HTTPS'] ) && $_SERVER['HTTPS'] !== 'off' ) ? 'https' : 'http' ) . "://$server_var[HTTP_HOST]$server_var[REQUEST_URI]";
 
 		return $url;
 
