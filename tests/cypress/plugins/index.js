@@ -1,10 +1,11 @@
 module.exports = (on, config) => {
+  const projectConfig = config
 
-  if( config.env.env == 'test' ) {
-    config.baseUrl = config.env.localUrl
+  if (config.env.env === 'test') {
+    projectConfig.baseUrl = projectConfig.env.localUrl
   } else {
-    config.baseUrl = config.env.productionUrl
+    projectConfig.baseUrl = projectConfig.env.productionUrl
   }
 
-  return config
+  return projectConfig
 }
