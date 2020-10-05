@@ -30,16 +30,19 @@
     "friendsoftwig/twigcs": "dev-master",
     "erusev/parsedown": "~1.7.1",
     "vimeo/psalm": "^3.11",
-    "giacocorsiglia/wordpress-stubs": "^5.1"
+    "giacocorsiglia/wordpress-stubs": "^5.1",
+    "phpunit/phpunit": "^9"
   },
   "autoload": {
     "psr-4": {
-      "Pixels\\Theme\\": "lib/"
+      "Pixels\\Theme\\": "lib/",
+      "Pixels\\Tests\\": "tests/"
     }
   },
   "scripts": {
     "test": [
       "phpcs",
+      "composer phpunit",
       "twigcs views",
       "yarn test"
     ],
@@ -48,6 +51,9 @@
     ],
     "psalm": [
       "psalm"
+    ],
+    "phpunit": [
+      "phpunit --testdox"
     ]
   }
 }
