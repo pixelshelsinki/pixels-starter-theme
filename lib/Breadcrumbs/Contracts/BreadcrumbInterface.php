@@ -18,28 +18,28 @@ interface BreadcrumbInterface {
 	 *
 	 * @param string $label of breadcrumb.
 	 */
-	public function set_label( $label );
+	public function set_label( string $label );
 
 	/**
 	 * Get breadcrumb label
 	 *
 	 * @return string $label of breadcrumb.
 	 */
-	public function get_label();
+	public function get_label() : string;
 
 	/**
 	 * Set breadcrumb url
 	 *
 	 * @param string $url of breadcrumb.
 	 */
-	public function set_url( $url );
+	public function set_url( string $url );
 
 	/**
 	 * Get breadcrumb url
 	 *
 	 * @return string $url of breadcrumb.
 	 */
-	public function get_url();
+	public function get_url() : string;
 
 
 }
