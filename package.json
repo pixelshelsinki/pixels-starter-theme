@@ -34,7 +34,9 @@
     "jest": "jest --verbose --runInBand --passWithNoTests",
     "test": "npm run -s lint && npm run jest",
     "e2e": "yarn cypress run --env env=test integration-tests --spec 'tests/Integration/tests/integration/**/*'",
-    "e2e:production": "yarn cypress run --env env=production integration-tests --spec 'tests/Integration/tests/integration/**/*'"
+    "e2e:production": "yarn cypress run --env env=production integration-tests --spec 'tests/Integration/tests/integration/**/*'",
+    "a11y": "yarn cypress run --env env=test a11y-tests --spec 'tests/Integration/tests/a11y/**/*'",
+    "a11y:production": "yarn cypress run --env env=production a11y-tests --spec 'tests/Integration/tests/a11y/**/*'"
   },
   "engines": {
     "node": ">= 12.15.0"
@@ -55,6 +57,7 @@
     "css-loader": "^3.4.2",
     "cssnano": "^4.1.10",
     "cypress": "^4.4.0",
+    "cypress-axe": "^0.8.1",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-loader": "^3.0.3",
