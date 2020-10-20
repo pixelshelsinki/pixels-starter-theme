@@ -8,7 +8,7 @@ module.exports = {
     'wp': true,
     'WPAPI': true,
     'jest/globals': true,
-    twigNamespaces: true,
+    'twigNamespaces': true,
   },
   'env': {
     'node': true,

@@ -1,10 +1,10 @@
 {
-  "fixturesFolder": "tests/cypress/fixtures",
-  "integrationFolder": "tests/cypress/integration",
-  "pluginsFile": "tests/cypress/plugins/index.js",
-  "supportFile": "tests/cypress/support/index.js",
-  "screenshotsFolder": "tests/cypress/screenshots",
-  "videosFolder": "tests/cypress/videos",
+  "fixturesFolder": "tests/Integration/config/fixtures",
+  "integrationFolder": "tests/Integration/tests",
+  "pluginsFile": "tests/Integration/config/plugins/index.js",
+  "supportFile": "tests/Integration/config/support/index.js",
+  "screenshotsFolder": "tests/Integration/logs/screenshots",
+  "videosFolder": "tests/Integration/logs/videos",
   "env": {
     "localUrl": "https://pixelsstartertheme.local",
     "productionUrl": "https://pixelsstartertheme.local",

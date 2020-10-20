@@ -10,9 +10,7 @@ vendor
 assets/config-local.json
 
 # Cypress
-tests/cypress/integration/examples
-tests/cypress/videos
-tests/cypress/screenshots
+tests/integration/logs
 
 # Mac OS
 .DS_Store

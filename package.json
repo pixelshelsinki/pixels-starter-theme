@@ -27,14 +27,16 @@
     "build": "webpack --mode='production' --config assets/build/webpack.config.js",
     "rmdist": "rimraf dist",
     "lint": "npm run -s lint:scripts && npm run -s lint:styles",
-    "lint:scripts": "eslint assets/scripts assets/build tests/cypress views --config assets/build/.eslintrc.js",
+    "lint:scripts": "eslint assets/scripts assets/build tests/Integration views --config assets/build/.eslintrc.js",
     "lint:styles": "stylelint \"{assets/styles,views}/**/*.{css,sass,scss,sss,less}\" --config assets/build/.stylelintrc.js",
-    "fix:scripts": "eslint assets/scripts assets/build tests/cypress views --fix --config assets/build/.eslintrc.js",
+    "fix:scripts": "eslint assets/scripts assets/build tests/Integration views --fix --config assets/build/.eslintrc.js",
     "fix:styles": "stylelint \"{assets/styles,views}/**/*.{css,sass,scss,sss,less}\" --fix --config assets/build/.stylelintrc.js",
     "jest": "jest --verbose --runInBand --passWithNoTests",
     "test": "npm run -s lint && npm run jest",
-    "e2e": "yarn cypress run --env env=test",
-    "e2e:production": "yarn cypress run --env env=production"
+    "e2e": "yarn cypress run --env env=test integration-tests --spec 'tests/Integration/tests/integration/**/*'",
+    "e2e:production": "yarn cypress run --env env=production integration-tests --spec 'tests/Integration/tests/integration/**/*'",
+    "a11y": "yarn cypress run --env env=test a11y-tests --spec 'tests/Integration/tests/a11y/**/*'",
+    "a11y:production": "yarn cypress run --env env=production a11y-tests --spec 'tests/Integration/tests/a11y/**/*'"
   },
   "engines": {
     "node": ">= 12.15.0"
@@ -55,6 +57,7 @@
     "css-loader": "^3.4.2",
     "cssnano": "^4.1.10",
     "cypress": "^4.4.0",
+    "cypress-axe": "^0.8.1",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-loader": "^3.0.3",
