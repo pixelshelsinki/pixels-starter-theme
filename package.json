@@ -17,6 +17,9 @@
       "url": "http://opensource.org/licenses/MIT"
     }
   ],
+  "engines": {
+    "node": ">= 14"
+  },
   "browserslist": [
     "last 2 versions",
     "android 4",
@@ -37,9 +40,6 @@
     "e2e:production": "yarn cypress run --env env=production integration-tests --spec 'tests/Integration/tests/integration/**/*'",
     "a11y": "yarn cypress run --env env=test a11y-tests --spec 'tests/Integration/tests/a11y/**/*'",
     "a11y:production": "yarn cypress run --env env=production a11y-tests --spec 'tests/Integration/tests/a11y/**/*'"
-  },
-  "engines": {
-    "node": ">= 12.15.0"
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",
