@@ -7,7 +7,6 @@ php:
   - nightly
 
 env:
-  - TRAVIS_NODE_VERSION="12"
   - TRAVIS_NODE_VERSION="14"
   - TRAVIS_NODE_VERSION="15"
 
