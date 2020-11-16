@@ -14,3 +14,6 @@ tests/integration/logs
 
 # Mac OS
 .DS_Store
+
+# PHPUnit
+/.phpunit.result.cache
