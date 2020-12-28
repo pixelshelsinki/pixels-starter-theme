@@ -12,7 +12,7 @@
  * @subpackage Pixels\Theme
  */
 
-use Pixels\Theme\DesignSystem;
+use Pixels\Theme\Templates\DesignSystem;
 
 if ( file_exists( get_template_directory() . '/vendor/erusev/parsedown/Parsedown.php' ) ) {
 	include_once get_template_directory() . '/vendor/erusev/parsedown/Parsedown.php';
