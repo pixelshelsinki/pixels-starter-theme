@@ -1,6 +1,6 @@
 const config = {
   urls : {
-    devUrl: 'https://startertheme.local',
+    devUrl: 'https://pixelsstartertheme.local',
     devHost : 'localhost',
     devPort: 3000,
   },

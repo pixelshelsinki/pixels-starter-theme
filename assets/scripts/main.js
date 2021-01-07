@@ -1,5 +1,5 @@
 // Common
-import './common/video-embeds'
+import { makeEmbedsResponsive } from './common/video-embeds'
 
 // Imports.
 import $ from 'jquery' // eslint-disable-line
@@ -8,7 +8,7 @@ import 'bootstrap'
 const pixelsThemeApp = (function main() {
   // Page load actions.
   const init = () => {
-
+    makeEmbedsResponsive()
   }
 
   // Scroll actions.

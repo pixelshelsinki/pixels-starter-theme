@@ -7,10 +7,13 @@ const StyleLintPlugin = require('stylelint-webpack-plugin');
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
-const ManifestPlugin = require('webpack-manifest-plugin');
+const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
 
 // Our asset config.
 const config = require('../config')
+
+// Other configs.
+const postCssConfig = require('./postcss.config')
 
 module.exports = (env, argv) => ({
   entry: {
@@ -82,9 +85,7 @@ module.exports = (env, argv) => ({
           {
             loader: 'postcss-loader',
             options: {
-              config: {
-                path: path.resolve(__dirname),
-              },
+              postcssOptions: postCssConfig,
             },
           },
           {
@@ -99,24 +100,25 @@ module.exports = (env, argv) => ({
     new StyleLintPlugin({
       configFile: path.resolve(__dirname, '.stylelintrc.js'),
     }),
-    new ManifestPlugin(
+    new WebpackManifestPlugin(
       {
         fileName: 'manifest.json',
         filter: (file) => !file.path.match(/\.svg|png|jpg|woff|woff2|js.LICENSE.txt|js.LICENSE$/),
+        publicPath: '',
       },
     ),
-    new CopyWebpackPlugin([
-      {
-        from: path.resolve(__dirname, config.paths.src.fonts),
-        to: path.resolve(__dirname, config.paths.dist.fonts),
-        ignore: ['.gitkeep', '.DS_Store'],
-      },
-      {
-        from: path.resolve(__dirname, config.paths.src.images),
-        to: path.resolve(__dirname, config.paths.dist.images),
-        ignore: ['.gitkeep', '.DS_Store'],
-      },
-    ]),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, config.paths.src.fonts),
+          to: path.resolve(__dirname, config.paths.dist.fonts),
+        },
+        {
+          from: path.resolve(__dirname, config.paths.src.images),
+          to: path.resolve(__dirname, config.paths.dist.images),
+        },
+      ],
+    }),
     new BrowserSyncPlugin(
       {
         host: config.urls.devHost,
@@ -132,7 +134,7 @@ module.exports = (env, argv) => ({
       maxInitialRequests: Infinity,
       minSize: 0,
       cacheGroups: {
-        vendor: {
+        defaultVendors: {
           test: /[\\/]node_modules[\\/]/,
           name(module) {
             const packageName = module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1];

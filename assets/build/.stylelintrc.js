@@ -1,6 +1,12 @@
 module.exports = {
   'extends': 'stylelint-config-standard',
+  'ignoreFiles': [
+    '../../dist/**/*.css',
+    '../../node_modules/**/*',
+    '../../vendor/**/*.css',
+  ],
   'rules': {
+    'value-keyword-case': null,
     'no-empty-source': null,
     'string-quotes': 'double',
     'at-rule-no-unknown': [
