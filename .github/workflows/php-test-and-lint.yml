@@ -1,6 +1,6 @@
 name: PHP - Test & Lint
 
-on: [pull_request, push]
+on: [pull_request]
 
 jobs:
   run:
