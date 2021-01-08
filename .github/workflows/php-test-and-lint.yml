@@ -24,4 +24,5 @@ jobs:
         coverage: xdebug        
         tools: php-cs-fixer, phpunit:${{ matrix.phpunit-versions }}, composer:v1
     - run: composer install
+    - run: mkdir node_modules
     - run: composer test
