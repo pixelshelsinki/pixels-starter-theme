@@ -8,6 +8,9 @@
 
 namespace Pixels\Theme\Twig;
 
+// Image functions.
+use Pixels\Components\Images\Factory;
+
 /**
  * Functions class
  *
@@ -46,8 +49,8 @@ class Functions {
 	public function add_functions( $twig ) {
 
 		// Responsive mage helper functions.
-		$twig->addFunction( new \Timber\Twig_Function( 'responsive_image', '\\Pixels\\Theme\\Images::responsive_image' ) );
-		$twig->addFunction( new \Timber\Twig_Function( 'responsive_background', '\\Pixels\\Theme\\Images::responsive_background' ) );
+		$twig->addFunction( new \Timber\Twig_Function( 'responsive_image', '\\Pixels\\Components\\Images\\Factory::responsive_image' ) );
+		$twig->addFunction( new \Timber\Twig_Function( 'responsive_background', '\\Pixels\\Components\\Images\\Factory::responsive_background' ) );
 
 		// Social share functions.
 		$twig->addFunction( new \Timber\Twig_Function( 'facebook_share', '\\Pixels\\Theme\\Share::facebook' ) );

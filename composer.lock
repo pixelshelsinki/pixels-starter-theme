@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "66e743f267af73648b01a219a3c60a20",
+    "content-hash": "b3b2bfc8ed93302d8778525c927c8325",
     "packages": [
         {
             "name": "composer/installers",
@@ -142,6 +142,44 @@
                 }
             ],
             "time": "2020-04-07T06:57:05+00:00"
+        },
+        {
+            "name": "pixelshelsinki/images",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pixelshelsinki/pixels-images.git",
+                "reference": "39bdfb853f817d7d01e4728344c780ae0ca870bc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pixelshelsinki/pixels-images/zipball/39bdfb853f817d7d01e4728344c780ae0ca870bc",
+                "reference": "39bdfb853f817d7d01e4728344c780ae0ca870bc",
+                "shasum": ""
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^9",
+                "squizlabs/php_codesniffer": "^3.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Pixels\\Components\\Images\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Silvanus / Sampo Silvennoinen",
+                    "email": "sampo@pixels.fi",
+                    "homepage": "https://github.com/pixelshelsinki/pixels-images"
+                }
+            ],
+            "description": "Responsive Image component for WordPress",
+            "time": "2021-01-11T13:21:35+00:00"
         }
     ],
     "packages-dev": [
@@ -930,6 +968,12 @@
                 "duplicate",
                 "object",
                 "object graph"
+            ],
+            "funding": [
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/myclabs/deep-copy",
+                    "type": "tidelift"
+                }
             ],
             "time": "2020-06-29T13:22:24+00:00"
         },
@@ -4432,7 +4476,7 @@
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
-        "php": ">=7.1.0"
+        "php": ">=7.3.0"
     },
     "platform-dev": [],
     "plugin-api-version": "1.1.0"
