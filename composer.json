@@ -42,7 +42,8 @@
   "scripts": {
     "test": [
       "composer lint",
-      "composer phpunit"
+      "composer phpunit",
+      "composer psalm"
     ],
     "lint": [
       "phpcs"
