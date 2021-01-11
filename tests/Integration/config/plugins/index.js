@@ -6,12 +6,12 @@ module.exports = (on, config) => {
    */
   on('task', {
     log(message) {
-      console.log(message)
+      console.log(message) // eslint-disable-line
 
       return null
     },
     table(message) {
-      console.table(message)
+      console.table(message) // eslint-disable-line
 
       return null
     },
