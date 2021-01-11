@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b3b2bfc8ed93302d8778525c927c8325",
+    "content-hash": "7bc1dfc5b6431c80eb6dc8d0a622d968",
     "packages": [
         {
             "name": "composer/installers",
@@ -145,16 +145,16 @@
         },
         {
             "name": "pixelshelsinki/images",
-            "version": "v1.0.0",
+            "version": "v1.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pixelshelsinki/pixels-images.git",
-                "reference": "39bdfb853f817d7d01e4728344c780ae0ca870bc"
+                "reference": "3235dc008a51511d2dafb55eb41f218fb7bcb5f1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pixelshelsinki/pixels-images/zipball/39bdfb853f817d7d01e4728344c780ae0ca870bc",
-                "reference": "39bdfb853f817d7d01e4728344c780ae0ca870bc",
+                "url": "https://api.github.com/repos/pixelshelsinki/pixels-images/zipball/3235dc008a51511d2dafb55eb41f218fb7bcb5f1",
+                "reference": "3235dc008a51511d2dafb55eb41f218fb7bcb5f1",
                 "shasum": ""
             },
             "require-dev": {
@@ -179,7 +179,7 @@
                 }
             ],
             "description": "Responsive Image component for WordPress",
-            "time": "2021-01-11T13:21:35+00:00"
+            "time": "2021-01-11T13:32:26+00:00"
         }
     ],
     "packages-dev": [
