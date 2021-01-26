@@ -11,6 +11,9 @@ namespace Pixels\Theme\Twig;
 // Utilities.
 use Pixels\Theme\Utils\Common;
 
+// Timber deps.
+use Timber\Menu as TimberMenu;
+
 
 /**
  * Context class
@@ -99,7 +102,7 @@ class Context {
 		foreach ( $menus as $menu => $title ) :
 
 			// Check if menu is in use.
-			$content = has_nav_menu( $menu ) ? new \TimberMenu( $menu ) : array();
+			$content = has_nav_menu( $menu ) ? new TimberMenu( $menu ) : array();
 
 			// Append items to context array.
 			$context['menu'][ $menu ] = is_object( $content ) ? $content->get_items() : $content;

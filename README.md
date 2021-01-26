@@ -31,13 +31,13 @@ This theme uses the following:
 
 To install this theme the server instance must have the following setup:
 
-* [WordPress](https://wordpress.org/) >= 4.7
-* [PHP](http://php.net/manual/en/install.php) >= 7.1
+* [WordPress](https://wordpress.org/) >= 5.6
+* [PHP](http://php.net/manual/en/install.php) >= 7.3
 
 To develop this theme you must also have the following:
 
 * [Composer](https://getcomposer.org/download/)
-* [Node.js](http://nodejs.org/) >= 12 (use nvm to switch on your local environment)
+* [Node.js](http://nodejs.org/) >= 14 (use nvm to switch on your local environment)
 * [Yarn](https://yarnpkg.com/en/docs/install) >= 1.0
 
 ## Theme Installation

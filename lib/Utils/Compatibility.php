@@ -22,14 +22,14 @@ class Compatibility {
 	 *
 	 * @var string
 	 */
-	const PHP_VERSION = '7.1.0';
+	const PHP_VERSION = '7.3.0';
 
 	/**
 	 * WP version to compare to
 	 *
 	 * @var string
 	 */
-	const WP_VERSION = '4.7.0';
+	const WP_VERSION = '5.5.0';
 
 	/**
 	 * Run all checks on theme start
@@ -39,8 +39,7 @@ class Compatibility {
 	public static function run_checks() {
 		$compatible =
 		self::check_php_version()
-		&& self::check_wordpress_version()
-		&& self::check_timber_plugin();
+		&& self::check_wordpress_version();
 
 		return $compatible;
 	}
@@ -51,7 +50,7 @@ class Compatibility {
 	 * @return bool $compatible status;
 	 * @since 1.0
 	 */
-	public static function check_php_version() {
+	public static function check_php_version() : bool {
 
 		$compatible = true;
 
@@ -71,7 +70,7 @@ class Compatibility {
 	 * @return bool $compatible status;
 	 * @since 1.0
 	 */
-	public static function check_wordpress_version() {
+	public static function check_wordpress_version() : bool {
 
 		$compatible = true;
 
@@ -81,28 +80,6 @@ class Compatibility {
 
 			$compatible = false;
 		}
-
-		return $compatible;
-	}
-
-	/**
-	 * Ensure Timber plugin is in use
-	 *
-	 * @return bool $compatible status;
-	 */
-	public static function check_timber_plugin() {
-
-		$compatible = true;
-
-		if ( ! class_exists( 'Timber' ) ) :
-			if ( is_admin() ) :
-				echo '<div class="error"><p>' . esc_attr( __( 'Timber not activated. Make sure you activate the plugin', 'pixels-text-domain' ) ) . '</p></div>';
-			else :
-				wp_die( esc_attr( __( 'Oh no! You need to activate the Timber plugin before you can use this theme.', 'pixels-text-domain' ) ) );
-			endif;
-
-			$compatible = false;
-		endif;
 
 		return $compatible;
 	}
