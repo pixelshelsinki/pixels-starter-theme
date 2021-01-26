@@ -21,7 +21,7 @@ class Timber {
 
 	/**
 	 * Timber library class instance.
-	 * 
+	 *
 	 * @var TimberLibrary
 	 */
 	private $timber;
