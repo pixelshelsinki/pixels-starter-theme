@@ -22,14 +22,14 @@ class Compatibility {
 	 *
 	 * @var string
 	 */
-	const PHP_VERSION = '7.1.0';
+	const PHP_VERSION = '7.3.0';
 
 	/**
 	 * WP version to compare to
 	 *
 	 * @var string
 	 */
-	const WP_VERSION = '4.7.0';
+	const WP_VERSION = '5.5.0';
 
 	/**
 	 * Run all checks on theme start
@@ -50,7 +50,7 @@ class Compatibility {
 	 * @return bool $compatible status;
 	 * @since 1.0
 	 */
-	public static function check_php_version() {
+	public static function check_php_version() : bool {
 
 		$compatible = true;
 
@@ -70,7 +70,7 @@ class Compatibility {
 	 * @return bool $compatible status;
 	 * @since 1.0
 	 */
-	public static function check_wordpress_version() {
+	public static function check_wordpress_version() : bool {
 
 		$compatible = true;
 
