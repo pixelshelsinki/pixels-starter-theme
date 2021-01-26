@@ -8,6 +8,9 @@
 
 namespace Pixels\Theme\Twig;
 
+// Main Timber library.
+use \Timber\Timber as TimberLibrary;
+
 /**
  * Timber class
  *
@@ -15,6 +18,13 @@ namespace Pixels\Theme\Twig;
  * Handle Timber related additional functionalities
  */
 class Timber {
+
+	/**
+	 * Timber library class instance.
+	 * 
+	 * @var TimberLibrary
+	 */
+	private $timber;
 
 	/**
 	 * Context class instance
@@ -38,6 +48,7 @@ class Timber {
 	public function __construct( $navigations ) {
 
 		// Class instances.
+		$this->timber    = new TimberLibrary();
 		$this->context   = new Context( $navigations );
 		$this->functions = new Functions();
 

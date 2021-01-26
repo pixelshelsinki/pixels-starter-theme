@@ -39,8 +39,7 @@ class Compatibility {
 	public static function run_checks() {
 		$compatible =
 		self::check_php_version()
-		&& self::check_wordpress_version()
-		&& self::check_timber_plugin();
+		&& self::check_wordpress_version();
 
 		return $compatible;
 	}
@@ -81,28 +80,6 @@ class Compatibility {
 
 			$compatible = false;
 		}
-
-		return $compatible;
-	}
-
-	/**
-	 * Ensure Timber plugin is in use
-	 *
-	 * @return bool $compatible status;
-	 */
-	public static function check_timber_plugin() {
-
-		$compatible = true;
-
-		if ( ! class_exists( 'Timber' ) ) :
-			if ( is_admin() ) :
-				echo '<div class="error"><p>' . esc_attr( __( 'Timber not activated. Make sure you activate the plugin', 'pixels-text-domain' ) ) . '</p></div>';
-			else :
-				wp_die( esc_attr( __( 'Oh no! You need to activate the Timber plugin before you can use this theme.', 'pixels-text-domain' ) ) );
-			endif;
-
-			$compatible = false;
-		endif;
 
 		return $compatible;
 	}

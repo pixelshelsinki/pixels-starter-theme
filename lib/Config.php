@@ -2,8 +2,6 @@
 /**
  * Common theme Configs.
  *
- * Extends the TimberSite clas
- *
  * @package WordPress
  * @subpackage PixelsTheme
  */
@@ -13,7 +11,7 @@ namespace Pixels\Theme;
 /**
  * Common theme configs.
  */
-class Config extends \TimberSite {
+class Config {
 
 	/**
 	 * Instance of admin settings
@@ -35,8 +33,6 @@ class Config extends \TimberSite {
 		if ( is_admin() ) {
 			$this->admin_config = new Admin\Config();
 		}
-
-		parent::__construct();
 	}
 
 	/**
