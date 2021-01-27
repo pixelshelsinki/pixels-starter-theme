@@ -10,6 +10,7 @@ namespace Pixels\Theme\Twig;
 
 // Image functions.
 use Pixels\Components\Images\Factory;
+use Pixels\Components\SocialShare\Share;
 
 // Timber deps.
 use \Timber\Twig_Function;
@@ -56,9 +57,9 @@ class Functions {
 		$twig->addFunction( new Twig_Function( 'responsive_background', '\\Pixels\\Components\\Images\\Factory::responsive_background' ) );
 
 		// Social share functions.
-		$twig->addFunction( new Twig_Function( 'facebook_share', '\\Pixels\\Theme\\Share::facebook' ) );
-		$twig->addFunction( new Twig_Function( 'twitter_share', '\\Pixels\\Theme\\Share::twitter' ) );
-		$twig->addFunction( new Twig_Function( 'linkedin_share', '\\Pixels\\Theme\\Share::linkedin' ) );
+		$twig->addFunction( new Twig_Function( 'facebook_share', '\\Pixels\\Components\\SocialShare\\Share::facebook' ) );
+		$twig->addFunction( new Twig_Function( 'twitter_share', '\\Pixels\\Components\\SocialShare\\Share::twitter' ) );
+		$twig->addFunction( new Twig_Function( 'linkedin_share', '\\Pixels\\Components\\SocialShare\\Share::linkedin' ) );
 
 		return $twig;
 	}
