@@ -29,5 +29,7 @@
 
     <stubs>
         <file name="vendor/giacocorsiglia/wordpress-stubs/wordpress-stubs.php" />
+        <file name="vendor/kimhf/advanced-custom-fields-pro-stubs/advanced-custom-fields-pro-stubs.php" />
+        <file name="vendor/wpsyntex/polylang-stubs/polylang-stubs.php" />
     </stubs>
 </psalm>
