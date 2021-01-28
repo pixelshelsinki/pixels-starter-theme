@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a99db0f1a30e5c78234407a081b29051",
+    "content-hash": "fac9c7445a235f4e28b45c418ad5c553",
     "packages": [
         {
             "name": "altorouter/altorouter",
@@ -1764,6 +1764,43 @@
             ],
             "description": "Library for handling version information and constraints",
             "time": "2020-06-27T14:39:04+00:00"
+        },
+        {
+            "name": "php-stubs/wordpress-globals",
+            "version": "v0.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/php-stubs/wordpress-globals.git",
+                "reference": "748a1fb2ae8fda94844bd0545935095dbf404b32"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/php-stubs/wordpress-globals/zipball/748a1fb2ae8fda94844bd0545935095dbf404b32",
+                "reference": "748a1fb2ae8fda94844bd0545935095dbf404b32",
+                "shasum": ""
+            },
+            "require-dev": {
+                "php": "~7.1"
+            },
+            "suggest": {
+                "php-stubs/wordpress-stubs": "Up-to-date WordPress function and class declaration stubs",
+                "szepeviktor/phpstan-wordpress": "WordPress extensions for PHPStan"
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Global variables and global constants from WordPress core.",
+            "homepage": "https://github.com/php-stubs/wordpress-globals",
+            "keywords": [
+                "PHPStan",
+                "constants",
+                "globals",
+                "static analysis",
+                "wordpress"
+            ],
+            "time": "2020-01-13T06:12:59+00:00"
         },
         {
             "name": "phpcompatibility/php-compatibility",

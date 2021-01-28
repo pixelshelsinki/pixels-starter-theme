@@ -36,7 +36,8 @@
     "phpunit/phpunit": "^9",
     "vimeo/psalm": "^4.4",
     "kimhf/advanced-custom-fields-pro-stubs": "^5.9",
-    "wpsyntex/polylang-stubs": "dev-master"
+    "wpsyntex/polylang-stubs": "dev-master",
+    "php-stubs/wordpress-globals": "^0.2.0"
   },
   "autoload": {
     "psr-4": {

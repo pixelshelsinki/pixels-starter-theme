@@ -8,6 +8,8 @@
 
 use Pixels\Theme\Controllers\PostController;
 
+global $post;
+
 // Set up Controller instance.
 $controller = new PostController();
 

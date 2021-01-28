@@ -22,7 +22,8 @@ $controller->set_templates( array( 'index/index.twig' ) );
 
 // If home add the home twig template to the front of the array.
 if ( is_home() ) {
-	$controller->set_templates( array_unshift( $controller->get_templates(), 'home/home.twig' ) );
+	$templates = $controller->get_templates();
+	$controller->set_templates( array_unshift( $templates, 'home/home.twig' ) );
 }
 
 // Render the twig.
