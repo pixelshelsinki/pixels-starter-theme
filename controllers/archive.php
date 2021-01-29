@@ -8,6 +8,8 @@
 
 use Pixels\Theme\Controllers\ArchiveController;
 
+global $post;
+
 // Set up Controller instance.
 $controller = new ArchiveController();
 

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <psalm
     totallyTyped="false"
-    errorLevel="8"
+    errorLevel="7"
     resolveFromConfigFile="true"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns="https://getpsalm.org/schema/config"
@@ -20,14 +20,13 @@
 
     <issueHandlers>
         <UndefinedClass errorLevel="suppress" />
-        <UndefinedFunction errorLevel="suppress" />
-        <UndefinedGlobalVariable errorLevel="suppress" />
-        <InvalidPassByReference errorLevel="suppress" />
-        <MissingDependency errorLevel="suppress" />
         <InvalidGlobal errorLevel="suppress" />
     </issueHandlers>
 
     <stubs>
         <file name="vendor/giacocorsiglia/wordpress-stubs/wordpress-stubs.php" />
+        <file name="vendor/php-stubs/wordpress-globals/wordpress-globals.php" />
+        <file name="vendor/kimhf/advanced-custom-fields-pro-stubs/advanced-custom-fields-pro-stubs.php" />
+        <file name="vendor/wpsyntex/polylang-stubs/polylang-stubs.php" />
     </stubs>
 </psalm>
