@@ -2,7 +2,7 @@
  * Make video embeds responsive
  */
 export const makeEmbedsResponsive = () => {
-  const videos = document.querySelectorAll( 'iframe[src*="youtube"], iframe[src*="vimeo"]' )
+  const videos = document.querySelectorAll('iframe[src*="youtube"], iframe[src*="vimeo"]')
   videos.forEach((video) => {
     // Remove enforced height & width
     video.removeAttribute('height');
