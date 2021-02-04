@@ -6,9 +6,14 @@ import $ from 'jquery' // eslint-disable-line
 import 'bootstrap'
 
 const pixelsThemeApp = (function main() {
+  const handleResponsiveVideos = () => {
+    const videos = document.querySelectorAll('iframe[src*="youtube"], iframe[src*="vimeo"]')
+    makeEmbedsResponsive(videos)
+  }
+
   // Page load actions.
   const init = () => {
-    makeEmbedsResponsive()
+    handleResponsiveVideos()
   }
 
   // Scroll actions.
@@ -20,8 +25,6 @@ const pixelsThemeApp = (function main() {
   const resize = () => {
 
   }
-
-  /* Functions */
 
   // Exports to DOM binds.
   return { init, scroll, resize }
