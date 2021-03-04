@@ -32,10 +32,7 @@ final class CompatibilityTest extends TestCase {
 	 */
 	public function testWpVersionAppliesMethodExists() {
 		$method_exists = method_exists( 'Compatibility', 'wp_version_applies' );
-		$this->assertEquals(
-			$method_exists,
-			false
-		);
+		$this->assertFalse( $method_exists );
 	}
 
 	/**
@@ -43,22 +40,13 @@ final class CompatibilityTest extends TestCase {
 	 */
 	public function testWpVersionAppliesNormalTestCases() {
 		$result_1 = Compatibility::wp_version_applies( '5.5', '5.4' );
-		$this->assertEquals(
-			$result_1,
-			false
-		);
+		$this->assertFalse( $result_1 );
 
 		$result_2 = Compatibility::wp_version_applies( '5.5', '5.5' );
-		$this->assertEquals(
-			$result_2,
-			true
-		);
+		$this->assertTrue( $result_2 );
 
 		$result_3 = Compatibility::wp_version_applies( '5.5', '5.6' );
-		$this->assertEquals(
-			$result_3,
-			true
-		);
+		$this->assertTrue( $result_3 );
 	}
 
 	/**
@@ -67,15 +55,9 @@ final class CompatibilityTest extends TestCase {
 	public function testWpVersionAppliesEdgeTestCases() {
 
 		$result_1 = Compatibility::wp_version_applies( '5.5.0', '5.5' );
-		$this->assertEquals(
-			$result_1,
-			true
-		);
+		$this->assertTrue( $result_1 );
 
 		$result_2 = Compatibility::wp_version_applies( '5.5', '5.5.0' );
-		$this->assertEquals(
-			$result_2,
-			true
-		);
+		$this->assertTrue( $result_2 );
 	}
 }
