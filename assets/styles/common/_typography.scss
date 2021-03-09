@@ -96,7 +96,7 @@ h6,
 
   h1,
   .h1 {
-    font-size: rem($h1-font-size-tablet, $body-font-size-tablet);
+    font-size: rem-tablet($h1-font-size-tablet);
     line-height: $h1-line-height-tablet;
     letter-spacing: $h1-letter-spacing-tablet;
     font-weight: $h1-font-weight-tablet;
@@ -104,7 +104,7 @@ h6,
 
   h2,
   .h2 {
-    font-size: rem($h2-font-size-tablet, $body-font-size-tablet);
+    font-size: rem-tablet($h2-font-size-tablet);
     line-height: $h2-line-height-tablet;
     letter-spacing: $h2-letter-spacing-tablet;
     font-weight: $h2-font-weight-tablet;
@@ -112,7 +112,7 @@ h6,
 
   h3,
   .h3 {
-    font-size: rem($h3-font-size-tablet, $body-font-size-tablet);
+    font-size: rem-tablet($h3-font-size-tablet);
     line-height: $h3-line-height-tablet;
     letter-spacing: $h3-letter-spacing-tablet;
     font-weight: $h3-font-weight-tablet;
@@ -120,7 +120,7 @@ h6,
 
   h4,
   .h4 {
-    font-size: rem($h4-font-size-tablet, $body-font-size-tablet);
+    font-size: rem-tablet($h4-font-size-tablet);
     line-height: $h4-line-height-tablet;
     letter-spacing: $h4-letter-spacing-tablet;
     font-weight: $h4-font-weight-tablet;
@@ -128,7 +128,7 @@ h6,
 
   h5,
   .h5 {
-    font-size: rem($h5-font-size-tablet, $body-font-size-tablet);
+    font-size: rem-tablet($h5-font-size-tablet);
     line-height: $h5-line-height-tablet;
     letter-spacing: $h5-letter-spacing-tablet;
     font-weight: $h5-font-weight-tablet;
@@ -136,14 +136,14 @@ h6,
 
   h6,
   .h6 {
-    font-size: rem($h6-font-size-tablet, $body-font-size-tablet);
+    font-size: rem-tablet($h6-font-size-tablet);
     line-height: $h6-line-height-tablet;
     letter-spacing: $h6-letter-spacing-tablet;
     font-weight: $h6-font-weight-tablet;
   }
 
   .lead {
-    font-size: rem($lead-font-size, $body-font-size-tablet);
+    font-size: rem-tablet($lead-font-size);
     line-height: $lead-line-height;
     letter-spacing: $lead-letter-spacing;
     font-weight: $lead-font-weight;
@@ -161,7 +161,7 @@ h6,
 
   h1,
   .h1 {
-    font-size: rem($h1-font-size, $body-font-size);
+    font-size: rem-desktop($h1-font-size);
     line-height: $h1-line-height;
     letter-spacing: $h1-letter-spacing;
     font-weight: $h1-font-weight;
@@ -169,7 +169,7 @@ h6,
 
   h2,
   .h2 {
-    font-size: rem($h2-font-size, $body-font-size);
+    font-size: rem-desktop($h2-font-size);
     line-height: $h2-line-height;
     letter-spacing: $h2-letter-spacing;
     font-weight: $h2-font-weight;
@@ -177,7 +177,7 @@ h6,
 
   h3,
   .h3 {
-    font-size: rem($h3-font-size, $body-font-size);
+    font-size: rem-desktop($h3-font-size);
     line-height: $h3-line-height;
     letter-spacing: $h3-letter-spacing;
     font-weight: $h3-font-weight;
@@ -185,7 +185,7 @@ h6,
 
   h4,
   .h4 {
-    font-size: rem($h4-font-size, $body-font-size);
+    font-size: rem-desktop($h4-font-size);
     line-height: $h4-line-height;
     letter-spacing: $h4-letter-spacing;
     font-weight: $h4-font-weight;
@@ -193,7 +193,7 @@ h6,
 
   h5,
   .h5 {
-    font-size: rem($h5-font-size, $body-font-size);
+    font-size: rem-desktop($h5-font-size);
     line-height: $h5-line-height;
     letter-spacing: $h5-letter-spacing;
     font-weight: $h5-font-weight;
@@ -201,7 +201,7 @@ h6,
 
   h6,
   .h6 {
-    font-size: rem($h6-font-size, $body-font-size);
+    font-size: rem-desktop($h6-font-size);
     line-height: $h6-line-height;
     letter-spacing: $h6-letter-spacing;
     font-weight: $h6-font-weight;

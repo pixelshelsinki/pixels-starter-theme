@@ -6,3 +6,12 @@
 @function rem($px, $body: $body-font-size-mobile) {
   @return ($px / $body) + rem;
 }
+
+// Shorthands for above function, add/edit/remove depending on needed breakpoints for the project
+@function rem-tablet($px) {
+  @return rem($px, $body-font-size-tablet);
+}
+
+@function rem-desktop($px) {
+  @return rem($px, $body-font-size);
+}
