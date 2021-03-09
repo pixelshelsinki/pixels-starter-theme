@@ -1,0 +1,17 @@
+/// Computes rem for given pixel value. Passed in parameters can be numbers (f.e. 16, 24.5) or pixel strings (f.e. 16px)
+///
+/// @param  {number|string} $px   - Pixel value we want to convert to rem
+/// @param  {number|string} $body - Optional pixel value of root element's font-size. This can be changed f.e. in media queries, if font-size changes
+/// @return {string}              - Computed value as rem unit
+@function rem($px, $body: $body-font-size-mobile) {
+  @return ($px / $body) + rem;
+}
+
+// Shorthands for above function, add/edit/remove depending on needed breakpoints for the project
+@function rem-tablet($px) {
+  @return rem($px, $body-font-size-tablet);
+}
+
+@function rem-desktop($px) {
+  @return rem($px, $body-font-size);
+}
