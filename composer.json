@@ -30,7 +30,7 @@
 		"phpcompatibility/phpcompatibility-wp": "*",
 		"roave/security-advisories": "dev-master",
     "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
-    "friendsoftwig/twigcs": "dev-master",
+    "friendsoftwig/twigcs": "^5.0",
     "erusev/parsedown": "~1.7.1",
     "giacocorsiglia/wordpress-stubs": "^5.1",
     "phpunit/phpunit": "^9",
