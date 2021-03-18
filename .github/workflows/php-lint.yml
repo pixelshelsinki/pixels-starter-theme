@@ -1,4 +1,4 @@
-name: PHP - Test & Lint
+name: PHP - Lint
 
 on: [pull_request]
 
