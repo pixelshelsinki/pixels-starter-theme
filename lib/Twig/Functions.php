@@ -60,6 +60,7 @@ class Functions {
 		$twig->addFunction( new Twig_Function( 'facebook_share', '\\Pixels\\Components\\SocialShare\\Share::facebook' ) );
 		$twig->addFunction( new Twig_Function( 'twitter_share', '\\Pixels\\Components\\SocialShare\\Share::twitter' ) );
 		$twig->addFunction( new Twig_Function( 'linkedin_share', '\\Pixels\\Components\\SocialShare\\Share::linkedin' ) );
+		$twig->addFunction( new Twig_Function( 'whatsapp_share', '\\Pixels\\Components\\SocialShare\\Share::whatsapp' ) );
 
 		return $twig;
 	}
