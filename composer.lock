@@ -294,21 +294,23 @@
         },
         {
             "name": "pixelshelsinki/social-share",
-            "version": "v1.0.0",
+            "version": "v1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/pixelshelsinki/pixels-social-share.git",
-                "reference": "cf9c2264a951821fa5643c3359504b6680c315c1"
+                "reference": "98f7fec3560e14d6263668724127a3ad20a0638b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/pixelshelsinki/pixels-social-share/zipball/cf9c2264a951821fa5643c3359504b6680c315c1",
-                "reference": "cf9c2264a951821fa5643c3359504b6680c315c1",
+                "url": "https://api.github.com/repos/pixelshelsinki/pixels-social-share/zipball/98f7fec3560e14d6263668724127a3ad20a0638b",
+                "reference": "98f7fec3560e14d6263668724127a3ad20a0638b",
                 "shasum": ""
             },
             "require-dev": {
+                "giacocorsiglia/wordpress-stubs": "^5.1",
                 "phpunit/phpunit": "^9",
-                "squizlabs/php_codesniffer": "^3.5"
+                "squizlabs/php_codesniffer": "^3.5",
+                "vimeo/psalm": "^4.4"
             },
             "type": "library",
             "autoload": {
@@ -328,7 +330,7 @@
                 }
             ],
             "description": "Social Share component for WordPress",
-            "time": "2021-01-27T12:13:38+00:00"
+            "time": "2021-03-17T13:33:17+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
