@@ -45,7 +45,7 @@
     "@babel/core": "^7.8.4",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
     "@babel/preset-env": "^7.8.4",
-    "@babel/preset-react": "^7.8.3",
+    "@babel/preset-react": "^7.13.13",
     "@svgr/webpack": "^5.1.0",
     "@testing-library/jest-dom": "^5.11.4",
     "autoprefixer": "^10.2.5",
