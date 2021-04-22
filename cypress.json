@@ -1,4 +1,5 @@
 {
+  "retries": 4,
   "fixturesFolder": "tests/Integration/config/fixtures",
   "integrationFolder": "tests/Integration/tests",
   "pluginsFile": "tests/Integration/config/plugins/index.js",
