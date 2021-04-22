@@ -79,4 +79,8 @@
   <rule ref="PHPCompatibility.Syntax.NewFunctionCallTrailingComma.FoundInFunctionCall">
     <severity>0</severity>
   </rule>
+  <!-- Ignore spelling of wordpress -->
+  <rule ref="WordPress.WP.CapitalPDangit.Misspelled">
+    <severity>0</severity>
+  </rule>  
 </ruleset>
