@@ -3,11 +3,11 @@
   display: inline-block;
   width: 100%;
 
-  @include media_breakpoint_up(md) {
+  @include media-tablet {
     width: 50%;
   }
 
-  @include media_breakpoint_up(lg) {
+  @include media-desktop {
     width: 20%;
   }
 }

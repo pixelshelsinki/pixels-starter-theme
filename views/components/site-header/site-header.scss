@@ -3,7 +3,7 @@
 .admin-bar-showing {
   top: 48px;
 
-  @include media-breakpoint-up(md) {
+  @include media-tablet {
     top: 32px;
   }
 }

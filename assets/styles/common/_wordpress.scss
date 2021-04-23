@@ -23,7 +23,7 @@
   height: auto;
 }
 
-@include media-breakpoint-up(sm) {
+@include media-tablet {
   // Only float if not on an extra small device
   .alignleft {
     float: left;
