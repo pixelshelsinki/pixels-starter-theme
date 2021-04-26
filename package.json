@@ -54,7 +54,7 @@
     "babel-loader": "^8.0.6",
     "browser-sync": "^2.26.13",
     "browser-sync-webpack-plugin": "^2.3.0",
-    "copy-webpack-plugin": "^7.0.0",
+    "copy-webpack-plugin": "^8.1.1",
     "css-loader": "^5.0.1",
     "cssnano": "^5.0.1",
     "cypress": "^6.2.1",
