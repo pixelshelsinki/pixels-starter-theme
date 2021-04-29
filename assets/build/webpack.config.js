@@ -8,6 +8,7 @@ const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin')
 const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
+const ESLintPlugin = require('eslint-webpack-plugin');
 
 // Our asset config.
 const config = require('../config')
@@ -43,12 +44,6 @@ module.exports = (env, argv) => ({
             loader: 'babel-loader',
             options: {
               configFile: path.resolve(__dirname, 'babel.config.js'),
-            },
-          },
-          {
-            loader: 'eslint-loader',
-            options: {
-              configFile: path.resolve(__dirname, '.eslintrc.js'),
             },
           },
         ],
@@ -124,6 +119,11 @@ module.exports = (env, argv) => ({
         host: config.urls.devHost,
         port: config.urls.devPort,
         proxy: config.urls.devUrl,
+      },
+    ),
+    new ESLintPlugin(
+      {
+        overrideConfigFile: path.resolve(__dirname, '.eslintrc.js'),
       },
     ),
   ],
