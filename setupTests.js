@@ -7,6 +7,7 @@ import { Twig } from 'twig-testing-library'
 global.twigNamespaces = {
   components: './views/components',
   layouts: './views/layouts',
+  icons: './assets/images',
 }
 
 /**
