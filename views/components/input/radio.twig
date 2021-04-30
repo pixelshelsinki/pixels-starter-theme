@@ -1,18 +1,13 @@
 {#
- # Template for a Bootrstrap radio input.
- #
- # @see https://getbootstrap.com/docs/4.0/components/forms/'
  # @version 1.0.0
  #
  # @var checked           If the input is checked.
  # @var classes           Classes for the input.
  # @var disabled          If the input is disabled.
  # @var id                Id attribute for the input.
- # @var inline            If the checkbox is inline with other checkboxes.
  # @var label             Label for the input.
  # @var label_classes     Label for the <label> element.
  # @var name              Name attribute for the input
- # @var readonly          If the input is read-only.
  # @var required          If the input is required.
  # @var value             The value of the input.
  #}
@@ -22,7 +17,6 @@
   {% set classes = '' %}
   {% set disabled = false %}
   {% set id = '' %}
-  {% set inline = false %}
   {% set label = '' %}
   {% set label_classes = '' %}
   {% set name = '' %}
@@ -30,9 +24,9 @@
   {% set value = '' %}
 {% endif %}
 
-<div class="form-check {{ inline ? 'form-check-inline' }} {{ disabled ? 'disabled' }}">
-  <label class="form-check-label {{ label_classes }}">
-    <input class="form-check-input{{ classes }}" type="radio" name="{{ name }}" id="{{ id }}" value="{{ value }}" {{ checked ? 'checked' }} {{ disabled ? 'disabled' }} {{ required ? 'required' }}>
+<div class="{{ classes }} {{ disabled ? 'disabled' }}">
+  <label class="{{ label_classes }}">
+    <input type="radio" name="{{ name }}" id="{{ id }}" value="{{ value }}" {{ checked ? 'checked' }} {{ disabled ? 'disabled' }} {{ required ? 'required' }}>
     {{ label }}
   </label>
 </div>
