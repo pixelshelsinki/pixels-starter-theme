@@ -3,7 +3,6 @@ import { makeEmbedsResponsive } from './common/video-embeds'
 
 // Imports.
 import $ from 'jquery' // eslint-disable-line
-import 'bootstrap'
 
 const pixelsThemeApp = (function main() {
   const handleResponsiveVideos = () => {

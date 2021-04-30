@@ -25,7 +25,6 @@ This theme uses the following:
 * [Webpack](https://webpack.github.io/) for compiling assets
 * [Browsersync](http://www.browsersync.io/) for synchronised browser testing
 * [Timber](https://timber.github.io/docs/) as a templating engine
-* [Boostrap 4 Beta](https://getbootstrap.com/docs/4.0/getting-started/introduction/) as a CSS framework
 
 ## Requirements
 
