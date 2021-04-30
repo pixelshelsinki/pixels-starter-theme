@@ -3,15 +3,18 @@
  #}
 
 <header class="site-header">
-  <nav class="navbar navbar-expand-lg navbar-light bg-light {{ fn('is_admin_bar_showing') ? 'admin-bar-showing' : '' }}">
+  <nav class="site-header__navbar {{ fn('is_admin_bar_showing') ? 'admin-bar-showing' : '' }}">
     <div class="container">
-      <a class="navbar-brand" href="{{ polylang.home }}">{{ site.title }}</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#site-header-nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ _x('Toggle navigation', 'Accessibility label for toggling menu', textdomain) }}">
-        <span class="navbar-toggler-icon"></span>
+      <a class="site-header__brand" href="/">{{ site.title }}</a>
+      <button class="site-header__navbar-toggler" type="button" data-toggle="collapse" data-target="#site-header-nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ _x('Toggle navigation', 'Accessibility label for toggling menu', textdomain) }}">
+        <span class="site-header__navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse" id="site-header-nav">
-        {% include 'nav/nav.twig' with {nav_items: menu.desktop.get_items, classes: 'navbar-nav'} %}
+      <div class="site-header__nav-wrapper">
+        {% include 'nav/nav.twig' with {
+          nav_items: menu.desktop.get_items,
+          classes: 'site-header__nav'
+        } %}
       </div>
     </div>
   </nav>

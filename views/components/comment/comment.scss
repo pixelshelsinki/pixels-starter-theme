@@ -3,7 +3,8 @@
  */
 
 .comment-list {
-  @extend .list-unstyled;
+  padding-left: 0;
+  list-style: none;
 }
 
 .comment-list ol {

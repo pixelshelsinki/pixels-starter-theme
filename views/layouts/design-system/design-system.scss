@@ -1,12 +1,41 @@
-/* Design System starts */
-.ds__component .modal {
-  position: relative;
-  top: auto;
-  right: auto;
-  bottom: auto;
-  left: auto;
-  z-index: 1;
-  display: block;
+.ds {
+  &__title {
+    width: 100%;
+  }
+
+  &__navigation {
+    &-list {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: $color-link;
+
+    &.active {
+      color: $color-link-hover;
+    }
+  }
 }
 
-/* Design System ends */
+@include media-desktop {
+  .ds {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    &__title {
+      width: 100%;
+    }
+
+    &__navigation {
+      width: 40%;
+    }
+
+    &__component {
+      width: 60%;
+    }
+  }
+}
