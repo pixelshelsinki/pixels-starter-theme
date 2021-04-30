@@ -29,7 +29,7 @@ exports[`Example section Should render with all content 1`] = `
     
           
       <a
-        class="btn btn--secondary"
+        class="btn"
         href="http://pixels.fi"
       >
         Click me
