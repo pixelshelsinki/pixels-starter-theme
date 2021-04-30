@@ -3,17 +3,24 @@
  */
 
 .search-form {
-  @extend .form-inline;
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
 }
 
 .search-form label {
   font-weight: normal;
-
-  @extend .form-group;
+  display: flex;
+  flex: 0 0 auto;
+  flex-flow: row wrap;
+  align-items: center;
+  margin-bottom: 0;
 }
 
 .search-form .search-field {
-  @extend .form-control;
+  display: block;
+  width: 100;
 }
 
 .search-form .search-submit {

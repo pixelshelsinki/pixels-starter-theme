@@ -3,14 +3,19 @@
  */
 
 .comment-form p {
-  @extend .form-group;
+  display: flex;
+  flex: 0 0 auto;
+  flex-flow: row wrap;
+  align-items: center;
+  margin-bottom: 0;
 }
 
 .comment-form input[type="text"],
 .comment-form input[type="email"],
 .comment-form input[type="url"],
 .comment-form textarea {
-  @extend .form-control;
+  display: block;
+  width: 100;
 }
 
 .comment-form input[type="submit"] {
