@@ -4,7 +4,7 @@
 /// @param  {number|string} $body - Optional pixel value of root element's font-size. This can be changed f.e. in media queries, if font-size changes
 /// @return {string}              - Computed value as rem unit
 @function rem($px, $body: $body-font-size-mobile) {
-  @return ($px / $body) + rem;
+  @return divide($px, $body) + rem;
 }
 
 // Shorthands for above function, add/edit/remove depending on needed breakpoints for the project

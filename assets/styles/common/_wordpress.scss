@@ -13,13 +13,13 @@
 
 .aligncenter {
   display: block;
-  margin: ($spacer / 2) auto;
+  margin: divide($spacer, 2) auto;
   height: auto;
 }
 
 .alignleft,
 .alignright {
-  margin-bottom: ($spacer / 2);
+  margin-bottom: divide($spacer, 2);
   height: auto;
 }
 
@@ -27,12 +27,12 @@
   // Only float if not on an extra small device
   .alignleft {
     float: left;
-    margin-right: ($spacer / 2);
+    margin-right: divide($spacer, 2);
   }
 
   .alignright {
     float: right;
-    margin-left: ($spacer / 2);
+    margin-left: divide($spacer, 2);
   }
 }
 
@@ -42,7 +42,7 @@
 }
 
 .wp-caption img {
-  margin-bottom: $spacer / 2;
+  margin-bottom: divide($spacer, 2);
   line-height: 1;
   max-width: 100%;
   height: auto;
