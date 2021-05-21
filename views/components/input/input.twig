@@ -1,7 +1,4 @@
 {#
- # Template for a Bootstrap input.
- #
- # @see https://getbootstrap.com/docs/4.0/components/forms/'
  # @version 1.0.0
  #
  # @var classes           Classes for the input.
@@ -25,11 +22,11 @@
   {% endif %}
 {% endblock %}
 {% block input %}
-  <input type="{{ type }}" class="form-control{{ type == 'file' ? '-file' }} {{ classes }}" id="{{ id }}"  name="{{ name }}" placeholder="{{ placeholder }}" {{ help_text ? 'aria-describedby="' ~ help_text.content ~ '"' }} {{ disabled ? 'disabled' }} {{ readonly ? 'readonly' }} {{ required ? 'required' }} value="{{ value }}">
+  <input type="{{ type }}" class="{{ classes }}" id="{{ id }}"  name="{{ name }}" placeholder="{{ placeholder }}" {{ help_text ? 'aria-describedby="' ~ help_text.content ~ '"' }} {{ disabled ? 'disabled' }} {{ readonly ? 'readonly' }} {{ required ? 'required' }} value="{{ value }}">
 {% endblock %}
 {% block help_text %}
   {% if help_text %}
-    <small id="{{ id }}-help-text" class="form-text {{ help_text_classes }}">
+    <small id="{{ id }}-help-text" class="{{ help_text_classes }}">
       {{ help_text }}
     </small>
   {% endif %}

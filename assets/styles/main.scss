@@ -1,13 +1,12 @@
+@import "reset-css";
 @import "common/variables";
-
-// Import npm dependencies
-@import "~bootstrap/scss/bootstrap";
 
 // *************
 // Common styles
 // *************
 @import "common/mixins/fluid-type";
 @import "common/mixins/media";
+@import "common/mixins/placeholder";
 @import "common/functions/rem";
 @import "common/typography";
 @import "common/global";

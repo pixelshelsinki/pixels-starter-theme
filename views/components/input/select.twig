@@ -1,7 +1,4 @@
 {#
- # Template for a Bootstrap select input.
- #
- # @see https://getbootstrap.com/docs/4.0/components/forms/'
  # @version 1.0.0
  #
  # @var classes           Classes for the input.
@@ -12,10 +9,8 @@
  # @var label_classes     Label for the <label> element.
  # @var name              Name attribute for the input
  # @var options           Array of options for the select.
- # @var placeholder       Placeholder for the input.
  # @var readonly          If the input is read-only.
  # @var required          If the input is required.
- # @var type              The input type.
  #}
 
 {% extends 'input/input.twig' %}
@@ -29,7 +24,6 @@
   {% set label_classes = '' %}
   {% set name = '' %}
   {% set options = [{value: '1', label: 'One'}, {value: '2', label: 'Two', selected: true}] %}
-  {% set readonly = false %}
   {% set required = false %}
 {% endif %}
 
@@ -37,7 +31,7 @@
   <label for="{{ id }}" class="{{ label_classes }}">{{ label }}</label>
 {% endblock %}
 {% block input %}
-  <select class="form-control {{ classes }}" id="{{ id }}" name="{{ name }}" {{ help_text ? 'aria-describedby="' ~ help_text ~ '"' }} {{ disabled ? 'disabled' }} {{ readonly ? 'readonly' }} {{ required ? 'required' }}>
+  <select class="{{ classes }}" id="{{ id }}" name="{{ name }}" {{ help_text ? 'aria-describedby="' ~ help_text ~ '"' }} {{ disabled ? 'disabled' }} {{ readonly ? 'readonly' }} {{ required ? 'required' }}>
     {% for option in options %}
       <option value="{{ option.value }}" {{ option.selected ? 'selected' }}>{{ option.label }}</option>
     {% endfor %}

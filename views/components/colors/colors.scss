@@ -3,6 +3,11 @@
   display: inline-block;
   width: 100%;
 
+  &__list {
+    list-style: none;
+    padding-left: 0;
+  }
+
   @include media-tablet {
     width: 50%;
   }

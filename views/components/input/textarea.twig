@@ -1,7 +1,4 @@
 {#
- # Template for a Bootstrap text area input.
- #
- # @see https://getbootstrap.com/docs/4.0/components/forms/'
  # @version 1.0.0
  #
  # @var classes           Classes for the input.
@@ -43,5 +40,5 @@
   <label for="{{ id }}" class="{{ label_classes }}">{{ label }}</label>
 {% endblock %}
 {% block input %}
-  <textarea class="form-control {{ classes }}" id="{{ id }}" name="{{ name }}" {{ rows ? 'rows="' ~ rows ~ '"' }} {{ cols ? 'cols="' ~ cols ~ '"' }} {{ help_text ? 'aria-describedby="' ~ help_text ~ '"' }} {{ disabled ? 'disabled' }} {{ readonly ? 'readonly' }} {{ required ? 'required' }} {{ placeholder ? 'placeholder="' ~ placeholder ~ '"' }}>{{ value }}</textarea>
+  <textarea class="{{ classes }}" id="{{ id }}" name="{{ name }}" {{ rows ? 'rows="' ~ rows ~ '"' }} {{ cols ? 'cols="' ~ cols ~ '"' }} {{ help_text ? 'aria-describedby="' ~ help_text ~ '"' }} {{ disabled ? 'disabled' }} {{ readonly ? 'readonly' }} {{ required ? 'required' }} {{ placeholder ? 'placeholder="' ~ placeholder ~ '"' }}>{{ value }}</textarea>
 {% endblock %}

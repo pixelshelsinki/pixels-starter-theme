@@ -7,6 +7,7 @@ import { Twig } from 'twig-testing-library'
 global.twigNamespaces = {
   components: './views/components',
   layouts: './views/layouts',
+  icons: './assets/images',
 }
 
 /**
@@ -21,6 +22,16 @@ Twig.extendFunction('__', (string, domain) => string)
 Twig.extendFunction('responsive_image', (id, mobileImage, desktopImage) => `printed image of id ${id} and sizes ${mobileImage} & ${desktopImage}`)
 
 Twig.extendFunction('responsive_background', (id, mobileImage, desktopImage, selector) => `printed background image of id ${id} and sizes ${mobileImage} & ${desktopImage} with selector ${selector}`)
+
+/**
+ * Mock TimberImage
+ */
+Twig.extendFunction('TimberImage', (id) => {
+  return {
+    src: `src for timber image with id ${id}`,
+    alt: `alt-text for timber image with id ${id}`
+  }
+})
 
 /**
   * Mock social share function calls.

@@ -83,7 +83,8 @@ class Timber {
 	 */
 	public function register_namespaces( $loader ) {
 		$loader->addPath( __DIR__ . '/../../views/components', 'components' );
-		$loader->addPath( __DIR__ . '/../..//views/layouts', 'layouts' );
+		$loader->addPath( __DIR__ . '/../../views/layouts', 'layouts' );
+		$loader->addPath( __DIR__ . '/../../assets/images', 'icons' );
 
 		return $loader;
 	}

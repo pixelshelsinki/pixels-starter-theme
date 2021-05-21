@@ -38,20 +38,31 @@
 
 // Captions
 .wp-caption {
-  @extend .figure;
+  display: inline-block;
 }
 
 .wp-caption img {
-  @extend .figure-img;
-  @extend .img-fluid;
+  margin-bottom: $spacer / 2;
+  line-height: 1;
+  max-width: 100%;
+  height: auto;
 }
 
 .wp-caption-text {
-  @extend .figure-caption;
+  color: $color-body;
 }
 
-// Text meant only for screen readers
+/// Text meant only for screen readers
+/// @see https://make.wordpress.org/accessibility/handbook/markup/the-css-class-screen-reader-text/#the-css
 .screen-reader-text {
-  @extend .sr-only;
-  @extend .sr-only-focusable;
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  word-wrap: normal !important;
 }
