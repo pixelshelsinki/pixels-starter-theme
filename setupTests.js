@@ -34,9 +34,16 @@ Twig.extendFunction('TimberImage', (id) => {
 })
 
 /**
-  * Mock social share function calls.
-  */
+ * Mock social share function calls.
+ */
 Twig.extendFunction('facebook_share', () => 'https://facebook-share-link.dev')
 Twig.extendFunction('twitter_share', () => 'https://twitter-share-link.dev')
 Twig.extendFunction('linkedin_share', () => 'https://linkedin-share-link.dev')
 Twig.extendFunction('whatsapp_share', () => 'https://whatsapp-share-link.dev')
+
+/**
+ * Timber filters.
+ */
+Twig.extendFilter("shortcodes", (content) => {
+  return `${content} <span hidden>shortcodes filter applied</span>`
+})
