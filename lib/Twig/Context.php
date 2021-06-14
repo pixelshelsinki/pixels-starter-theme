@@ -66,6 +66,7 @@ class Context {
 		 */
 		$context['site']           = $this;
 		$context['site']->site_url = get_site_url(); // Since timber only returns home URL as 'link'.
+		$context['site']->language = get_language_attributes();
 
 		/**
 		 * Textdomain for translations
