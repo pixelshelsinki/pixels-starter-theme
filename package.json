@@ -42,7 +42,7 @@
     "a11y:production": "yarn cypress run --env env=production a11y-tests --spec 'tests/Integration/tests/a11y/**/*'"
   },
   "devDependencies": {
-    "@babel/core": "^7.14.3",
+    "@babel/core": "^7.14.5",
     "@babel/eslint-parser": "^7.14.3",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
     "@babel/preset-env": "^7.14.2",
