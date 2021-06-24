@@ -3,7 +3,7 @@ module.exports = {
   verbose: false,
   transform: {
    '^.+\\.js$': 'babel-jest',
-   '^.+\\.svg$': 'jest-svg-transformer'
+   '\\.svg$': 'svg-jest'
   },
   setupFilesAfterEnv: [
     './setupTests.js'
