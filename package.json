@@ -84,7 +84,7 @@
     "style-loader": "^2.0.0",
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^22.0.0",
-    "stylelint-webpack-plugin": "^2.2.1",
+    "stylelint-webpack-plugin": "^2.2.2",
     "terser-webpack-plugin": "^5.1.3",
     "twig-testing-library": "^1.1.1",
     "url-loader": "^4.1.1",
