@@ -8784,10 +8784,10 @@ tweetnacl@^0.14.3, tweetnacl@~0.14.0:
   resolved "https://registry.yarnpkg.com/tweetnacl/-/tweetnacl-0.14.5.tgz#5ae68177f192d4456269d108afa93ff8743f4f64"
   integrity sha1-WuaBd/GS1EViadEIr6k/+HQ/T2Q=
 
-twig-testing-library@^1.1.1:
-  version "1.1.2"
-  resolved "https://registry.yarnpkg.com/twig-testing-library/-/twig-testing-library-1.1.2.tgz#ee014f46dd69c603223118d5006a5a891d8fadb5"
-  integrity sha512-H//M1V7A6pAgFuyW09PqD9nyGt4t0cZTj9O3HZX1in/Hu/RfeDMYrUFhPL3AmJ1ETyQJwbnMbI0nT3YHfB32Xw==
+twig-testing-library@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/twig-testing-library/-/twig-testing-library-1.2.0.tgz#49366c7f3176b6d13fc699f0f2fb9f53b4a34df7"
+  integrity sha512-8ybNtyE25BcqG5f2+vnrUydbOPJEOlXhKzWR/dDzyUpenCs4346UBWsTPhaOc4eRPiEofALfRR/BVOmU5lF+cQ==
   dependencies:
     "@babel/runtime" "^7.13.10"
     "@testing-library/dom" "^7.30.3"
