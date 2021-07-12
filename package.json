@@ -79,7 +79,7 @@
     "postcss-normalize": "^10.0.0",
     "react-test-renderer": "^17.0.1",
     "rimraf": "^3.0.1",
-    "sass": "^1.35.1",
+    "sass": "^1.35.2",
     "sass-loader": "^12.1.0",
     "style-loader": "^2.0.0",
     "stylelint": "^13.13.1",
