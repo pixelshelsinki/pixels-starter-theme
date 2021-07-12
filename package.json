@@ -50,7 +50,7 @@
     "@svgr/webpack": "^5.1.0",
     "@testing-library/jest-dom": "^5.14.1",
     "autoprefixer": "^10.2.6",
-    "axe-core": "^4.2.3",
+    "axe-core": "^4.3.0",
     "babel-loader": "^8.0.6",
     "browser-sync": "^2.26.13",
     "browser-sync-webpack-plugin": "^2.3.0",
